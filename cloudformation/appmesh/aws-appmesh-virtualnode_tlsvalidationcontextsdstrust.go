@@ -4,7 +4,10 @@ package appmesh
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VirtualNode_TlsValidationContextSdsTrust AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.TlsValidationContextSdsTrust)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextsdstrust.html

@@ -4,7 +4,10 @@ package msk
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster_EncryptionInTransit AWS CloudFormation Resource (AWS::MSK::Cluster.EncryptionInTransit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html
@@ -18,7 +21,7 @@ type Cluster_EncryptionInTransit struct {
 	// InCluster AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-incluster
-	InCluster *bool `json:"InCluster,omitempty"`
+	InCluster *utils.Value[bool] `json:"InCluster,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

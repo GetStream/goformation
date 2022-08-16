@@ -4,7 +4,10 @@ package mediaconnect
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FlowOutput_Encryption AWS CloudFormation Resource (AWS::MediaConnect::FlowOutput.Encryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-encryption.html

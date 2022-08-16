@@ -4,7 +4,10 @@ package ecs
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TaskDefinition_EphemeralStorage AWS CloudFormation Resource (AWS::ECS::TaskDefinition.EphemeralStorage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-ephemeralstorage.html
@@ -13,7 +16,7 @@ type TaskDefinition_EphemeralStorage struct {
 	// SizeInGiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-ephemeralstorage.html#cfn-ecs-taskdefinition-ephemeralstorage-sizeingib
-	SizeInGiB *int `json:"SizeInGiB,omitempty"`
+	SizeInGiB *utils.Value[int] `json:"SizeInGiB,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

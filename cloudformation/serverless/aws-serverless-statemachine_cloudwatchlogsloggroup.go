@@ -4,7 +4,10 @@ package serverless
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StateMachine_CloudWatchLogsLogGroup AWS CloudFormation Resource (AWS::Serverless::StateMachine.CloudWatchLogsLogGroup)
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-logdestination-cloudwatchlogsloggroup.html

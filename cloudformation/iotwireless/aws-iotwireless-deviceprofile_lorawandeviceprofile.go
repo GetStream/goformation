@@ -4,7 +4,10 @@ package iotwireless
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeviceProfile_LoRaWANDeviceProfile AWS CloudFormation Resource (AWS::IoTWireless::DeviceProfile.LoRaWANDeviceProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html
@@ -13,12 +16,12 @@ type DeviceProfile_LoRaWANDeviceProfile struct {
 	// ClassBTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-classbtimeout
-	ClassBTimeout *int `json:"ClassBTimeout,omitempty"`
+	ClassBTimeout *utils.Value[int] `json:"ClassBTimeout,omitempty"`
 
 	// ClassCTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-classctimeout
-	ClassCTimeout *int `json:"ClassCTimeout,omitempty"`
+	ClassCTimeout *utils.Value[int] `json:"ClassCTimeout,omitempty"`
 
 	// MacVersion AWS CloudFormation Property
 	// Required: false
@@ -28,27 +31,27 @@ type DeviceProfile_LoRaWANDeviceProfile struct {
 	// MaxDutyCycle AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-maxdutycycle
-	MaxDutyCycle *int `json:"MaxDutyCycle,omitempty"`
+	MaxDutyCycle *utils.Value[int] `json:"MaxDutyCycle,omitempty"`
 
 	// MaxEirp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-maxeirp
-	MaxEirp *int `json:"MaxEirp,omitempty"`
+	MaxEirp *utils.Value[int] `json:"MaxEirp,omitempty"`
 
 	// PingSlotDr AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-pingslotdr
-	PingSlotDr *int `json:"PingSlotDr,omitempty"`
+	PingSlotDr *utils.Value[int] `json:"PingSlotDr,omitempty"`
 
 	// PingSlotFreq AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-pingslotfreq
-	PingSlotFreq *int `json:"PingSlotFreq,omitempty"`
+	PingSlotFreq *utils.Value[int] `json:"PingSlotFreq,omitempty"`
 
 	// PingSlotPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-pingslotperiod
-	PingSlotPeriod *int `json:"PingSlotPeriod,omitempty"`
+	PingSlotPeriod *utils.Value[int] `json:"PingSlotPeriod,omitempty"`
 
 	// RegParamsRevision AWS CloudFormation Property
 	// Required: false
@@ -63,22 +66,22 @@ type DeviceProfile_LoRaWANDeviceProfile struct {
 	// Supports32BitFCnt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supports32bitfcnt
-	Supports32BitFCnt *bool `json:"Supports32BitFCnt,omitempty"`
+	Supports32BitFCnt *utils.Value[bool] `json:"Supports32BitFCnt,omitempty"`
 
 	// SupportsClassB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supportsclassb
-	SupportsClassB *bool `json:"SupportsClassB,omitempty"`
+	SupportsClassB *utils.Value[bool] `json:"SupportsClassB,omitempty"`
 
 	// SupportsClassC AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supportsclassc
-	SupportsClassC *bool `json:"SupportsClassC,omitempty"`
+	SupportsClassC *utils.Value[bool] `json:"SupportsClassC,omitempty"`
 
 	// SupportsJoin AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supportsjoin
-	SupportsJoin *bool `json:"SupportsJoin,omitempty"`
+	SupportsJoin *utils.Value[bool] `json:"SupportsJoin,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

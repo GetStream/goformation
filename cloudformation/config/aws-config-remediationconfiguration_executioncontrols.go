@@ -4,7 +4,10 @@ package config
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RemediationConfiguration_ExecutionControls AWS CloudFormation Resource (AWS::Config::RemediationConfiguration.ExecutionControls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-executioncontrols.html

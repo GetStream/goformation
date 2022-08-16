@@ -4,7 +4,10 @@ package rds
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // OptionGroup_OptionConfiguration AWS CloudFormation Resource (AWS::RDS::OptionGroup.OptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfiguration.html
@@ -33,7 +36,7 @@ type OptionGroup_OptionConfiguration struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfiguration.html#cfn-rds-optiongroup-optionconfiguration-port
-	Port *int `json:"Port,omitempty"`
+	Port *utils.Value[int] `json:"Port,omitempty"`
 
 	// VpcSecurityGroupMemberships AWS CloudFormation Property
 	// Required: false

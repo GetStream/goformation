@@ -4,7 +4,10 @@ package kinesisfirehose
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeliveryStream_DataFormatConversionConfiguration AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.DataFormatConversionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html
@@ -13,7 +16,7 @@ type DeliveryStream_DataFormatConversionConfiguration struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *utils.Value[bool] `json:"Enabled,omitempty"`
 
 	// InputFormatConfiguration AWS CloudFormation Property
 	// Required: false

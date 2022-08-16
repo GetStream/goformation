@@ -4,7 +4,10 @@ package dms
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Endpoint_MicrosoftSqlServerSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.MicrosoftSqlServerSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-microsoftsqlserversettings.html
@@ -13,7 +16,7 @@ type Endpoint_MicrosoftSqlServerSettings struct {
 	// BcpPacketSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-microsoftsqlserversettings.html#cfn-dms-endpoint-microsoftsqlserversettings-bcppacketsize
-	BcpPacketSize *int `json:"BcpPacketSize,omitempty"`
+	BcpPacketSize *utils.Value[int] `json:"BcpPacketSize,omitempty"`
 
 	// ControlTablesFileGroup AWS CloudFormation Property
 	// Required: false
@@ -23,12 +26,12 @@ type Endpoint_MicrosoftSqlServerSettings struct {
 	// QuerySingleAlwaysOnNode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-microsoftsqlserversettings.html#cfn-dms-endpoint-microsoftsqlserversettings-querysinglealwaysonnode
-	QuerySingleAlwaysOnNode *bool `json:"QuerySingleAlwaysOnNode,omitempty"`
+	QuerySingleAlwaysOnNode *utils.Value[bool] `json:"QuerySingleAlwaysOnNode,omitempty"`
 
 	// ReadBackupOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-microsoftsqlserversettings.html#cfn-dms-endpoint-microsoftsqlserversettings-readbackuponly
-	ReadBackupOnly *bool `json:"ReadBackupOnly,omitempty"`
+	ReadBackupOnly *utils.Value[bool] `json:"ReadBackupOnly,omitempty"`
 
 	// SafeguardPolicy AWS CloudFormation Property
 	// Required: false
@@ -48,12 +51,12 @@ type Endpoint_MicrosoftSqlServerSettings struct {
 	// UseBcpFullLoad AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-microsoftsqlserversettings.html#cfn-dms-endpoint-microsoftsqlserversettings-usebcpfullload
-	UseBcpFullLoad *bool `json:"UseBcpFullLoad,omitempty"`
+	UseBcpFullLoad *utils.Value[bool] `json:"UseBcpFullLoad,omitempty"`
 
 	// UseThirdPartyBackupDevice AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-microsoftsqlserversettings.html#cfn-dms-endpoint-microsoftsqlserversettings-usethirdpartybackupdevice
-	UseThirdPartyBackupDevice *bool `json:"UseThirdPartyBackupDevice,omitempty"`
+	UseThirdPartyBackupDevice *utils.Value[bool] `json:"UseThirdPartyBackupDevice,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

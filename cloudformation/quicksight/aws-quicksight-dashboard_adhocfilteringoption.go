@@ -4,7 +4,10 @@ package quicksight
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Dashboard_AdHocFilteringOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.AdHocFilteringOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-adhocfilteringoption.html

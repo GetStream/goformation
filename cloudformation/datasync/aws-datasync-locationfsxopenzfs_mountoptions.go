@@ -4,7 +4,10 @@ package datasync
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LocationFSxOpenZFS_MountOptions AWS CloudFormation Resource (AWS::DataSync::LocationFSxOpenZFS.MountOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxopenzfs-mountoptions.html

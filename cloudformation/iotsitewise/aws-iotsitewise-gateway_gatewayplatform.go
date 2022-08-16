@@ -4,7 +4,10 @@ package iotsitewise
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Gateway_GatewayPlatform AWS CloudFormation Resource (AWS::IoTSiteWise::Gateway.GatewayPlatform)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html

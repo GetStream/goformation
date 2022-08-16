@@ -4,7 +4,10 @@ package imagebuilder
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ImageRecipe_SystemsManagerAgent AWS CloudFormation Resource (AWS::ImageBuilder::ImageRecipe.SystemsManagerAgent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-systemsmanageragent.html
@@ -13,7 +16,7 @@ type ImageRecipe_SystemsManagerAgent struct {
 	// UninstallAfterBuild AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-systemsmanageragent.html#cfn-imagebuilder-imagerecipe-systemsmanageragent-uninstallafterbuild
-	UninstallAfterBuild *bool `json:"UninstallAfterBuild,omitempty"`
+	UninstallAfterBuild *utils.Value[bool] `json:"UninstallAfterBuild,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

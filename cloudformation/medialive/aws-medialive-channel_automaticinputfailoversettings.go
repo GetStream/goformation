@@ -4,7 +4,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_AutomaticInputFailoverSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AutomaticInputFailoverSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html
@@ -13,7 +16,7 @@ type Channel_AutomaticInputFailoverSettings struct {
 	// ErrorClearTimeMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html#cfn-medialive-channel-automaticinputfailoversettings-errorcleartimemsec
-	ErrorClearTimeMsec *int `json:"ErrorClearTimeMsec,omitempty"`
+	ErrorClearTimeMsec *utils.Value[int] `json:"ErrorClearTimeMsec,omitempty"`
 
 	// FailoverConditions AWS CloudFormation Property
 	// Required: false

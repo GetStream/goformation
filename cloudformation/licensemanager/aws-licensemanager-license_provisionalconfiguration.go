@@ -4,7 +4,10 @@ package licensemanager
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // License_ProvisionalConfiguration AWS CloudFormation Resource (AWS::LicenseManager::License.ProvisionalConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-provisionalconfiguration.html
@@ -13,7 +16,7 @@ type License_ProvisionalConfiguration struct {
 	// MaxTimeToLiveInMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-provisionalconfiguration.html#cfn-licensemanager-license-provisionalconfiguration-maxtimetoliveinminutes
-	MaxTimeToLiveInMinutes int `json:"MaxTimeToLiveInMinutes"`
+	MaxTimeToLiveInMinutes utils.Value[int] `json:"MaxTimeToLiveInMinutes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

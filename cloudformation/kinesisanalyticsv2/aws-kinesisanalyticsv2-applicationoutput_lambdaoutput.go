@@ -4,7 +4,10 @@ package kinesisanalyticsv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ApplicationOutput_LambdaOutput AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::ApplicationOutput.LambdaOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-lambdaoutput.html

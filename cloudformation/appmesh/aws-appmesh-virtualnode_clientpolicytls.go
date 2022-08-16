@@ -4,7 +4,10 @@ package appmesh
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VirtualNode_ClientPolicyTls AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.ClientPolicyTls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html
@@ -18,7 +21,7 @@ type VirtualNode_ClientPolicyTls struct {
 	// Enforce AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html#cfn-appmesh-virtualnode-clientpolicytls-enforce
-	Enforce *bool `json:"Enforce,omitempty"`
+	Enforce *utils.Value[bool] `json:"Enforce,omitempty"`
 
 	// Ports AWS CloudFormation Property
 	// Required: false

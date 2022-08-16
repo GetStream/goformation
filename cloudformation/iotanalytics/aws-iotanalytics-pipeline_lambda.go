@@ -4,7 +4,10 @@ package iotanalytics
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Pipeline_Lambda AWS CloudFormation Resource (AWS::IoTAnalytics::Pipeline.Lambda)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-lambda.html
@@ -13,7 +16,7 @@ type Pipeline_Lambda struct {
 	// BatchSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-lambda.html#cfn-iotanalytics-pipeline-lambda-batchsize
-	BatchSize int `json:"BatchSize"`
+	BatchSize utils.Value[int] `json:"BatchSize"`
 
 	// LambdaName AWS CloudFormation Property
 	// Required: true

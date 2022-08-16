@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Site AWS CloudFormation Resource (AWS::NetworkManager::Site)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html

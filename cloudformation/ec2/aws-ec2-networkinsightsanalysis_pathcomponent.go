@@ -4,7 +4,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // NetworkInsightsAnalysis_PathComponent AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.PathComponent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html
@@ -48,7 +51,7 @@ type NetworkInsightsAnalysis_PathComponent struct {
 	// SequenceNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sequencenumber
-	SequenceNumber *int `json:"SequenceNumber,omitempty"`
+	SequenceNumber *utils.Value[int] `json:"SequenceNumber,omitempty"`
 
 	// SourceVpc AWS CloudFormation Property
 	// Required: false

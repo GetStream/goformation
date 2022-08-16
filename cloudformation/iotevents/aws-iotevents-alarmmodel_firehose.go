@@ -4,7 +4,10 @@ package iotevents
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AlarmModel_Firehose AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.Firehose)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-firehose.html

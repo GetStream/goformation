@@ -4,7 +4,10 @@ package iottwinmaker
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Entity_DataValue AWS CloudFormation Resource (AWS::IoTTwinMaker::Entity.DataValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html
@@ -13,7 +16,7 @@ type Entity_DataValue struct {
 	// BooleanValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-booleanvalue
-	BooleanValue *bool `json:"BooleanValue,omitempty"`
+	BooleanValue *utils.Value[bool] `json:"BooleanValue,omitempty"`
 
 	// DoubleValue AWS CloudFormation Property
 	// Required: false
@@ -28,7 +31,7 @@ type Entity_DataValue struct {
 	// IntegerValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-integervalue
-	IntegerValue *int `json:"IntegerValue,omitempty"`
+	IntegerValue *utils.Value[int] `json:"IntegerValue,omitempty"`
 
 	// ListValue AWS CloudFormation Property
 	// Required: false

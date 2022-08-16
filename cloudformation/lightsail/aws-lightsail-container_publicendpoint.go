@@ -4,7 +4,10 @@ package lightsail
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Container_PublicEndpoint AWS CloudFormation Resource (AWS::Lightsail::Container.PublicEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-publicendpoint.html
@@ -18,7 +21,7 @@ type Container_PublicEndpoint struct {
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-container-publicendpoint.html#cfn-lightsail-container-publicendpoint-containerport
-	ContainerPort *int `json:"ContainerPort,omitempty"`
+	ContainerPort *utils.Value[int] `json:"ContainerPort,omitempty"`
 
 	// HealthCheckConfig AWS CloudFormation Property
 	// Required: false

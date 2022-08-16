@@ -4,7 +4,10 @@ package ses
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConfigurationSet_SendingOptions AWS CloudFormation Resource (AWS::SES::ConfigurationSet.SendingOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-sendingoptions.html
@@ -13,7 +16,7 @@ type ConfigurationSet_SendingOptions struct {
 	// SendingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-sendingoptions.html#cfn-ses-configurationset-sendingoptions-sendingenabled
-	SendingEnabled *bool `json:"SendingEnabled,omitempty"`
+	SendingEnabled *utils.Value[bool] `json:"SendingEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -4,7 +4,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EC2Fleet_OnDemandOptionsRequest AWS CloudFormation Resource (AWS::EC2::EC2Fleet.OnDemandOptionsRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html
@@ -28,17 +31,17 @@ type EC2Fleet_OnDemandOptionsRequest struct {
 	// MinTargetCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-mintargetcapacity
-	MinTargetCapacity *int `json:"MinTargetCapacity,omitempty"`
+	MinTargetCapacity *utils.Value[int] `json:"MinTargetCapacity,omitempty"`
 
 	// SingleAvailabilityZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-singleavailabilityzone
-	SingleAvailabilityZone *bool `json:"SingleAvailabilityZone,omitempty"`
+	SingleAvailabilityZone *utils.Value[bool] `json:"SingleAvailabilityZone,omitempty"`
 
 	// SingleInstanceType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-singleinstancetype
-	SingleInstanceType *bool `json:"SingleInstanceType,omitempty"`
+	SingleInstanceType *utils.Value[bool] `json:"SingleInstanceType,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

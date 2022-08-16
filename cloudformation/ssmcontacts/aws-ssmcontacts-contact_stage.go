@@ -4,7 +4,10 @@ package ssmcontacts
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Contact_Stage AWS CloudFormation Resource (AWS::SSMContacts::Contact.Stage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-stage.html
@@ -13,7 +16,7 @@ type Contact_Stage struct {
 	// DurationInMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-stage.html#cfn-ssmcontacts-contact-stage-durationinminutes
-	DurationInMinutes int `json:"DurationInMinutes"`
+	DurationInMinutes utils.Value[int] `json:"DurationInMinutes"`
 
 	// Targets AWS CloudFormation Property
 	// Required: false

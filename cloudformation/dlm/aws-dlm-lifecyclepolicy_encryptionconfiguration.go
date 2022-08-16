@@ -4,7 +4,10 @@ package dlm
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LifecyclePolicy_EncryptionConfiguration AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.EncryptionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-encryptionconfiguration.html
@@ -18,7 +21,7 @@ type LifecyclePolicy_EncryptionConfiguration struct {
 	// Encrypted AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-encryptionconfiguration.html#cfn-dlm-lifecyclepolicy-encryptionconfiguration-encrypted
-	Encrypted bool `json:"Encrypted"`
+	Encrypted utils.Value[bool] `json:"Encrypted"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

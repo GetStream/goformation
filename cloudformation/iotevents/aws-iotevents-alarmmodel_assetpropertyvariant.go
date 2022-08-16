@@ -4,7 +4,10 @@ package iotevents
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AlarmModel_AssetPropertyVariant AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.AssetPropertyVariant)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-assetpropertyvariant.html

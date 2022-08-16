@@ -4,7 +4,10 @@ package emr
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster_ComputeLimits AWS CloudFormation Resource (AWS::EMR::Cluster.ComputeLimits)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html
@@ -13,22 +16,22 @@ type Cluster_ComputeLimits struct {
 	// MaximumCapacityUnits AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-maximumcapacityunits
-	MaximumCapacityUnits int `json:"MaximumCapacityUnits"`
+	MaximumCapacityUnits utils.Value[int] `json:"MaximumCapacityUnits"`
 
 	// MaximumCoreCapacityUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-maximumcorecapacityunits
-	MaximumCoreCapacityUnits *int `json:"MaximumCoreCapacityUnits,omitempty"`
+	MaximumCoreCapacityUnits *utils.Value[int] `json:"MaximumCoreCapacityUnits,omitempty"`
 
 	// MaximumOnDemandCapacityUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-maximumondemandcapacityunits
-	MaximumOnDemandCapacityUnits *int `json:"MaximumOnDemandCapacityUnits,omitempty"`
+	MaximumOnDemandCapacityUnits *utils.Value[int] `json:"MaximumOnDemandCapacityUnits,omitempty"`
 
 	// MinimumCapacityUnits AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-minimumcapacityunits
-	MinimumCapacityUnits int `json:"MinimumCapacityUnits"`
+	MinimumCapacityUnits utils.Value[int] `json:"MinimumCapacityUnits"`
 
 	// UnitType AWS CloudFormation Property
 	// Required: true

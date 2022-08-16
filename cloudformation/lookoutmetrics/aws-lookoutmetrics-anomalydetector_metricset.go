@@ -4,7 +4,10 @@ package lookoutmetrics
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AnomalyDetector_MetricSet AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.MetricSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html
@@ -43,7 +46,7 @@ type AnomalyDetector_MetricSet struct {
 	// Offset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-offset
-	Offset *int `json:"Offset,omitempty"`
+	Offset *utils.Value[int] `json:"Offset,omitempty"`
 
 	// TimestampColumn AWS CloudFormation Property
 	// Required: false

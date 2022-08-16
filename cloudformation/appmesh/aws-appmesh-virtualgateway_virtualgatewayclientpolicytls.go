@@ -4,7 +4,10 @@ package appmesh
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VirtualGateway_VirtualGatewayClientPolicyTls AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayClientPolicyTls)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicytls.html
@@ -18,7 +21,7 @@ type VirtualGateway_VirtualGatewayClientPolicyTls struct {
 	// Enforce AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicytls.html#cfn-appmesh-virtualgateway-virtualgatewayclientpolicytls-enforce
-	Enforce *bool `json:"Enforce,omitempty"`
+	Enforce *utils.Value[bool] `json:"Enforce,omitempty"`
 
 	// Ports AWS CloudFormation Property
 	// Required: false

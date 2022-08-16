@@ -4,7 +4,10 @@ package iotevents
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AlarmModel_InitializationConfiguration AWS CloudFormation Resource (AWS::IoTEvents::AlarmModel.InitializationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-initializationconfiguration.html
@@ -13,7 +16,7 @@ type AlarmModel_InitializationConfiguration struct {
 	// DisabledOnInitialization AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-alarmmodel-initializationconfiguration.html#cfn-iotevents-alarmmodel-initializationconfiguration-disabledoninitialization
-	DisabledOnInitialization bool `json:"DisabledOnInitialization"`
+	DisabledOnInitialization utils.Value[bool] `json:"DisabledOnInitialization"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

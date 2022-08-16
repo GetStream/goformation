@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LocationHDFS AWS CloudFormation Resource (AWS::DataSync::LocationHDFS)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html
@@ -28,7 +31,7 @@ type LocationHDFS struct {
 	// BlockSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-blocksize
-	BlockSize *int `json:"BlockSize,omitempty"`
+	BlockSize *utils.Value[int] `json:"BlockSize,omitempty"`
 
 	// KerberosKeytab AWS CloudFormation Property
 	// Required: false
@@ -63,7 +66,7 @@ type LocationHDFS struct {
 	// ReplicationFactor AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-replicationfactor
-	ReplicationFactor *int `json:"ReplicationFactor,omitempty"`
+	ReplicationFactor *utils.Value[int] `json:"ReplicationFactor,omitempty"`
 
 	// SimpleUser AWS CloudFormation Property
 	// Required: false

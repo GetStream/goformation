@@ -4,7 +4,10 @@ package nimblestudio
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StudioComponent_SharedFileSystemConfiguration AWS CloudFormation Resource (AWS::NimbleStudio::StudioComponent.SharedFileSystemConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-sharedfilesystemconfiguration.html

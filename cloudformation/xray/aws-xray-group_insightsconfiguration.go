@@ -4,7 +4,10 @@ package xray
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Group_InsightsConfiguration AWS CloudFormation Resource (AWS::XRay::Group.InsightsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-insightsconfiguration.html
@@ -13,12 +16,12 @@ type Group_InsightsConfiguration struct {
 	// InsightsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-insightsconfiguration.html#cfn-xray-group-insightsconfiguration-insightsenabled
-	InsightsEnabled *bool `json:"InsightsEnabled,omitempty"`
+	InsightsEnabled *utils.Value[bool] `json:"InsightsEnabled,omitempty"`
 
 	// NotificationsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-insightsconfiguration.html#cfn-xray-group-insightsconfiguration-notificationsenabled
-	NotificationsEnabled *bool `json:"NotificationsEnabled,omitempty"`
+	NotificationsEnabled *utils.Value[bool] `json:"NotificationsEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

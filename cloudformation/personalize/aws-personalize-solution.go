@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Solution AWS CloudFormation Resource (AWS::Personalize::Solution)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html
@@ -32,12 +35,12 @@ type Solution struct {
 	// PerformAutoML AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-performautoml
-	PerformAutoML *bool `json:"PerformAutoML,omitempty"`
+	PerformAutoML *utils.Value[bool] `json:"PerformAutoML,omitempty"`
 
 	// PerformHPO AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-performhpo
-	PerformHPO *bool `json:"PerformHPO,omitempty"`
+	PerformHPO *utils.Value[bool] `json:"PerformHPO,omitempty"`
 
 	// RecipeArn AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package eks
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster_ResourcesVpcConfig AWS CloudFormation Resource (AWS::EKS::Cluster.ResourcesVpcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html
@@ -13,12 +16,12 @@ type Cluster_ResourcesVpcConfig struct {
 	// EndpointPrivateAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-endpointprivateaccess
-	EndpointPrivateAccess *bool `json:"EndpointPrivateAccess,omitempty"`
+	EndpointPrivateAccess *utils.Value[bool] `json:"EndpointPrivateAccess,omitempty"`
 
 	// EndpointPublicAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-resourcesvpcconfig.html#cfn-eks-cluster-resourcesvpcconfig-endpointpublicaccess
-	EndpointPublicAccess *bool `json:"EndpointPublicAccess,omitempty"`
+	EndpointPublicAccess *utils.Value[bool] `json:"EndpointPublicAccess,omitempty"`
 
 	// PublicAccessCidrs AWS CloudFormation Property
 	// Required: false

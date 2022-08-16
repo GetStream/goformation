@@ -4,7 +4,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConnectorProfile_SnowflakeConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SnowflakeConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofilecredentials.html

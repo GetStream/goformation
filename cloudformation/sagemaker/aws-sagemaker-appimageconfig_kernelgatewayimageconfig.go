@@ -4,7 +4,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AppImageConfig_KernelGatewayImageConfig AWS CloudFormation Resource (AWS::SageMaker::AppImageConfig.KernelGatewayImageConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-kernelgatewayimageconfig.html

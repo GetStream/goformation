@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Profile AWS CloudFormation Resource (AWS::RolesAnywhere::Profile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html
@@ -23,7 +26,7 @@ type Profile struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *utils.Value[bool] `json:"Enabled,omitempty"`
 
 	// ManagedPolicyArns AWS CloudFormation Property
 	// Required: false
@@ -38,7 +41,7 @@ type Profile struct {
 	// RequireInstanceProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-requireinstanceproperties
-	RequireInstanceProperties *bool `json:"RequireInstanceProperties,omitempty"`
+	RequireInstanceProperties *utils.Value[bool] `json:"RequireInstanceProperties,omitempty"`
 
 	// RoleArns AWS CloudFormation Property
 	// Required: false

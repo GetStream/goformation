@@ -4,7 +4,10 @@ package eks
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Nodegroup_RemoteAccess AWS CloudFormation Resource (AWS::EKS::Nodegroup.RemoteAccess)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-remoteaccess.html

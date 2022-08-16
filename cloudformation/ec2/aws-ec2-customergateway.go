@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CustomerGateway AWS CloudFormation Resource (AWS::EC2::CustomerGateway)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html
@@ -18,7 +21,7 @@ type CustomerGateway struct {
 	// BgpAsn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-bgpasn
-	BgpAsn int `json:"BgpAsn"`
+	BgpAsn utils.Value[int] `json:"BgpAsn"`
 
 	// IpAddress AWS CloudFormation Property
 	// Required: true

@@ -4,7 +4,10 @@ package refactorspaces
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Application_ApiGatewayProxyInput AWS CloudFormation Resource (AWS::RefactorSpaces::Application.ApiGatewayProxyInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-application-apigatewayproxyinput.html

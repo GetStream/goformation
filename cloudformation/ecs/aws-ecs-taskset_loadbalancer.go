@@ -4,7 +4,10 @@ package ecs
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TaskSet_LoadBalancer AWS CloudFormation Resource (AWS::ECS::TaskSet.LoadBalancer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-loadbalancer.html
@@ -18,7 +21,7 @@ type TaskSet_LoadBalancer struct {
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-loadbalancer.html#cfn-ecs-taskset-loadbalancer-containerport
-	ContainerPort *int `json:"ContainerPort,omitempty"`
+	ContainerPort *utils.Value[int] `json:"ContainerPort,omitempty"`
 
 	// LoadBalancerName AWS CloudFormation Property
 	// Required: false

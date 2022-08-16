@@ -4,7 +4,10 @@ package cloudwatch
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Alarm_MetricStat AWS CloudFormation Resource (AWS::CloudWatch::Alarm.MetricStat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html
@@ -18,7 +21,7 @@ type Alarm_MetricStat struct {
 	// Period AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html#cfn-cloudwatch-alarm-metricstat-period
-	Period int `json:"Period"`
+	Period utils.Value[int] `json:"Period"`
 
 	// Stat AWS CloudFormation Property
 	// Required: true

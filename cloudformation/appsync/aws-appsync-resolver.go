@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Resolver AWS CloudFormation Resource (AWS::AppSync::Resolver)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html
@@ -42,7 +45,7 @@ type Resolver struct {
 	// MaxBatchSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-maxbatchsize
-	MaxBatchSize *int `json:"MaxBatchSize,omitempty"`
+	MaxBatchSize *utils.Value[int] `json:"MaxBatchSize,omitempty"`
 
 	// PipelineConfig AWS CloudFormation Property
 	// Required: false

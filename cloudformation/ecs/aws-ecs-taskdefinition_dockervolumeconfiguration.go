@@ -4,7 +4,10 @@ package ecs
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TaskDefinition_DockerVolumeConfiguration AWS CloudFormation Resource (AWS::ECS::TaskDefinition.DockerVolumeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html
@@ -13,7 +16,7 @@ type TaskDefinition_DockerVolumeConfiguration struct {
 	// Autoprovision AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-autoprovision
-	Autoprovision *bool `json:"Autoprovision,omitempty"`
+	Autoprovision *utils.Value[bool] `json:"Autoprovision,omitempty"`
 
 	// Driver AWS CloudFormation Property
 	// Required: false

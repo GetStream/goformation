@@ -4,7 +4,10 @@ package greengrass
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LoggerDefinition_Logger AWS CloudFormation Resource (AWS::Greengrass::LoggerDefinition.Logger)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html
@@ -28,7 +31,7 @@ type LoggerDefinition_Logger struct {
 	// Space AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-space
-	Space *int `json:"Space,omitempty"`
+	Space *utils.Value[int] `json:"Space,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true

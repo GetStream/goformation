@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Stack AWS CloudFormation Resource (AWS::AppStream::Stack)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html
@@ -33,7 +36,7 @@ type Stack struct {
 	// DeleteStorageConnectors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-deletestorageconnectors
-	DeleteStorageConnectors *bool `json:"DeleteStorageConnectors,omitempty"`
+	DeleteStorageConnectors *utils.Value[bool] `json:"DeleteStorageConnectors,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false

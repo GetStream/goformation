@@ -4,7 +4,10 @@ package iotanalytics
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Datastore_CustomerManagedS3Storage AWS CloudFormation Resource (AWS::IoTAnalytics::Datastore.CustomerManagedS3Storage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-customermanageds3storage.html

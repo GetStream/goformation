@@ -4,7 +4,10 @@ package dynamodb
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // GlobalTable_ReplicaGlobalSecondaryIndexSpecification AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.ReplicaGlobalSecondaryIndexSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaglobalsecondaryindexspecification.html

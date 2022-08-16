@@ -4,7 +4,10 @@ package iot
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TopicRule_AssetPropertyTimestamp AWS CloudFormation Resource (AWS::IoT::TopicRule.AssetPropertyTimestamp)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertytimestamp.html

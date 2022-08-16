@@ -4,7 +4,10 @@ package dynamodb
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // GlobalTable_ReadProvisionedThroughputSettings AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.ReadProvisionedThroughputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-readprovisionedthroughputsettings.html
@@ -18,7 +21,7 @@ type GlobalTable_ReadProvisionedThroughputSettings struct {
 	// ReadCapacityUnits AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-readprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-readprovisionedthroughputsettings-readcapacityunits
-	ReadCapacityUnits *int `json:"ReadCapacityUnits,omitempty"`
+	ReadCapacityUnits *utils.Value[int] `json:"ReadCapacityUnits,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

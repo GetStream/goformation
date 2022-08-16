@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ClientVpnAuthorizationRule AWS CloudFormation Resource (AWS::EC2::ClientVpnAuthorizationRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html
@@ -22,7 +25,7 @@ type ClientVpnAuthorizationRule struct {
 	// AuthorizeAllGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-authorizeallgroups
-	AuthorizeAllGroups *bool `json:"AuthorizeAllGroups,omitempty"`
+	AuthorizeAllGroups *utils.Value[bool] `json:"AuthorizeAllGroups,omitempty"`
 
 	// ClientVpnEndpointId AWS CloudFormation Property
 	// Required: true

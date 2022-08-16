@@ -4,7 +4,10 @@ package networkmanager
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CoreNetwork_CoreNetworkEdge AWS CloudFormation Resource (AWS::NetworkManager::CoreNetwork.CoreNetworkEdge)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-corenetwork-corenetworkedge.html

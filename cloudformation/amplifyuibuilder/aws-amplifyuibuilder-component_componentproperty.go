@@ -4,7 +4,10 @@ package amplifyuibuilder
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Component_ComponentProperty AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html
@@ -43,7 +46,7 @@ type Component_ComponentProperty struct {
 	// Configured AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentproperty.html#cfn-amplifyuibuilder-component-componentproperty-configured
-	Configured *bool `json:"Configured,omitempty"`
+	Configured *utils.Value[bool] `json:"Configured,omitempty"`
 
 	// DefaultValue AWS CloudFormation Property
 	// Required: false

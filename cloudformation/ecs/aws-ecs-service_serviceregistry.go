@@ -4,7 +4,10 @@ package ecs
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Service_ServiceRegistry AWS CloudFormation Resource (AWS::ECS::Service.ServiceRegistry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html
@@ -18,12 +21,12 @@ type Service_ServiceRegistry struct {
 	// ContainerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html#cfn-ecs-service-serviceregistry-containerport
-	ContainerPort *int `json:"ContainerPort,omitempty"`
+	ContainerPort *utils.Value[int] `json:"ContainerPort,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html#cfn-ecs-service-serviceregistry-port
-	Port *int `json:"Port,omitempty"`
+	Port *utils.Value[int] `json:"Port,omitempty"`
 
 	// RegistryArn AWS CloudFormation Property
 	// Required: false

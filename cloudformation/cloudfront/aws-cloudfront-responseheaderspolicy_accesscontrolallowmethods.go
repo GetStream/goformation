@@ -4,7 +4,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResponseHeadersPolicy_AccessControlAllowMethods AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowMethods)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolallowmethods.html

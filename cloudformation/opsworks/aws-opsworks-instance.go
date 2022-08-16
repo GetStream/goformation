@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Instance AWS CloudFormation Resource (AWS::OpsWorks::Instance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html
@@ -47,7 +50,7 @@ type Instance struct {
 	// EbsOptimized AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-ebsoptimized
-	EbsOptimized *bool `json:"EbsOptimized,omitempty"`
+	EbsOptimized *utils.Value[bool] `json:"EbsOptimized,omitempty"`
 
 	// ElasticIps AWS CloudFormation Property
 	// Required: false
@@ -62,7 +65,7 @@ type Instance struct {
 	// InstallUpdatesOnBoot AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-installupdatesonboot
-	InstallUpdatesOnBoot *bool `json:"InstallUpdatesOnBoot,omitempty"`
+	InstallUpdatesOnBoot *utils.Value[bool] `json:"InstallUpdatesOnBoot,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true

@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Container AWS CloudFormation Resource (AWS::Lightsail::Container)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html
@@ -23,7 +26,7 @@ type Container struct {
 	// IsDisabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-isdisabled
-	IsDisabled *bool `json:"IsDisabled,omitempty"`
+	IsDisabled *utils.Value[bool] `json:"IsDisabled,omitempty"`
 
 	// Power AWS CloudFormation Property
 	// Required: true
@@ -38,7 +41,7 @@ type Container struct {
 	// Scale AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-scale
-	Scale int `json:"Scale"`
+	Scale utils.Value[int] `json:"Scale"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: true

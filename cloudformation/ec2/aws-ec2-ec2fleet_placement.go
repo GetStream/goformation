@@ -4,7 +4,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EC2Fleet_Placement AWS CloudFormation Resource (AWS::EC2::EC2Fleet.Placement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-placement.html
@@ -38,7 +41,7 @@ type EC2Fleet_Placement struct {
 	// PartitionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-placement.html#cfn-ec2-ec2fleet-placement-partitionnumber
-	PartitionNumber *int `json:"PartitionNumber,omitempty"`
+	PartitionNumber *utils.Value[int] `json:"PartitionNumber,omitempty"`
 
 	// SpreadDomain AWS CloudFormation Property
 	// Required: false

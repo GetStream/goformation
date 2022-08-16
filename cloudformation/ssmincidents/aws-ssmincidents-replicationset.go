@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ReplicationSet AWS CloudFormation Resource (AWS::SSMIncidents::ReplicationSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-replicationset.html
@@ -17,7 +20,7 @@ type ReplicationSet struct {
 	// DeletionProtected AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-replicationset.html#cfn-ssmincidents-replicationset-deletionprotected
-	DeletionProtected *bool `json:"DeletionProtected,omitempty"`
+	DeletionProtected *utils.Value[bool] `json:"DeletionProtected,omitempty"`
 
 	// Regions AWS CloudFormation Property
 	// Required: true

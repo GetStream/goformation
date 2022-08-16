@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TrafficMirrorSession AWS CloudFormation Resource (AWS::EC2::TrafficMirrorSession)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html
@@ -28,12 +31,12 @@ type TrafficMirrorSession struct {
 	// PacketLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-packetlength
-	PacketLength *int `json:"PacketLength,omitempty"`
+	PacketLength *utils.Value[int] `json:"PacketLength,omitempty"`
 
 	// SessionNumber AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-sessionnumber
-	SessionNumber int `json:"SessionNumber"`
+	SessionNumber utils.Value[int] `json:"SessionNumber"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -53,7 +56,7 @@ type TrafficMirrorSession struct {
 	// VirtualNetworkId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-virtualnetworkid
-	VirtualNetworkId *int `json:"VirtualNetworkId,omitempty"`
+	VirtualNetworkId *utils.Value[int] `json:"VirtualNetworkId,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

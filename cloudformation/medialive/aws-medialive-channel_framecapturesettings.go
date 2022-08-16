@@ -4,7 +4,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_FrameCaptureSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.FrameCaptureSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturesettings.html
@@ -13,7 +16,7 @@ type Channel_FrameCaptureSettings struct {
 	// CaptureInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturesettings.html#cfn-medialive-channel-framecapturesettings-captureinterval
-	CaptureInterval *int `json:"CaptureInterval,omitempty"`
+	CaptureInterval *utils.Value[int] `json:"CaptureInterval,omitempty"`
 
 	// CaptureIntervalUnits AWS CloudFormation Property
 	// Required: false

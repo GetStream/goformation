@@ -4,7 +4,10 @@ package autoscaling
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ScalingPolicy_PredictiveScalingConfiguration AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.PredictiveScalingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingconfiguration.html
@@ -18,7 +21,7 @@ type ScalingPolicy_PredictiveScalingConfiguration struct {
 	// MaxCapacityBuffer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingconfiguration.html#cfn-autoscaling-scalingpolicy-predictivescalingconfiguration-maxcapacitybuffer
-	MaxCapacityBuffer *int `json:"MaxCapacityBuffer,omitempty"`
+	MaxCapacityBuffer *utils.Value[int] `json:"MaxCapacityBuffer,omitempty"`
 
 	// MetricSpecifications AWS CloudFormation Property
 	// Required: true
@@ -33,7 +36,7 @@ type ScalingPolicy_PredictiveScalingConfiguration struct {
 	// SchedulingBufferTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predictivescalingconfiguration.html#cfn-autoscaling-scalingpolicy-predictivescalingconfiguration-schedulingbuffertime
-	SchedulingBufferTime *int `json:"SchedulingBufferTime,omitempty"`
+	SchedulingBufferTime *utils.Value[int] `json:"SchedulingBufferTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

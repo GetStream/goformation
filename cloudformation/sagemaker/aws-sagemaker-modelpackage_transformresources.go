@@ -4,7 +4,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ModelPackage_TransformResources AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.TransformResources)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformresources.html
@@ -13,7 +16,7 @@ type ModelPackage_TransformResources struct {
 	// InstanceCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformresources.html#cfn-sagemaker-modelpackage-transformresources-instancecount
-	InstanceCount int `json:"InstanceCount"`
+	InstanceCount utils.Value[int] `json:"InstanceCount"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true

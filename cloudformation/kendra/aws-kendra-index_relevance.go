@@ -4,7 +4,10 @@ package kendra
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Index_Relevance AWS CloudFormation Resource (AWS::Kendra::Index.Relevance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html
@@ -18,12 +21,12 @@ type Index_Relevance struct {
 	// Freshness AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-freshness
-	Freshness *bool `json:"Freshness,omitempty"`
+	Freshness *utils.Value[bool] `json:"Freshness,omitempty"`
 
 	// Importance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-importance
-	Importance *int `json:"Importance,omitempty"`
+	Importance *utils.Value[int] `json:"Importance,omitempty"`
 
 	// RankOrder AWS CloudFormation Property
 	// Required: false

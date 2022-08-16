@@ -4,7 +4,10 @@ package greengrassv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ComponentVersion_LambdaVolumeMount AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.LambdaVolumeMount)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html
@@ -13,7 +16,7 @@ type ComponentVersion_LambdaVolumeMount struct {
 	// AddGroupOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-addgroupowner
-	AddGroupOwner *bool `json:"AddGroupOwner,omitempty"`
+	AddGroupOwner *utils.Value[bool] `json:"AddGroupOwner,omitempty"`
 
 	// DestinationPath AWS CloudFormation Property
 	// Required: false

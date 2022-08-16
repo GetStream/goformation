@@ -4,7 +4,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResponseHeadersPolicy_ContentSecurityPolicy AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.ContentSecurityPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-contentsecuritypolicy.html
@@ -18,7 +21,7 @@ type ResponseHeadersPolicy_ContentSecurityPolicy struct {
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-contentsecuritypolicy.html#cfn-cloudfront-responseheaderspolicy-contentsecuritypolicy-override
-	Override bool `json:"Override"`
+	Override utils.Value[bool] `json:"Override"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

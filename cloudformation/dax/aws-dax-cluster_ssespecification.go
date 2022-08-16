@@ -4,7 +4,10 @@ package dax
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster_SSESpecification AWS CloudFormation Resource (AWS::DAX::Cluster.SSESpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html
@@ -13,7 +16,7 @@ type Cluster_SSESpecification struct {
 	// SSEEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html#cfn-dax-cluster-ssespecification-sseenabled
-	SSEEnabled *bool `json:"SSEEnabled,omitempty"`
+	SSEEnabled *utils.Value[bool] `json:"SSEEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

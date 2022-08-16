@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TaskDefinition AWS CloudFormation Resource (AWS::IoTWireless::TaskDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html
@@ -18,7 +21,7 @@ type TaskDefinition struct {
 	// AutoCreateTasks AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html#cfn-iotwireless-taskdefinition-autocreatetasks
-	AutoCreateTasks bool `json:"AutoCreateTasks"`
+	AutoCreateTasks utils.Value[bool] `json:"AutoCreateTasks"`
 
 	// LoRaWANUpdateGatewayTaskEntry AWS CloudFormation Property
 	// Required: false

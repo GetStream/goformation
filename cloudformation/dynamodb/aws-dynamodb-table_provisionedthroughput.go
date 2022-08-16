@@ -4,7 +4,10 @@ package dynamodb
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Table_ProvisionedThroughput AWS CloudFormation Resource (AWS::DynamoDB::Table.ProvisionedThroughput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html

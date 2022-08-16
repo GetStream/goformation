@@ -4,7 +4,10 @@ package workspaces
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Workspace_WorkspaceProperties AWS CloudFormation Resource (AWS::WorkSpaces::Workspace.WorkspaceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html
@@ -18,7 +21,7 @@ type Workspace_WorkspaceProperties struct {
 	// RootVolumeSizeGib AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-rootvolumesizegib
-	RootVolumeSizeGib *int `json:"RootVolumeSizeGib,omitempty"`
+	RootVolumeSizeGib *utils.Value[int] `json:"RootVolumeSizeGib,omitempty"`
 
 	// RunningMode AWS CloudFormation Property
 	// Required: false
@@ -28,12 +31,12 @@ type Workspace_WorkspaceProperties struct {
 	// RunningModeAutoStopTimeoutInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmodeautostoptimeoutinminutes
-	RunningModeAutoStopTimeoutInMinutes *int `json:"RunningModeAutoStopTimeoutInMinutes,omitempty"`
+	RunningModeAutoStopTimeoutInMinutes *utils.Value[int] `json:"RunningModeAutoStopTimeoutInMinutes,omitempty"`
 
 	// UserVolumeSizeGib AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-uservolumesizegib
-	UserVolumeSizeGib *int `json:"UserVolumeSizeGib,omitempty"`
+	UserVolumeSizeGib *utils.Value[int] `json:"UserVolumeSizeGib,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

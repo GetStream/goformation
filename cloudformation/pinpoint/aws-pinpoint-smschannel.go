@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SMSChannel AWS CloudFormation Resource (AWS::Pinpoint::SMSChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html
@@ -22,7 +25,7 @@ type SMSChannel struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *utils.Value[bool] `json:"Enabled,omitempty"`
 
 	// SenderId AWS CloudFormation Property
 	// Required: false

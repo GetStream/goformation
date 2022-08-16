@@ -4,7 +4,10 @@ package customerprofiles
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Integration_IncrementalPullConfig AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.IncrementalPullConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-incrementalpullconfig.html

@@ -4,7 +4,10 @@ package ssmincidents
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResponsePlan_SsmAutomation AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.SsmAutomation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html

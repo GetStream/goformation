@@ -4,7 +4,10 @@ package fis
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ExperimentTemplate_ExperimentTemplateAction AWS CloudFormation Resource (AWS::FIS::ExperimentTemplate.ExperimentTemplateAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateaction.html

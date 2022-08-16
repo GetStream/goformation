@@ -4,7 +4,10 @@ package quicksight
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSet_JoinKeyProperties AWS CloudFormation Resource (AWS::QuickSight::DataSet.JoinKeyProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joinkeyproperties.html
@@ -13,7 +16,7 @@ type DataSet_JoinKeyProperties struct {
 	// UniqueKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joinkeyproperties.html#cfn-quicksight-dataset-joinkeyproperties-uniquekey
-	UniqueKey *bool `json:"UniqueKey,omitempty"`
+	UniqueKey *utils.Value[bool] `json:"UniqueKey,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

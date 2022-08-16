@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Stage AWS CloudFormation Resource (AWS::ApiGatewayV2::Stage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html
@@ -32,7 +35,7 @@ type Stage struct {
 	// AutoDeploy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-autodeploy
-	AutoDeploy *bool `json:"AutoDeploy,omitempty"`
+	AutoDeploy *utils.Value[bool] `json:"AutoDeploy,omitempty"`
 
 	// ClientCertificateId AWS CloudFormation Property
 	// Required: false

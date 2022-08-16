@@ -4,7 +4,10 @@ package iot
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MitigationAction_AddThingsToThingGroupParams AWS CloudFormation Resource (AWS::IoT::MitigationAction.AddThingsToThingGroupParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-addthingstothinggroupparams.html
@@ -13,7 +16,7 @@ type MitigationAction_AddThingsToThingGroupParams struct {
 	// OverrideDynamicGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-addthingstothinggroupparams.html#cfn-iot-mitigationaction-addthingstothinggroupparams-overridedynamicgroups
-	OverrideDynamicGroups *bool `json:"OverrideDynamicGroups,omitempty"`
+	OverrideDynamicGroups *utils.Value[bool] `json:"OverrideDynamicGroups,omitempty"`
 
 	// ThingGroupNames AWS CloudFormation Property
 	// Required: true

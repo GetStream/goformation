@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Filter AWS CloudFormation Resource (AWS::GuardDuty::Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html
@@ -43,7 +46,7 @@ type Filter struct {
 	// Rank AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-rank
-	Rank int `json:"Rank"`
+	Rank utils.Value[int] `json:"Rank"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

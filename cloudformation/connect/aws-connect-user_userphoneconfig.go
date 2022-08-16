@@ -4,7 +4,10 @@ package connect
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // User_UserPhoneConfig AWS CloudFormation Resource (AWS::Connect::User.UserPhoneConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-userphoneconfig.html
@@ -13,12 +16,12 @@ type User_UserPhoneConfig struct {
 	// AfterContactWorkTimeLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-userphoneconfig.html#cfn-connect-user-userphoneconfig-aftercontactworktimelimit
-	AfterContactWorkTimeLimit *int `json:"AfterContactWorkTimeLimit,omitempty"`
+	AfterContactWorkTimeLimit *utils.Value[int] `json:"AfterContactWorkTimeLimit,omitempty"`
 
 	// AutoAccept AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-user-userphoneconfig.html#cfn-connect-user-userphoneconfig-autoaccept
-	AutoAccept *bool `json:"AutoAccept,omitempty"`
+	AutoAccept *utils.Value[bool] `json:"AutoAccept,omitempty"`
 
 	// DeskPhoneNumber AWS CloudFormation Property
 	// Required: false

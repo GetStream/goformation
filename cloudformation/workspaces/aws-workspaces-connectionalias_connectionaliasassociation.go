@@ -4,7 +4,10 @@ package workspaces
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConnectionAlias_ConnectionAliasAssociation AWS CloudFormation Resource (AWS::WorkSpaces::ConnectionAlias.ConnectionAliasAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-connectionalias-connectionaliasassociation.html

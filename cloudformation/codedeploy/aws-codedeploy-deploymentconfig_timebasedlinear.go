@@ -4,7 +4,10 @@ package codedeploy
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeploymentConfig_TimeBasedLinear AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentConfig.TimeBasedLinear)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html
@@ -13,12 +16,12 @@ type DeploymentConfig_TimeBasedLinear struct {
 	// LinearInterval AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedlinear-linearinterval
-	LinearInterval int `json:"LinearInterval"`
+	LinearInterval utils.Value[int] `json:"LinearInterval"`
 
 	// LinearPercentage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedlinear-linearpercentage
-	LinearPercentage int `json:"LinearPercentage"`
+	LinearPercentage utils.Value[int] `json:"LinearPercentage"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

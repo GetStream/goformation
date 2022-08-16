@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Domain AWS CloudFormation Resource (AWS::Amplify::Domain)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html
@@ -37,7 +40,7 @@ type Domain struct {
 	// EnableAutoSubDomain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-enableautosubdomain
-	EnableAutoSubDomain *bool `json:"EnableAutoSubDomain,omitempty"`
+	EnableAutoSubDomain *utils.Value[bool] `json:"EnableAutoSubDomain,omitempty"`
 
 	// SubDomainSettings AWS CloudFormation Property
 	// Required: true

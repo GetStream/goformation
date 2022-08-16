@@ -4,7 +4,10 @@ package lakeformation
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TagAssociation_DatabaseResource AWS CloudFormation Resource (AWS::LakeFormation::TagAssociation.DatabaseResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-databaseresource.html

@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Authorizer AWS CloudFormation Resource (AWS::ApiGatewayV2::Authorizer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html
@@ -32,7 +35,7 @@ type Authorizer struct {
 	// AuthorizerResultTtlInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-authorizerresultttlinseconds
-	AuthorizerResultTtlInSeconds *int `json:"AuthorizerResultTtlInSeconds,omitempty"`
+	AuthorizerResultTtlInSeconds *utils.Value[int] `json:"AuthorizerResultTtlInSeconds,omitempty"`
 
 	// AuthorizerType AWS CloudFormation Property
 	// Required: true
@@ -47,7 +50,7 @@ type Authorizer struct {
 	// EnableSimpleResponses AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-enablesimpleresponses
-	EnableSimpleResponses *bool `json:"EnableSimpleResponses,omitempty"`
+	EnableSimpleResponses *utils.Value[bool] `json:"EnableSimpleResponses,omitempty"`
 
 	// IdentitySource AWS CloudFormation Property
 	// Required: false

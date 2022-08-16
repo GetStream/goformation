@@ -4,7 +4,10 @@ package opsworks
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Layer_VolumeConfiguration AWS CloudFormation Resource (AWS::OpsWorks::Layer.VolumeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html
@@ -13,12 +16,12 @@ type Layer_VolumeConfiguration struct {
 	// Encrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volumeconfiguration-encrypted
-	Encrypted *bool `json:"Encrypted,omitempty"`
+	Encrypted *utils.Value[bool] `json:"Encrypted,omitempty"`
 
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *utils.Value[int] `json:"Iops,omitempty"`
 
 	// MountPoint AWS CloudFormation Property
 	// Required: false
@@ -28,17 +31,17 @@ type Layer_VolumeConfiguration struct {
 	// NumberOfDisks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-numberofdisks
-	NumberOfDisks *int `json:"NumberOfDisks,omitempty"`
+	NumberOfDisks *utils.Value[int] `json:"NumberOfDisks,omitempty"`
 
 	// RaidLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-raidlevel
-	RaidLevel *int `json:"RaidLevel,omitempty"`
+	RaidLevel *utils.Value[int] `json:"RaidLevel,omitempty"`
 
 	// Size AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-size
-	Size *int `json:"Size,omitempty"`
+	Size *utils.Value[int] `json:"Size,omitempty"`
 
 	// VolumeType AWS CloudFormation Property
 	// Required: false

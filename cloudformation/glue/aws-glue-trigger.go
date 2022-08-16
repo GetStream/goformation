@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Trigger AWS CloudFormation Resource (AWS::Glue::Trigger)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html
@@ -42,7 +45,7 @@ type Trigger struct {
 	// StartOnCreation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-startoncreation
-	StartOnCreation *bool `json:"StartOnCreation,omitempty"`
+	StartOnCreation *utils.Value[bool] `json:"StartOnCreation,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

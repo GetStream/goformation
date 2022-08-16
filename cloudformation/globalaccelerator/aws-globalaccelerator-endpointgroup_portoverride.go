@@ -4,7 +4,10 @@ package globalaccelerator
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EndpointGroup_PortOverride AWS CloudFormation Resource (AWS::GlobalAccelerator::EndpointGroup.PortOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-portoverride.html
@@ -13,12 +16,12 @@ type EndpointGroup_PortOverride struct {
 	// EndpointPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-portoverride.html#cfn-globalaccelerator-endpointgroup-portoverride-endpointport
-	EndpointPort int `json:"EndpointPort"`
+	EndpointPort utils.Value[int] `json:"EndpointPort"`
 
 	// ListenerPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-portoverride.html#cfn-globalaccelerator-endpointgroup-portoverride-listenerport
-	ListenerPort int `json:"ListenerPort"`
+	ListenerPort utils.Value[int] `json:"ListenerPort"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

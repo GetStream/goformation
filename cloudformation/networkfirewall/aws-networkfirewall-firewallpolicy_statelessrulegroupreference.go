@@ -4,7 +4,10 @@ package networkfirewall
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FirewallPolicy_StatelessRuleGroupReference AWS CloudFormation Resource (AWS::NetworkFirewall::FirewallPolicy.StatelessRuleGroupReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statelessrulegroupreference.html
@@ -13,7 +16,7 @@ type FirewallPolicy_StatelessRuleGroupReference struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statelessrulegroupreference.html#cfn-networkfirewall-firewallpolicy-statelessrulegroupreference-priority
-	Priority int `json:"Priority"`
+	Priority utils.Value[int] `json:"Priority"`
 
 	// ResourceArn AWS CloudFormation Property
 	// Required: true

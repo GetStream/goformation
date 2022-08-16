@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Topic AWS CloudFormation Resource (AWS::SNS::Topic)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html
@@ -18,7 +21,7 @@ type Topic struct {
 	// ContentBasedDeduplication AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-contentbaseddeduplication
-	ContentBasedDeduplication *bool `json:"ContentBasedDeduplication,omitempty"`
+	ContentBasedDeduplication *utils.Value[bool] `json:"ContentBasedDeduplication,omitempty"`
 
 	// DisplayName AWS CloudFormation Property
 	// Required: false
@@ -28,7 +31,7 @@ type Topic struct {
 	// FifoTopic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-fifotopic
-	FifoTopic *bool `json:"FifoTopic,omitempty"`
+	FifoTopic *utils.Value[bool] `json:"FifoTopic,omitempty"`
 
 	// KmsMasterKeyId AWS CloudFormation Property
 	// Required: false

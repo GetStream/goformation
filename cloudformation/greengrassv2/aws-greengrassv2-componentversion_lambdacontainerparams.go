@@ -4,7 +4,10 @@ package greengrassv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ComponentVersion_LambdaContainerParams AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.LambdaContainerParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html
@@ -18,12 +21,12 @@ type ComponentVersion_LambdaContainerParams struct {
 	// MemorySizeInKB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-memorysizeinkb
-	MemorySizeInKB *int `json:"MemorySizeInKB,omitempty"`
+	MemorySizeInKB *utils.Value[int] `json:"MemorySizeInKB,omitempty"`
 
 	// MountROSysfs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-mountrosysfs
-	MountROSysfs *bool `json:"MountROSysfs,omitempty"`
+	MountROSysfs *utils.Value[bool] `json:"MountROSysfs,omitempty"`
 
 	// Volumes AWS CloudFormation Property
 	// Required: false

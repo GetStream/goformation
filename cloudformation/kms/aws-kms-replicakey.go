@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ReplicaKey AWS CloudFormation Resource (AWS::KMS::ReplicaKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html
@@ -23,7 +26,7 @@ type ReplicaKey struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *utils.Value[bool] `json:"Enabled,omitempty"`
 
 	// KeyPolicy AWS CloudFormation Property
 	// Required: true
@@ -33,7 +36,7 @@ type ReplicaKey struct {
 	// PendingWindowInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-pendingwindowindays
-	PendingWindowInDays *int `json:"PendingWindowInDays,omitempty"`
+	PendingWindowInDays *utils.Value[int] `json:"PendingWindowInDays,omitempty"`
 
 	// PrimaryKeyArn AWS CloudFormation Property
 	// Required: true

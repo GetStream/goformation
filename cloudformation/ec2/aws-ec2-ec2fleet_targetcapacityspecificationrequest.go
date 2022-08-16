@@ -4,7 +4,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EC2Fleet_TargetCapacitySpecificationRequest AWS CloudFormation Resource (AWS::EC2::EC2Fleet.TargetCapacitySpecificationRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html
@@ -18,12 +21,12 @@ type EC2Fleet_TargetCapacitySpecificationRequest struct {
 	// OnDemandTargetCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-ondemandtargetcapacity
-	OnDemandTargetCapacity *int `json:"OnDemandTargetCapacity,omitempty"`
+	OnDemandTargetCapacity *utils.Value[int] `json:"OnDemandTargetCapacity,omitempty"`
 
 	// SpotTargetCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-spottargetcapacity
-	SpotTargetCapacity *int `json:"SpotTargetCapacity,omitempty"`
+	SpotTargetCapacity *utils.Value[int] `json:"SpotTargetCapacity,omitempty"`
 
 	// TargetCapacityUnitType AWS CloudFormation Property
 	// Required: false
@@ -33,7 +36,7 @@ type EC2Fleet_TargetCapacitySpecificationRequest struct {
 	// TotalTargetCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-totaltargetcapacity
-	TotalTargetCapacity int `json:"TotalTargetCapacity"`
+	TotalTargetCapacity utils.Value[int] `json:"TotalTargetCapacity"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

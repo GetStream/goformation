@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TransitGatewayRoute AWS CloudFormation Resource (AWS::EC2::TransitGatewayRoute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html
@@ -17,7 +20,7 @@ type TransitGatewayRoute struct {
 	// Blackhole AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-blackhole
-	Blackhole *bool `json:"Blackhole,omitempty"`
+	Blackhole *utils.Value[bool] `json:"Blackhole,omitempty"`
 
 	// DestinationCidrBlock AWS CloudFormation Property
 	// Required: false

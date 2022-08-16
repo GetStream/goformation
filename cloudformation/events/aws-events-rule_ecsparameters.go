@@ -5,7 +5,10 @@ package events
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Rule_EcsParameters AWS CloudFormation Resource (AWS::Events::Rule.EcsParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html
@@ -19,12 +22,12 @@ type Rule_EcsParameters struct {
 	// EnableECSManagedTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-enableecsmanagedtags
-	EnableECSManagedTags *bool `json:"EnableECSManagedTags,omitempty"`
+	EnableECSManagedTags *utils.Value[bool] `json:"EnableECSManagedTags,omitempty"`
 
 	// EnableExecuteCommand AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-enableexecutecommand
-	EnableExecuteCommand *bool `json:"EnableExecuteCommand,omitempty"`
+	EnableExecuteCommand *utils.Value[bool] `json:"EnableExecuteCommand,omitempty"`
 
 	// Group AWS CloudFormation Property
 	// Required: false
@@ -74,7 +77,7 @@ type Rule_EcsParameters struct {
 	// TaskCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskcount
-	TaskCount *int `json:"TaskCount,omitempty"`
+	TaskCount *utils.Value[int] `json:"TaskCount,omitempty"`
 
 	// TaskDefinitionArn AWS CloudFormation Property
 	// Required: true

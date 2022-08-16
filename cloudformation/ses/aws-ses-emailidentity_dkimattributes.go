@@ -4,7 +4,10 @@ package ses
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EmailIdentity_DkimAttributes AWS CloudFormation Resource (AWS::SES::EmailIdentity.DkimAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-dkimattributes.html
@@ -13,7 +16,7 @@ type EmailIdentity_DkimAttributes struct {
 	// SigningEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-dkimattributes.html#cfn-ses-emailidentity-dkimattributes-signingenabled
-	SigningEnabled *bool `json:"SigningEnabled,omitempty"`
+	SigningEnabled *utils.Value[bool] `json:"SigningEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

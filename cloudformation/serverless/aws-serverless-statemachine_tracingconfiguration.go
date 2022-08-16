@@ -4,7 +4,10 @@ package serverless
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StateMachine_TracingConfiguration AWS CloudFormation Resource (AWS::Serverless::StateMachine.TracingConfiguration)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
@@ -13,7 +16,7 @@ type StateMachine_TracingConfiguration struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-tracingconfiguration.html
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *utils.Value[bool] `json:"Enabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

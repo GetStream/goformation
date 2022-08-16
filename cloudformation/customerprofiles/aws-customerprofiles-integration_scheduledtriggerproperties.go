@@ -4,7 +4,10 @@ package customerprofiles
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Integration_ScheduledTriggerProperties AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.ScheduledTriggerProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-scheduledtriggerproperties.html
@@ -33,7 +36,7 @@ type Integration_ScheduledTriggerProperties struct {
 	// ScheduleOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-scheduledtriggerproperties.html#cfn-customerprofiles-integration-scheduledtriggerproperties-scheduleoffset
-	ScheduleOffset *int `json:"ScheduleOffset,omitempty"`
+	ScheduleOffset *utils.Value[int] `json:"ScheduleOffset,omitempty"`
 
 	// ScheduleStartTime AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package s3
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bucket_DefaultRetention AWS CloudFormation Resource (AWS::S3::Bucket.DefaultRetention)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html
@@ -13,7 +16,7 @@ type Bucket_DefaultRetention struct {
 	// Days AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-days
-	Days *int `json:"Days,omitempty"`
+	Days *utils.Value[int] `json:"Days,omitempty"`
 
 	// Mode AWS CloudFormation Property
 	// Required: false
@@ -23,7 +26,7 @@ type Bucket_DefaultRetention struct {
 	// Years AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-years
-	Years *int `json:"Years,omitempty"`
+	Years *utils.Value[int] `json:"Years,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

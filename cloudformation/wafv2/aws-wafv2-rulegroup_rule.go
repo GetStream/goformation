@@ -4,7 +4,10 @@ package wafv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RuleGroup_Rule AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html
@@ -28,7 +31,7 @@ type RuleGroup_Rule struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-priority
-	Priority int `json:"Priority"`
+	Priority utils.Value[int] `json:"Priority"`
 
 	// RuleLabels AWS CloudFormation Property
 	// Required: false

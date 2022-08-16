@@ -4,7 +4,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ModelPackage_TransformJobDefinition AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.TransformJobDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html
@@ -23,12 +26,12 @@ type ModelPackage_TransformJobDefinition struct {
 	// MaxConcurrentTransforms AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html#cfn-sagemaker-modelpackage-transformjobdefinition-maxconcurrenttransforms
-	MaxConcurrentTransforms *int `json:"MaxConcurrentTransforms,omitempty"`
+	MaxConcurrentTransforms *utils.Value[int] `json:"MaxConcurrentTransforms,omitempty"`
 
 	// MaxPayloadInMB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html#cfn-sagemaker-modelpackage-transformjobdefinition-maxpayloadinmb
-	MaxPayloadInMB *int `json:"MaxPayloadInMB,omitempty"`
+	MaxPayloadInMB *utils.Value[int] `json:"MaxPayloadInMB,omitempty"`
 
 	// TransformInput AWS CloudFormation Property
 	// Required: true

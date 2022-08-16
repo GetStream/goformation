@@ -4,7 +4,10 @@ package events
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Rule_RedshiftDataParameters AWS CloudFormation Resource (AWS::Events::Rule.RedshiftDataParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-redshiftdataparameters.html
@@ -38,7 +41,7 @@ type Rule_RedshiftDataParameters struct {
 	// WithEvent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-redshiftdataparameters.html#cfn-events-rule-redshiftdataparameters-withevent
-	WithEvent *bool `json:"WithEvent,omitempty"`
+	WithEvent *utils.Value[bool] `json:"WithEvent,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -4,7 +4,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Distribution_CustomOriginConfig AWS CloudFormation Resource (AWS::CloudFront::Distribution.CustomOriginConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html
@@ -13,17 +16,17 @@ type Distribution_CustomOriginConfig struct {
 	// HTTPPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpport
-	HTTPPort *int `json:"HTTPPort,omitempty"`
+	HTTPPort *utils.Value[int] `json:"HTTPPort,omitempty"`
 
 	// HTTPSPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpsport
-	HTTPSPort *int `json:"HTTPSPort,omitempty"`
+	HTTPSPort *utils.Value[int] `json:"HTTPSPort,omitempty"`
 
 	// OriginKeepaliveTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originkeepalivetimeout
-	OriginKeepaliveTimeout *int `json:"OriginKeepaliveTimeout,omitempty"`
+	OriginKeepaliveTimeout *utils.Value[int] `json:"OriginKeepaliveTimeout,omitempty"`
 
 	// OriginProtocolPolicy AWS CloudFormation Property
 	// Required: true
@@ -33,7 +36,7 @@ type Distribution_CustomOriginConfig struct {
 	// OriginReadTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originreadtimeout
-	OriginReadTimeout *int `json:"OriginReadTimeout,omitempty"`
+	OriginReadTimeout *utils.Value[int] `json:"OriginReadTimeout,omitempty"`
 
 	// OriginSSLProtocols AWS CloudFormation Property
 	// Required: false

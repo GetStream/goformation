@@ -4,7 +4,10 @@ package rds
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat AWS CloudFormation Resource (AWS::RDS::DBProxyTargetGroup.ConnectionPoolConfigurationInfoFormat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat.html
@@ -13,7 +16,7 @@ type DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat struct {
 	// ConnectionBorrowTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat-connectionborrowtimeout
-	ConnectionBorrowTimeout *int `json:"ConnectionBorrowTimeout,omitempty"`
+	ConnectionBorrowTimeout *utils.Value[int] `json:"ConnectionBorrowTimeout,omitempty"`
 
 	// InitQuery AWS CloudFormation Property
 	// Required: false
@@ -23,12 +26,12 @@ type DBProxyTargetGroup_ConnectionPoolConfigurationInfoFormat struct {
 	// MaxConnectionsPercent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat-maxconnectionspercent
-	MaxConnectionsPercent *int `json:"MaxConnectionsPercent,omitempty"`
+	MaxConnectionsPercent *utils.Value[int] `json:"MaxConnectionsPercent,omitempty"`
 
 	// MaxIdleConnectionsPercent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat-maxidleconnectionspercent
-	MaxIdleConnectionsPercent *int `json:"MaxIdleConnectionsPercent,omitempty"`
+	MaxIdleConnectionsPercent *utils.Value[int] `json:"MaxIdleConnectionsPercent,omitempty"`
 
 	// SessionPinningFilters AWS CloudFormation Property
 	// Required: false

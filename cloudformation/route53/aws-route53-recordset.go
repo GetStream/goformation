@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RecordSet AWS CloudFormation Resource (AWS::Route53::RecordSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html
@@ -57,7 +60,7 @@ type RecordSet struct {
 	// MultiValueAnswer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-multivalueanswer
-	MultiValueAnswer *bool `json:"MultiValueAnswer,omitempty"`
+	MultiValueAnswer *utils.Value[bool] `json:"MultiValueAnswer,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -92,7 +95,7 @@ type RecordSet struct {
 	// Weight AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-weight
-	Weight *int `json:"Weight,omitempty"`
+	Weight *utils.Value[int] `json:"Weight,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

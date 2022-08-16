@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster AWS CloudFormation Resource (AWS::EMR::Cluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html
@@ -53,7 +56,7 @@ type Cluster struct {
 	// EbsRootVolumeSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-ebsrootvolumesize
-	EbsRootVolumeSize *int `json:"EbsRootVolumeSize,omitempty"`
+	EbsRootVolumeSize *utils.Value[int] `json:"EbsRootVolumeSize,omitempty"`
 
 	// Instances AWS CloudFormation Property
 	// Required: true
@@ -113,7 +116,7 @@ type Cluster struct {
 	// StepConcurrencyLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-stepconcurrencylevel
-	StepConcurrencyLevel *int `json:"StepConcurrencyLevel,omitempty"`
+	StepConcurrencyLevel *utils.Value[int] `json:"StepConcurrencyLevel,omitempty"`
 
 	// Steps AWS CloudFormation Property
 	// Required: false
@@ -128,7 +131,7 @@ type Cluster struct {
 	// VisibleToAllUsers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-visibletoallusers
-	VisibleToAllUsers *bool `json:"VisibleToAllUsers,omitempty"`
+	VisibleToAllUsers *utils.Value[bool] `json:"VisibleToAllUsers,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

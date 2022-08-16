@@ -4,7 +4,10 @@ package amplify
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // App_AutoBranchCreationConfig AWS CloudFormation Resource (AWS::Amplify::App.AutoBranchCreationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html
@@ -28,22 +31,22 @@ type App_AutoBranchCreationConfig struct {
 	// EnableAutoBranchCreation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-enableautobranchcreation
-	EnableAutoBranchCreation *bool `json:"EnableAutoBranchCreation,omitempty"`
+	EnableAutoBranchCreation *utils.Value[bool] `json:"EnableAutoBranchCreation,omitempty"`
 
 	// EnableAutoBuild AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-enableautobuild
-	EnableAutoBuild *bool `json:"EnableAutoBuild,omitempty"`
+	EnableAutoBuild *utils.Value[bool] `json:"EnableAutoBuild,omitempty"`
 
 	// EnablePerformanceMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-enableperformancemode
-	EnablePerformanceMode *bool `json:"EnablePerformanceMode,omitempty"`
+	EnablePerformanceMode *utils.Value[bool] `json:"EnablePerformanceMode,omitempty"`
 
 	// EnablePullRequestPreview AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-enablepullrequestpreview
-	EnablePullRequestPreview *bool `json:"EnablePullRequestPreview,omitempty"`
+	EnablePullRequestPreview *utils.Value[bool] `json:"EnablePullRequestPreview,omitempty"`
 
 	// EnvironmentVariables AWS CloudFormation Property
 	// Required: false

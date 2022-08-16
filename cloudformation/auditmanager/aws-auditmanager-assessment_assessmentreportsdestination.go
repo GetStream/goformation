@@ -4,7 +4,10 @@ package auditmanager
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Assessment_AssessmentReportsDestination AWS CloudFormation Resource (AWS::AuditManager::Assessment.AssessmentReportsDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-assessmentreportsdestination.html

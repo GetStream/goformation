@@ -4,7 +4,10 @@ package lex
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bot_FulfillmentStartResponseSpecification AWS CloudFormation Resource (AWS::Lex::Bot.FulfillmentStartResponseSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentstartresponsespecification.html
@@ -13,12 +16,12 @@ type Bot_FulfillmentStartResponseSpecification struct {
 	// AllowInterrupt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentstartresponsespecification.html#cfn-lex-bot-fulfillmentstartresponsespecification-allowinterrupt
-	AllowInterrupt *bool `json:"AllowInterrupt,omitempty"`
+	AllowInterrupt *utils.Value[bool] `json:"AllowInterrupt,omitempty"`
 
 	// DelayInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentstartresponsespecification.html#cfn-lex-bot-fulfillmentstartresponsespecification-delayinseconds
-	DelayInSeconds int `json:"DelayInSeconds"`
+	DelayInSeconds utils.Value[int] `json:"DelayInSeconds"`
 
 	// MessageGroups AWS CloudFormation Property
 	// Required: true

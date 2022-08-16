@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StackUserAssociation AWS CloudFormation Resource (AWS::AppStream::StackUserAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html
@@ -22,7 +25,7 @@ type StackUserAssociation struct {
 	// SendEmailNotification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-sendemailnotification
-	SendEmailNotification *bool `json:"SendEmailNotification,omitempty"`
+	SendEmailNotification *utils.Value[bool] `json:"SendEmailNotification,omitempty"`
 
 	// StackName AWS CloudFormation Property
 	// Required: true

@@ -4,7 +4,10 @@ package secretsmanager
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RotationSchedule_HostedRotationLambda AWS CloudFormation Resource (AWS::SecretsManager::RotationSchedule.HostedRotationLambda)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html

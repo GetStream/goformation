@@ -4,7 +4,10 @@ package mediapackage
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // PackagingConfiguration_CmafEncryption AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.CmafEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafencryption.html

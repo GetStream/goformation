@@ -4,7 +4,10 @@ package greengrass
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SubscriptionDefinition_Subscription AWS CloudFormation Resource (AWS::Greengrass::SubscriptionDefinition.Subscription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscription.html

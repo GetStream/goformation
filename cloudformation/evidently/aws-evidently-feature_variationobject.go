@@ -4,7 +4,10 @@ package evidently
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Feature_VariationObject AWS CloudFormation Resource (AWS::Evidently::Feature.VariationObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html
@@ -13,7 +16,7 @@ type Feature_VariationObject struct {
 	// BooleanValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html#cfn-evidently-feature-variationobject-booleanvalue
-	BooleanValue *bool `json:"BooleanValue,omitempty"`
+	BooleanValue *utils.Value[bool] `json:"BooleanValue,omitempty"`
 
 	// DoubleValue AWS CloudFormation Property
 	// Required: false

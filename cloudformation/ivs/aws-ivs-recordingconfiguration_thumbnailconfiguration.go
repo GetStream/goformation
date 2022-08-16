@@ -4,7 +4,10 @@ package ivs
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RecordingConfiguration_ThumbnailConfiguration AWS CloudFormation Resource (AWS::IVS::RecordingConfiguration.ThumbnailConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-thumbnailconfiguration.html
@@ -18,7 +21,7 @@ type RecordingConfiguration_ThumbnailConfiguration struct {
 	// TargetIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-thumbnailconfiguration.html#cfn-ivs-recordingconfiguration-thumbnailconfiguration-targetintervalseconds
-	TargetIntervalSeconds *int `json:"TargetIntervalSeconds,omitempty"`
+	TargetIntervalSeconds *utils.Value[int] `json:"TargetIntervalSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -4,7 +4,10 @@ package kafkaconnect
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Connector_WorkerConfiguration AWS CloudFormation Resource (AWS::KafkaConnect::Connector.WorkerConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html
@@ -13,7 +16,7 @@ type Connector_WorkerConfiguration struct {
 	// Revision AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-revision
-	Revision int `json:"Revision"`
+	Revision utils.Value[int] `json:"Revision"`
 
 	// WorkerConfigurationArn AWS CloudFormation Property
 	// Required: true

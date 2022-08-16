@@ -4,7 +4,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Flow_DestinationFlowConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.DestinationFlowConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationflowconfig.html

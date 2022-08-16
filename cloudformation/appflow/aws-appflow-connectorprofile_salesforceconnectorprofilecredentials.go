@@ -4,7 +4,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConnectorProfile_SalesforceConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SalesforceConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html

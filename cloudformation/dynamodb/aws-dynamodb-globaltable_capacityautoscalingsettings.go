@@ -4,7 +4,10 @@ package dynamodb
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // GlobalTable_CapacityAutoScalingSettings AWS CloudFormation Resource (AWS::DynamoDB::GlobalTable.CapacityAutoScalingSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-capacityautoscalingsettings.html
@@ -13,17 +16,17 @@ type GlobalTable_CapacityAutoScalingSettings struct {
 	// MaxCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-capacityautoscalingsettings.html#cfn-dynamodb-globaltable-capacityautoscalingsettings-maxcapacity
-	MaxCapacity int `json:"MaxCapacity"`
+	MaxCapacity utils.Value[int] `json:"MaxCapacity"`
 
 	// MinCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-capacityautoscalingsettings.html#cfn-dynamodb-globaltable-capacityautoscalingsettings-mincapacity
-	MinCapacity int `json:"MinCapacity"`
+	MinCapacity utils.Value[int] `json:"MinCapacity"`
 
 	// SeedCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-capacityautoscalingsettings.html#cfn-dynamodb-globaltable-capacityautoscalingsettings-seedcapacity
-	SeedCapacity *int `json:"SeedCapacity,omitempty"`
+	SeedCapacity *utils.Value[int] `json:"SeedCapacity,omitempty"`
 
 	// TargetTrackingScalingPolicyConfiguration AWS CloudFormation Property
 	// Required: true

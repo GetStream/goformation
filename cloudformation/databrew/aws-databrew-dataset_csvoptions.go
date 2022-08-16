@@ -4,7 +4,10 @@ package databrew
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Dataset_CsvOptions AWS CloudFormation Resource (AWS::DataBrew::Dataset.CsvOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-csvoptions.html
@@ -18,7 +21,7 @@ type Dataset_CsvOptions struct {
 	// HeaderRow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-csvoptions.html#cfn-databrew-dataset-csvoptions-headerrow
-	HeaderRow *bool `json:"HeaderRow,omitempty"`
+	HeaderRow *utils.Value[bool] `json:"HeaderRow,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

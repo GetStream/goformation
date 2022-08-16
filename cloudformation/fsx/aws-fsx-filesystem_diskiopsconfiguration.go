@@ -4,7 +4,10 @@ package fsx
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FileSystem_DiskIopsConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.DiskIopsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-diskiopsconfiguration.html
@@ -13,7 +16,7 @@ type FileSystem_DiskIopsConfiguration struct {
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-diskiopsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-diskiopsconfiguration-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *utils.Value[int] `json:"Iops,omitempty"`
 
 	// Mode AWS CloudFormation Property
 	// Required: false

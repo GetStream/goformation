@@ -4,7 +4,10 @@ package timestream
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ScheduledQuery_SnsConfiguration AWS CloudFormation Resource (AWS::Timestream::ScheduledQuery.SnsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-snsconfiguration.html

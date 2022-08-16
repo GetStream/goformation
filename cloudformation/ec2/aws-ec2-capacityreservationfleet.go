@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CapacityReservationFleet AWS CloudFormation Resource (AWS::EC2::CapacityReservationFleet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html
@@ -37,12 +40,12 @@ type CapacityReservationFleet struct {
 	// NoRemoveEndDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-noremoveenddate
-	NoRemoveEndDate *bool `json:"NoRemoveEndDate,omitempty"`
+	NoRemoveEndDate *utils.Value[bool] `json:"NoRemoveEndDate,omitempty"`
 
 	// RemoveEndDate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-removeenddate
-	RemoveEndDate *bool `json:"RemoveEndDate,omitempty"`
+	RemoveEndDate *utils.Value[bool] `json:"RemoveEndDate,omitempty"`
 
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
@@ -57,7 +60,7 @@ type CapacityReservationFleet struct {
 	// TotalTargetCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-totaltargetcapacity
-	TotalTargetCapacity *int `json:"TotalTargetCapacity,omitempty"`
+	TotalTargetCapacity *utils.Value[int] `json:"TotalTargetCapacity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

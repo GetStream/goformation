@@ -4,7 +4,10 @@ package lookoutmetrics
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AnomalyDetector_RedshiftSourceConfig AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.RedshiftSourceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html
@@ -28,7 +31,7 @@ type AnomalyDetector_RedshiftSourceConfig struct {
 	// DatabasePort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-databaseport
-	DatabasePort int `json:"DatabasePort"`
+	DatabasePort utils.Value[int] `json:"DatabasePort"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true

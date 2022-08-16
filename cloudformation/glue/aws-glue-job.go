@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Job AWS CloudFormation Resource (AWS::Glue::Job)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html
@@ -77,7 +80,7 @@ type Job struct {
 	// NumberOfWorkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-numberofworkers
-	NumberOfWorkers *int `json:"NumberOfWorkers,omitempty"`
+	NumberOfWorkers *utils.Value[int] `json:"NumberOfWorkers,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: true
@@ -97,7 +100,7 @@ type Job struct {
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-timeout
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *utils.Value[int] `json:"Timeout,omitempty"`
 
 	// WorkerType AWS CloudFormation Property
 	// Required: false

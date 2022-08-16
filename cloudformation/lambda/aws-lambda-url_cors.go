@@ -4,7 +4,10 @@ package lambda
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Url_Cors AWS CloudFormation Resource (AWS::Lambda::Url.Cors)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html
@@ -13,7 +16,7 @@ type Url_Cors struct {
 	// AllowCredentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html#cfn-lambda-url-cors-allowcredentials
-	AllowCredentials *bool `json:"AllowCredentials,omitempty"`
+	AllowCredentials *utils.Value[bool] `json:"AllowCredentials,omitempty"`
 
 	// AllowHeaders AWS CloudFormation Property
 	// Required: false
@@ -38,7 +41,7 @@ type Url_Cors struct {
 	// MaxAge AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-url-cors.html#cfn-lambda-url-cors-maxage
-	MaxAge *int `json:"MaxAge,omitempty"`
+	MaxAge *utils.Value[int] `json:"MaxAge,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

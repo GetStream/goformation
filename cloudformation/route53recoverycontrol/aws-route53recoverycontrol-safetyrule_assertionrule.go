@@ -4,7 +4,10 @@ package route53recoverycontrol
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SafetyRule_AssertionRule AWS CloudFormation Resource (AWS::Route53RecoveryControl::SafetyRule.AssertionRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-assertionrule.html
@@ -18,7 +21,7 @@ type SafetyRule_AssertionRule struct {
 	// WaitPeriodMs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-assertionrule.html#cfn-route53recoverycontrol-safetyrule-assertionrule-waitperiodms
-	WaitPeriodMs int `json:"WaitPeriodMs"`
+	WaitPeriodMs utils.Value[int] `json:"WaitPeriodMs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

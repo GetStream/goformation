@@ -4,7 +4,10 @@ package iottwinmaker
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ComponentType_PropertyDefinition AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType.PropertyDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html
@@ -28,22 +31,22 @@ type ComponentType_PropertyDefinition struct {
 	// IsExternalId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html#cfn-iottwinmaker-componenttype-propertydefinition-isexternalid
-	IsExternalId *bool `json:"IsExternalId,omitempty"`
+	IsExternalId *utils.Value[bool] `json:"IsExternalId,omitempty"`
 
 	// IsRequiredInEntity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html#cfn-iottwinmaker-componenttype-propertydefinition-isrequiredinentity
-	IsRequiredInEntity *bool `json:"IsRequiredInEntity,omitempty"`
+	IsRequiredInEntity *utils.Value[bool] `json:"IsRequiredInEntity,omitempty"`
 
 	// IsStoredExternally AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html#cfn-iottwinmaker-componenttype-propertydefinition-isstoredexternally
-	IsStoredExternally *bool `json:"IsStoredExternally,omitempty"`
+	IsStoredExternally *utils.Value[bool] `json:"IsStoredExternally,omitempty"`
 
 	// IsTimeSeries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html#cfn-iottwinmaker-componenttype-propertydefinition-istimeseries
-	IsTimeSeries *bool `json:"IsTimeSeries,omitempty"`
+	IsTimeSeries *utils.Value[bool] `json:"IsTimeSeries,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

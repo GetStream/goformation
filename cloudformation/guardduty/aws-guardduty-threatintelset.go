@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ThreatIntelSet AWS CloudFormation Resource (AWS::GuardDuty::ThreatIntelSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html
@@ -18,7 +21,7 @@ type ThreatIntelSet struct {
 	// Activate AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html#cfn-guardduty-threatintelset-activate
-	Activate bool `json:"Activate"`
+	Activate utils.Value[bool] `json:"Activate"`
 
 	// DetectorId AWS CloudFormation Property
 	// Required: true

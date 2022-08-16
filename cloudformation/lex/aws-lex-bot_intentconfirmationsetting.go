@@ -4,7 +4,10 @@ package lex
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bot_IntentConfirmationSetting AWS CloudFormation Resource (AWS::Lex::Bot.IntentConfirmationSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html
@@ -18,7 +21,7 @@ type Bot_IntentConfirmationSetting struct {
 	// IsActive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-isactive
-	IsActive *bool `json:"IsActive,omitempty"`
+	IsActive *utils.Value[bool] `json:"IsActive,omitempty"`
 
 	// PromptSpecification AWS CloudFormation Property
 	// Required: true

@@ -4,7 +4,10 @@ package lakeformation
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataCellsFilter_ColumnWildcard AWS CloudFormation Resource (AWS::LakeFormation::DataCellsFilter.ColumnWildcard)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datacellsfilter-columnwildcard.html

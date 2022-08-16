@@ -4,7 +4,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StreamingDistribution_Logging AWS CloudFormation Resource (AWS::CloudFront::StreamingDistribution.Logging)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html
@@ -18,7 +21,7 @@ type StreamingDistribution_Logging struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled utils.Value[bool] `json:"Enabled"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: true

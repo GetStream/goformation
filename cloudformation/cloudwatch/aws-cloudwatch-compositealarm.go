@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CompositeAlarm AWS CloudFormation Resource (AWS::CloudWatch::CompositeAlarm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html
@@ -17,7 +20,7 @@ type CompositeAlarm struct {
 	// ActionsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionsenabled
-	ActionsEnabled *bool `json:"ActionsEnabled,omitempty"`
+	ActionsEnabled *utils.Value[bool] `json:"ActionsEnabled,omitempty"`
 
 	// ActionsSuppressor AWS CloudFormation Property
 	// Required: false
@@ -27,12 +30,12 @@ type CompositeAlarm struct {
 	// ActionsSuppressorExtensionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionssuppressorextensionperiod
-	ActionsSuppressorExtensionPeriod *int `json:"ActionsSuppressorExtensionPeriod,omitempty"`
+	ActionsSuppressorExtensionPeriod *utils.Value[int] `json:"ActionsSuppressorExtensionPeriod,omitempty"`
 
 	// ActionsSuppressorWaitPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionssuppressorwaitperiod
-	ActionsSuppressorWaitPeriod *int `json:"ActionsSuppressorWaitPeriod,omitempty"`
+	ActionsSuppressorWaitPeriod *utils.Value[int] `json:"ActionsSuppressorWaitPeriod,omitempty"`
 
 	// AlarmActions AWS CloudFormation Property
 	// Required: false

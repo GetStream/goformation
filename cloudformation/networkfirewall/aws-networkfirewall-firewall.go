@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Firewall AWS CloudFormation Resource (AWS::NetworkFirewall::Firewall)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html
@@ -18,7 +21,7 @@ type Firewall struct {
 	// DeleteProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-deleteprotection
-	DeleteProtection *bool `json:"DeleteProtection,omitempty"`
+	DeleteProtection *utils.Value[bool] `json:"DeleteProtection,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -38,12 +41,12 @@ type Firewall struct {
 	// FirewallPolicyChangeProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-firewallpolicychangeprotection
-	FirewallPolicyChangeProtection *bool `json:"FirewallPolicyChangeProtection,omitempty"`
+	FirewallPolicyChangeProtection *utils.Value[bool] `json:"FirewallPolicyChangeProtection,omitempty"`
 
 	// SubnetChangeProtection AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-subnetchangeprotection
-	SubnetChangeProtection *bool `json:"SubnetChangeProtection,omitempty"`
+	SubnetChangeProtection *utils.Value[bool] `json:"SubnetChangeProtection,omitempty"`
 
 	// SubnetMappings AWS CloudFormation Property
 	// Required: true

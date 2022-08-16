@@ -4,7 +4,10 @@ package elasticloadbalancingv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ListenerRule_Action AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.Action)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html
@@ -33,7 +36,7 @@ type ListenerRule_Action struct {
 	// Order AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-order
-	Order *int `json:"Order,omitempty"`
+	Order *utils.Value[int] `json:"Order,omitempty"`
 
 	// RedirectConfig AWS CloudFormation Property
 	// Required: false

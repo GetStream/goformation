@@ -4,7 +4,10 @@ package serverless
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StateMachine_EventBridgeRuleEvent AWS CloudFormation Resource (AWS::Serverless::StateMachine.EventBridgeRuleEvent)
 // See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-statemachine-cloudwatchevent.html

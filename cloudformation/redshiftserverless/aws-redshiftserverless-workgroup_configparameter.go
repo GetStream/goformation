@@ -4,7 +4,10 @@ package redshiftserverless
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Workgroup_ConfigParameter AWS CloudFormation Resource (AWS::RedshiftServerless::Workgroup.ConfigParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-configparameter.html

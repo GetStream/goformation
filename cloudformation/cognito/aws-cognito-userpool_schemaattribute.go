@@ -4,7 +4,10 @@ package cognito
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // UserPool_SchemaAttribute AWS CloudFormation Resource (AWS::Cognito::UserPool.SchemaAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html
@@ -18,12 +21,12 @@ type UserPool_SchemaAttribute struct {
 	// DeveloperOnlyAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-developeronlyattribute
-	DeveloperOnlyAttribute *bool `json:"DeveloperOnlyAttribute,omitempty"`
+	DeveloperOnlyAttribute *utils.Value[bool] `json:"DeveloperOnlyAttribute,omitempty"`
 
 	// Mutable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-mutable
-	Mutable *bool `json:"Mutable,omitempty"`
+	Mutable *utils.Value[bool] `json:"Mutable,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -38,7 +41,7 @@ type UserPool_SchemaAttribute struct {
 	// Required AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-required
-	Required *bool `json:"Required,omitempty"`
+	Required *utils.Value[bool] `json:"Required,omitempty"`
 
 	// StringAttributeConstraints AWS CloudFormation Property
 	// Required: false

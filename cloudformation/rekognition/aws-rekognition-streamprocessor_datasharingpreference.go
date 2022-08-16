@@ -4,7 +4,10 @@ package rekognition
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StreamProcessor_DataSharingPreference AWS CloudFormation Resource (AWS::Rekognition::StreamProcessor.DataSharingPreference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-datasharingpreference.html
@@ -13,7 +16,7 @@ type StreamProcessor_DataSharingPreference struct {
 	// OptIn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-datasharingpreference.html#cfn-rekognition-streamprocessor-datasharingpreference-optin
-	OptIn bool `json:"OptIn"`
+	OptIn utils.Value[bool] `json:"OptIn"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

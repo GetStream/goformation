@@ -4,7 +4,10 @@ package kendra
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSource_DocumentAttributeTarget AWS CloudFormation Resource (AWS::Kendra::DataSource.DocumentAttributeTarget)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html
@@ -23,7 +26,7 @@ type DataSource_DocumentAttributeTarget struct {
 	// TargetDocumentAttributeValueDeletion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributevaluedeletion
-	TargetDocumentAttributeValueDeletion *bool `json:"TargetDocumentAttributeValueDeletion,omitempty"`
+	TargetDocumentAttributeValueDeletion *utils.Value[bool] `json:"TargetDocumentAttributeValueDeletion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

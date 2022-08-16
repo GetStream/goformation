@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ImageBuilder AWS CloudFormation Resource (AWS::AppStream::ImageBuilder)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html
@@ -43,7 +46,7 @@ type ImageBuilder struct {
 	// EnableDefaultInternetAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-enabledefaultinternetaccess
-	EnableDefaultInternetAccess *bool `json:"EnableDefaultInternetAccess,omitempty"`
+	EnableDefaultInternetAccess *utils.Value[bool] `json:"EnableDefaultInternetAccess,omitempty"`
 
 	// IamRoleArn AWS CloudFormation Property
 	// Required: false

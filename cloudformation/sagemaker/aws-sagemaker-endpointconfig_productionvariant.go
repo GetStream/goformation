@@ -4,7 +4,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EndpointConfig_ProductionVariant AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ProductionVariant)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html
@@ -18,7 +21,7 @@ type EndpointConfig_ProductionVariant struct {
 	// InitialInstanceCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-initialinstancecount
-	InitialInstanceCount *int `json:"InitialInstanceCount,omitempty"`
+	InitialInstanceCount *utils.Value[int] `json:"InitialInstanceCount,omitempty"`
 
 	// InitialVariantWeight AWS CloudFormation Property
 	// Required: true

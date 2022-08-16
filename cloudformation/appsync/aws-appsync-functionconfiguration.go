@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FunctionConfiguration AWS CloudFormation Resource (AWS::AppSync::FunctionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html
@@ -37,7 +40,7 @@ type FunctionConfiguration struct {
 	// MaxBatchSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-maxbatchsize
-	MaxBatchSize *int `json:"MaxBatchSize,omitempty"`
+	MaxBatchSize *utils.Value[int] `json:"MaxBatchSize,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true

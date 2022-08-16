@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MemberInvitation AWS CloudFormation Resource (AWS::Detective::MemberInvitation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html
@@ -17,7 +20,7 @@ type MemberInvitation struct {
 	// DisableEmailNotification AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-disableemailnotification
-	DisableEmailNotification *bool `json:"DisableEmailNotification,omitempty"`
+	DisableEmailNotification *utils.Value[bool] `json:"DisableEmailNotification,omitempty"`
 
 	// GraphArn AWS CloudFormation Property
 	// Required: true

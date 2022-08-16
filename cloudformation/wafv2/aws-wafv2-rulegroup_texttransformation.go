@@ -4,7 +4,10 @@ package wafv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RuleGroup_TextTransformation AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.TextTransformation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-texttransformation.html
@@ -13,7 +16,7 @@ type RuleGroup_TextTransformation struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-texttransformation.html#cfn-wafv2-rulegroup-texttransformation-priority
-	Priority int `json:"Priority"`
+	Priority utils.Value[int] `json:"Priority"`
 
 	// Type AWS CloudFormation Property
 	// Required: true

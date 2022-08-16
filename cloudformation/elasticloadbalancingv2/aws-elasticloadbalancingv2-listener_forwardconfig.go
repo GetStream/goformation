@@ -4,7 +4,10 @@ package elasticloadbalancingv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Listener_ForwardConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::Listener.ForwardConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-forwardconfig.html

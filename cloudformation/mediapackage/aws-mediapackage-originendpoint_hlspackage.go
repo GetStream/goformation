@@ -4,7 +4,10 @@ package mediapackage
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // OriginEndpoint_HlsPackage AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.HlsPackage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html
@@ -33,7 +36,7 @@ type OriginEndpoint_HlsPackage struct {
 	// IncludeIframeOnlyStream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-includeiframeonlystream
-	IncludeIframeOnlyStream *bool `json:"IncludeIframeOnlyStream,omitempty"`
+	IncludeIframeOnlyStream *utils.Value[bool] `json:"IncludeIframeOnlyStream,omitempty"`
 
 	// PlaylistType AWS CloudFormation Property
 	// Required: false
@@ -43,17 +46,17 @@ type OriginEndpoint_HlsPackage struct {
 	// PlaylistWindowSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-playlistwindowseconds
-	PlaylistWindowSeconds *int `json:"PlaylistWindowSeconds,omitempty"`
+	PlaylistWindowSeconds *utils.Value[int] `json:"PlaylistWindowSeconds,omitempty"`
 
 	// ProgramDateTimeIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-programdatetimeintervalseconds
-	ProgramDateTimeIntervalSeconds *int `json:"ProgramDateTimeIntervalSeconds,omitempty"`
+	ProgramDateTimeIntervalSeconds *utils.Value[int] `json:"ProgramDateTimeIntervalSeconds,omitempty"`
 
 	// SegmentDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-segmentdurationseconds
-	SegmentDurationSeconds *int `json:"SegmentDurationSeconds,omitempty"`
+	SegmentDurationSeconds *utils.Value[int] `json:"SegmentDurationSeconds,omitempty"`
 
 	// StreamSelection AWS CloudFormation Property
 	// Required: false
@@ -63,7 +66,7 @@ type OriginEndpoint_HlsPackage struct {
 	// UseAudioRenditionGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-useaudiorenditiongroup
-	UseAudioRenditionGroup *bool `json:"UseAudioRenditionGroup,omitempty"`
+	UseAudioRenditionGroup *utils.Value[bool] `json:"UseAudioRenditionGroup,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // InfrastructureConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::InfrastructureConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html
@@ -77,7 +80,7 @@ type InfrastructureConfiguration struct {
 	// TerminateInstanceOnFailure AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-terminateinstanceonfailure
-	TerminateInstanceOnFailure *bool `json:"TerminateInstanceOnFailure,omitempty"`
+	TerminateInstanceOnFailure *utils.Value[bool] `json:"TerminateInstanceOnFailure,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

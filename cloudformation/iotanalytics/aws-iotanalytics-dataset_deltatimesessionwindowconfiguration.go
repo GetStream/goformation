@@ -4,7 +4,10 @@ package iotanalytics
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Dataset_DeltaTimeSessionWindowConfiguration AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.DeltaTimeSessionWindowConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatimesessionwindowconfiguration.html
@@ -13,7 +16,7 @@ type Dataset_DeltaTimeSessionWindowConfiguration struct {
 	// TimeoutInMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatimesessionwindowconfiguration.html#cfn-iotanalytics-dataset-deltatimesessionwindowconfiguration-timeoutinminutes
-	TimeoutInMinutes int `json:"TimeoutInMinutes"`
+	TimeoutInMinutes utils.Value[int] `json:"TimeoutInMinutes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -4,7 +4,10 @@ package groundstation
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Config_AntennaDownlinkConfig AWS CloudFormation Resource (AWS::GroundStation::Config.AntennaDownlinkConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennadownlinkconfig.html

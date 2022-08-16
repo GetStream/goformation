@@ -4,7 +4,10 @@ package s3
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StorageLens_StorageLensConfiguration AWS CloudFormation Resource (AWS::S3::StorageLens.StorageLensConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html
@@ -43,7 +46,7 @@ type StorageLens_StorageLensConfiguration struct {
 	// IsEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-isenabled
-	IsEnabled bool `json:"IsEnabled"`
+	IsEnabled utils.Value[bool] `json:"IsEnabled"`
 
 	// StorageLensArn AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package elasticloadbalancingv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ListenerRule_FixedResponseConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.FixedResponseConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-fixedresponseconfig.html

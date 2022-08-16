@@ -4,7 +4,10 @@ package kendra
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSource_SharePointConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.SharePointConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html
@@ -13,12 +16,12 @@ type DataSource_SharePointConfiguration struct {
 	// CrawlAttachments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-crawlattachments
-	CrawlAttachments *bool `json:"CrawlAttachments,omitempty"`
+	CrawlAttachments *utils.Value[bool] `json:"CrawlAttachments,omitempty"`
 
 	// DisableLocalGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-disablelocalgroups
-	DisableLocalGroups *bool `json:"DisableLocalGroups,omitempty"`
+	DisableLocalGroups *utils.Value[bool] `json:"DisableLocalGroups,omitempty"`
 
 	// DocumentTitleFieldName AWS CloudFormation Property
 	// Required: false
@@ -63,7 +66,7 @@ type DataSource_SharePointConfiguration struct {
 	// UseChangeLog AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-usechangelog
-	UseChangeLog *bool `json:"UseChangeLog,omitempty"`
+	UseChangeLog *utils.Value[bool] `json:"UseChangeLog,omitempty"`
 
 	// VpcConfiguration AWS CloudFormation Property
 	// Required: false

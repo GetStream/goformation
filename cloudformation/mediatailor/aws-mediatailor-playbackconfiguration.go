@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // PlaybackConfiguration AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html
@@ -63,7 +66,7 @@ type PlaybackConfiguration struct {
 	// PersonalizationThresholdSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-personalizationthresholdseconds
-	PersonalizationThresholdSeconds *int `json:"PersonalizationThresholdSeconds,omitempty"`
+	PersonalizationThresholdSeconds *utils.Value[int] `json:"PersonalizationThresholdSeconds,omitempty"`
 
 	// SlateAdUrl AWS CloudFormation Property
 	// Required: false

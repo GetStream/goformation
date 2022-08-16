@@ -4,7 +4,10 @@ package pinpoint
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Campaign_Schedule AWS CloudFormation Resource (AWS::Pinpoint::Campaign.Schedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html
@@ -28,7 +31,7 @@ type Campaign_Schedule struct {
 	// IsLocalTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-islocaltime
-	IsLocalTime *bool `json:"IsLocalTime,omitempty"`
+	IsLocalTime *utils.Value[bool] `json:"IsLocalTime,omitempty"`
 
 	// QuietTime AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package apigatewayv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Authorizer_JWTConfiguration AWS CloudFormation Resource (AWS::ApiGatewayV2::Authorizer.JWTConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-authorizer-jwtconfiguration.html

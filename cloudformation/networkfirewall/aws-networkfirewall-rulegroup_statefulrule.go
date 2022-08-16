@@ -4,7 +4,10 @@ package networkfirewall
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RuleGroup_StatefulRule AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.StatefulRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statefulrule.html

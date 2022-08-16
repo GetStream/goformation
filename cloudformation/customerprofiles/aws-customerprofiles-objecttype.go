@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ObjectType AWS CloudFormation Resource (AWS::CustomerProfiles::ObjectType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html
@@ -18,7 +21,7 @@ type ObjectType struct {
 	// AllowProfileCreation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-allowprofilecreation
-	AllowProfileCreation *bool `json:"AllowProfileCreation,omitempty"`
+	AllowProfileCreation *utils.Value[bool] `json:"AllowProfileCreation,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -38,7 +41,7 @@ type ObjectType struct {
 	// ExpirationDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-expirationdays
-	ExpirationDays *int `json:"ExpirationDays,omitempty"`
+	ExpirationDays *utils.Value[int] `json:"ExpirationDays,omitempty"`
 
 	// Fields AWS CloudFormation Property
 	// Required: false

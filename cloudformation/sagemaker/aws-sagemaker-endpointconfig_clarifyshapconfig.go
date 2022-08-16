@@ -4,7 +4,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EndpointConfig_ClarifyShapConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ClarifyShapConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapconfig.html
@@ -13,12 +16,12 @@ type EndpointConfig_ClarifyShapConfig struct {
 	// NumberOfSamples AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapconfig.html#cfn-sagemaker-endpointconfig-clarifyshapconfig-numberofsamples
-	NumberOfSamples *int `json:"NumberOfSamples,omitempty"`
+	NumberOfSamples *utils.Value[int] `json:"NumberOfSamples,omitempty"`
 
 	// Seed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapconfig.html#cfn-sagemaker-endpointconfig-clarifyshapconfig-seed
-	Seed *int `json:"Seed,omitempty"`
+	Seed *utils.Value[int] `json:"Seed,omitempty"`
 
 	// ShapBaselineConfig AWS CloudFormation Property
 	// Required: true
@@ -33,7 +36,7 @@ type EndpointConfig_ClarifyShapConfig struct {
 	// UseLogit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyshapconfig.html#cfn-sagemaker-endpointconfig-clarifyshapconfig-uselogit
-	UseLogit *bool `json:"UseLogit,omitempty"`
+	UseLogit *utils.Value[bool] `json:"UseLogit,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

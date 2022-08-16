@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FlowSource AWS CloudFormation Resource (AWS::MediaConnect::FlowSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html
@@ -37,17 +40,17 @@ type FlowSource struct {
 	// IngestPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-ingestport
-	IngestPort *int `json:"IngestPort,omitempty"`
+	IngestPort *utils.Value[int] `json:"IngestPort,omitempty"`
 
 	// MaxBitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-maxbitrate
-	MaxBitrate *int `json:"MaxBitrate,omitempty"`
+	MaxBitrate *utils.Value[int] `json:"MaxBitrate,omitempty"`
 
 	// MaxLatency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-maxlatency
-	MaxLatency *int `json:"MaxLatency,omitempty"`
+	MaxLatency *utils.Value[int] `json:"MaxLatency,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true

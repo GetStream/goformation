@@ -4,7 +4,10 @@ package quicksight
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSet_DataSetUsageConfiguration AWS CloudFormation Resource (AWS::QuickSight::DataSet.DataSetUsageConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-datasetusageconfiguration.html
@@ -13,12 +16,12 @@ type DataSet_DataSetUsageConfiguration struct {
 	// DisableUseAsDirectQuerySource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-datasetusageconfiguration.html#cfn-quicksight-dataset-datasetusageconfiguration-disableuseasdirectquerysource
-	DisableUseAsDirectQuerySource *bool `json:"DisableUseAsDirectQuerySource,omitempty"`
+	DisableUseAsDirectQuerySource *utils.Value[bool] `json:"DisableUseAsDirectQuerySource,omitempty"`
 
 	// DisableUseAsImportedSource AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-datasetusageconfiguration.html#cfn-quicksight-dataset-datasetusageconfiguration-disableuseasimportedsource
-	DisableUseAsImportedSource *bool `json:"DisableUseAsImportedSource,omitempty"`
+	DisableUseAsImportedSource *utils.Value[bool] `json:"DisableUseAsImportedSource,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

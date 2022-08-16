@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Detector AWS CloudFormation Resource (AWS::GuardDuty::Detector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html
@@ -23,7 +26,7 @@ type Detector struct {
 	// Enable AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-enable
-	Enable bool `json:"Enable"`
+	Enable utils.Value[bool] `json:"Enable"`
 
 	// FindingPublishingFrequency AWS CloudFormation Property
 	// Required: false

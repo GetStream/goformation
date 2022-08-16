@@ -4,7 +4,10 @@ package pinpointemail
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConfigurationSet_TrackingOptions AWS CloudFormation Resource (AWS::PinpointEmail::ConfigurationSet.TrackingOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-trackingoptions.html

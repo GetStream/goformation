@@ -4,7 +4,10 @@ package ses
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConfigurationSet_ReputationOptions AWS CloudFormation Resource (AWS::SES::ConfigurationSet.ReputationOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-reputationoptions.html
@@ -13,7 +16,7 @@ type ConfigurationSet_ReputationOptions struct {
 	// ReputationMetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-reputationoptions.html#cfn-ses-configurationset-reputationoptions-reputationmetricsenabled
-	ReputationMetricsEnabled *bool `json:"ReputationMetricsEnabled,omitempty"`
+	ReputationMetricsEnabled *utils.Value[bool] `json:"ReputationMetricsEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

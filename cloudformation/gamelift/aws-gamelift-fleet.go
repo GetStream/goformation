@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Fleet AWS CloudFormation Resource (AWS::GameLift::Fleet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html
@@ -32,7 +35,7 @@ type Fleet struct {
 	// DesiredEC2Instances AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances
-	DesiredEC2Instances *int `json:"DesiredEC2Instances,omitempty"`
+	DesiredEC2Instances *utils.Value[int] `json:"DesiredEC2Instances,omitempty"`
 
 	// EC2InboundPermissions AWS CloudFormation Property
 	// Required: false
@@ -62,7 +65,7 @@ type Fleet struct {
 	// MaxSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-maxsize
-	MaxSize *int `json:"MaxSize,omitempty"`
+	MaxSize *utils.Value[int] `json:"MaxSize,omitempty"`
 
 	// MetricGroups AWS CloudFormation Property
 	// Required: false
@@ -72,7 +75,7 @@ type Fleet struct {
 	// MinSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-minsize
-	MinSize *int `json:"MinSize,omitempty"`
+	MinSize *utils.Value[int] `json:"MinSize,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false

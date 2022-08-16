@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MissionProfile AWS CloudFormation Resource (AWS::GroundStation::MissionProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html
@@ -18,12 +21,12 @@ type MissionProfile struct {
 	// ContactPostPassDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-contactpostpassdurationseconds
-	ContactPostPassDurationSeconds *int `json:"ContactPostPassDurationSeconds,omitempty"`
+	ContactPostPassDurationSeconds *utils.Value[int] `json:"ContactPostPassDurationSeconds,omitempty"`
 
 	// ContactPrePassDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-contactprepassdurationseconds
-	ContactPrePassDurationSeconds *int `json:"ContactPrePassDurationSeconds,omitempty"`
+	ContactPrePassDurationSeconds *utils.Value[int] `json:"ContactPrePassDurationSeconds,omitempty"`
 
 	// DataflowEdges AWS CloudFormation Property
 	// Required: true
@@ -33,7 +36,7 @@ type MissionProfile struct {
 	// MinimumViableContactDurationSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-minimumviablecontactdurationseconds
-	MinimumViableContactDurationSeconds int `json:"MinimumViableContactDurationSeconds"`
+	MinimumViableContactDurationSeconds utils.Value[int] `json:"MinimumViableContactDurationSeconds"`
 
 	// Name AWS CloudFormation Property
 	// Required: true

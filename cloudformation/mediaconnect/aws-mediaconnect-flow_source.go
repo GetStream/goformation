@@ -4,7 +4,10 @@ package mediaconnect
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Flow_Source AWS CloudFormation Resource (AWS::MediaConnect::Flow.Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html
@@ -33,22 +36,22 @@ type Flow_Source struct {
 	// IngestPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-ingestport
-	IngestPort *int `json:"IngestPort,omitempty"`
+	IngestPort *utils.Value[int] `json:"IngestPort,omitempty"`
 
 	// MaxBitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-maxbitrate
-	MaxBitrate *int `json:"MaxBitrate,omitempty"`
+	MaxBitrate *utils.Value[int] `json:"MaxBitrate,omitempty"`
 
 	// MaxLatency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-maxlatency
-	MaxLatency *int `json:"MaxLatency,omitempty"`
+	MaxLatency *utils.Value[int] `json:"MaxLatency,omitempty"`
 
 	// MinLatency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-minlatency
-	MinLatency *int `json:"MinLatency,omitempty"`
+	MinLatency *utils.Value[int] `json:"MinLatency,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false

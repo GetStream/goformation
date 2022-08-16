@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EndpointGroup AWS CloudFormation Resource (AWS::GlobalAccelerator::EndpointGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html
@@ -27,7 +30,7 @@ type EndpointGroup struct {
 	// HealthCheckIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-healthcheckintervalseconds
-	HealthCheckIntervalSeconds *int `json:"HealthCheckIntervalSeconds,omitempty"`
+	HealthCheckIntervalSeconds *utils.Value[int] `json:"HealthCheckIntervalSeconds,omitempty"`
 
 	// HealthCheckPath AWS CloudFormation Property
 	// Required: false
@@ -37,7 +40,7 @@ type EndpointGroup struct {
 	// HealthCheckPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-healthcheckport
-	HealthCheckPort *int `json:"HealthCheckPort,omitempty"`
+	HealthCheckPort *utils.Value[int] `json:"HealthCheckPort,omitempty"`
 
 	// HealthCheckProtocol AWS CloudFormation Property
 	// Required: false
@@ -57,7 +60,7 @@ type EndpointGroup struct {
 	// ThresholdCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-thresholdcount
-	ThresholdCount *int `json:"ThresholdCount,omitempty"`
+	ThresholdCount *utils.Value[int] `json:"ThresholdCount,omitempty"`
 
 	// TrafficDialPercentage AWS CloudFormation Property
 	// Required: false

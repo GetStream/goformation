@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Alarm AWS CloudFormation Resource (AWS::CloudWatch::Alarm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html
@@ -17,7 +20,7 @@ type Alarm struct {
 	// ActionsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-actionsenabled
-	ActionsEnabled *bool `json:"ActionsEnabled,omitempty"`
+	ActionsEnabled *utils.Value[bool] `json:"ActionsEnabled,omitempty"`
 
 	// AlarmActions AWS CloudFormation Property
 	// Required: false
@@ -42,7 +45,7 @@ type Alarm struct {
 	// DatapointsToAlarm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarm-datapointstoalarm
-	DatapointsToAlarm *int `json:"DatapointsToAlarm,omitempty"`
+	DatapointsToAlarm *utils.Value[int] `json:"DatapointsToAlarm,omitempty"`
 
 	// Dimensions AWS CloudFormation Property
 	// Required: false
@@ -57,7 +60,7 @@ type Alarm struct {
 	// EvaluationPeriods AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-evaluationperiods
-	EvaluationPeriods int `json:"EvaluationPeriods"`
+	EvaluationPeriods utils.Value[int] `json:"EvaluationPeriods"`
 
 	// ExtendedStatistic AWS CloudFormation Property
 	// Required: false
@@ -92,7 +95,7 @@ type Alarm struct {
 	// Period AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-period
-	Period *int `json:"Period,omitempty"`
+	Period *utils.Value[int] `json:"Period,omitempty"`
 
 	// Statistic AWS CloudFormation Property
 	// Required: false

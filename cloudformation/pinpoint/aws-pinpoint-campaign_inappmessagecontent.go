@@ -4,7 +4,10 @@ package pinpoint
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Campaign_InAppMessageContent AWS CloudFormation Resource (AWS::Pinpoint::Campaign.InAppMessageContent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-inappmessagecontent.html

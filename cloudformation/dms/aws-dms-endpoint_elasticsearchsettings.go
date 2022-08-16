@@ -4,7 +4,10 @@ package dms
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Endpoint_ElasticsearchSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.ElasticsearchSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-elasticsearchsettings.html
@@ -18,12 +21,12 @@ type Endpoint_ElasticsearchSettings struct {
 	// ErrorRetryDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-elasticsearchsettings.html#cfn-dms-endpoint-elasticsearchsettings-errorretryduration
-	ErrorRetryDuration *int `json:"ErrorRetryDuration,omitempty"`
+	ErrorRetryDuration *utils.Value[int] `json:"ErrorRetryDuration,omitempty"`
 
 	// FullLoadErrorPercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-elasticsearchsettings.html#cfn-dms-endpoint-elasticsearchsettings-fullloaderrorpercentage
-	FullLoadErrorPercentage *int `json:"FullLoadErrorPercentage,omitempty"`
+	FullLoadErrorPercentage *utils.Value[int] `json:"FullLoadErrorPercentage,omitempty"`
 
 	// ServiceAccessRoleArn AWS CloudFormation Property
 	// Required: false

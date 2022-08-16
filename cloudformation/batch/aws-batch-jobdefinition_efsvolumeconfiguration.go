@@ -4,7 +4,10 @@ package batch
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // JobDefinition_EfsVolumeConfiguration AWS CloudFormation Resource (AWS::Batch::JobDefinition.EfsVolumeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html
@@ -33,7 +36,7 @@ type JobDefinition_EfsVolumeConfiguration struct {
 	// TransitEncryptionPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html#cfn-batch-jobdefinition-efsvolumeconfiguration-transitencryptionport
-	TransitEncryptionPort *int `json:"TransitEncryptionPort,omitempty"`
+	TransitEncryptionPort *utils.Value[int] `json:"TransitEncryptionPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

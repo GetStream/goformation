@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VPCCidrBlock AWS CloudFormation Resource (AWS::EC2::VPCCidrBlock)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html
@@ -17,7 +20,7 @@ type VPCCidrBlock struct {
 	// AmazonProvidedIpv6CidrBlock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock
-	AmazonProvidedIpv6CidrBlock *bool `json:"AmazonProvidedIpv6CidrBlock,omitempty"`
+	AmazonProvidedIpv6CidrBlock *utils.Value[bool] `json:"AmazonProvidedIpv6CidrBlock,omitempty"`
 
 	// CidrBlock AWS CloudFormation Property
 	// Required: false
@@ -32,7 +35,7 @@ type VPCCidrBlock struct {
 	// Ipv4NetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv4netmasklength
-	Ipv4NetmaskLength *int `json:"Ipv4NetmaskLength,omitempty"`
+	Ipv4NetmaskLength *utils.Value[int] `json:"Ipv4NetmaskLength,omitempty"`
 
 	// Ipv6CidrBlock AWS CloudFormation Property
 	// Required: false
@@ -47,7 +50,7 @@ type VPCCidrBlock struct {
 	// Ipv6NetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6netmasklength
-	Ipv6NetmaskLength *int `json:"Ipv6NetmaskLength,omitempty"`
+	Ipv6NetmaskLength *utils.Value[int] `json:"Ipv6NetmaskLength,omitempty"`
 
 	// Ipv6Pool AWS CloudFormation Property
 	// Required: false

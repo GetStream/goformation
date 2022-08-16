@@ -4,7 +4,10 @@ package mediaconnect
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FlowOutput_VpcInterfaceAttachment AWS CloudFormation Resource (AWS::MediaConnect::FlowOutput.VpcInterfaceAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-vpcinterfaceattachment.html

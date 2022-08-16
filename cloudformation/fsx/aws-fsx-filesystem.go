@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FileSystem AWS CloudFormation Resource (AWS::FSx::FileSystem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html
@@ -58,7 +61,7 @@ type FileSystem struct {
 	// StorageCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagecapacity
-	StorageCapacity *int `json:"StorageCapacity,omitempty"`
+	StorageCapacity *utils.Value[int] `json:"StorageCapacity,omitempty"`
 
 	// StorageType AWS CloudFormation Property
 	// Required: false

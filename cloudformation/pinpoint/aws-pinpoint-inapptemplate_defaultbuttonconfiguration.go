@@ -4,7 +4,10 @@ package pinpoint
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // InAppTemplate_DefaultButtonConfiguration AWS CloudFormation Resource (AWS::Pinpoint::InAppTemplate.DefaultButtonConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-defaultbuttonconfiguration.html
@@ -18,7 +21,7 @@ type InAppTemplate_DefaultButtonConfiguration struct {
 	// BorderRadius AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-defaultbuttonconfiguration.html#cfn-pinpoint-inapptemplate-defaultbuttonconfiguration-borderradius
-	BorderRadius *int `json:"BorderRadius,omitempty"`
+	BorderRadius *utils.Value[int] `json:"BorderRadius,omitempty"`
 
 	// ButtonAction AWS CloudFormation Property
 	// Required: false

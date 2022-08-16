@@ -5,7 +5,10 @@ package frauddetector
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Detector_EventType AWS CloudFormation Resource (AWS::FraudDetector::Detector.EventType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html
@@ -39,7 +42,7 @@ type Detector_EventType struct {
 	// Inline AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html#cfn-frauddetector-detector-eventtype-inline
-	Inline *bool `json:"Inline,omitempty"`
+	Inline *utils.Value[bool] `json:"Inline,omitempty"`
 
 	// Labels AWS CloudFormation Property
 	// Required: false

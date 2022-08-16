@@ -4,7 +4,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Endpoint_BlueGreenUpdatePolicy AWS CloudFormation Resource (AWS::SageMaker::Endpoint.BlueGreenUpdatePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html
@@ -13,12 +16,12 @@ type Endpoint_BlueGreenUpdatePolicy struct {
 	// MaximumExecutionTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-maximumexecutiontimeoutinseconds
-	MaximumExecutionTimeoutInSeconds *int `json:"MaximumExecutionTimeoutInSeconds,omitempty"`
+	MaximumExecutionTimeoutInSeconds *utils.Value[int] `json:"MaximumExecutionTimeoutInSeconds,omitempty"`
 
 	// TerminationWaitInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-terminationwaitinseconds
-	TerminationWaitInSeconds *int `json:"TerminationWaitInSeconds,omitempty"`
+	TerminationWaitInSeconds *utils.Value[int] `json:"TerminationWaitInSeconds,omitempty"`
 
 	// TrafficRoutingConfiguration AWS CloudFormation Property
 	// Required: true

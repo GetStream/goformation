@@ -4,7 +4,10 @@ package imagebuilder
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // InfrastructureConfiguration_InstanceMetadataOptions AWS CloudFormation Resource (AWS::ImageBuilder::InfrastructureConfiguration.InstanceMetadataOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-instancemetadataoptions.html
@@ -13,7 +16,7 @@ type InfrastructureConfiguration_InstanceMetadataOptions struct {
 	// HttpPutResponseHopLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-instancemetadataoptions.html#cfn-imagebuilder-infrastructureconfiguration-instancemetadataoptions-httpputresponsehoplimit
-	HttpPutResponseHopLimit *int `json:"HttpPutResponseHopLimit,omitempty"`
+	HttpPutResponseHopLimit *utils.Value[int] `json:"HttpPutResponseHopLimit,omitempty"`
 
 	// HttpTokens AWS CloudFormation Property
 	// Required: false

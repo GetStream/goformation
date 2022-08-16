@@ -4,7 +4,10 @@ package rekognition
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StreamProcessor_BoundingBox AWS CloudFormation Resource (AWS::Rekognition::StreamProcessor.BoundingBox)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-boundingbox.html

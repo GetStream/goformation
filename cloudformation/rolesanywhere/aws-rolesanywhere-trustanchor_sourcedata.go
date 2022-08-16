@@ -4,7 +4,10 @@ package rolesanywhere
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TrustAnchor_SourceData AWS CloudFormation Resource (AWS::RolesAnywhere::TrustAnchor.SourceData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rolesanywhere-trustanchor-sourcedata.html

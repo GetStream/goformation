@@ -4,7 +4,10 @@ package greengrass
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FunctionDefinition_Environment AWS CloudFormation Resource (AWS::Greengrass::FunctionDefinition.Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html
@@ -13,7 +16,7 @@ type FunctionDefinition_Environment struct {
 	// AccessSysfs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-accesssysfs
-	AccessSysfs *bool `json:"AccessSysfs,omitempty"`
+	AccessSysfs *utils.Value[bool] `json:"AccessSysfs,omitempty"`
 
 	// Execution AWS CloudFormation Property
 	// Required: false

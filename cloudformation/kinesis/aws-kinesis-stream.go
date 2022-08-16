@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Stream AWS CloudFormation Resource (AWS::Kinesis::Stream)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html
@@ -23,12 +26,12 @@ type Stream struct {
 	// RetentionPeriodHours AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours
-	RetentionPeriodHours *int `json:"RetentionPeriodHours,omitempty"`
+	RetentionPeriodHours *utils.Value[int] `json:"RetentionPeriodHours,omitempty"`
 
 	// ShardCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount
-	ShardCount *int `json:"ShardCount,omitempty"`
+	ShardCount *utils.Value[int] `json:"ShardCount,omitempty"`
 
 	// StreamEncryption AWS CloudFormation Property
 	// Required: false

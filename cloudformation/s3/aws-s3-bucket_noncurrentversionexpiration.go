@@ -4,7 +4,10 @@ package s3
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bucket_NoncurrentVersionExpiration AWS CloudFormation Resource (AWS::S3::Bucket.NoncurrentVersionExpiration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration.html
@@ -13,12 +16,12 @@ type Bucket_NoncurrentVersionExpiration struct {
 	// NewerNoncurrentVersions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration-newernoncurrentversions
-	NewerNoncurrentVersions *int `json:"NewerNoncurrentVersions,omitempty"`
+	NewerNoncurrentVersions *utils.Value[int] `json:"NewerNoncurrentVersions,omitempty"`
 
 	// NoncurrentDays AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration-noncurrentdays
-	NoncurrentDays int `json:"NoncurrentDays"`
+	NoncurrentDays utils.Value[int] `json:"NoncurrentDays"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

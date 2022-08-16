@@ -4,7 +4,10 @@ package databrew
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Job_Output AWS CloudFormation Resource (AWS::DataBrew::Job.Output)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html
@@ -33,12 +36,12 @@ type Job_Output struct {
 	// MaxOutputFiles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-maxoutputfiles
-	MaxOutputFiles *int `json:"MaxOutputFiles,omitempty"`
+	MaxOutputFiles *utils.Value[int] `json:"MaxOutputFiles,omitempty"`
 
 	// Overwrite AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-overwrite
-	Overwrite *bool `json:"Overwrite,omitempty"`
+	Overwrite *utils.Value[bool] `json:"Overwrite,omitempty"`
 
 	// PartitionColumns AWS CloudFormation Property
 	// Required: false

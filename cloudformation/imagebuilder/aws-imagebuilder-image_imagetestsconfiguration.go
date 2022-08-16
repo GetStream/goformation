@@ -4,7 +4,10 @@ package imagebuilder
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Image_ImageTestsConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::Image.ImageTestsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagetestsconfiguration.html
@@ -13,12 +16,12 @@ type Image_ImageTestsConfiguration struct {
 	// ImageTestsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagetestsconfiguration.html#cfn-imagebuilder-image-imagetestsconfiguration-imagetestsenabled
-	ImageTestsEnabled *bool `json:"ImageTestsEnabled,omitempty"`
+	ImageTestsEnabled *utils.Value[bool] `json:"ImageTestsEnabled,omitempty"`
 
 	// TimeoutMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagetestsconfiguration.html#cfn-imagebuilder-image-imagetestsconfiguration-timeoutminutes
-	TimeoutMinutes *int `json:"TimeoutMinutes,omitempty"`
+	TimeoutMinutes *utils.Value[int] `json:"TimeoutMinutes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -4,7 +4,10 @@ package imagebuilder
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // InfrastructureConfiguration_Logging AWS CloudFormation Resource (AWS::ImageBuilder::InfrastructureConfiguration.Logging)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-logging.html

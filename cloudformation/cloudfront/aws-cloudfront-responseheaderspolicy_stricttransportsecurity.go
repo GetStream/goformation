@@ -4,7 +4,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResponseHeadersPolicy_StrictTransportSecurity AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.StrictTransportSecurity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-stricttransportsecurity.html
@@ -13,22 +16,22 @@ type ResponseHeadersPolicy_StrictTransportSecurity struct {
 	// AccessControlMaxAgeSec AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-stricttransportsecurity.html#cfn-cloudfront-responseheaderspolicy-stricttransportsecurity-accesscontrolmaxagesec
-	AccessControlMaxAgeSec int `json:"AccessControlMaxAgeSec"`
+	AccessControlMaxAgeSec utils.Value[int] `json:"AccessControlMaxAgeSec"`
 
 	// IncludeSubdomains AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-stricttransportsecurity.html#cfn-cloudfront-responseheaderspolicy-stricttransportsecurity-includesubdomains
-	IncludeSubdomains *bool `json:"IncludeSubdomains,omitempty"`
+	IncludeSubdomains *utils.Value[bool] `json:"IncludeSubdomains,omitempty"`
 
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-stricttransportsecurity.html#cfn-cloudfront-responseheaderspolicy-stricttransportsecurity-override
-	Override bool `json:"Override"`
+	Override utils.Value[bool] `json:"Override"`
 
 	// Preload AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-stricttransportsecurity.html#cfn-cloudfront-responseheaderspolicy-stricttransportsecurity-preload
-	Preload *bool `json:"Preload,omitempty"`
+	Preload *utils.Value[bool] `json:"Preload,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CacheCluster AWS CloudFormation Resource (AWS::ElastiCache::CacheCluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html
@@ -23,7 +26,7 @@ type CacheCluster struct {
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-autominorversionupgrade
-	AutoMinorVersionUpgrade *bool `json:"AutoMinorVersionUpgrade,omitempty"`
+	AutoMinorVersionUpgrade *utils.Value[bool] `json:"AutoMinorVersionUpgrade,omitempty"`
 
 	// CacheNodeType AWS CloudFormation Property
 	// Required: true
@@ -73,12 +76,12 @@ type CacheCluster struct {
 	// NumCacheNodes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-numcachenodes
-	NumCacheNodes int `json:"NumCacheNodes"`
+	NumCacheNodes utils.Value[int] `json:"NumCacheNodes"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-port
-	Port *int `json:"Port,omitempty"`
+	Port *utils.Value[int] `json:"Port,omitempty"`
 
 	// PreferredAvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -108,7 +111,7 @@ type CacheCluster struct {
 	// SnapshotRetentionLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotretentionlimit
-	SnapshotRetentionLimit *int `json:"SnapshotRetentionLimit,omitempty"`
+	SnapshotRetentionLimit *utils.Value[int] `json:"SnapshotRetentionLimit,omitempty"`
 
 	// SnapshotWindow AWS CloudFormation Property
 	// Required: false

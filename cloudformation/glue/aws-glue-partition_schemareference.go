@@ -4,7 +4,10 @@ package glue
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Partition_SchemaReference AWS CloudFormation Resource (AWS::Glue::Partition.SchemaReference)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html
@@ -23,7 +26,7 @@ type Partition_SchemaReference struct {
 	// SchemaVersionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionnumber
-	SchemaVersionNumber *int `json:"SchemaVersionNumber,omitempty"`
+	SchemaVersionNumber *utils.Value[int] `json:"SchemaVersionNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

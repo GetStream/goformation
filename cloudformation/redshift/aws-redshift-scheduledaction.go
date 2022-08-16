@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ScheduledAction AWS CloudFormation Resource (AWS::Redshift::ScheduledAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html
@@ -17,7 +20,7 @@ type ScheduledAction struct {
 	// Enable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-enable
-	Enable *bool `json:"Enable,omitempty"`
+	Enable *utils.Value[bool] `json:"Enable,omitempty"`
 
 	// EndTime AWS CloudFormation Property
 	// Required: false

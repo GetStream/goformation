@@ -4,7 +4,10 @@ package batch
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ComputeEnvironment_UpdatePolicy AWS CloudFormation Resource (AWS::Batch::ComputeEnvironment.UpdatePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-updatepolicy.html
@@ -13,12 +16,12 @@ type ComputeEnvironment_UpdatePolicy struct {
 	// JobExecutionTimeoutMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-updatepolicy.html#cfn-batch-computeenvironment-updatepolicy-jobexecutiontimeoutminutes
-	JobExecutionTimeoutMinutes *int `json:"JobExecutionTimeoutMinutes,omitempty"`
+	JobExecutionTimeoutMinutes *utils.Value[int] `json:"JobExecutionTimeoutMinutes,omitempty"`
 
 	// TerminateJobsOnUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-updatepolicy.html#cfn-batch-computeenvironment-updatepolicy-terminatejobsonupdate
-	TerminateJobsOnUpdate *bool `json:"TerminateJobsOnUpdate,omitempty"`
+	TerminateJobsOnUpdate *utils.Value[bool] `json:"TerminateJobsOnUpdate,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

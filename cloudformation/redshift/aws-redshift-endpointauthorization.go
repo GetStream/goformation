@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EndpointAuthorization AWS CloudFormation Resource (AWS::Redshift::EndpointAuthorization)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html
@@ -27,7 +30,7 @@ type EndpointAuthorization struct {
 	// Force AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#cfn-redshift-endpointauthorization-force
-	Force *bool `json:"Force,omitempty"`
+	Force *utils.Value[bool] `json:"Force,omitempty"`
 
 	// VpcIds AWS CloudFormation Property
 	// Required: false

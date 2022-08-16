@@ -4,7 +4,10 @@ package mediapackage
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // OriginEndpoint_HlsManifest AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.HlsManifest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html
@@ -33,7 +36,7 @@ type OriginEndpoint_HlsManifest struct {
 	// IncludeIframeOnlyStream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-includeiframeonlystream
-	IncludeIframeOnlyStream *bool `json:"IncludeIframeOnlyStream,omitempty"`
+	IncludeIframeOnlyStream *utils.Value[bool] `json:"IncludeIframeOnlyStream,omitempty"`
 
 	// ManifestName AWS CloudFormation Property
 	// Required: false
@@ -48,12 +51,12 @@ type OriginEndpoint_HlsManifest struct {
 	// PlaylistWindowSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-playlistwindowseconds
-	PlaylistWindowSeconds *int `json:"PlaylistWindowSeconds,omitempty"`
+	PlaylistWindowSeconds *utils.Value[int] `json:"PlaylistWindowSeconds,omitempty"`
 
 	// ProgramDateTimeIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-programdatetimeintervalseconds
-	ProgramDateTimeIntervalSeconds *int `json:"ProgramDateTimeIntervalSeconds,omitempty"`
+	ProgramDateTimeIntervalSeconds *utils.Value[int] `json:"ProgramDateTimeIntervalSeconds,omitempty"`
 
 	// Url AWS CloudFormation Property
 	// Required: false

@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RoleAlias AWS CloudFormation Resource (AWS::IoT::RoleAlias)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-rolealias.html
@@ -18,7 +21,7 @@ type RoleAlias struct {
 	// CredentialDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-rolealias.html#cfn-iot-rolealias-credentialdurationseconds
-	CredentialDurationSeconds *int `json:"CredentialDurationSeconds,omitempty"`
+	CredentialDurationSeconds *utils.Value[int] `json:"CredentialDurationSeconds,omitempty"`
 
 	// RoleAlias AWS CloudFormation Property
 	// Required: false

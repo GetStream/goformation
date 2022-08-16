@@ -4,7 +4,10 @@ package amplifyuibuilder
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Component_ComponentConditionProperty AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentConditionProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentconditionproperty.html

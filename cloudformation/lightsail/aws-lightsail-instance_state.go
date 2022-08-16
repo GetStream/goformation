@@ -4,7 +4,10 @@ package lightsail
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Instance_State AWS CloudFormation Resource (AWS::Lightsail::Instance.State)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-state.html
@@ -13,7 +16,7 @@ type Instance_State struct {
 	// Code AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-state.html#cfn-lightsail-instance-state-code
-	Code *int `json:"Code,omitempty"`
+	Code *utils.Value[int] `json:"Code,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false

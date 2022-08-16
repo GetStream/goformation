@@ -4,7 +4,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResponseHeadersPolicy_CustomHeader AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.CustomHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html
@@ -18,7 +21,7 @@ type ResponseHeadersPolicy_CustomHeader struct {
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-override
-	Override bool `json:"Override"`
+	Override utils.Value[bool] `json:"Override"`
 
 	// Value AWS CloudFormation Property
 	// Required: true

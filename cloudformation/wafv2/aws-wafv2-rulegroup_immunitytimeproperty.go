@@ -4,7 +4,10 @@ package wafv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RuleGroup_ImmunityTimeProperty AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.ImmunityTimeProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-immunitytimeproperty.html
@@ -13,7 +16,7 @@ type RuleGroup_ImmunityTimeProperty struct {
 	// ImmunityTime AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-immunitytimeproperty.html#cfn-wafv2-rulegroup-immunitytimeproperty-immunitytime
-	ImmunityTime int `json:"ImmunityTime"`
+	ImmunityTime utils.Value[int] `json:"ImmunityTime"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

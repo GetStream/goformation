@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AccessKey AWS CloudFormation Resource (AWS::IAM::AccessKey)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html
@@ -17,7 +20,7 @@ type AccessKey struct {
 	// Serial AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-serial
-	Serial *int `json:"Serial,omitempty"`
+	Serial *utils.Value[int] `json:"Serial,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package devopsguru
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // NotificationChannel_NotificationChannelConfig AWS CloudFormation Resource (AWS::DevOpsGuru::NotificationChannel.NotificationChannelConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationchannelconfig.html

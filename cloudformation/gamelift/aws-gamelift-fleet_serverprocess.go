@@ -4,7 +4,10 @@ package gamelift
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Fleet_ServerProcess AWS CloudFormation Resource (AWS::GameLift::Fleet.ServerProcess)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-serverprocess.html
@@ -13,7 +16,7 @@ type Fleet_ServerProcess struct {
 	// ConcurrentExecutions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-serverprocess.html#cfn-gamelift-fleet-serverprocess-concurrentexecutions
-	ConcurrentExecutions int `json:"ConcurrentExecutions"`
+	ConcurrentExecutions utils.Value[int] `json:"ConcurrentExecutions"`
 
 	// LaunchPath AWS CloudFormation Property
 	// Required: true

@@ -4,7 +4,10 @@ package secretsmanager
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Secret_GenerateSecretString AWS CloudFormation Resource (AWS::SecretsManager::Secret.GenerateSecretString)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html
@@ -18,22 +21,22 @@ type Secret_GenerateSecretString struct {
 	// ExcludeLowercase AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludelowercase
-	ExcludeLowercase *bool `json:"ExcludeLowercase,omitempty"`
+	ExcludeLowercase *utils.Value[bool] `json:"ExcludeLowercase,omitempty"`
 
 	// ExcludeNumbers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludenumbers
-	ExcludeNumbers *bool `json:"ExcludeNumbers,omitempty"`
+	ExcludeNumbers *utils.Value[bool] `json:"ExcludeNumbers,omitempty"`
 
 	// ExcludePunctuation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludepunctuation
-	ExcludePunctuation *bool `json:"ExcludePunctuation,omitempty"`
+	ExcludePunctuation *utils.Value[bool] `json:"ExcludePunctuation,omitempty"`
 
 	// ExcludeUppercase AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludeuppercase
-	ExcludeUppercase *bool `json:"ExcludeUppercase,omitempty"`
+	ExcludeUppercase *utils.Value[bool] `json:"ExcludeUppercase,omitempty"`
 
 	// GenerateStringKey AWS CloudFormation Property
 	// Required: false
@@ -43,17 +46,17 @@ type Secret_GenerateSecretString struct {
 	// IncludeSpace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-includespace
-	IncludeSpace *bool `json:"IncludeSpace,omitempty"`
+	IncludeSpace *utils.Value[bool] `json:"IncludeSpace,omitempty"`
 
 	// PasswordLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-passwordlength
-	PasswordLength *int `json:"PasswordLength,omitempty"`
+	PasswordLength *utils.Value[int] `json:"PasswordLength,omitempty"`
 
 	// RequireEachIncludedType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-requireeachincludedtype
-	RequireEachIncludedType *bool `json:"RequireEachIncludedType,omitempty"`
+	RequireEachIncludedType *utils.Value[bool] `json:"RequireEachIncludedType,omitempty"`
 
 	// SecretStringTemplate AWS CloudFormation Property
 	// Required: false

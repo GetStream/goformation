@@ -4,7 +4,10 @@ package refactorspaces
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Service_LambdaEndpointInput AWS CloudFormation Resource (AWS::RefactorSpaces::Service.LambdaEndpointInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-service-lambdaendpointinput.html

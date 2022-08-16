@@ -4,7 +4,10 @@ package imagebuilder
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DistributionConfiguration_FastLaunchConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.FastLaunchConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchconfiguration.html
@@ -18,7 +21,7 @@ type DistributionConfiguration_FastLaunchConfiguration struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchconfiguration.html#cfn-imagebuilder-distributionconfiguration-fastlaunchconfiguration-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *utils.Value[bool] `json:"Enabled,omitempty"`
 
 	// LaunchTemplate AWS CloudFormation Property
 	// Required: false
@@ -28,7 +31,7 @@ type DistributionConfiguration_FastLaunchConfiguration struct {
 	// MaxParallelLaunches AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchconfiguration.html#cfn-imagebuilder-distributionconfiguration-fastlaunchconfiguration-maxparallellaunches
-	MaxParallelLaunches *int `json:"MaxParallelLaunches,omitempty"`
+	MaxParallelLaunches *utils.Value[int] `json:"MaxParallelLaunches,omitempty"`
 
 	// SnapshotConfiguration AWS CloudFormation Property
 	// Required: false

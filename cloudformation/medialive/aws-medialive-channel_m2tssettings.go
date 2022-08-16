@@ -4,7 +4,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_M2tsSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.M2tsSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html
@@ -38,7 +41,7 @@ type Channel_M2tsSettings struct {
 	// AudioFramesPerPes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-audioframesperpes
-	AudioFramesPerPes *int `json:"AudioFramesPerPes,omitempty"`
+	AudioFramesPerPes *utils.Value[int] `json:"AudioFramesPerPes,omitempty"`
 
 	// AudioPids AWS CloudFormation Property
 	// Required: false
@@ -53,7 +56,7 @@ type Channel_M2tsSettings struct {
 	// Bitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-bitrate
-	Bitrate *int `json:"Bitrate,omitempty"`
+	Bitrate *utils.Value[int] `json:"Bitrate,omitempty"`
 
 	// BufferModel AWS CloudFormation Property
 	// Required: false
@@ -103,7 +106,7 @@ type Channel_M2tsSettings struct {
 	// EbpLookaheadMs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-ebplookaheadms
-	EbpLookaheadMs *int `json:"EbpLookaheadMs,omitempty"`
+	EbpLookaheadMs *utils.Value[int] `json:"EbpLookaheadMs,omitempty"`
 
 	// EbpPlacement AWS CloudFormation Property
 	// Required: false
@@ -158,7 +161,7 @@ type Channel_M2tsSettings struct {
 	// PatInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-patinterval
-	PatInterval *int `json:"PatInterval,omitempty"`
+	PatInterval *utils.Value[int] `json:"PatInterval,omitempty"`
 
 	// PcrControl AWS CloudFormation Property
 	// Required: false
@@ -168,7 +171,7 @@ type Channel_M2tsSettings struct {
 	// PcrPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-pcrperiod
-	PcrPeriod *int `json:"PcrPeriod,omitempty"`
+	PcrPeriod *utils.Value[int] `json:"PcrPeriod,omitempty"`
 
 	// PcrPid AWS CloudFormation Property
 	// Required: false
@@ -178,7 +181,7 @@ type Channel_M2tsSettings struct {
 	// PmtInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-pmtinterval
-	PmtInterval *int `json:"PmtInterval,omitempty"`
+	PmtInterval *utils.Value[int] `json:"PmtInterval,omitempty"`
 
 	// PmtPid AWS CloudFormation Property
 	// Required: false
@@ -188,7 +191,7 @@ type Channel_M2tsSettings struct {
 	// ProgramNum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-programnum
-	ProgramNum *int `json:"ProgramNum,omitempty"`
+	ProgramNum *utils.Value[int] `json:"ProgramNum,omitempty"`
 
 	// RateMode AWS CloudFormation Property
 	// Required: false
@@ -238,7 +241,7 @@ type Channel_M2tsSettings struct {
 	// TransportStreamId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-transportstreamid
-	TransportStreamId *int `json:"TransportStreamId,omitempty"`
+	TransportStreamId *utils.Value[int] `json:"TransportStreamId,omitempty"`
 
 	// VideoPid AWS CloudFormation Property
 	// Required: false

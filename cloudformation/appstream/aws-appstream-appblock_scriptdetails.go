@@ -4,7 +4,10 @@ package appstream
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AppBlock_ScriptDetails AWS CloudFormation Resource (AWS::AppStream::AppBlock.ScriptDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-appblock-scriptdetails.html
@@ -28,7 +31,7 @@ type AppBlock_ScriptDetails struct {
 	// TimeoutInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-appblock-scriptdetails.html#cfn-appstream-appblock-scriptdetails-timeoutinseconds
-	TimeoutInSeconds int `json:"TimeoutInSeconds"`
+	TimeoutInSeconds utils.Value[int] `json:"TimeoutInSeconds"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

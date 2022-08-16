@@ -4,7 +4,10 @@ package config
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConfigRule_CustomPolicyDetails AWS CloudFormation Resource (AWS::Config::ConfigRule.CustomPolicyDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html
@@ -13,7 +16,7 @@ type ConfigRule_CustomPolicyDetails struct {
 	// EnableDebugLogDelivery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-enabledebuglogdelivery
-	EnableDebugLogDelivery *bool `json:"EnableDebugLogDelivery,omitempty"`
+	EnableDebugLogDelivery *utils.Value[bool] `json:"EnableDebugLogDelivery,omitempty"`
 
 	// PolicyRuntime AWS CloudFormation Property
 	// Required: false

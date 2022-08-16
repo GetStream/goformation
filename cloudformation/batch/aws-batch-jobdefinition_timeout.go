@@ -4,7 +4,10 @@ package batch
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // JobDefinition_Timeout AWS CloudFormation Resource (AWS::Batch::JobDefinition.Timeout)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-timeout.html
@@ -13,7 +16,7 @@ type JobDefinition_Timeout struct {
 	// AttemptDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-timeout.html#cfn-batch-jobdefinition-timeout-attemptdurationseconds
-	AttemptDurationSeconds *int `json:"AttemptDurationSeconds,omitempty"`
+	AttemptDurationSeconds *utils.Value[int] `json:"AttemptDurationSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

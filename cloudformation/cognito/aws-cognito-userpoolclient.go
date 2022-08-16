@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // UserPoolClient AWS CloudFormation Resource (AWS::Cognito::UserPoolClient)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html
@@ -17,7 +20,7 @@ type UserPoolClient struct {
 	// AccessTokenValidity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-accesstokenvalidity
-	AccessTokenValidity *int `json:"AccessTokenValidity,omitempty"`
+	AccessTokenValidity *utils.Value[int] `json:"AccessTokenValidity,omitempty"`
 
 	// AllowedOAuthFlows AWS CloudFormation Property
 	// Required: false
@@ -27,7 +30,7 @@ type UserPoolClient struct {
 	// AllowedOAuthFlowsUserPoolClient AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthflowsuserpoolclient
-	AllowedOAuthFlowsUserPoolClient *bool `json:"AllowedOAuthFlowsUserPoolClient,omitempty"`
+	AllowedOAuthFlowsUserPoolClient *utils.Value[bool] `json:"AllowedOAuthFlowsUserPoolClient,omitempty"`
 
 	// AllowedOAuthScopes AWS CloudFormation Property
 	// Required: false
@@ -57,12 +60,12 @@ type UserPoolClient struct {
 	// EnablePropagateAdditionalUserContextData AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-enablepropagateadditionalusercontextdata
-	EnablePropagateAdditionalUserContextData *bool `json:"EnablePropagateAdditionalUserContextData,omitempty"`
+	EnablePropagateAdditionalUserContextData *utils.Value[bool] `json:"EnablePropagateAdditionalUserContextData,omitempty"`
 
 	// EnableTokenRevocation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-enabletokenrevocation
-	EnableTokenRevocation *bool `json:"EnableTokenRevocation,omitempty"`
+	EnableTokenRevocation *utils.Value[bool] `json:"EnableTokenRevocation,omitempty"`
 
 	// ExplicitAuthFlows AWS CloudFormation Property
 	// Required: false
@@ -72,12 +75,12 @@ type UserPoolClient struct {
 	// GenerateSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-generatesecret
-	GenerateSecret *bool `json:"GenerateSecret,omitempty"`
+	GenerateSecret *utils.Value[bool] `json:"GenerateSecret,omitempty"`
 
 	// IdTokenValidity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-idtokenvalidity
-	IdTokenValidity *int `json:"IdTokenValidity,omitempty"`
+	IdTokenValidity *utils.Value[int] `json:"IdTokenValidity,omitempty"`
 
 	// LogoutURLs AWS CloudFormation Property
 	// Required: false
@@ -97,7 +100,7 @@ type UserPoolClient struct {
 	// RefreshTokenValidity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-refreshtokenvalidity
-	RefreshTokenValidity *int `json:"RefreshTokenValidity,omitempty"`
+	RefreshTokenValidity *utils.Value[int] `json:"RefreshTokenValidity,omitempty"`
 
 	// SupportedIdentityProviders AWS CloudFormation Property
 	// Required: false

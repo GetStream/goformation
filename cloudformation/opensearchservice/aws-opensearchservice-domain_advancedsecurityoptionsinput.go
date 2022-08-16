@@ -4,7 +4,10 @@ package opensearchservice
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Domain_AdvancedSecurityOptionsInput AWS CloudFormation Resource (AWS::OpenSearchService::Domain.AdvancedSecurityOptionsInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-advancedsecurityoptionsinput.html
@@ -13,12 +16,12 @@ type Domain_AdvancedSecurityOptionsInput struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-advancedsecurityoptionsinput.html#cfn-opensearchservice-domain-advancedsecurityoptionsinput-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *utils.Value[bool] `json:"Enabled,omitempty"`
 
 	// InternalUserDatabaseEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-advancedsecurityoptionsinput.html#cfn-opensearchservice-domain-advancedsecurityoptionsinput-internaluserdatabaseenabled
-	InternalUserDatabaseEnabled *bool `json:"InternalUserDatabaseEnabled,omitempty"`
+	InternalUserDatabaseEnabled *utils.Value[bool] `json:"InternalUserDatabaseEnabled,omitempty"`
 
 	// MasterUserOptions AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package mediaconvert
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // JobTemplate_AccelerationSettings AWS CloudFormation Resource (AWS::MediaConvert::JobTemplate.AccelerationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-accelerationsettings.html

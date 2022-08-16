@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ScalingPolicy AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scalingpolicy.html
@@ -32,7 +35,7 @@ type ScalingPolicy struct {
 	// EstimatedInstanceWarmup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scalingpolicy.html#cfn-autoscaling-scalingpolicy-estimatedinstancewarmup
-	EstimatedInstanceWarmup *int `json:"EstimatedInstanceWarmup,omitempty"`
+	EstimatedInstanceWarmup *utils.Value[int] `json:"EstimatedInstanceWarmup,omitempty"`
 
 	// MetricAggregationType AWS CloudFormation Property
 	// Required: false
@@ -42,7 +45,7 @@ type ScalingPolicy struct {
 	// MinAdjustmentMagnitude AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scalingpolicy.html#cfn-autoscaling-scalingpolicy-minadjustmentmagnitude
-	MinAdjustmentMagnitude *int `json:"MinAdjustmentMagnitude,omitempty"`
+	MinAdjustmentMagnitude *utils.Value[int] `json:"MinAdjustmentMagnitude,omitempty"`
 
 	// PolicyType AWS CloudFormation Property
 	// Required: false
@@ -57,7 +60,7 @@ type ScalingPolicy struct {
 	// ScalingAdjustment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scalingpolicy.html#cfn-autoscaling-scalingpolicy-scalingadjustment
-	ScalingAdjustment *int `json:"ScalingAdjustment,omitempty"`
+	ScalingAdjustment *utils.Value[int] `json:"ScalingAdjustment,omitempty"`
 
 	// StepAdjustments AWS CloudFormation Property
 	// Required: false

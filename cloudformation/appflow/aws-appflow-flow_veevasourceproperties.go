@@ -4,7 +4,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Flow_VeevaSourceProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.VeevaSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html
@@ -18,17 +21,17 @@ type Flow_VeevaSourceProperties struct {
 	// IncludeAllVersions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-includeallversions
-	IncludeAllVersions *bool `json:"IncludeAllVersions,omitempty"`
+	IncludeAllVersions *utils.Value[bool] `json:"IncludeAllVersions,omitempty"`
 
 	// IncludeRenditions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-includerenditions
-	IncludeRenditions *bool `json:"IncludeRenditions,omitempty"`
+	IncludeRenditions *utils.Value[bool] `json:"IncludeRenditions,omitempty"`
 
 	// IncludeSourceFiles AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-includesourcefiles
-	IncludeSourceFiles *bool `json:"IncludeSourceFiles,omitempty"`
+	IncludeSourceFiles *utils.Value[bool] `json:"IncludeSourceFiles,omitempty"`
 
 	// Object AWS CloudFormation Property
 	// Required: true

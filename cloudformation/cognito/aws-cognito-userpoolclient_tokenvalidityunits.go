@@ -4,7 +4,10 @@ package cognito
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // UserPoolClient_TokenValidityUnits AWS CloudFormation Resource (AWS::Cognito::UserPoolClient.TokenValidityUnits)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-tokenvalidityunits.html

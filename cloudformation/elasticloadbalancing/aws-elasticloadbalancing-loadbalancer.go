@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LoadBalancer AWS CloudFormation Resource (AWS::ElasticLoadBalancing::LoadBalancer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html
@@ -43,7 +46,7 @@ type LoadBalancer struct {
 	// CrossZone AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-crosszone
-	CrossZone *bool `json:"CrossZone,omitempty"`
+	CrossZone *utils.Value[bool] `json:"CrossZone,omitempty"`
 
 	// HealthCheck AWS CloudFormation Property
 	// Required: false

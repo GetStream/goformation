@@ -4,7 +4,10 @@ package autoscaling
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ScalingPolicy_StepAdjustment AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.StepAdjustment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustment.html
@@ -23,7 +26,7 @@ type ScalingPolicy_StepAdjustment struct {
 	// ScalingAdjustment AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustment.html#cfn-autoscaling-scalingpolicy-stepadjustment-scalingadjustment
-	ScalingAdjustment int `json:"ScalingAdjustment"`
+	ScalingAdjustment utils.Value[int] `json:"ScalingAdjustment"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

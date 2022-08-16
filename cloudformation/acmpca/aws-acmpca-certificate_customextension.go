@@ -4,7 +4,10 @@ package acmpca
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Certificate_CustomExtension AWS CloudFormation Resource (AWS::ACMPCA::Certificate.CustomExtension)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-customextension.html
@@ -13,7 +16,7 @@ type Certificate_CustomExtension struct {
 	// Critical AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-customextension.html#cfn-acmpca-certificate-customextension-critical
-	Critical *bool `json:"Critical,omitempty"`
+	Critical *utils.Value[bool] `json:"Critical,omitempty"`
 
 	// ObjectIdentifier AWS CloudFormation Property
 	// Required: true

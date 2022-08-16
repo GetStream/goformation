@@ -4,7 +4,10 @@ package networkmanager
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VpcAttachment_VpcOptions AWS CloudFormation Resource (AWS::NetworkManager::VpcAttachment.VpcOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-vpcoptions.html
@@ -13,7 +16,7 @@ type VpcAttachment_VpcOptions struct {
 	// Ipv6Support AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-vpcoptions.html#cfn-networkmanager-vpcattachment-vpcoptions-ipv6support
-	Ipv6Support *bool `json:"Ipv6Support,omitempty"`
+	Ipv6Support *utils.Value[bool] `json:"Ipv6Support,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

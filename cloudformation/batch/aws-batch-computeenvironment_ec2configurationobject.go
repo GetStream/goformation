@@ -4,7 +4,10 @@ package batch
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ComputeEnvironment_Ec2ConfigurationObject AWS CloudFormation Resource (AWS::Batch::ComputeEnvironment.Ec2ConfigurationObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-ec2configurationobject.html

@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VPCEndpointService AWS CloudFormation Resource (AWS::EC2::VPCEndpointService)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html
@@ -17,12 +20,12 @@ type VPCEndpointService struct {
 	// AcceptanceRequired AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-acceptancerequired
-	AcceptanceRequired *bool `json:"AcceptanceRequired,omitempty"`
+	AcceptanceRequired *utils.Value[bool] `json:"AcceptanceRequired,omitempty"`
 
 	// ContributorInsightsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-contributorinsightsenabled
-	ContributorInsightsEnabled *bool `json:"ContributorInsightsEnabled,omitempty"`
+	ContributorInsightsEnabled *utils.Value[bool] `json:"ContributorInsightsEnabled,omitempty"`
 
 	// GatewayLoadBalancerArns AWS CloudFormation Property
 	// Required: false

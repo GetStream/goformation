@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FlowLog AWS CloudFormation Resource (AWS::EC2::FlowLog)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html
@@ -48,7 +51,7 @@ type FlowLog struct {
 	// MaxAggregationInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-maxaggregationinterval
-	MaxAggregationInterval *int `json:"MaxAggregationInterval,omitempty"`
+	MaxAggregationInterval *utils.Value[int] `json:"MaxAggregationInterval,omitempty"`
 
 	// ResourceId AWS CloudFormation Property
 	// Required: true

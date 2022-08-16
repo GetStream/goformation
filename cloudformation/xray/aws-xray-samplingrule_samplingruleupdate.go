@@ -4,7 +4,10 @@ package xray
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SamplingRule_SamplingRuleUpdate AWS CloudFormation Resource (AWS::XRay::SamplingRule.SamplingRuleUpdate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html
@@ -33,12 +36,12 @@ type SamplingRule_SamplingRuleUpdate struct {
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-priority
-	Priority *int `json:"Priority,omitempty"`
+	Priority *utils.Value[int] `json:"Priority,omitempty"`
 
 	// ReservoirSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-reservoirsize
-	ReservoirSize *int `json:"ReservoirSize,omitempty"`
+	ReservoirSize *utils.Value[int] `json:"ReservoirSize,omitempty"`
 
 	// ResourceARN AWS CloudFormation Property
 	// Required: false

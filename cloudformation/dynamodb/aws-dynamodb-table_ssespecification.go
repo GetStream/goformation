@@ -4,7 +4,10 @@ package dynamodb
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Table_SSESpecification AWS CloudFormation Resource (AWS::DynamoDB::Table.SSESpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html
@@ -18,7 +21,7 @@ type Table_SSESpecification struct {
 	// SSEEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html#cfn-dynamodb-table-ssespecification-sseenabled
-	SSEEnabled bool `json:"SSEEnabled"`
+	SSEEnabled utils.Value[bool] `json:"SSEEnabled"`
 
 	// SSEType AWS CloudFormation Property
 	// Required: false

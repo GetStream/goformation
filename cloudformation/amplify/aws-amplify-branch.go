@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Branch AWS CloudFormation Resource (AWS::Amplify::Branch)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html
@@ -43,17 +46,17 @@ type Branch struct {
 	// EnableAutoBuild AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enableautobuild
-	EnableAutoBuild *bool `json:"EnableAutoBuild,omitempty"`
+	EnableAutoBuild *utils.Value[bool] `json:"EnableAutoBuild,omitempty"`
 
 	// EnablePerformanceMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enableperformancemode
-	EnablePerformanceMode *bool `json:"EnablePerformanceMode,omitempty"`
+	EnablePerformanceMode *utils.Value[bool] `json:"EnablePerformanceMode,omitempty"`
 
 	// EnablePullRequestPreview AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enablepullrequestpreview
-	EnablePullRequestPreview *bool `json:"EnablePullRequestPreview,omitempty"`
+	EnablePullRequestPreview *utils.Value[bool] `json:"EnablePullRequestPreview,omitempty"`
 
 	// EnvironmentVariables AWS CloudFormation Property
 	// Required: false

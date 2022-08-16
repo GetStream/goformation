@@ -4,7 +4,10 @@ package inspectorv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Filter_PortRangeFilter AWS CloudFormation Resource (AWS::InspectorV2::Filter.PortRangeFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-portrangefilter.html
@@ -13,12 +16,12 @@ type Filter_PortRangeFilter struct {
 	// BeginInclusive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-portrangefilter.html#cfn-inspectorv2-filter-portrangefilter-begininclusive
-	BeginInclusive *int `json:"BeginInclusive,omitempty"`
+	BeginInclusive *utils.Value[int] `json:"BeginInclusive,omitempty"`
 
 	// EndInclusive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-portrangefilter.html#cfn-inspectorv2-filter-portrangefilter-endinclusive
-	EndInclusive *int `json:"EndInclusive,omitempty"`
+	EndInclusive *utils.Value[int] `json:"EndInclusive,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

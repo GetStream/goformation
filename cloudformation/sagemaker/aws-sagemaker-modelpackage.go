@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ModelPackage AWS CloudFormation Resource (AWS::SageMaker::ModelPackage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html
@@ -38,7 +41,7 @@ type ModelPackage struct {
 	// CertifyForMarketplace AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-certifyformarketplace
-	CertifyForMarketplace *bool `json:"CertifyForMarketplace,omitempty"`
+	CertifyForMarketplace *utils.Value[bool] `json:"CertifyForMarketplace,omitempty"`
 
 	// ClientToken AWS CloudFormation Property
 	// Required: false
@@ -128,7 +131,7 @@ type ModelPackage struct {
 	// ModelPackageVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-modelpackageversion
-	ModelPackageVersion *int `json:"ModelPackageVersion,omitempty"`
+	ModelPackageVersion *utils.Value[int] `json:"ModelPackageVersion,omitempty"`
 
 	// SamplePayloadUrl AWS CloudFormation Property
 	// Required: false

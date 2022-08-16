@@ -4,7 +4,10 @@ package elasticloadbalancingv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Listener_AuthenticateOidcConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::Listener.AuthenticateOidcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html
@@ -63,7 +66,7 @@ type Listener_AuthenticateOidcConfig struct {
 	// UseExistingClientSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-useexistingclientsecret
-	UseExistingClientSecret *bool `json:"UseExistingClientSecret,omitempty"`
+	UseExistingClientSecret *utils.Value[bool] `json:"UseExistingClientSecret,omitempty"`
 
 	// UserInfoEndpoint AWS CloudFormation Property
 	// Required: true

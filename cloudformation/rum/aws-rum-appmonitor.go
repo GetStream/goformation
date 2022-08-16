@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AppMonitor AWS CloudFormation Resource (AWS::RUM::AppMonitor)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html
@@ -23,7 +26,7 @@ type AppMonitor struct {
 	// CwLogEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-cwlogenabled
-	CwLogEnabled *bool `json:"CwLogEnabled,omitempty"`
+	CwLogEnabled *utils.Value[bool] `json:"CwLogEnabled,omitempty"`
 
 	// Domain AWS CloudFormation Property
 	// Required: true

@@ -4,7 +4,10 @@ package glue
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MLTransform_FindMatchesParameters AWS CloudFormation Resource (AWS::Glue::MLTransform.FindMatchesParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html
@@ -18,7 +21,7 @@ type MLTransform_FindMatchesParameters struct {
 	// EnforceProvidedLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-enforceprovidedlabels
-	EnforceProvidedLabels *bool `json:"EnforceProvidedLabels,omitempty"`
+	EnforceProvidedLabels *utils.Value[bool] `json:"EnforceProvidedLabels,omitempty"`
 
 	// PrecisionRecallTradeoff AWS CloudFormation Property
 	// Required: false

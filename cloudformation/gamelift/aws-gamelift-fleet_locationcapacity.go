@@ -4,7 +4,10 @@ package gamelift
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Fleet_LocationCapacity AWS CloudFormation Resource (AWS::GameLift::Fleet.LocationCapacity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html
@@ -13,17 +16,17 @@ type Fleet_LocationCapacity struct {
 	// DesiredEC2Instances AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-desiredec2instances
-	DesiredEC2Instances int `json:"DesiredEC2Instances"`
+	DesiredEC2Instances utils.Value[int] `json:"DesiredEC2Instances"`
 
 	// MaxSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-maxsize
-	MaxSize int `json:"MaxSize"`
+	MaxSize utils.Value[int] `json:"MaxSize"`
 
 	// MinSize AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-minsize
-	MinSize int `json:"MinSize"`
+	MinSize utils.Value[int] `json:"MinSize"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

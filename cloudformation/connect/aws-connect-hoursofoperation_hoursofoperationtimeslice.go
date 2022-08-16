@@ -4,7 +4,10 @@ package connect
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // HoursOfOperation_HoursOfOperationTimeSlice AWS CloudFormation Resource (AWS::Connect::HoursOfOperation.HoursOfOperationTimeSlice)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationtimeslice.html
@@ -13,12 +16,12 @@ type HoursOfOperation_HoursOfOperationTimeSlice struct {
 	// Hours AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationtimeslice.html#cfn-connect-hoursofoperation-hoursofoperationtimeslice-hours
-	Hours int `json:"Hours"`
+	Hours utils.Value[int] `json:"Hours"`
 
 	// Minutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationtimeslice.html#cfn-connect-hoursofoperation-hoursofoperationtimeslice-minutes
-	Minutes int `json:"Minutes"`
+	Minutes utils.Value[int] `json:"Minutes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

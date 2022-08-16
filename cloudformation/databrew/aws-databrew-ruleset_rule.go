@@ -4,7 +4,10 @@ package databrew
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Ruleset_Rule AWS CloudFormation Resource (AWS::DataBrew::Ruleset.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html
@@ -23,7 +26,7 @@ type Ruleset_Rule struct {
 	// Disabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-disabled
-	Disabled *bool `json:"Disabled,omitempty"`
+	Disabled *utils.Value[bool] `json:"Disabled,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true

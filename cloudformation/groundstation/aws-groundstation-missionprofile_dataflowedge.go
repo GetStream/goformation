@@ -4,7 +4,10 @@ package groundstation
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MissionProfile_DataflowEdge AWS CloudFormation Resource (AWS::GroundStation::MissionProfile.DataflowEdge)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-missionprofile-dataflowedge.html

@@ -4,7 +4,10 @@ package secretsmanager
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RotationSchedule_RotationRules AWS CloudFormation Resource (AWS::SecretsManager::RotationSchedule.RotationRules)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html
@@ -13,7 +16,7 @@ type RotationSchedule_RotationRules struct {
 	// AutomaticallyAfterDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html#cfn-secretsmanager-rotationschedule-rotationrules-automaticallyafterdays
-	AutomaticallyAfterDays *int `json:"AutomaticallyAfterDays,omitempty"`
+	AutomaticallyAfterDays *utils.Value[int] `json:"AutomaticallyAfterDays,omitempty"`
 
 	// Duration AWS CloudFormation Property
 	// Required: false

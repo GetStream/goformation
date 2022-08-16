@@ -4,7 +4,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_VideoBlackFailoverSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.VideoBlackFailoverSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoblackfailoversettings.html
@@ -18,7 +21,7 @@ type Channel_VideoBlackFailoverSettings struct {
 	// VideoBlackThresholdMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoblackfailoversettings.html#cfn-medialive-channel-videoblackfailoversettings-videoblackthresholdmsec
-	VideoBlackThresholdMsec *int `json:"VideoBlackThresholdMsec,omitempty"`
+	VideoBlackThresholdMsec *utils.Value[int] `json:"VideoBlackThresholdMsec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

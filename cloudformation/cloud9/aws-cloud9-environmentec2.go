@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EnvironmentEC2 AWS CloudFormation Resource (AWS::Cloud9::EnvironmentEC2)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html
@@ -18,7 +21,7 @@ type EnvironmentEC2 struct {
 	// AutomaticStopTimeMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-automaticstoptimeminutes
-	AutomaticStopTimeMinutes *int `json:"AutomaticStopTimeMinutes,omitempty"`
+	AutomaticStopTimeMinutes *utils.Value[int] `json:"AutomaticStopTimeMinutes,omitempty"`
 
 	// ConnectionType AWS CloudFormation Property
 	// Required: false

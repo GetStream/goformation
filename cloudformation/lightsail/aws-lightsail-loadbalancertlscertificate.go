@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LoadBalancerTlsCertificate AWS CloudFormation Resource (AWS::Lightsail::LoadBalancerTlsCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html
@@ -32,12 +35,12 @@ type LoadBalancerTlsCertificate struct {
 	// HttpsRedirectionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-httpsredirectionenabled
-	HttpsRedirectionEnabled *bool `json:"HttpsRedirectionEnabled,omitempty"`
+	HttpsRedirectionEnabled *utils.Value[bool] `json:"HttpsRedirectionEnabled,omitempty"`
 
 	// IsAttached AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-isattached
-	IsAttached *bool `json:"IsAttached,omitempty"`
+	IsAttached *utils.Value[bool] `json:"IsAttached,omitempty"`
 
 	// LoadBalancerName AWS CloudFormation Property
 	// Required: true

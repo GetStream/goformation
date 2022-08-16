@@ -4,7 +4,10 @@ package healthlake
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FHIRDatastore_KmsEncryptionConfig AWS CloudFormation Resource (AWS::HealthLake::FHIRDatastore.KmsEncryptionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-kmsencryptionconfig.html

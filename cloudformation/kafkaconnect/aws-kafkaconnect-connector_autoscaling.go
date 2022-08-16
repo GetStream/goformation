@@ -4,7 +4,10 @@ package kafkaconnect
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Connector_AutoScaling AWS CloudFormation Resource (AWS::KafkaConnect::Connector.AutoScaling)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html
@@ -13,17 +16,17 @@ type Connector_AutoScaling struct {
 	// MaxWorkerCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-maxworkercount
-	MaxWorkerCount int `json:"MaxWorkerCount"`
+	MaxWorkerCount utils.Value[int] `json:"MaxWorkerCount"`
 
 	// McuCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-mcucount
-	McuCount int `json:"McuCount"`
+	McuCount utils.Value[int] `json:"McuCount"`
 
 	// MinWorkerCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-minworkercount
-	MinWorkerCount int `json:"MinWorkerCount"`
+	MinWorkerCount utils.Value[int] `json:"MinWorkerCount"`
 
 	// ScaleInPolicy AWS CloudFormation Property
 	// Required: true

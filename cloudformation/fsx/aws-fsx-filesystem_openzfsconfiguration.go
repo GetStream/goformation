@@ -4,7 +4,10 @@ package fsx
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FileSystem_OpenZFSConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.OpenZFSConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html
@@ -13,17 +16,17 @@ type FileSystem_OpenZFSConfiguration struct {
 	// AutomaticBackupRetentionDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-automaticbackupretentiondays
-	AutomaticBackupRetentionDays *int `json:"AutomaticBackupRetentionDays,omitempty"`
+	AutomaticBackupRetentionDays *utils.Value[int] `json:"AutomaticBackupRetentionDays,omitempty"`
 
 	// CopyTagsToBackups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-copytagstobackups
-	CopyTagsToBackups *bool `json:"CopyTagsToBackups,omitempty"`
+	CopyTagsToBackups *utils.Value[bool] `json:"CopyTagsToBackups,omitempty"`
 
 	// CopyTagsToVolumes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-copytagstovolumes
-	CopyTagsToVolumes *bool `json:"CopyTagsToVolumes,omitempty"`
+	CopyTagsToVolumes *utils.Value[bool] `json:"CopyTagsToVolumes,omitempty"`
 
 	// DailyAutomaticBackupStartTime AWS CloudFormation Property
 	// Required: false
@@ -53,7 +56,7 @@ type FileSystem_OpenZFSConfiguration struct {
 	// ThroughputCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-throughputcapacity
-	ThroughputCapacity *int `json:"ThroughputCapacity,omitempty"`
+	ThroughputCapacity *utils.Value[int] `json:"ThroughputCapacity,omitempty"`
 
 	// WeeklyMaintenanceStartTime AWS CloudFormation Property
 	// Required: false

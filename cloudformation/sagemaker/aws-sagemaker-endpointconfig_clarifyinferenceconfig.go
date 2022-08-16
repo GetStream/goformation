@@ -4,7 +4,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EndpointConfig_ClarifyInferenceConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.ClarifyInferenceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html
@@ -43,17 +46,17 @@ type EndpointConfig_ClarifyInferenceConfig struct {
 	// LabelIndex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-labelindex
-	LabelIndex *int `json:"LabelIndex,omitempty"`
+	LabelIndex *utils.Value[int] `json:"LabelIndex,omitempty"`
 
 	// MaxPayloadInMB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-maxpayloadinmb
-	MaxPayloadInMB *int `json:"MaxPayloadInMB,omitempty"`
+	MaxPayloadInMB *utils.Value[int] `json:"MaxPayloadInMB,omitempty"`
 
 	// MaxRecordCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-maxrecordcount
-	MaxRecordCount *int `json:"MaxRecordCount,omitempty"`
+	MaxRecordCount *utils.Value[int] `json:"MaxRecordCount,omitempty"`
 
 	// ProbabilityAttribute AWS CloudFormation Property
 	// Required: false
@@ -63,7 +66,7 @@ type EndpointConfig_ClarifyInferenceConfig struct {
 	// ProbabilityIndex AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-probabilityindex
-	ProbabilityIndex *int `json:"ProbabilityIndex,omitempty"`
+	ProbabilityIndex *utils.Value[int] `json:"ProbabilityIndex,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

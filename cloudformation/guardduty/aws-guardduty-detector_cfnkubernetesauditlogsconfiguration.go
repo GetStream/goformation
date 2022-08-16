@@ -4,7 +4,10 @@ package guardduty
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Detector_CFNKubernetesAuditLogsConfiguration AWS CloudFormation Resource (AWS::GuardDuty::Detector.CFNKubernetesAuditLogsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnkubernetesauditlogsconfiguration.html
@@ -13,7 +16,7 @@ type Detector_CFNKubernetesAuditLogsConfiguration struct {
 	// Enable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnkubernetesauditlogsconfiguration.html#cfn-guardduty-detector-cfnkubernetesauditlogsconfiguration-enable
-	Enable *bool `json:"Enable,omitempty"`
+	Enable *utils.Value[bool] `json:"Enable,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

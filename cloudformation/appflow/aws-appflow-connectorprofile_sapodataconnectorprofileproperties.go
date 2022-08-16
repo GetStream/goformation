@@ -4,7 +4,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConnectorProfile_SAPODataConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SAPODataConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html
@@ -38,7 +41,7 @@ type ConnectorProfile_SAPODataConnectorProfileProperties struct {
 	// PortNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofileproperties.html#cfn-appflow-connectorprofile-sapodataconnectorprofileproperties-portnumber
-	PortNumber *int `json:"PortNumber,omitempty"`
+	PortNumber *utils.Value[int] `json:"PortNumber,omitempty"`
 
 	// PrivateLinkServiceName AWS CloudFormation Property
 	// Required: false

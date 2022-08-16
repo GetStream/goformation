@@ -4,7 +4,10 @@ package mediapackage
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // OriginEndpoint_DashPackage AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.DashPackage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html
@@ -28,7 +31,7 @@ type OriginEndpoint_DashPackage struct {
 	// IncludeIframeOnlyStream AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-includeiframeonlystream
-	IncludeIframeOnlyStream *bool `json:"IncludeIframeOnlyStream,omitempty"`
+	IncludeIframeOnlyStream *utils.Value[bool] `json:"IncludeIframeOnlyStream,omitempty"`
 
 	// ManifestLayout AWS CloudFormation Property
 	// Required: false
@@ -38,17 +41,17 @@ type OriginEndpoint_DashPackage struct {
 	// ManifestWindowSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-manifestwindowseconds
-	ManifestWindowSeconds *int `json:"ManifestWindowSeconds,omitempty"`
+	ManifestWindowSeconds *utils.Value[int] `json:"ManifestWindowSeconds,omitempty"`
 
 	// MinBufferTimeSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-minbuffertimeseconds
-	MinBufferTimeSeconds *int `json:"MinBufferTimeSeconds,omitempty"`
+	MinBufferTimeSeconds *utils.Value[int] `json:"MinBufferTimeSeconds,omitempty"`
 
 	// MinUpdatePeriodSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-minupdateperiodseconds
-	MinUpdatePeriodSeconds *int `json:"MinUpdatePeriodSeconds,omitempty"`
+	MinUpdatePeriodSeconds *utils.Value[int] `json:"MinUpdatePeriodSeconds,omitempty"`
 
 	// PeriodTriggers AWS CloudFormation Property
 	// Required: false
@@ -63,7 +66,7 @@ type OriginEndpoint_DashPackage struct {
 	// SegmentDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-segmentdurationseconds
-	SegmentDurationSeconds *int `json:"SegmentDurationSeconds,omitempty"`
+	SegmentDurationSeconds *utils.Value[int] `json:"SegmentDurationSeconds,omitempty"`
 
 	// SegmentTemplateFormat AWS CloudFormation Property
 	// Required: false
@@ -78,7 +81,7 @@ type OriginEndpoint_DashPackage struct {
 	// SuggestedPresentationDelaySeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-suggestedpresentationdelayseconds
-	SuggestedPresentationDelaySeconds *int `json:"SuggestedPresentationDelaySeconds,omitempty"`
+	SuggestedPresentationDelaySeconds *utils.Value[int] `json:"SuggestedPresentationDelaySeconds,omitempty"`
 
 	// UtcTiming AWS CloudFormation Property
 	// Required: false

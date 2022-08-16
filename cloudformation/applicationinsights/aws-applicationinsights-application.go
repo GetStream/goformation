@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Application AWS CloudFormation Resource (AWS::ApplicationInsights::Application)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html
@@ -18,12 +21,12 @@ type Application struct {
 	// AutoConfigurationEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-autoconfigurationenabled
-	AutoConfigurationEnabled *bool `json:"AutoConfigurationEnabled,omitempty"`
+	AutoConfigurationEnabled *utils.Value[bool] `json:"AutoConfigurationEnabled,omitempty"`
 
 	// CWEMonitorEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-cwemonitorenabled
-	CWEMonitorEnabled *bool `json:"CWEMonitorEnabled,omitempty"`
+	CWEMonitorEnabled *utils.Value[bool] `json:"CWEMonitorEnabled,omitempty"`
 
 	// ComponentMonitoringSettings AWS CloudFormation Property
 	// Required: false
@@ -48,7 +51,7 @@ type Application struct {
 	// OpsCenterEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-opscenterenabled
-	OpsCenterEnabled *bool `json:"OpsCenterEnabled,omitempty"`
+	OpsCenterEnabled *utils.Value[bool] `json:"OpsCenterEnabled,omitempty"`
 
 	// OpsItemSNSTopicArn AWS CloudFormation Property
 	// Required: false

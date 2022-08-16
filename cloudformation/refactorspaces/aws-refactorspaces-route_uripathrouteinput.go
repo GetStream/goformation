@@ -4,7 +4,10 @@ package refactorspaces
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Route_UriPathRouteInput AWS CloudFormation Resource (AWS::RefactorSpaces::Route.UriPathRouteInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html
@@ -18,7 +21,7 @@ type Route_UriPathRouteInput struct {
 	// IncludeChildPaths AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-refactorspaces-route-uripathrouteinput.html#cfn-refactorspaces-route-uripathrouteinput-includechildpaths
-	IncludeChildPaths *bool `json:"IncludeChildPaths,omitempty"`
+	IncludeChildPaths *utils.Value[bool] `json:"IncludeChildPaths,omitempty"`
 
 	// Methods AWS CloudFormation Property
 	// Required: false

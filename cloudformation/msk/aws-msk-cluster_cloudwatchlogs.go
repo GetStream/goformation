@@ -4,7 +4,10 @@ package msk
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster_CloudWatchLogs AWS CloudFormation Resource (AWS::MSK::Cluster.CloudWatchLogs)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html
@@ -13,7 +16,7 @@ type Cluster_CloudWatchLogs struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled utils.Value[bool] `json:"Enabled"`
 
 	// LogGroup AWS CloudFormation Property
 	// Required: false

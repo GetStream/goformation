@@ -4,7 +4,10 @@ package global
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/serverless"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Api AWS CloudFormation Resource (Api)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
@@ -28,7 +31,7 @@ type Api struct {
 	// CacheClusterEnabled AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	CacheClusterEnabled *bool `json:"CacheClusterEnabled,omitempty"`
+	CacheClusterEnabled *utils.Value[bool] `json:"CacheClusterEnabled,omitempty"`
 
 	// CacheClusterSize AWS CloudFormation Property
 	// Required: false
@@ -78,7 +81,7 @@ type Api struct {
 	// MinimumCompressionSize AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-api.html#sam-api-minimumcompressionsize
-	MinimumCompressionSize *int `json:"MinimumCompressionSize,omitempty"`
+	MinimumCompressionSize *utils.Value[int] `json:"MinimumCompressionSize,omitempty"`
 
 	// Models AWS CloudFormation Property
 	// Required: false
@@ -103,7 +106,7 @@ type Api struct {
 	// TracingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessapi
-	TracingEnabled *bool `json:"TracingEnabled,omitempty"`
+	TracingEnabled *utils.Value[bool] `json:"TracingEnabled,omitempty"`
 
 	// Variables AWS CloudFormation Property
 	// Required: false

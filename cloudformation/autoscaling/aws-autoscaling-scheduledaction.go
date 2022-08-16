@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ScheduledAction AWS CloudFormation Resource (AWS::AutoScaling::ScheduledAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html
@@ -22,7 +25,7 @@ type ScheduledAction struct {
 	// DesiredCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-desiredcapacity
-	DesiredCapacity *int `json:"DesiredCapacity,omitempty"`
+	DesiredCapacity *utils.Value[int] `json:"DesiredCapacity,omitempty"`
 
 	// EndTime AWS CloudFormation Property
 	// Required: false
@@ -32,12 +35,12 @@ type ScheduledAction struct {
 	// MaxSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-maxsize
-	MaxSize *int `json:"MaxSize,omitempty"`
+	MaxSize *utils.Value[int] `json:"MaxSize,omitempty"`
 
 	// MinSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-as-scheduledaction.html#cfn-as-scheduledaction-minsize
-	MinSize *int `json:"MinSize,omitempty"`
+	MinSize *utils.Value[int] `json:"MinSize,omitempty"`
 
 	// Recurrence AWS CloudFormation Property
 	// Required: false

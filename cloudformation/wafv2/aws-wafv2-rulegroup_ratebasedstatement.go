@@ -4,7 +4,10 @@ package wafv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RuleGroup_RateBasedStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.RateBasedStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ratebasedstatement.html
@@ -23,7 +26,7 @@ type RuleGroup_RateBasedStatement struct {
 	// Limit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ratebasedstatement.html#cfn-wafv2-rulegroup-ratebasedstatement-limit
-	Limit int `json:"Limit"`
+	Limit utils.Value[int] `json:"Limit"`
 
 	// ScopeDownStatement AWS CloudFormation Property
 	// Required: false

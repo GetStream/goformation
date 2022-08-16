@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MatchmakingConfiguration AWS CloudFormation Resource (AWS::GameLift::MatchmakingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html
@@ -18,17 +21,17 @@ type MatchmakingConfiguration struct {
 	// AcceptanceRequired AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-acceptancerequired
-	AcceptanceRequired bool `json:"AcceptanceRequired"`
+	AcceptanceRequired utils.Value[bool] `json:"AcceptanceRequired"`
 
 	// AcceptanceTimeoutSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-acceptancetimeoutseconds
-	AcceptanceTimeoutSeconds *int `json:"AcceptanceTimeoutSeconds,omitempty"`
+	AcceptanceTimeoutSeconds *utils.Value[int] `json:"AcceptanceTimeoutSeconds,omitempty"`
 
 	// AdditionalPlayerCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-additionalplayercount
-	AdditionalPlayerCount *int `json:"AdditionalPlayerCount,omitempty"`
+	AdditionalPlayerCount *utils.Value[int] `json:"AdditionalPlayerCount,omitempty"`
 
 	// BackfillMode AWS CloudFormation Property
 	// Required: false
@@ -78,7 +81,7 @@ type MatchmakingConfiguration struct {
 	// RequestTimeoutSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-requesttimeoutseconds
-	RequestTimeoutSeconds int `json:"RequestTimeoutSeconds"`
+	RequestTimeoutSeconds utils.Value[int] `json:"RequestTimeoutSeconds"`
 
 	// RuleSetName AWS CloudFormation Property
 	// Required: true

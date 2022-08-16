@@ -4,7 +4,10 @@ package amazonmq
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Broker_LdapServerMetadata AWS CloudFormation Resource (AWS::AmazonMQ::Broker.LdapServerMetadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html
@@ -33,7 +36,7 @@ type Broker_LdapServerMetadata struct {
 	// RoleSearchSubtree AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-rolesearchsubtree
-	RoleSearchSubtree *bool `json:"RoleSearchSubtree,omitempty"`
+	RoleSearchSubtree *utils.Value[bool] `json:"RoleSearchSubtree,omitempty"`
 
 	// ServiceAccountPassword AWS CloudFormation Property
 	// Required: true
@@ -63,7 +66,7 @@ type Broker_LdapServerMetadata struct {
 	// UserSearchSubtree AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-usersearchsubtree
-	UserSearchSubtree *bool `json:"UserSearchSubtree,omitempty"`
+	UserSearchSubtree *utils.Value[bool] `json:"UserSearchSubtree,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -4,7 +4,10 @@ package lambda
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EventSourceMapping_DestinationConfig AWS CloudFormation Resource (AWS::Lambda::EventSourceMapping.DestinationConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-destinationconfig.html

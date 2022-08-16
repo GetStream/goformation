@@ -4,7 +4,10 @@ package autoscaling
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ScalingPolicy_TargetTrackingConfiguration AWS CloudFormation Resource (AWS::AutoScaling::ScalingPolicy.TargetTrackingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html
@@ -18,7 +21,7 @@ type ScalingPolicy_TargetTrackingConfiguration struct {
 	// DisableScaleIn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-disablescalein
-	DisableScaleIn *bool `json:"DisableScaleIn,omitempty"`
+	DisableScaleIn *utils.Value[bool] `json:"DisableScaleIn,omitempty"`
 
 	// PredefinedMetricSpecification AWS CloudFormation Property
 	// Required: false

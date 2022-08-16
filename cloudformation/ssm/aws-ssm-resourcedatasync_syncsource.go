@@ -4,7 +4,10 @@ package ssm
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResourceDataSync_SyncSource AWS CloudFormation Resource (AWS::SSM::ResourceDataSync.SyncSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html
@@ -18,7 +21,7 @@ type ResourceDataSync_SyncSource struct {
 	// IncludeFutureRegions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-includefutureregions
-	IncludeFutureRegions *bool `json:"IncludeFutureRegions,omitempty"`
+	IncludeFutureRegions *utils.Value[bool] `json:"IncludeFutureRegions,omitempty"`
 
 	// SourceRegions AWS CloudFormation Property
 	// Required: true

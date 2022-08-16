@@ -4,7 +4,10 @@ package mediapackage
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // OriginEndpoint_StreamSelection AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.StreamSelection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-streamselection.html
@@ -13,12 +16,12 @@ type OriginEndpoint_StreamSelection struct {
 	// MaxVideoBitsPerSecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-streamselection.html#cfn-mediapackage-originendpoint-streamselection-maxvideobitspersecond
-	MaxVideoBitsPerSecond *int `json:"MaxVideoBitsPerSecond,omitempty"`
+	MaxVideoBitsPerSecond *utils.Value[int] `json:"MaxVideoBitsPerSecond,omitempty"`
 
 	// MinVideoBitsPerSecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-streamselection.html#cfn-mediapackage-originendpoint-streamselection-minvideobitspersecond
-	MinVideoBitsPerSecond *int `json:"MinVideoBitsPerSecond,omitempty"`
+	MinVideoBitsPerSecond *utils.Value[int] `json:"MinVideoBitsPerSecond,omitempty"`
 
 	// StreamOrder AWS CloudFormation Property
 	// Required: false

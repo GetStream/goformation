@@ -4,7 +4,10 @@ package emr
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // InstanceGroupConfig_VolumeSpecification AWS CloudFormation Resource (AWS::EMR::InstanceGroupConfig.VolumeSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification.html
@@ -13,12 +16,12 @@ type InstanceGroupConfig_VolumeSpecification struct {
 	// Iops AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification-iops
-	Iops *int `json:"Iops,omitempty"`
+	Iops *utils.Value[int] `json:"Iops,omitempty"`
 
 	// SizeInGB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification-sizeingb
-	SizeInGB int `json:"SizeInGB"`
+	SizeInGB utils.Value[int] `json:"SizeInGB"`
 
 	// VolumeType AWS CloudFormation Property
 	// Required: true

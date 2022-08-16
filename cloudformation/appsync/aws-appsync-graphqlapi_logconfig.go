@@ -4,7 +4,10 @@ package appsync
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // GraphQLApi_LogConfig AWS CloudFormation Resource (AWS::AppSync::GraphQLApi.LogConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html
@@ -18,7 +21,7 @@ type GraphQLApi_LogConfig struct {
 	// ExcludeVerboseContent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-excludeverbosecontent
-	ExcludeVerboseContent *bool `json:"ExcludeVerboseContent,omitempty"`
+	ExcludeVerboseContent *utils.Value[bool] `json:"ExcludeVerboseContent,omitempty"`
 
 	// FieldLogLevel AWS CloudFormation Property
 	// Required: false

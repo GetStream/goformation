@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ComponentType AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html
@@ -37,7 +40,7 @@ type ComponentType struct {
 	// IsSingleton AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#cfn-iottwinmaker-componenttype-issingleton
-	IsSingleton *bool `json:"IsSingleton,omitempty"`
+	IsSingleton *utils.Value[bool] `json:"IsSingleton,omitempty"`
 
 	// PropertyDefinitions AWS CloudFormation Property
 	// Required: false

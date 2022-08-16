@@ -4,7 +4,10 @@ package applicationautoscaling
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ScalingPolicy_TargetTrackingScalingPolicyConfiguration AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalingPolicy.TargetTrackingScalingPolicyConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html
@@ -18,7 +21,7 @@ type ScalingPolicy_TargetTrackingScalingPolicyConfiguration struct {
 	// DisableScaleIn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-disablescalein
-	DisableScaleIn *bool `json:"DisableScaleIn,omitempty"`
+	DisableScaleIn *utils.Value[bool] `json:"DisableScaleIn,omitempty"`
 
 	// PredefinedMetricSpecification AWS CloudFormation Property
 	// Required: false
@@ -28,12 +31,12 @@ type ScalingPolicy_TargetTrackingScalingPolicyConfiguration struct {
 	// ScaleInCooldown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-scaleincooldown
-	ScaleInCooldown *int `json:"ScaleInCooldown,omitempty"`
+	ScaleInCooldown *utils.Value[int] `json:"ScaleInCooldown,omitempty"`
 
 	// ScaleOutCooldown AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-scaleoutcooldown
-	ScaleOutCooldown *int `json:"ScaleOutCooldown,omitempty"`
+	ScaleOutCooldown *utils.Value[int] `json:"ScaleOutCooldown,omitempty"`
 
 	// TargetValue AWS CloudFormation Property
 	// Required: true

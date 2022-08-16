@@ -4,7 +4,10 @@ package dms
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Endpoint_NeptuneSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.NeptuneSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html
@@ -13,22 +16,22 @@ type Endpoint_NeptuneSettings struct {
 	// ErrorRetryDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-errorretryduration
-	ErrorRetryDuration *int `json:"ErrorRetryDuration,omitempty"`
+	ErrorRetryDuration *utils.Value[int] `json:"ErrorRetryDuration,omitempty"`
 
 	// IamAuthEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-iamauthenabled
-	IamAuthEnabled *bool `json:"IamAuthEnabled,omitempty"`
+	IamAuthEnabled *utils.Value[bool] `json:"IamAuthEnabled,omitempty"`
 
 	// MaxFileSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-maxfilesize
-	MaxFileSize *int `json:"MaxFileSize,omitempty"`
+	MaxFileSize *utils.Value[int] `json:"MaxFileSize,omitempty"`
 
 	// MaxRetryCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-maxretrycount
-	MaxRetryCount *int `json:"MaxRetryCount,omitempty"`
+	MaxRetryCount *utils.Value[int] `json:"MaxRetryCount,omitempty"`
 
 	// S3BucketFolder AWS CloudFormation Property
 	// Required: false

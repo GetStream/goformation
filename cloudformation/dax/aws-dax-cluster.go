@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster AWS CloudFormation Resource (AWS::DAX::Cluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html
@@ -62,7 +65,7 @@ type Cluster struct {
 	// ReplicationFactor AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-replicationfactor
-	ReplicationFactor int `json:"ReplicationFactor"`
+	ReplicationFactor utils.Value[int] `json:"ReplicationFactor"`
 
 	// SSESpecification AWS CloudFormation Property
 	// Required: false

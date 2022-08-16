@@ -4,7 +4,10 @@ package codebuild
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Project_WebhookFilter AWS CloudFormation Resource (AWS::CodeBuild::Project.WebhookFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html
@@ -13,7 +16,7 @@ type Project_WebhookFilter struct {
 	// ExcludeMatchedPattern AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-excludematchedpattern
-	ExcludeMatchedPattern *bool `json:"ExcludeMatchedPattern,omitempty"`
+	ExcludeMatchedPattern *utils.Value[bool] `json:"ExcludeMatchedPattern,omitempty"`
 
 	// Pattern AWS CloudFormation Property
 	// Required: true

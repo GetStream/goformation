@@ -4,7 +4,10 @@ package serverless
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Function_RequestParameter AWS CloudFormation Resource (AWS::Serverless::Function.RequestParameter)
 // See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-requestparameter.html
@@ -13,12 +16,12 @@ type Function_RequestParameter struct {
 	// Caching AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-requestparameter.html#sam-function-requestparameter-caching
-	Caching *bool `json:"Caching,omitempty"`
+	Caching *utils.Value[bool] `json:"Caching,omitempty"`
 
 	// Required AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-function-requestparameter.html#sam-function-requestparameter-required
-	Required *bool `json:"Required,omitempty"`
+	Required *utils.Value[bool] `json:"Required,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

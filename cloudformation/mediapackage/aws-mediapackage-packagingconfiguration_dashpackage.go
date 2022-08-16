@@ -4,7 +4,10 @@ package mediapackage
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // PackagingConfiguration_DashPackage AWS CloudFormation Resource (AWS::MediaPackage::PackagingConfiguration.DashPackage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html
@@ -23,7 +26,7 @@ type PackagingConfiguration_DashPackage struct {
 	// IncludeEncoderConfigurationInSegments AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-includeencoderconfigurationinsegments
-	IncludeEncoderConfigurationInSegments *bool `json:"IncludeEncoderConfigurationInSegments,omitempty"`
+	IncludeEncoderConfigurationInSegments *utils.Value[bool] `json:"IncludeEncoderConfigurationInSegments,omitempty"`
 
 	// PeriodTriggers AWS CloudFormation Property
 	// Required: false
@@ -33,7 +36,7 @@ type PackagingConfiguration_DashPackage struct {
 	// SegmentDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-segmentdurationseconds
-	SegmentDurationSeconds *int `json:"SegmentDurationSeconds,omitempty"`
+	SegmentDurationSeconds *utils.Value[int] `json:"SegmentDurationSeconds,omitempty"`
 
 	// SegmentTemplateFormat AWS CloudFormation Property
 	// Required: false

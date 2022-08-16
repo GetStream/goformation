@@ -4,7 +4,10 @@ package elasticache
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ReplicationGroup_NodeGroupConfiguration AWS CloudFormation Resource (AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html
@@ -28,7 +31,7 @@ type ReplicationGroup_NodeGroupConfiguration struct {
 	// ReplicaCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html#cfn-elasticache-replicationgroup-nodegroupconfiguration-replicacount
-	ReplicaCount *int `json:"ReplicaCount,omitempty"`
+	ReplicaCount *utils.Value[int] `json:"ReplicaCount,omitempty"`
 
 	// Slots AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package fsx
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FileSystem_WindowsConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.WindowsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html
@@ -28,12 +31,12 @@ type FileSystem_WindowsConfiguration struct {
 	// AutomaticBackupRetentionDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-automaticbackupretentiondays
-	AutomaticBackupRetentionDays *int `json:"AutomaticBackupRetentionDays,omitempty"`
+	AutomaticBackupRetentionDays *utils.Value[int] `json:"AutomaticBackupRetentionDays,omitempty"`
 
 	// CopyTagsToBackups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-copytagstobackups
-	CopyTagsToBackups *bool `json:"CopyTagsToBackups,omitempty"`
+	CopyTagsToBackups *utils.Value[bool] `json:"CopyTagsToBackups,omitempty"`
 
 	// DailyAutomaticBackupStartTime AWS CloudFormation Property
 	// Required: false
@@ -58,7 +61,7 @@ type FileSystem_WindowsConfiguration struct {
 	// ThroughputCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-throughputcapacity
-	ThroughputCapacity int `json:"ThroughputCapacity"`
+	ThroughputCapacity utils.Value[int] `json:"ThroughputCapacity"`
 
 	// WeeklyMaintenanceStartTime AWS CloudFormation Property
 	// Required: false

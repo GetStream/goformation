@@ -4,7 +4,10 @@ package dlm
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LifecyclePolicy_CrossRegionCopyRetainRule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.CrossRegionCopyRetainRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyretainrule.html
@@ -13,7 +16,7 @@ type LifecyclePolicy_CrossRegionCopyRetainRule struct {
 	// Interval AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyretainrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyretainrule-interval
-	Interval int `json:"Interval"`
+	Interval utils.Value[int] `json:"Interval"`
 
 	// IntervalUnit AWS CloudFormation Property
 	// Required: true

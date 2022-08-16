@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Authorizer AWS CloudFormation Resource (AWS::IoT::Authorizer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-authorizer.html
@@ -28,12 +31,12 @@ type Authorizer struct {
 	// EnableCachingForHttp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-authorizer.html#cfn-iot-authorizer-enablecachingforhttp
-	EnableCachingForHttp *bool `json:"EnableCachingForHttp,omitempty"`
+	EnableCachingForHttp *utils.Value[bool] `json:"EnableCachingForHttp,omitempty"`
 
 	// SigningDisabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-authorizer.html#cfn-iot-authorizer-signingdisabled
-	SigningDisabled *bool `json:"SigningDisabled,omitempty"`
+	SigningDisabled *utils.Value[bool] `json:"SigningDisabled,omitempty"`
 
 	// Status AWS CloudFormation Property
 	// Required: false

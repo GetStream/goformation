@@ -4,7 +4,10 @@ package kinesisfirehose
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeliveryStream_ElasticsearchBufferingHints AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.ElasticsearchBufferingHints)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchbufferinghints.html
@@ -13,12 +16,12 @@ type DeliveryStream_ElasticsearchBufferingHints struct {
 	// IntervalInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchbufferinghints.html#cfn-kinesisfirehose-deliverystream-elasticsearchbufferinghints-intervalinseconds
-	IntervalInSeconds *int `json:"IntervalInSeconds,omitempty"`
+	IntervalInSeconds *utils.Value[int] `json:"IntervalInSeconds,omitempty"`
 
 	// SizeInMBs AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchbufferinghints.html#cfn-kinesisfirehose-deliverystream-elasticsearchbufferinghints-sizeinmbs
-	SizeInMBs *int `json:"SizeInMBs,omitempty"`
+	SizeInMBs *utils.Value[int] `json:"SizeInMBs,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -4,7 +4,10 @@ package lightsail
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Database_RelationalDatabaseParameter AWS CloudFormation Resource (AWS::Lightsail::Database.RelationalDatabaseParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-database-relationaldatabaseparameter.html
@@ -38,7 +41,7 @@ type Database_RelationalDatabaseParameter struct {
 	// IsModifiable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-database-relationaldatabaseparameter.html#cfn-lightsail-database-relationaldatabaseparameter-ismodifiable
-	IsModifiable *bool `json:"IsModifiable,omitempty"`
+	IsModifiable *utils.Value[bool] `json:"IsModifiable,omitempty"`
 
 	// ParameterName AWS CloudFormation Property
 	// Required: false

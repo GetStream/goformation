@@ -4,7 +4,10 @@ package pinpoint
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Campaign_WriteTreatmentResource AWS CloudFormation Resource (AWS::Pinpoint::Campaign.WriteTreatmentResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html
@@ -28,7 +31,7 @@ type Campaign_WriteTreatmentResource struct {
 	// SizePercent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-sizepercent
-	SizePercent *int `json:"SizePercent,omitempty"`
+	SizePercent *utils.Value[int] `json:"SizePercent,omitempty"`
 
 	// TemplateConfiguration AWS CloudFormation Property
 	// Required: false

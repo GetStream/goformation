@@ -4,7 +4,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_FecOutputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.FecOutputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fecoutputsettings.html
@@ -13,7 +16,7 @@ type Channel_FecOutputSettings struct {
 	// ColumnDepth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fecoutputsettings.html#cfn-medialive-channel-fecoutputsettings-columndepth
-	ColumnDepth *int `json:"ColumnDepth,omitempty"`
+	ColumnDepth *utils.Value[int] `json:"ColumnDepth,omitempty"`
 
 	// IncludeFec AWS CloudFormation Property
 	// Required: false
@@ -23,7 +26,7 @@ type Channel_FecOutputSettings struct {
 	// RowLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fecoutputsettings.html#cfn-medialive-channel-fecoutputsettings-rowlength
-	RowLength *int `json:"RowLength,omitempty"`
+	RowLength *utils.Value[int] `json:"RowLength,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

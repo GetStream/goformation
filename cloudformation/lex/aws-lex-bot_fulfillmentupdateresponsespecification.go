@@ -4,7 +4,10 @@ package lex
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bot_FulfillmentUpdateResponseSpecification AWS CloudFormation Resource (AWS::Lex::Bot.FulfillmentUpdateResponseSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdateresponsespecification.html
@@ -13,12 +16,12 @@ type Bot_FulfillmentUpdateResponseSpecification struct {
 	// AllowInterrupt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdateresponsespecification.html#cfn-lex-bot-fulfillmentupdateresponsespecification-allowinterrupt
-	AllowInterrupt *bool `json:"AllowInterrupt,omitempty"`
+	AllowInterrupt *utils.Value[bool] `json:"AllowInterrupt,omitempty"`
 
 	// FrequencyInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdateresponsespecification.html#cfn-lex-bot-fulfillmentupdateresponsespecification-frequencyinseconds
-	FrequencyInSeconds int `json:"FrequencyInSeconds"`
+	FrequencyInSeconds utils.Value[int] `json:"FrequencyInSeconds"`
 
 	// MessageGroups AWS CloudFormation Property
 	// Required: true

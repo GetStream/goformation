@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DHCPOptions AWS CloudFormation Resource (AWS::EC2::DHCPOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html
@@ -33,7 +36,7 @@ type DHCPOptions struct {
 	// NetbiosNodeType AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-netbiosnodetype
-	NetbiosNodeType *int `json:"NetbiosNodeType,omitempty"`
+	NetbiosNodeType *utils.Value[int] `json:"NetbiosNodeType,omitempty"`
 
 	// NtpServers AWS CloudFormation Property
 	// Required: false

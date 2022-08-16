@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MLTransform AWS CloudFormation Resource (AWS::Glue::MLTransform)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html
@@ -37,7 +40,7 @@ type MLTransform struct {
 	// MaxRetries AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-maxretries
-	MaxRetries *int `json:"MaxRetries,omitempty"`
+	MaxRetries *utils.Value[int] `json:"MaxRetries,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -47,7 +50,7 @@ type MLTransform struct {
 	// NumberOfWorkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-numberofworkers
-	NumberOfWorkers *int `json:"NumberOfWorkers,omitempty"`
+	NumberOfWorkers *utils.Value[int] `json:"NumberOfWorkers,omitempty"`
 
 	// Role AWS CloudFormation Property
 	// Required: true
@@ -62,7 +65,7 @@ type MLTransform struct {
 	// Timeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-timeout
-	Timeout *int `json:"Timeout,omitempty"`
+	Timeout *utils.Value[int] `json:"Timeout,omitempty"`
 
 	// TransformEncryption AWS CloudFormation Property
 	// Required: false

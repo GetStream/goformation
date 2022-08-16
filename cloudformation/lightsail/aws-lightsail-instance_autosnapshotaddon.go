@@ -4,7 +4,10 @@ package lightsail
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Instance_AutoSnapshotAddOn AWS CloudFormation Resource (AWS::Lightsail::Instance.AutoSnapshotAddOn)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-autosnapshotaddon.html

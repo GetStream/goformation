@@ -4,7 +4,10 @@ package wafv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // WebACL_CustomResponse AWS CloudFormation Resource (AWS::WAFv2::WebACL.CustomResponse)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customresponse.html
@@ -18,7 +21,7 @@ type WebACL_CustomResponse struct {
 	// ResponseCode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customresponse.html#cfn-wafv2-webacl-customresponse-responsecode
-	ResponseCode int `json:"ResponseCode"`
+	ResponseCode utils.Value[int] `json:"ResponseCode"`
 
 	// ResponseHeaders AWS CloudFormation Property
 	// Required: false

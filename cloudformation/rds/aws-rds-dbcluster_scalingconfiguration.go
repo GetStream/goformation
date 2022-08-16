@@ -4,7 +4,10 @@ package rds
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DBCluster_ScalingConfiguration AWS CloudFormation Resource (AWS::RDS::DBCluster.ScalingConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html
@@ -13,22 +16,22 @@ type DBCluster_ScalingConfiguration struct {
 	// AutoPause AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-autopause
-	AutoPause *bool `json:"AutoPause,omitempty"`
+	AutoPause *utils.Value[bool] `json:"AutoPause,omitempty"`
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-maxcapacity
-	MaxCapacity *int `json:"MaxCapacity,omitempty"`
+	MaxCapacity *utils.Value[int] `json:"MaxCapacity,omitempty"`
 
 	// MinCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-mincapacity
-	MinCapacity *int `json:"MinCapacity,omitempty"`
+	MinCapacity *utils.Value[int] `json:"MinCapacity,omitempty"`
 
 	// SecondsUntilAutoPause AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-secondsuntilautopause
-	SecondsUntilAutoPause *int `json:"SecondsUntilAutoPause,omitempty"`
+	SecondsUntilAutoPause *utils.Value[int] `json:"SecondsUntilAutoPause,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

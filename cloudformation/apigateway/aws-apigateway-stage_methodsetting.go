@@ -4,7 +4,10 @@ package apigateway
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Stage_MethodSetting AWS CloudFormation Resource (AWS::ApiGateway::Stage.MethodSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html
@@ -13,22 +16,22 @@ type Stage_MethodSetting struct {
 	// CacheDataEncrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-cachedataencrypted
-	CacheDataEncrypted *bool `json:"CacheDataEncrypted,omitempty"`
+	CacheDataEncrypted *utils.Value[bool] `json:"CacheDataEncrypted,omitempty"`
 
 	// CacheTtlInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-cachettlinseconds
-	CacheTtlInSeconds *int `json:"CacheTtlInSeconds,omitempty"`
+	CacheTtlInSeconds *utils.Value[int] `json:"CacheTtlInSeconds,omitempty"`
 
 	// CachingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-cachingenabled
-	CachingEnabled *bool `json:"CachingEnabled,omitempty"`
+	CachingEnabled *utils.Value[bool] `json:"CachingEnabled,omitempty"`
 
 	// DataTraceEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-datatraceenabled
-	DataTraceEnabled *bool `json:"DataTraceEnabled,omitempty"`
+	DataTraceEnabled *utils.Value[bool] `json:"DataTraceEnabled,omitempty"`
 
 	// HttpMethod AWS CloudFormation Property
 	// Required: false
@@ -43,7 +46,7 @@ type Stage_MethodSetting struct {
 	// MetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-metricsenabled
-	MetricsEnabled *bool `json:"MetricsEnabled,omitempty"`
+	MetricsEnabled *utils.Value[bool] `json:"MetricsEnabled,omitempty"`
 
 	// ResourcePath AWS CloudFormation Property
 	// Required: false
@@ -53,7 +56,7 @@ type Stage_MethodSetting struct {
 	// ThrottlingBurstLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-throttlingburstlimit
-	ThrottlingBurstLimit *int `json:"ThrottlingBurstLimit,omitempty"`
+	ThrottlingBurstLimit *utils.Value[int] `json:"ThrottlingBurstLimit,omitempty"`
 
 	// ThrottlingRateLimit AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package lightsail
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Instance_Hardware AWS CloudFormation Resource (AWS::Lightsail::Instance.Hardware)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-hardware.html
@@ -13,7 +16,7 @@ type Instance_Hardware struct {
 	// CpuCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-hardware.html#cfn-lightsail-instance-hardware-cpucount
-	CpuCount *int `json:"CpuCount,omitempty"`
+	CpuCount *utils.Value[int] `json:"CpuCount,omitempty"`
 
 	// Disks AWS CloudFormation Property
 	// Required: false
@@ -23,7 +26,7 @@ type Instance_Hardware struct {
 	// RamSizeInGb AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-hardware.html#cfn-lightsail-instance-hardware-ramsizeingb
-	RamSizeInGb *int `json:"RamSizeInGb,omitempty"`
+	RamSizeInGb *utils.Value[int] `json:"RamSizeInGb,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

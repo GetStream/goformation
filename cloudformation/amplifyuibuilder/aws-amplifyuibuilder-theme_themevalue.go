@@ -4,7 +4,10 @@ package amplifyuibuilder
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Theme_ThemeValue AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Theme.ThemeValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-theme-themevalue.html

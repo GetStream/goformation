@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LifecycleHook AWS CloudFormation Resource (AWS::AutoScaling::LifecycleHook)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-lifecyclehook.html
@@ -27,7 +30,7 @@ type LifecycleHook struct {
 	// HeartbeatTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-lifecyclehook.html#cfn-autoscaling-lifecyclehook-heartbeattimeout
-	HeartbeatTimeout *int `json:"HeartbeatTimeout,omitempty"`
+	HeartbeatTimeout *utils.Value[int] `json:"HeartbeatTimeout,omitempty"`
 
 	// LifecycleHookName AWS CloudFormation Property
 	// Required: false

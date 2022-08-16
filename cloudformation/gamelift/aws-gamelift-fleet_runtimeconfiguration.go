@@ -4,7 +4,10 @@ package gamelift
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Fleet_RuntimeConfiguration AWS CloudFormation Resource (AWS::GameLift::Fleet.RuntimeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-runtimeconfiguration.html
@@ -13,12 +16,12 @@ type Fleet_RuntimeConfiguration struct {
 	// GameSessionActivationTimeoutSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-runtimeconfiguration.html#cfn-gamelift-fleet-runtimeconfiguration-gamesessionactivationtimeoutseconds
-	GameSessionActivationTimeoutSeconds *int `json:"GameSessionActivationTimeoutSeconds,omitempty"`
+	GameSessionActivationTimeoutSeconds *utils.Value[int] `json:"GameSessionActivationTimeoutSeconds,omitempty"`
 
 	// MaxConcurrentGameSessionActivations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-runtimeconfiguration.html#cfn-gamelift-fleet-runtimeconfiguration-maxconcurrentgamesessionactivations
-	MaxConcurrentGameSessionActivations *int `json:"MaxConcurrentGameSessionActivations,omitempty"`
+	MaxConcurrentGameSessionActivations *utils.Value[int] `json:"MaxConcurrentGameSessionActivations,omitempty"`
 
 	// ServerProcesses AWS CloudFormation Property
 	// Required: false

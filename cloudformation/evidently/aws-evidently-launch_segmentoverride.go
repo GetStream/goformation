@@ -4,7 +4,10 @@ package evidently
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Launch_SegmentOverride AWS CloudFormation Resource (AWS::Evidently::Launch.SegmentOverride)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-segmentoverride.html
@@ -13,7 +16,7 @@ type Launch_SegmentOverride struct {
 	// EvaluationOrder AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-segmentoverride.html#cfn-evidently-launch-segmentoverride-evaluationorder
-	EvaluationOrder int `json:"EvaluationOrder"`
+	EvaluationOrder utils.Value[int] `json:"EvaluationOrder"`
 
 	// Segment AWS CloudFormation Property
 	// Required: true

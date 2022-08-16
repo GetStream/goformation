@@ -4,7 +4,10 @@ package amplifyuibuilder
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Component_ComponentOverrides AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentOverrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentoverrides.html

@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // WaitCondition AWS CloudFormation Resource (AWS::CloudFormation::WaitCondition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html
@@ -17,7 +20,7 @@ type WaitCondition struct {
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-count
-	Count *int `json:"Count,omitempty"`
+	Count *utils.Value[int] `json:"Count,omitempty"`
 
 	// Handle AWS CloudFormation Property
 	// Required: false

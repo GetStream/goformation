@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Container AWS CloudFormation Resource (AWS::MediaStore::Container)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html
@@ -18,7 +21,7 @@ type Container struct {
 	// AccessLoggingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-accessloggingenabled
-	AccessLoggingEnabled *bool `json:"AccessLoggingEnabled,omitempty"`
+	AccessLoggingEnabled *utils.Value[bool] `json:"AccessLoggingEnabled,omitempty"`
 
 	// ContainerName AWS CloudFormation Property
 	// Required: true

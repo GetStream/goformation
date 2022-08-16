@@ -4,7 +4,10 @@ package apigateway
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // UsagePlan_QuotaSettings AWS CloudFormation Resource (AWS::ApiGateway::UsagePlan.QuotaSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html
@@ -13,12 +16,12 @@ type UsagePlan_QuotaSettings struct {
 	// Limit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-limit
-	Limit *int `json:"Limit,omitempty"`
+	Limit *utils.Value[int] `json:"Limit,omitempty"`
 
 	// Offset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-offset
-	Offset *int `json:"Offset,omitempty"`
+	Offset *utils.Value[int] `json:"Offset,omitempty"`
 
 	// Period AWS CloudFormation Property
 	// Required: false

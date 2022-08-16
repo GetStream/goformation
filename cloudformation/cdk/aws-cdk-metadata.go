@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Metadata AWS CloudFormation Resource (AWS::CDK::Metadata)
 // See: https://github.com/aws/aws-cdk-rfcs/blob/master/text/0253-cdk-metadata-v2.md

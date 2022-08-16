@@ -4,7 +4,10 @@ package guardduty
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Detector_CFNScanEc2InstanceWithFindingsConfiguration AWS CloudFormation Resource (AWS::GuardDuty::Detector.CFNScanEc2InstanceWithFindingsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnscanec2instancewithfindingsconfiguration.html
@@ -13,7 +16,7 @@ type Detector_CFNScanEc2InstanceWithFindingsConfiguration struct {
 	// EbsVolumes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnscanec2instancewithfindingsconfiguration.html#cfn-guardduty-detector-cfnscanec2instancewithfindingsconfiguration-ebsvolumes
-	EbsVolumes *bool `json:"EbsVolumes,omitempty"`
+	EbsVolumes *utils.Value[bool] `json:"EbsVolumes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

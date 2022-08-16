@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ReplicationGroup AWS CloudFormation Resource (AWS::ElastiCache::ReplicationGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html
@@ -18,7 +21,7 @@ type ReplicationGroup struct {
 	// AtRestEncryptionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-atrestencryptionenabled
-	AtRestEncryptionEnabled *bool `json:"AtRestEncryptionEnabled,omitempty"`
+	AtRestEncryptionEnabled *utils.Value[bool] `json:"AtRestEncryptionEnabled,omitempty"`
 
 	// AuthToken AWS CloudFormation Property
 	// Required: false
@@ -28,12 +31,12 @@ type ReplicationGroup struct {
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-autominorversionupgrade
-	AutoMinorVersionUpgrade *bool `json:"AutoMinorVersionUpgrade,omitempty"`
+	AutoMinorVersionUpgrade *utils.Value[bool] `json:"AutoMinorVersionUpgrade,omitempty"`
 
 	// AutomaticFailoverEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-automaticfailoverenabled
-	AutomaticFailoverEnabled *bool `json:"AutomaticFailoverEnabled,omitempty"`
+	AutomaticFailoverEnabled *utils.Value[bool] `json:"AutomaticFailoverEnabled,omitempty"`
 
 	// CacheNodeType AWS CloudFormation Property
 	// Required: false
@@ -58,7 +61,7 @@ type ReplicationGroup struct {
 	// DataTieringEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-datatieringenabled
-	DataTieringEnabled *bool `json:"DataTieringEnabled,omitempty"`
+	DataTieringEnabled *utils.Value[bool] `json:"DataTieringEnabled,omitempty"`
 
 	// Engine AWS CloudFormation Property
 	// Required: false
@@ -88,7 +91,7 @@ type ReplicationGroup struct {
 	// MultiAZEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-multiazenabled
-	MultiAZEnabled *bool `json:"MultiAZEnabled,omitempty"`
+	MultiAZEnabled *utils.Value[bool] `json:"MultiAZEnabled,omitempty"`
 
 	// NodeGroupConfiguration AWS CloudFormation Property
 	// Required: false
@@ -103,17 +106,17 @@ type ReplicationGroup struct {
 	// NumCacheClusters AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numcacheclusters
-	NumCacheClusters *int `json:"NumCacheClusters,omitempty"`
+	NumCacheClusters *utils.Value[int] `json:"NumCacheClusters,omitempty"`
 
 	// NumNodeGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numnodegroups
-	NumNodeGroups *int `json:"NumNodeGroups,omitempty"`
+	NumNodeGroups *utils.Value[int] `json:"NumNodeGroups,omitempty"`
 
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-port
-	Port *int `json:"Port,omitempty"`
+	Port *utils.Value[int] `json:"Port,omitempty"`
 
 	// PreferredCacheClusterAZs AWS CloudFormation Property
 	// Required: false
@@ -133,7 +136,7 @@ type ReplicationGroup struct {
 	// ReplicasPerNodeGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicaspernodegroup
-	ReplicasPerNodeGroup *int `json:"ReplicasPerNodeGroup,omitempty"`
+	ReplicasPerNodeGroup *utils.Value[int] `json:"ReplicasPerNodeGroup,omitempty"`
 
 	// ReplicationGroupDescription AWS CloudFormation Property
 	// Required: true
@@ -163,7 +166,7 @@ type ReplicationGroup struct {
 	// SnapshotRetentionLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotretentionlimit
-	SnapshotRetentionLimit *int `json:"SnapshotRetentionLimit,omitempty"`
+	SnapshotRetentionLimit *utils.Value[int] `json:"SnapshotRetentionLimit,omitempty"`
 
 	// SnapshotWindow AWS CloudFormation Property
 	// Required: false
@@ -183,7 +186,7 @@ type ReplicationGroup struct {
 	// TransitEncryptionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-transitencryptionenabled
-	TransitEncryptionEnabled *bool `json:"TransitEncryptionEnabled,omitempty"`
+	TransitEncryptionEnabled *utils.Value[bool] `json:"TransitEncryptionEnabled,omitempty"`
 
 	// UserGroupIds AWS CloudFormation Property
 	// Required: false

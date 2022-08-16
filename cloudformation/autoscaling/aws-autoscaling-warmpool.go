@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // WarmPool AWS CloudFormation Resource (AWS::AutoScaling::WarmPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-warmpool.html
@@ -27,12 +30,12 @@ type WarmPool struct {
 	// MaxGroupPreparedCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-warmpool.html#cfn-autoscaling-warmpool-maxgrouppreparedcapacity
-	MaxGroupPreparedCapacity *int `json:"MaxGroupPreparedCapacity,omitempty"`
+	MaxGroupPreparedCapacity *utils.Value[int] `json:"MaxGroupPreparedCapacity,omitempty"`
 
 	// MinSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-warmpool.html#cfn-autoscaling-warmpool-minsize
-	MinSize *int `json:"MinSize,omitempty"`
+	MinSize *utils.Value[int] `json:"MinSize,omitempty"`
 
 	// PoolState AWS CloudFormation Property
 	// Required: false

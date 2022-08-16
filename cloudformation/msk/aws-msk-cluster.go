@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster AWS CloudFormation Resource (AWS::MSK::Cluster)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html
@@ -62,7 +65,7 @@ type Cluster struct {
 	// NumberOfBrokerNodes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-numberofbrokernodes
-	NumberOfBrokerNodes int `json:"NumberOfBrokerNodes"`
+	NumberOfBrokerNodes utils.Value[int] `json:"NumberOfBrokerNodes"`
 
 	// OpenMonitoring AWS CloudFormation Property
 	// Required: false

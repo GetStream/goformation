@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RotationSchedule AWS CloudFormation Resource (AWS::SecretsManager::RotationSchedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html
@@ -22,7 +25,7 @@ type RotationSchedule struct {
 	// RotateImmediatelyOnUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotateimmediatelyonupdate
-	RotateImmediatelyOnUpdate *bool `json:"RotateImmediatelyOnUpdate,omitempty"`
+	RotateImmediatelyOnUpdate *utils.Value[bool] `json:"RotateImmediatelyOnUpdate,omitempty"`
 
 	// RotationLambdaARN AWS CloudFormation Property
 	// Required: false

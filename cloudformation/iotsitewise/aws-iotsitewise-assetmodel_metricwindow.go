@@ -4,7 +4,10 @@ package iotsitewise
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AssetModel_MetricWindow AWS CloudFormation Resource (AWS::IoTSiteWise::AssetModel.MetricWindow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-metricwindow.html

@@ -4,7 +4,10 @@ package licensemanager
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // License_Entitlement AWS CloudFormation Resource (AWS::LicenseManager::License.Entitlement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html
@@ -13,12 +16,12 @@ type License_Entitlement struct {
 	// AllowCheckIn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-allowcheckin
-	AllowCheckIn *bool `json:"AllowCheckIn,omitempty"`
+	AllowCheckIn *utils.Value[bool] `json:"AllowCheckIn,omitempty"`
 
 	// MaxCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-maxcount
-	MaxCount *int `json:"MaxCount,omitempty"`
+	MaxCount *utils.Value[int] `json:"MaxCount,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -28,7 +31,7 @@ type License_Entitlement struct {
 	// Overage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-overage
-	Overage *bool `json:"Overage,omitempty"`
+	Overage *utils.Value[bool] `json:"Overage,omitempty"`
 
 	// Unit AWS CloudFormation Property
 	// Required: true

@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VPNGateway AWS CloudFormation Resource (AWS::EC2::VPNGateway)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html
@@ -18,7 +21,7 @@ type VPNGateway struct {
 	// AmazonSideAsn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-amazonsideasn
-	AmazonSideAsn *int `json:"AmazonSideAsn,omitempty"`
+	AmazonSideAsn *utils.Value[int] `json:"AmazonSideAsn,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

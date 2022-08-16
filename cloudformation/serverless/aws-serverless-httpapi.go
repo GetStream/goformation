@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // HttpApi AWS CloudFormation Resource (AWS::Serverless::HttpApi)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
@@ -52,7 +55,7 @@ type HttpApi struct {
 	// DisableExecuteApiEndpoint AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-httpapi.html#sam-httpapi-disableexecuteapiendpoint
-	DisableExecuteApiEndpoint *bool `json:"DisableExecuteApiEndpoint,omitempty"`
+	DisableExecuteApiEndpoint *utils.Value[bool] `json:"DisableExecuteApiEndpoint,omitempty"`
 
 	// Domain AWS CloudFormation Property
 	// Required: false
@@ -62,7 +65,7 @@ type HttpApi struct {
 	// FailOnWarnings AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlesshttpapi
-	FailOnWarnings *bool `json:"FailOnWarnings,omitempty"`
+	FailOnWarnings *utils.Value[bool] `json:"FailOnWarnings,omitempty"`
 
 	// RouteSettings AWS CloudFormation Property
 	// Required: false

@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // PackageVersion AWS CloudFormation Resource (AWS::Panorama::PackageVersion)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html
@@ -17,7 +20,7 @@ type PackageVersion struct {
 	// MarkLatest AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-marklatest
-	MarkLatest *bool `json:"MarkLatest,omitempty"`
+	MarkLatest *utils.Value[bool] `json:"MarkLatest,omitempty"`
 
 	// OwnerAccount AWS CloudFormation Property
 	// Required: false

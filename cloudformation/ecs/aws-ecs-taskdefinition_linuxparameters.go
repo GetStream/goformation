@@ -4,7 +4,10 @@ package ecs
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TaskDefinition_LinuxParameters AWS CloudFormation Resource (AWS::ECS::TaskDefinition.LinuxParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html
@@ -23,22 +26,22 @@ type TaskDefinition_LinuxParameters struct {
 	// InitProcessEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-initprocessenabled
-	InitProcessEnabled *bool `json:"InitProcessEnabled,omitempty"`
+	InitProcessEnabled *utils.Value[bool] `json:"InitProcessEnabled,omitempty"`
 
 	// MaxSwap AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-maxswap
-	MaxSwap *int `json:"MaxSwap,omitempty"`
+	MaxSwap *utils.Value[int] `json:"MaxSwap,omitempty"`
 
 	// SharedMemorySize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-sharedmemorysize
-	SharedMemorySize *int `json:"SharedMemorySize,omitempty"`
+	SharedMemorySize *utils.Value[int] `json:"SharedMemorySize,omitempty"`
 
 	// Swappiness AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-swappiness
-	Swappiness *int `json:"Swappiness,omitempty"`
+	Swappiness *utils.Value[int] `json:"Swappiness,omitempty"`
 
 	// Tmpfs AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package dlm
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LifecyclePolicy_DeprecateRule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.DeprecateRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-deprecaterule.html
@@ -13,12 +16,12 @@ type LifecyclePolicy_DeprecateRule struct {
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-deprecaterule.html#cfn-dlm-lifecyclepolicy-deprecaterule-count
-	Count *int `json:"Count,omitempty"`
+	Count *utils.Value[int] `json:"Count,omitempty"`
 
 	// Interval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-deprecaterule.html#cfn-dlm-lifecyclepolicy-deprecaterule-interval
-	Interval *int `json:"Interval,omitempty"`
+	Interval *utils.Value[int] `json:"Interval,omitempty"`
 
 	// IntervalUnit AWS CloudFormation Property
 	// Required: false

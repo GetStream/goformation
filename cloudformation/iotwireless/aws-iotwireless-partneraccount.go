@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // PartnerAccount AWS CloudFormation Resource (AWS::IoTWireless::PartnerAccount)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html
@@ -18,7 +21,7 @@ type PartnerAccount struct {
 	// AccountLinked AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-accountlinked
-	AccountLinked *bool `json:"AccountLinked,omitempty"`
+	AccountLinked *utils.Value[bool] `json:"AccountLinked,omitempty"`
 
 	// Fingerprint AWS CloudFormation Property
 	// Required: false

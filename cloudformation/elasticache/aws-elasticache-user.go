@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // User AWS CloudFormation Resource (AWS::ElastiCache::User)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html
@@ -27,7 +30,7 @@ type User struct {
 	// NoPasswordRequired AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-nopasswordrequired
-	NoPasswordRequired *bool `json:"NoPasswordRequired,omitempty"`
+	NoPasswordRequired *utils.Value[bool] `json:"NoPasswordRequired,omitempty"`
 
 	// Passwords AWS CloudFormation Property
 	// Required: false

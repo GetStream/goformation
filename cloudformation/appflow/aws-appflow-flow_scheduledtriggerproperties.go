@@ -4,7 +4,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Flow_ScheduledTriggerProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.ScheduledTriggerProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html
@@ -23,7 +26,7 @@ type Flow_ScheduledTriggerProperties struct {
 	// FlowErrorDeactivationThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-flowerrordeactivationthreshold
-	FlowErrorDeactivationThreshold *int `json:"FlowErrorDeactivationThreshold,omitempty"`
+	FlowErrorDeactivationThreshold *utils.Value[int] `json:"FlowErrorDeactivationThreshold,omitempty"`
 
 	// ScheduleEndTime AWS CloudFormation Property
 	// Required: false

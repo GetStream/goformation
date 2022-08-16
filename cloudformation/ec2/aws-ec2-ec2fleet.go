@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EC2Fleet AWS CloudFormation Resource (AWS::EC2::EC2Fleet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html
@@ -37,7 +40,7 @@ type EC2Fleet struct {
 	// ReplaceUnhealthyInstances AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-replaceunhealthyinstances
-	ReplaceUnhealthyInstances *bool `json:"ReplaceUnhealthyInstances,omitempty"`
+	ReplaceUnhealthyInstances *utils.Value[bool] `json:"ReplaceUnhealthyInstances,omitempty"`
 
 	// SpotOptions AWS CloudFormation Property
 	// Required: false
@@ -57,7 +60,7 @@ type EC2Fleet struct {
 	// TerminateInstancesWithExpiration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-terminateinstanceswithexpiration
-	TerminateInstancesWithExpiration *bool `json:"TerminateInstancesWithExpiration,omitempty"`
+	TerminateInstancesWithExpiration *utils.Value[bool] `json:"TerminateInstancesWithExpiration,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false

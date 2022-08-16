@@ -4,7 +4,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SecurityGroup_Ingress AWS CloudFormation Resource (AWS::EC2::SecurityGroup.Ingress)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html
@@ -28,7 +31,7 @@ type SecurityGroup_Ingress struct {
 	// FromPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-fromport
-	FromPort *int `json:"FromPort,omitempty"`
+	FromPort *utils.Value[int] `json:"FromPort,omitempty"`
 
 	// IpProtocol AWS CloudFormation Property
 	// Required: true
@@ -58,7 +61,7 @@ type SecurityGroup_Ingress struct {
 	// ToPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-toport
-	ToPort *int `json:"ToPort,omitempty"`
+	ToPort *utils.Value[int] `json:"ToPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

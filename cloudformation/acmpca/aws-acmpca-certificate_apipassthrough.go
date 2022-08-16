@@ -4,7 +4,10 @@ package acmpca
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Certificate_ApiPassthrough AWS CloudFormation Resource (AWS::ACMPCA::Certificate.ApiPassthrough)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-apipassthrough.html

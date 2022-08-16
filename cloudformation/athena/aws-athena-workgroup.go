@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // WorkGroup AWS CloudFormation Resource (AWS::Athena::WorkGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html
@@ -28,7 +31,7 @@ type WorkGroup struct {
 	// RecursiveDeleteOption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-recursivedeleteoption
-	RecursiveDeleteOption *bool `json:"RecursiveDeleteOption,omitempty"`
+	RecursiveDeleteOption *utils.Value[bool] `json:"RecursiveDeleteOption,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false

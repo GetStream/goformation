@@ -4,7 +4,10 @@ package route53recoveryreadiness
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResourceSet_TargetResource AWS CloudFormation Resource (AWS::Route53RecoveryReadiness::ResourceSet.TargetResource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-targetresource.html

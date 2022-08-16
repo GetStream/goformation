@@ -4,7 +4,10 @@ package dlm
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LifecyclePolicy_CrossRegionCopyAction AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.CrossRegionCopyAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyaction.html

@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Subnet AWS CloudFormation Resource (AWS::EC2::Subnet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html
@@ -18,7 +21,7 @@ type Subnet struct {
 	// AssignIpv6AddressOnCreation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation
-	AssignIpv6AddressOnCreation *bool `json:"AssignIpv6AddressOnCreation,omitempty"`
+	AssignIpv6AddressOnCreation *utils.Value[bool] `json:"AssignIpv6AddressOnCreation,omitempty"`
 
 	// AvailabilityZone AWS CloudFormation Property
 	// Required: false
@@ -38,7 +41,7 @@ type Subnet struct {
 	// EnableDns64 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-enabledns64
-	EnableDns64 *bool `json:"EnableDns64,omitempty"`
+	EnableDns64 *utils.Value[bool] `json:"EnableDns64,omitempty"`
 
 	// Ipv6CidrBlock AWS CloudFormation Property
 	// Required: false
@@ -48,12 +51,12 @@ type Subnet struct {
 	// Ipv6Native AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6native
-	Ipv6Native *bool `json:"Ipv6Native,omitempty"`
+	Ipv6Native *utils.Value[bool] `json:"Ipv6Native,omitempty"`
 
 	// MapPublicIpOnLaunch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch
-	MapPublicIpOnLaunch *bool `json:"MapPublicIpOnLaunch,omitempty"`
+	MapPublicIpOnLaunch *utils.Value[bool] `json:"MapPublicIpOnLaunch,omitempty"`
 
 	// OutpostArn AWS CloudFormation Property
 	// Required: false

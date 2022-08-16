@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Instance AWS CloudFormation Resource (AWS::EC2::Instance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html
@@ -48,12 +51,12 @@ type Instance struct {
 	// DisableApiTermination AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-disableapitermination
-	DisableApiTermination *bool `json:"DisableApiTermination,omitempty"`
+	DisableApiTermination *utils.Value[bool] `json:"DisableApiTermination,omitempty"`
 
 	// EbsOptimized AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ebsoptimized
-	EbsOptimized *bool `json:"EbsOptimized,omitempty"`
+	EbsOptimized *utils.Value[bool] `json:"EbsOptimized,omitempty"`
 
 	// ElasticGpuSpecifications AWS CloudFormation Property
 	// Required: false
@@ -108,7 +111,7 @@ type Instance struct {
 	// Ipv6AddressCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ipv6addresscount
-	Ipv6AddressCount *int `json:"Ipv6AddressCount,omitempty"`
+	Ipv6AddressCount *utils.Value[int] `json:"Ipv6AddressCount,omitempty"`
 
 	// Ipv6Addresses AWS CloudFormation Property
 	// Required: false
@@ -138,7 +141,7 @@ type Instance struct {
 	// Monitoring AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-monitoring
-	Monitoring *bool `json:"Monitoring,omitempty"`
+	Monitoring *utils.Value[bool] `json:"Monitoring,omitempty"`
 
 	// NetworkInterfaces AWS CloudFormation Property
 	// Required: false
@@ -163,7 +166,7 @@ type Instance struct {
 	// PropagateTagsToVolumeOnCreation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-propagatetagstovolumeoncreation
-	PropagateTagsToVolumeOnCreation *bool `json:"PropagateTagsToVolumeOnCreation,omitempty"`
+	PropagateTagsToVolumeOnCreation *utils.Value[bool] `json:"PropagateTagsToVolumeOnCreation,omitempty"`
 
 	// RamdiskId AWS CloudFormation Property
 	// Required: false
@@ -183,7 +186,7 @@ type Instance struct {
 	// SourceDestCheck AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-sourcedestcheck
-	SourceDestCheck *bool `json:"SourceDestCheck,omitempty"`
+	SourceDestCheck *utils.Value[bool] `json:"SourceDestCheck,omitempty"`
 
 	// SsmAssociations AWS CloudFormation Property
 	// Required: false

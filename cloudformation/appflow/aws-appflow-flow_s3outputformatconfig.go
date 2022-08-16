@@ -4,7 +4,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Flow_S3OutputFormatConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.S3OutputFormatConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3outputformatconfig.html
@@ -28,7 +31,7 @@ type Flow_S3OutputFormatConfig struct {
 	// PreserveSourceDataTyping AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3outputformatconfig.html#cfn-appflow-flow-s3outputformatconfig-preservesourcedatatyping
-	PreserveSourceDataTyping *bool `json:"PreserveSourceDataTyping,omitempty"`
+	PreserveSourceDataTyping *utils.Value[bool] `json:"PreserveSourceDataTyping,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

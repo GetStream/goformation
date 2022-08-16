@@ -4,7 +4,10 @@ package licensemanager
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // License_BorrowConfiguration AWS CloudFormation Resource (AWS::LicenseManager::License.BorrowConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-borrowconfiguration.html
@@ -13,12 +16,12 @@ type License_BorrowConfiguration struct {
 	// AllowEarlyCheckIn AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-borrowconfiguration.html#cfn-licensemanager-license-borrowconfiguration-allowearlycheckin
-	AllowEarlyCheckIn bool `json:"AllowEarlyCheckIn"`
+	AllowEarlyCheckIn utils.Value[bool] `json:"AllowEarlyCheckIn"`
 
 	// MaxTimeToLiveInMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-borrowconfiguration.html#cfn-licensemanager-license-borrowconfiguration-maxtimetoliveinminutes
-	MaxTimeToLiveInMinutes int `json:"MaxTimeToLiveInMinutes"`
+	MaxTimeToLiveInMinutes utils.Value[int] `json:"MaxTimeToLiveInMinutes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

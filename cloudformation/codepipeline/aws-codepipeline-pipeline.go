@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Pipeline AWS CloudFormation Resource (AWS::CodePipeline::Pipeline)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html
@@ -38,7 +41,7 @@ type Pipeline struct {
 	// RestartExecutionOnUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-restartexecutiononupdate
-	RestartExecutionOnUpdate *bool `json:"RestartExecutionOnUpdate,omitempty"`
+	RestartExecutionOnUpdate *utils.Value[bool] `json:"RestartExecutionOnUpdate,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true

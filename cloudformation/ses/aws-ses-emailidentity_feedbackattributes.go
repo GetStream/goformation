@@ -4,7 +4,10 @@ package ses
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EmailIdentity_FeedbackAttributes AWS CloudFormation Resource (AWS::SES::EmailIdentity.FeedbackAttributes)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-feedbackattributes.html
@@ -13,7 +16,7 @@ type EmailIdentity_FeedbackAttributes struct {
 	// EmailForwardingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-emailidentity-feedbackattributes.html#cfn-ses-emailidentity-feedbackattributes-emailforwardingenabled
-	EmailForwardingEnabled *bool `json:"EmailForwardingEnabled,omitempty"`
+	EmailForwardingEnabled *utils.Value[bool] `json:"EmailForwardingEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

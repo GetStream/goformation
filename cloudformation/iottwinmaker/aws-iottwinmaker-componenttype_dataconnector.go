@@ -4,7 +4,10 @@ package iottwinmaker
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ComponentType_DataConnector AWS CloudFormation Resource (AWS::IoTTwinMaker::ComponentType.DataConnector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-dataconnector.html
@@ -13,7 +16,7 @@ type ComponentType_DataConnector struct {
 	// IsNative AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-dataconnector.html#cfn-iottwinmaker-componenttype-dataconnector-isnative
-	IsNative *bool `json:"IsNative,omitempty"`
+	IsNative *utils.Value[bool] `json:"IsNative,omitempty"`
 
 	// Lambda AWS CloudFormation Property
 	// Required: false

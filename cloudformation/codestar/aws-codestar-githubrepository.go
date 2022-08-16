@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // GitHubRepository AWS CloudFormation Resource (AWS::CodeStar::GitHubRepository)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html
@@ -27,12 +30,12 @@ type GitHubRepository struct {
 	// EnableIssues AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-enableissues
-	EnableIssues *bool `json:"EnableIssues,omitempty"`
+	EnableIssues *utils.Value[bool] `json:"EnableIssues,omitempty"`
 
 	// IsPrivate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-isprivate
-	IsPrivate *bool `json:"IsPrivate,omitempty"`
+	IsPrivate *utils.Value[bool] `json:"IsPrivate,omitempty"`
 
 	// RepositoryAccessToken AWS CloudFormation Property
 	// Required: false

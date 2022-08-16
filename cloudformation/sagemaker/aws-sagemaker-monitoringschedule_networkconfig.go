@@ -4,7 +4,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MonitoringSchedule_NetworkConfig AWS CloudFormation Resource (AWS::SageMaker::MonitoringSchedule.NetworkConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-networkconfig.html
@@ -13,12 +16,12 @@ type MonitoringSchedule_NetworkConfig struct {
 	// EnableInterContainerTrafficEncryption AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-networkconfig.html#cfn-sagemaker-monitoringschedule-networkconfig-enableintercontainertrafficencryption
-	EnableInterContainerTrafficEncryption *bool `json:"EnableInterContainerTrafficEncryption,omitempty"`
+	EnableInterContainerTrafficEncryption *utils.Value[bool] `json:"EnableInterContainerTrafficEncryption,omitempty"`
 
 	// EnableNetworkIsolation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-networkconfig.html#cfn-sagemaker-monitoringschedule-networkconfig-enablenetworkisolation
-	EnableNetworkIsolation *bool `json:"EnableNetworkIsolation,omitempty"`
+	EnableNetworkIsolation *utils.Value[bool] `json:"EnableNetworkIsolation,omitempty"`
 
 	// VpcConfig AWS CloudFormation Property
 	// Required: false

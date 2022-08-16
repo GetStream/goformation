@@ -4,7 +4,10 @@ package iot
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TopicRule_TopicRulePayload AWS CloudFormation Resource (AWS::IoT::TopicRule.TopicRulePayload)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html
@@ -33,7 +36,7 @@ type TopicRule_TopicRulePayload struct {
 	// RuleDisabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-ruledisabled
-	RuleDisabled *bool `json:"RuleDisabled,omitempty"`
+	RuleDisabled *utils.Value[bool] `json:"RuleDisabled,omitempty"`
 
 	// Sql AWS CloudFormation Property
 	// Required: true

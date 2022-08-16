@@ -4,7 +4,10 @@ package apprunner
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Service_ServiceObservabilityConfiguration AWS CloudFormation Resource (AWS::AppRunner::Service.ServiceObservabilityConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-serviceobservabilityconfiguration.html
@@ -18,7 +21,7 @@ type Service_ServiceObservabilityConfiguration struct {
 	// ObservabilityEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-serviceobservabilityconfiguration.html#cfn-apprunner-service-serviceobservabilityconfiguration-observabilityenabled
-	ObservabilityEnabled bool `json:"ObservabilityEnabled"`
+	ObservabilityEnabled utils.Value[bool] `json:"ObservabilityEnabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

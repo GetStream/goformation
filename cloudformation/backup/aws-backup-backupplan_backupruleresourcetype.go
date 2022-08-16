@@ -4,7 +4,10 @@ package backup
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // BackupPlan_BackupRuleResourceType AWS CloudFormation Resource (AWS::Backup::BackupPlan.BackupRuleResourceType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html
@@ -23,7 +26,7 @@ type BackupPlan_BackupRuleResourceType struct {
 	// EnableContinuousBackup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-enablecontinuousbackup
-	EnableContinuousBackup *bool `json:"EnableContinuousBackup,omitempty"`
+	EnableContinuousBackup *utils.Value[bool] `json:"EnableContinuousBackup,omitempty"`
 
 	// Lifecycle AWS CloudFormation Property
 	// Required: false

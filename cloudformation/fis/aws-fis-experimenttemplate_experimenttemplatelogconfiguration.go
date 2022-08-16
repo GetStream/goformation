@@ -4,7 +4,10 @@ package fis
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ExperimentTemplate_ExperimentTemplateLogConfiguration AWS CloudFormation Resource (AWS::FIS::ExperimentTemplate.ExperimentTemplateLogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatelogconfiguration.html
@@ -18,7 +21,7 @@ type ExperimentTemplate_ExperimentTemplateLogConfiguration struct {
 	// LogSchemaVersion AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatelogconfiguration.html#cfn-fis-experimenttemplate-experimenttemplatelogconfiguration-logschemaversion
-	LogSchemaVersion int `json:"LogSchemaVersion"`
+	LogSchemaVersion utils.Value[int] `json:"LogSchemaVersion"`
 
 	// S3Configuration AWS CloudFormation Property
 	// Required: false

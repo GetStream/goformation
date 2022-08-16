@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Trail AWS CloudFormation Resource (AWS::CloudTrail::Trail)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html
@@ -28,7 +31,7 @@ type Trail struct {
 	// EnableLogFileValidation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-enablelogfilevalidation
-	EnableLogFileValidation *bool `json:"EnableLogFileValidation,omitempty"`
+	EnableLogFileValidation *utils.Value[bool] `json:"EnableLogFileValidation,omitempty"`
 
 	// EventSelectors AWS CloudFormation Property
 	// Required: false
@@ -38,7 +41,7 @@ type Trail struct {
 	// IncludeGlobalServiceEvents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-includeglobalserviceevents
-	IncludeGlobalServiceEvents *bool `json:"IncludeGlobalServiceEvents,omitempty"`
+	IncludeGlobalServiceEvents *utils.Value[bool] `json:"IncludeGlobalServiceEvents,omitempty"`
 
 	// InsightSelectors AWS CloudFormation Property
 	// Required: false
@@ -48,17 +51,17 @@ type Trail struct {
 	// IsLogging AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-islogging
-	IsLogging bool `json:"IsLogging"`
+	IsLogging utils.Value[bool] `json:"IsLogging"`
 
 	// IsMultiRegionTrail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-ismultiregiontrail
-	IsMultiRegionTrail *bool `json:"IsMultiRegionTrail,omitempty"`
+	IsMultiRegionTrail *utils.Value[bool] `json:"IsMultiRegionTrail,omitempty"`
 
 	// IsOrganizationTrail AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-isorganizationtrail
-	IsOrganizationTrail *bool `json:"IsOrganizationTrail,omitempty"`
+	IsOrganizationTrail *utils.Value[bool] `json:"IsOrganizationTrail,omitempty"`
 
 	// KMSKeyId AWS CloudFormation Property
 	// Required: false

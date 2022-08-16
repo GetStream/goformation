@@ -4,7 +4,10 @@ package route53recoverycontrol
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SafetyRule_GatingRule AWS CloudFormation Resource (AWS::Route53RecoveryControl::SafetyRule.GatingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-gatingrule.html
@@ -23,7 +26,7 @@ type SafetyRule_GatingRule struct {
 	// WaitPeriodMs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-gatingrule.html#cfn-route53recoverycontrol-safetyrule-gatingrule-waitperiodms
-	WaitPeriodMs int `json:"WaitPeriodMs"`
+	WaitPeriodMs utils.Value[int] `json:"WaitPeriodMs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

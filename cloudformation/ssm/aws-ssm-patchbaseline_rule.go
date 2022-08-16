@@ -4,7 +4,10 @@ package ssm
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // PatchBaseline_Rule AWS CloudFormation Resource (AWS::SSM::PatchBaseline.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html
@@ -13,7 +16,7 @@ type PatchBaseline_Rule struct {
 	// ApproveAfterDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveafterdays
-	ApproveAfterDays *int `json:"ApproveAfterDays,omitempty"`
+	ApproveAfterDays *utils.Value[int] `json:"ApproveAfterDays,omitempty"`
 
 	// ApproveUntilDate AWS CloudFormation Property
 	// Required: false
@@ -28,7 +31,7 @@ type PatchBaseline_Rule struct {
 	// EnableNonSecurity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-enablenonsecurity
-	EnableNonSecurity *bool `json:"EnableNonSecurity,omitempty"`
+	EnableNonSecurity *utils.Value[bool] `json:"EnableNonSecurity,omitempty"`
 
 	// PatchFilterGroup AWS CloudFormation Property
 	// Required: false

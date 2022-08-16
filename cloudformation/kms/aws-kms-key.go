@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Key AWS CloudFormation Resource (AWS::KMS::Key)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html
@@ -23,12 +26,12 @@ type Key struct {
 	// EnableKeyRotation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-enablekeyrotation
-	EnableKeyRotation *bool `json:"EnableKeyRotation,omitempty"`
+	EnableKeyRotation *utils.Value[bool] `json:"EnableKeyRotation,omitempty"`
 
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-enabled
-	Enabled *bool `json:"Enabled,omitempty"`
+	Enabled *utils.Value[bool] `json:"Enabled,omitempty"`
 
 	// KeyPolicy AWS CloudFormation Property
 	// Required: true
@@ -48,12 +51,12 @@ type Key struct {
 	// MultiRegion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-multiregion
-	MultiRegion *bool `json:"MultiRegion,omitempty"`
+	MultiRegion *utils.Value[bool] `json:"MultiRegion,omitempty"`
 
 	// PendingWindowInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-pendingwindowindays
-	PendingWindowInDays *int `json:"PendingWindowInDays,omitempty"`
+	PendingWindowInDays *utils.Value[int] `json:"PendingWindowInDays,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

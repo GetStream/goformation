@@ -4,7 +4,10 @@ package serverless
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StateMachine_LoggingConfiguration AWS CloudFormation Resource (AWS::Serverless::StateMachine.LoggingConfiguration)
 // See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-loggingconfiguration.html
@@ -18,7 +21,7 @@ type StateMachine_LoggingConfiguration struct {
 	// IncludeExecutionData AWS CloudFormation Property
 	// Required: true
 	// See: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-loggingconfiguration.html
-	IncludeExecutionData bool `json:"IncludeExecutionData"`
+	IncludeExecutionData utils.Value[bool] `json:"IncludeExecutionData"`
 
 	// Level AWS CloudFormation Property
 	// Required: true

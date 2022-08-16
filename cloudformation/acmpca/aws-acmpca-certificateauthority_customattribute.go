@@ -4,7 +4,10 @@ package acmpca
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CertificateAuthority_CustomAttribute AWS CloudFormation Resource (AWS::ACMPCA::CertificateAuthority.CustomAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-customattribute.html

@@ -4,7 +4,10 @@ package codedeploy
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeploymentGroup_DeploymentReadyOption AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.DeploymentReadyOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html
@@ -18,7 +21,7 @@ type DeploymentGroup_DeploymentReadyOption struct {
 	// WaitTimeInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-deploymentreadyoption-waittimeinminutes
-	WaitTimeInMinutes *int `json:"WaitTimeInMinutes,omitempty"`
+	WaitTimeInMinutes *utils.Value[int] `json:"WaitTimeInMinutes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

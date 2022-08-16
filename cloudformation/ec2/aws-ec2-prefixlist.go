@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // PrefixList AWS CloudFormation Resource (AWS::EC2::PrefixList)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html
@@ -28,7 +31,7 @@ type PrefixList struct {
 	// MaxEntries AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-maxentries
-	MaxEntries int `json:"MaxEntries"`
+	MaxEntries utils.Value[int] `json:"MaxEntries"`
 
 	// PrefixListName AWS CloudFormation Property
 	// Required: true

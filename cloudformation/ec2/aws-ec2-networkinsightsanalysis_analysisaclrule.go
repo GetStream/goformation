@@ -4,7 +4,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // NetworkInsightsAnalysis_AnalysisAclRule AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.AnalysisAclRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html
@@ -18,7 +21,7 @@ type NetworkInsightsAnalysis_AnalysisAclRule struct {
 	// Egress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-egress
-	Egress *bool `json:"Egress,omitempty"`
+	Egress *utils.Value[bool] `json:"Egress,omitempty"`
 
 	// PortRange AWS CloudFormation Property
 	// Required: false
@@ -38,7 +41,7 @@ type NetworkInsightsAnalysis_AnalysisAclRule struct {
 	// RuleNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-rulenumber
-	RuleNumber *int `json:"RuleNumber,omitempty"`
+	RuleNumber *utils.Value[int] `json:"RuleNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

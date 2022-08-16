@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Distribution AWS CloudFormation Resource (AWS::Lightsail::Distribution)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html
@@ -53,7 +56,7 @@ type Distribution struct {
 	// IsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-isenabled
-	IsEnabled *bool `json:"IsEnabled,omitempty"`
+	IsEnabled *utils.Value[bool] `json:"IsEnabled,omitempty"`
 
 	// Origin AWS CloudFormation Property
 	// Required: true

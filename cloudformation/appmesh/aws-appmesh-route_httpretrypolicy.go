@@ -4,7 +4,10 @@ package appmesh
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Route_HttpRetryPolicy AWS CloudFormation Resource (AWS::AppMesh::Route.HttpRetryPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpretrypolicy.html
@@ -18,7 +21,7 @@ type Route_HttpRetryPolicy struct {
 	// MaxRetries AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpretrypolicy.html#cfn-appmesh-route-httpretrypolicy-maxretries
-	MaxRetries int `json:"MaxRetries"`
+	MaxRetries utils.Value[int] `json:"MaxRetries"`
 
 	// PerRetryTimeout AWS CloudFormation Property
 	// Required: true

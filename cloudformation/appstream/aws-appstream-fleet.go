@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Fleet AWS CloudFormation Resource (AWS::AppStream::Fleet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html
@@ -28,7 +31,7 @@ type Fleet struct {
 	// DisconnectTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-disconnecttimeoutinseconds
-	DisconnectTimeoutInSeconds *int `json:"DisconnectTimeoutInSeconds,omitempty"`
+	DisconnectTimeoutInSeconds *utils.Value[int] `json:"DisconnectTimeoutInSeconds,omitempty"`
 
 	// DisplayName AWS CloudFormation Property
 	// Required: false
@@ -43,7 +46,7 @@ type Fleet struct {
 	// EnableDefaultInternetAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-enabledefaultinternetaccess
-	EnableDefaultInternetAccess *bool `json:"EnableDefaultInternetAccess,omitempty"`
+	EnableDefaultInternetAccess *utils.Value[bool] `json:"EnableDefaultInternetAccess,omitempty"`
 
 	// FleetType AWS CloudFormation Property
 	// Required: false
@@ -58,7 +61,7 @@ type Fleet struct {
 	// IdleDisconnectTimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-idledisconnecttimeoutinseconds
-	IdleDisconnectTimeoutInSeconds *int `json:"IdleDisconnectTimeoutInSeconds,omitempty"`
+	IdleDisconnectTimeoutInSeconds *utils.Value[int] `json:"IdleDisconnectTimeoutInSeconds,omitempty"`
 
 	// ImageArn AWS CloudFormation Property
 	// Required: false
@@ -78,12 +81,12 @@ type Fleet struct {
 	// MaxConcurrentSessions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxconcurrentsessions
-	MaxConcurrentSessions *int `json:"MaxConcurrentSessions,omitempty"`
+	MaxConcurrentSessions *utils.Value[int] `json:"MaxConcurrentSessions,omitempty"`
 
 	// MaxUserDurationInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxuserdurationinseconds
-	MaxUserDurationInSeconds *int `json:"MaxUserDurationInSeconds,omitempty"`
+	MaxUserDurationInSeconds *utils.Value[int] `json:"MaxUserDurationInSeconds,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true

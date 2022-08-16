@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Experiment AWS CloudFormation Resource (AWS::Evidently::Experiment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html
@@ -48,7 +51,7 @@ type Experiment struct {
 	// RemoveSegment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-removesegment
-	RemoveSegment *bool `json:"RemoveSegment,omitempty"`
+	RemoveSegment *utils.Value[bool] `json:"RemoveSegment,omitempty"`
 
 	// RunningStatus AWS CloudFormation Property
 	// Required: false
@@ -58,7 +61,7 @@ type Experiment struct {
 	// SamplingRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-samplingrate
-	SamplingRate *int `json:"SamplingRate,omitempty"`
+	SamplingRate *utils.Value[int] `json:"SamplingRate,omitempty"`
 
 	// Segment AWS CloudFormation Property
 	// Required: false

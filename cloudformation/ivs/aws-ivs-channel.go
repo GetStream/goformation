@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel AWS CloudFormation Resource (AWS::IVS::Channel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html
@@ -18,7 +21,7 @@ type Channel struct {
 	// Authorized AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#cfn-ivs-channel-authorized
-	Authorized *bool `json:"Authorized,omitempty"`
+	Authorized *utils.Value[bool] `json:"Authorized,omitempty"`
 
 	// LatencyMode AWS CloudFormation Property
 	// Required: false

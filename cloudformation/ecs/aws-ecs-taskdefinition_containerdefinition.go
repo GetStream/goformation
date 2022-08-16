@@ -4,7 +4,10 @@ package ecs
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TaskDefinition_ContainerDefinition AWS CloudFormation Resource (AWS::ECS::TaskDefinition.ContainerDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html
@@ -18,7 +21,7 @@ type TaskDefinition_ContainerDefinition struct {
 	// Cpu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-cpu
-	Cpu *int `json:"Cpu,omitempty"`
+	Cpu *utils.Value[int] `json:"Cpu,omitempty"`
 
 	// DependsOn AWS CloudFormation Property
 	// Required: false
@@ -28,7 +31,7 @@ type TaskDefinition_ContainerDefinition struct {
 	// DisableNetworking AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-disablenetworking
-	DisableNetworking *bool `json:"DisableNetworking,omitempty"`
+	DisableNetworking *utils.Value[bool] `json:"DisableNetworking,omitempty"`
 
 	// DnsSearchDomains AWS CloudFormation Property
 	// Required: false
@@ -68,7 +71,7 @@ type TaskDefinition_ContainerDefinition struct {
 	// Essential AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-essential
-	Essential *bool `json:"Essential,omitempty"`
+	Essential *utils.Value[bool] `json:"Essential,omitempty"`
 
 	// ExtraHosts AWS CloudFormation Property
 	// Required: false
@@ -98,7 +101,7 @@ type TaskDefinition_ContainerDefinition struct {
 	// Interactive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-interactive
-	Interactive *bool `json:"Interactive,omitempty"`
+	Interactive *utils.Value[bool] `json:"Interactive,omitempty"`
 
 	// Links AWS CloudFormation Property
 	// Required: false
@@ -118,12 +121,12 @@ type TaskDefinition_ContainerDefinition struct {
 	// Memory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-memory
-	Memory *int `json:"Memory,omitempty"`
+	Memory *utils.Value[int] `json:"Memory,omitempty"`
 
 	// MemoryReservation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-memoryreservation
-	MemoryReservation *int `json:"MemoryReservation,omitempty"`
+	MemoryReservation *utils.Value[int] `json:"MemoryReservation,omitempty"`
 
 	// MountPoints AWS CloudFormation Property
 	// Required: false
@@ -143,17 +146,17 @@ type TaskDefinition_ContainerDefinition struct {
 	// Privileged AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-privileged
-	Privileged *bool `json:"Privileged,omitempty"`
+	Privileged *utils.Value[bool] `json:"Privileged,omitempty"`
 
 	// PseudoTerminal AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-pseudoterminal
-	PseudoTerminal *bool `json:"PseudoTerminal,omitempty"`
+	PseudoTerminal *utils.Value[bool] `json:"PseudoTerminal,omitempty"`
 
 	// ReadonlyRootFilesystem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-readonlyrootfilesystem
-	ReadonlyRootFilesystem *bool `json:"ReadonlyRootFilesystem,omitempty"`
+	ReadonlyRootFilesystem *utils.Value[bool] `json:"ReadonlyRootFilesystem,omitempty"`
 
 	// RepositoryCredentials AWS CloudFormation Property
 	// Required: false
@@ -173,12 +176,12 @@ type TaskDefinition_ContainerDefinition struct {
 	// StartTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-starttimeout
-	StartTimeout *int `json:"StartTimeout,omitempty"`
+	StartTimeout *utils.Value[int] `json:"StartTimeout,omitempty"`
 
 	// StopTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-stoptimeout
-	StopTimeout *int `json:"StopTimeout,omitempty"`
+	StopTimeout *utils.Value[int] `json:"StopTimeout,omitempty"`
 
 	// SystemControls AWS CloudFormation Property
 	// Required: false

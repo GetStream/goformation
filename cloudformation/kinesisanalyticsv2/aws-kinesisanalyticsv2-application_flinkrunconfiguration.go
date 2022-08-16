@@ -4,7 +4,10 @@ package kinesisanalyticsv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Application_FlinkRunConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.FlinkRunConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-flinkrunconfiguration.html
@@ -13,7 +16,7 @@ type Application_FlinkRunConfiguration struct {
 	// AllowNonRestoredState AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-flinkrunconfiguration.html#cfn-kinesisanalyticsv2-application-flinkrunconfiguration-allownonrestoredstate
-	AllowNonRestoredState *bool `json:"AllowNonRestoredState,omitempty"`
+	AllowNonRestoredState *utils.Value[bool] `json:"AllowNonRestoredState,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

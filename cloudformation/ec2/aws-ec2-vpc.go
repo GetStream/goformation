@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VPC AWS CloudFormation Resource (AWS::EC2::VPC)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html
@@ -23,12 +26,12 @@ type VPC struct {
 	// EnableDnsHostnames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-enablednshostnames
-	EnableDnsHostnames *bool `json:"EnableDnsHostnames,omitempty"`
+	EnableDnsHostnames *utils.Value[bool] `json:"EnableDnsHostnames,omitempty"`
 
 	// EnableDnsSupport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-enablednssupport
-	EnableDnsSupport *bool `json:"EnableDnsSupport,omitempty"`
+	EnableDnsSupport *utils.Value[bool] `json:"EnableDnsSupport,omitempty"`
 
 	// InstanceTenancy AWS CloudFormation Property
 	// Required: false
@@ -43,7 +46,7 @@ type VPC struct {
 	// Ipv4NetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-ipv4netmasklength
-	Ipv4NetmaskLength *int `json:"Ipv4NetmaskLength,omitempty"`
+	Ipv4NetmaskLength *utils.Value[int] `json:"Ipv4NetmaskLength,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

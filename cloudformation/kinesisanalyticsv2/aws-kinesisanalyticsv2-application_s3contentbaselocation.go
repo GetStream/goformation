@@ -4,7 +4,10 @@ package kinesisanalyticsv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Application_S3ContentBaseLocation AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.S3ContentBaseLocation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-s3contentbaselocation.html

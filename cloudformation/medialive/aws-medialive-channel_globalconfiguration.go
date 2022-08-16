@@ -4,7 +4,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_GlobalConfiguration AWS CloudFormation Resource (AWS::MediaLive::Channel.GlobalConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html
@@ -13,7 +16,7 @@ type Channel_GlobalConfiguration struct {
 	// InitialAudioGain AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html#cfn-medialive-channel-globalconfiguration-initialaudiogain
-	InitialAudioGain *int `json:"InitialAudioGain,omitempty"`
+	InitialAudioGain *utils.Value[int] `json:"InitialAudioGain,omitempty"`
 
 	// InputEndAction AWS CloudFormation Property
 	// Required: false

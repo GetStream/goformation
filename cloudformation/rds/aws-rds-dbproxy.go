@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DBProxy AWS CloudFormation Resource (AWS::RDS::DBProxy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html
@@ -27,7 +30,7 @@ type DBProxy struct {
 	// DebugLogging AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-debuglogging
-	DebugLogging *bool `json:"DebugLogging,omitempty"`
+	DebugLogging *utils.Value[bool] `json:"DebugLogging,omitempty"`
 
 	// EngineFamily AWS CloudFormation Property
 	// Required: true
@@ -37,12 +40,12 @@ type DBProxy struct {
 	// IdleClientTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-idleclienttimeout
-	IdleClientTimeout *int `json:"IdleClientTimeout,omitempty"`
+	IdleClientTimeout *utils.Value[int] `json:"IdleClientTimeout,omitempty"`
 
 	// RequireTLS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-requiretls
-	RequireTLS *bool `json:"RequireTLS,omitempty"`
+	RequireTLS *utils.Value[bool] `json:"RequireTLS,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true

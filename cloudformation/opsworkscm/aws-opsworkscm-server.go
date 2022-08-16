@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Server AWS CloudFormation Resource (AWS::OpsWorksCM::Server)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html
@@ -18,7 +21,7 @@ type Server struct {
 	// AssociatePublicIpAddress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-associatepublicipaddress
-	AssociatePublicIpAddress *bool `json:"AssociatePublicIpAddress,omitempty"`
+	AssociatePublicIpAddress *utils.Value[bool] `json:"AssociatePublicIpAddress,omitempty"`
 
 	// BackupId AWS CloudFormation Property
 	// Required: false
@@ -28,7 +31,7 @@ type Server struct {
 	// BackupRetentionCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-backupretentioncount
-	BackupRetentionCount *int `json:"BackupRetentionCount,omitempty"`
+	BackupRetentionCount *utils.Value[int] `json:"BackupRetentionCount,omitempty"`
 
 	// CustomCertificate AWS CloudFormation Property
 	// Required: false
@@ -48,7 +51,7 @@ type Server struct {
 	// DisableAutomatedBackup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-disableautomatedbackup
-	DisableAutomatedBackup *bool `json:"DisableAutomatedBackup,omitempty"`
+	DisableAutomatedBackup *utils.Value[bool] `json:"DisableAutomatedBackup,omitempty"`
 
 	// Engine AWS CloudFormation Property
 	// Required: false

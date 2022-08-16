@@ -4,7 +4,10 @@ package nimblestudio
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LaunchProfile_StreamingSessionStorageRoot AWS CloudFormation Resource (AWS::NimbleStudio::LaunchProfile.StreamingSessionStorageRoot)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamingsessionstorageroot.html

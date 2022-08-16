@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TypeActivation AWS CloudFormation Resource (AWS::CloudFormation::TypeActivation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-typeactivation.html
@@ -17,7 +20,7 @@ type TypeActivation struct {
 	// AutoUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-typeactivation.html#cfn-cloudformation-typeactivation-autoupdate
-	AutoUpdate *bool `json:"AutoUpdate,omitempty"`
+	AutoUpdate *utils.Value[bool] `json:"AutoUpdate,omitempty"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: false

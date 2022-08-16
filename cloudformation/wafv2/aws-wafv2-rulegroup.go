@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RuleGroup AWS CloudFormation Resource (AWS::WAFv2::RuleGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html
@@ -18,7 +21,7 @@ type RuleGroup struct {
 	// Capacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-capacity
-	Capacity int `json:"Capacity"`
+	Capacity utils.Value[int] `json:"Capacity"`
 
 	// CustomResponseBodies AWS CloudFormation Property
 	// Required: false

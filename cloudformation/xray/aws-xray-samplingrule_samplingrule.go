@@ -4,7 +4,10 @@ package xray
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SamplingRule_SamplingRule AWS CloudFormation Resource (AWS::XRay::SamplingRule.SamplingRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html
@@ -33,12 +36,12 @@ type SamplingRule_SamplingRule struct {
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-priority
-	Priority *int `json:"Priority,omitempty"`
+	Priority *utils.Value[int] `json:"Priority,omitempty"`
 
 	// ReservoirSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-reservoirsize
-	ReservoirSize *int `json:"ReservoirSize,omitempty"`
+	ReservoirSize *utils.Value[int] `json:"ReservoirSize,omitempty"`
 
 	// ResourceARN AWS CloudFormation Property
 	// Required: false
@@ -73,7 +76,7 @@ type SamplingRule_SamplingRule struct {
 	// Version AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-version
-	Version *int `json:"Version,omitempty"`
+	Version *utils.Value[int] `json:"Version,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

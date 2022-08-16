@@ -4,7 +4,10 @@ package opensearchservice
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Domain_SnapshotOptions AWS CloudFormation Resource (AWS::OpenSearchService::Domain.SnapshotOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-snapshotoptions.html
@@ -13,7 +16,7 @@ type Domain_SnapshotOptions struct {
 	// AutomatedSnapshotStartHour AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-snapshotoptions.html#cfn-opensearchservice-domain-snapshotoptions-automatedsnapshotstarthour
-	AutomatedSnapshotStartHour *int `json:"AutomatedSnapshotStartHour,omitempty"`
+	AutomatedSnapshotStartHour *utils.Value[int] `json:"AutomatedSnapshotStartHour,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

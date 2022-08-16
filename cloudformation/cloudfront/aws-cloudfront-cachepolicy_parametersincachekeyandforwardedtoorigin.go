@@ -4,7 +4,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CachePolicy_ParametersInCacheKeyAndForwardedToOrigin AWS CloudFormation Resource (AWS::CloudFront::CachePolicy.ParametersInCacheKeyAndForwardedToOrigin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html
@@ -18,12 +21,12 @@ type CachePolicy_ParametersInCacheKeyAndForwardedToOrigin struct {
 	// EnableAcceptEncodingBrotli AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-enableacceptencodingbrotli
-	EnableAcceptEncodingBrotli *bool `json:"EnableAcceptEncodingBrotli,omitempty"`
+	EnableAcceptEncodingBrotli *utils.Value[bool] `json:"EnableAcceptEncodingBrotli,omitempty"`
 
 	// EnableAcceptEncodingGzip AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-enableacceptencodinggzip
-	EnableAcceptEncodingGzip bool `json:"EnableAcceptEncodingGzip"`
+	EnableAcceptEncodingGzip utils.Value[bool] `json:"EnableAcceptEncodingGzip"`
 
 	// HeadersConfig AWS CloudFormation Property
 	// Required: true

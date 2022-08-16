@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FlowOutput AWS CloudFormation Resource (AWS::MediaConnect::FlowOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html
@@ -42,12 +45,12 @@ type FlowOutput struct {
 	// MaxLatency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-maxlatency
-	MaxLatency *int `json:"MaxLatency,omitempty"`
+	MaxLatency *utils.Value[int] `json:"MaxLatency,omitempty"`
 
 	// MinLatency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-minlatency
-	MinLatency *int `json:"MinLatency,omitempty"`
+	MinLatency *utils.Value[int] `json:"MinLatency,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -57,7 +60,7 @@ type FlowOutput struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-port
-	Port *int `json:"Port,omitempty"`
+	Port *utils.Value[int] `json:"Port,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -72,7 +75,7 @@ type FlowOutput struct {
 	// SmoothingLatency AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-smoothinglatency
-	SmoothingLatency *int `json:"SmoothingLatency,omitempty"`
+	SmoothingLatency *utils.Value[int] `json:"SmoothingLatency,omitempty"`
 
 	// StreamId AWS CloudFormation Property
 	// Required: false

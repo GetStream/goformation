@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // GlobalReplicationGroup AWS CloudFormation Resource (AWS::ElastiCache::GlobalReplicationGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html
@@ -17,7 +20,7 @@ type GlobalReplicationGroup struct {
 	// AutomaticFailoverEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-automaticfailoverenabled
-	AutomaticFailoverEnabled *bool `json:"AutomaticFailoverEnabled,omitempty"`
+	AutomaticFailoverEnabled *utils.Value[bool] `json:"AutomaticFailoverEnabled,omitempty"`
 
 	// CacheNodeType AWS CloudFormation Property
 	// Required: false
@@ -37,7 +40,7 @@ type GlobalReplicationGroup struct {
 	// GlobalNodeGroupCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalnodegroupcount
-	GlobalNodeGroupCount *int `json:"GlobalNodeGroupCount,omitempty"`
+	GlobalNodeGroupCount *utils.Value[int] `json:"GlobalNodeGroupCount,omitempty"`
 
 	// GlobalReplicationGroupDescription AWS CloudFormation Property
 	// Required: false

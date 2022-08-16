@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FileSystem AWS CloudFormation Resource (AWS::EFS::FileSystem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html
@@ -27,12 +30,12 @@ type FileSystem struct {
 	// BypassPolicyLockoutSafetyCheck AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-bypasspolicylockoutsafetycheck
-	BypassPolicyLockoutSafetyCheck *bool `json:"BypassPolicyLockoutSafetyCheck,omitempty"`
+	BypassPolicyLockoutSafetyCheck *utils.Value[bool] `json:"BypassPolicyLockoutSafetyCheck,omitempty"`
 
 	// Encrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-encrypted
-	Encrypted *bool `json:"Encrypted,omitempty"`
+	Encrypted *utils.Value[bool] `json:"Encrypted,omitempty"`
 
 	// FileSystemPolicy AWS CloudFormation Property
 	// Required: false

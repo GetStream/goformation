@@ -4,7 +4,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResponseHeadersPolicy_XSSProtection AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.XSSProtection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html
@@ -13,17 +16,17 @@ type ResponseHeadersPolicy_XSSProtection struct {
 	// ModeBlock AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-modeblock
-	ModeBlock *bool `json:"ModeBlock,omitempty"`
+	ModeBlock *utils.Value[bool] `json:"ModeBlock,omitempty"`
 
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-override
-	Override bool `json:"Override"`
+	Override utils.Value[bool] `json:"Override"`
 
 	// Protection AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-protection
-	Protection bool `json:"Protection"`
+	Protection utils.Value[bool] `json:"Protection"`
 
 	// ReportUri AWS CloudFormation Property
 	// Required: false

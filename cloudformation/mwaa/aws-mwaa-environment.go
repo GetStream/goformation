@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Environment AWS CloudFormation Resource (AWS::MWAA::Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html
@@ -52,12 +55,12 @@ type Environment struct {
 	// MaxWorkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-maxworkers
-	MaxWorkers *int `json:"MaxWorkers,omitempty"`
+	MaxWorkers *utils.Value[int] `json:"MaxWorkers,omitempty"`
 
 	// MinWorkers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-minworkers
-	MinWorkers *int `json:"MinWorkers,omitempty"`
+	MinWorkers *utils.Value[int] `json:"MinWorkers,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -92,7 +95,7 @@ type Environment struct {
 	// Schedulers AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-schedulers
-	Schedulers *int `json:"Schedulers,omitempty"`
+	Schedulers *utils.Value[int] `json:"Schedulers,omitempty"`
 
 	// SourceBucketArn AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package lex
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bot_OutputContext AWS CloudFormation Resource (AWS::Lex::Bot.OutputContext)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html
@@ -18,12 +21,12 @@ type Bot_OutputContext struct {
 	// TimeToLiveInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-timetoliveinseconds
-	TimeToLiveInSeconds int `json:"TimeToLiveInSeconds"`
+	TimeToLiveInSeconds utils.Value[int] `json:"TimeToLiveInSeconds"`
 
 	// TurnsToLive AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-turnstolive
-	TurnsToLive int `json:"TurnsToLive"`
+	TurnsToLive utils.Value[int] `json:"TurnsToLive"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

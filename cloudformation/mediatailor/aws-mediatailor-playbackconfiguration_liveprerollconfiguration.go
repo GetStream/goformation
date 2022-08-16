@@ -4,7 +4,10 @@ package mediatailor
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // PlaybackConfiguration_LivePreRollConfiguration AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration.LivePreRollConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-liveprerollconfiguration.html
@@ -18,7 +21,7 @@ type PlaybackConfiguration_LivePreRollConfiguration struct {
 	// MaxDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-liveprerollconfiguration.html#cfn-mediatailor-playbackconfiguration-liveprerollconfiguration-maxdurationseconds
-	MaxDurationSeconds *int `json:"MaxDurationSeconds,omitempty"`
+	MaxDurationSeconds *utils.Value[int] `json:"MaxDurationSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

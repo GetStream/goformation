@@ -4,7 +4,10 @@ package mediatailor
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // PlaybackConfiguration_HlsConfiguration AWS CloudFormation Resource (AWS::MediaTailor::PlaybackConfiguration.HlsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-hlsconfiguration.html

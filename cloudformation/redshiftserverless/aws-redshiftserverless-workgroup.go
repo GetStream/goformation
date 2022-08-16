@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Workgroup AWS CloudFormation Resource (AWS::RedshiftServerless::Workgroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html
@@ -18,7 +21,7 @@ type Workgroup struct {
 	// BaseCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-basecapacity
-	BaseCapacity *int `json:"BaseCapacity,omitempty"`
+	BaseCapacity *utils.Value[int] `json:"BaseCapacity,omitempty"`
 
 	// ConfigParameters AWS CloudFormation Property
 	// Required: false
@@ -28,7 +31,7 @@ type Workgroup struct {
 	// EnhancedVpcRouting AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-enhancedvpcrouting
-	EnhancedVpcRouting *bool `json:"EnhancedVpcRouting,omitempty"`
+	EnhancedVpcRouting *utils.Value[bool] `json:"EnhancedVpcRouting,omitempty"`
 
 	// NamespaceName AWS CloudFormation Property
 	// Required: false
@@ -38,7 +41,7 @@ type Workgroup struct {
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-publiclyaccessible
-	PubliclyAccessible *bool `json:"PubliclyAccessible,omitempty"`
+	PubliclyAccessible *utils.Value[bool] `json:"PubliclyAccessible,omitempty"`
 
 	// SecurityGroupIds AWS CloudFormation Property
 	// Required: false

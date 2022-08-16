@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Namespace AWS CloudFormation Resource (AWS::RedshiftServerless::Namespace)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html
@@ -43,7 +46,7 @@ type Namespace struct {
 	// FinalSnapshotRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-finalsnapshotretentionperiod
-	FinalSnapshotRetentionPeriod *int `json:"FinalSnapshotRetentionPeriod,omitempty"`
+	FinalSnapshotRetentionPeriod *utils.Value[int] `json:"FinalSnapshotRetentionPeriod,omitempty"`
 
 	// IamRoles AWS CloudFormation Property
 	// Required: false

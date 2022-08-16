@@ -4,7 +4,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Distribution_CacheBehavior AWS CloudFormation Resource (AWS::CloudFront::Distribution.CacheBehavior)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html
@@ -28,7 +31,7 @@ type Distribution_CacheBehavior struct {
 	// Compress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-compress
-	Compress *bool `json:"Compress,omitempty"`
+	Compress *utils.Value[bool] `json:"Compress,omitempty"`
 
 	// DefaultTTL AWS CloudFormation Property
 	// Required: false
@@ -88,7 +91,7 @@ type Distribution_CacheBehavior struct {
 	// SmoothStreaming AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-smoothstreaming
-	SmoothStreaming *bool `json:"SmoothStreaming,omitempty"`
+	SmoothStreaming *utils.Value[bool] `json:"SmoothStreaming,omitempty"`
 
 	// TargetOriginId AWS CloudFormation Property
 	// Required: true

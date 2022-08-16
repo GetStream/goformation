@@ -4,7 +4,10 @@ package s3objectlambda
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AccessPoint_TransformationConfiguration AWS CloudFormation Resource (AWS::S3ObjectLambda::AccessPoint.TransformationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-transformationconfiguration.html

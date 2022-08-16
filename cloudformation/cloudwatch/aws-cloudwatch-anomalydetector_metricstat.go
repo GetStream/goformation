@@ -4,7 +4,10 @@ package cloudwatch
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AnomalyDetector_MetricStat AWS CloudFormation Resource (AWS::CloudWatch::AnomalyDetector.MetricStat)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricstat.html
@@ -18,7 +21,7 @@ type AnomalyDetector_MetricStat struct {
 	// Period AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricstat.html#cfn-cloudwatch-anomalydetector-metricstat-period
-	Period int `json:"Period"`
+	Period utils.Value[int] `json:"Period"`
 
 	// Stat AWS CloudFormation Property
 	// Required: true

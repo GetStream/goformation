@@ -4,7 +4,10 @@ package guardduty
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Filter_Condition AWS CloudFormation Resource (AWS::GuardDuty::Filter.Condition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html
@@ -23,42 +26,42 @@ type Filter_Condition struct {
 	// GreaterThan AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-greaterthan
-	GreaterThan *int `json:"GreaterThan,omitempty"`
+	GreaterThan *utils.Value[int] `json:"GreaterThan,omitempty"`
 
 	// GreaterThanOrEqual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-greaterthanorequal
-	GreaterThanOrEqual *int `json:"GreaterThanOrEqual,omitempty"`
+	GreaterThanOrEqual *utils.Value[int] `json:"GreaterThanOrEqual,omitempty"`
 
 	// Gt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-gt
-	Gt *int `json:"Gt,omitempty"`
+	Gt *utils.Value[int] `json:"Gt,omitempty"`
 
 	// Gte AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-gte
-	Gte *int `json:"Gte,omitempty"`
+	Gte *utils.Value[int] `json:"Gte,omitempty"`
 
 	// LessThan AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lessthan
-	LessThan *int `json:"LessThan,omitempty"`
+	LessThan *utils.Value[int] `json:"LessThan,omitempty"`
 
 	// LessThanOrEqual AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lessthanorequal
-	LessThanOrEqual *int `json:"LessThanOrEqual,omitempty"`
+	LessThanOrEqual *utils.Value[int] `json:"LessThanOrEqual,omitempty"`
 
 	// Lt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lt
-	Lt *int `json:"Lt,omitempty"`
+	Lt *utils.Value[int] `json:"Lt,omitempty"`
 
 	// Lte AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lte
-	Lte *int `json:"Lte,omitempty"`
+	Lte *utils.Value[int] `json:"Lte,omitempty"`
 
 	// Neq AWS CloudFormation Property
 	// Required: false

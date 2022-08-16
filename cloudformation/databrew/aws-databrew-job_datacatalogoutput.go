@@ -4,7 +4,10 @@ package databrew
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Job_DataCatalogOutput AWS CloudFormation Resource (AWS::DataBrew::Job.DataCatalogOutput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-datacatalogoutput.html
@@ -28,7 +31,7 @@ type Job_DataCatalogOutput struct {
 	// Overwrite AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-datacatalogoutput.html#cfn-databrew-job-datacatalogoutput-overwrite
-	Overwrite *bool `json:"Overwrite,omitempty"`
+	Overwrite *utils.Value[bool] `json:"Overwrite,omitempty"`
 
 	// S3Options AWS CloudFormation Property
 	// Required: false

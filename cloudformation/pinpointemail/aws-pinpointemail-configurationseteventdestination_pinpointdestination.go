@@ -4,7 +4,10 @@ package pinpointemail
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConfigurationSetEventDestination_PinpointDestination AWS CloudFormation Resource (AWS::PinpointEmail::ConfigurationSetEventDestination.PinpointDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-pinpointdestination.html

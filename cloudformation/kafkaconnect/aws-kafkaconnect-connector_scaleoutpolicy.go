@@ -4,7 +4,10 @@ package kafkaconnect
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Connector_ScaleOutPolicy AWS CloudFormation Resource (AWS::KafkaConnect::Connector.ScaleOutPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-scaleoutpolicy.html
@@ -13,7 +16,7 @@ type Connector_ScaleOutPolicy struct {
 	// CpuUtilizationPercentage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-scaleoutpolicy.html#cfn-kafkaconnect-connector-scaleoutpolicy-cpuutilizationpercentage
-	CpuUtilizationPercentage int `json:"CpuUtilizationPercentage"`
+	CpuUtilizationPercentage utils.Value[int] `json:"CpuUtilizationPercentage"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

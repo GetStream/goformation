@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Stack AWS CloudFormation Resource (AWS::OpsWorks::Stack)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html
@@ -38,7 +41,7 @@ type Stack struct {
 	// ClonePermissions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-clonepermissions
-	ClonePermissions *bool `json:"ClonePermissions,omitempty"`
+	ClonePermissions *utils.Value[bool] `json:"ClonePermissions,omitempty"`
 
 	// ConfigurationManager AWS CloudFormation Property
 	// Required: false
@@ -128,12 +131,12 @@ type Stack struct {
 	// UseCustomCookbooks AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#usecustcookbooks
-	UseCustomCookbooks *bool `json:"UseCustomCookbooks,omitempty"`
+	UseCustomCookbooks *utils.Value[bool] `json:"UseCustomCookbooks,omitempty"`
 
 	// UseOpsworksSecurityGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-useopsworkssecuritygroups
-	UseOpsworksSecurityGroups *bool `json:"UseOpsworksSecurityGroups,omitempty"`
+	UseOpsworksSecurityGroups *utils.Value[bool] `json:"UseOpsworksSecurityGroups,omitempty"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: false

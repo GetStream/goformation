@@ -4,7 +4,10 @@ package fsx
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Volume_TieringPolicy AWS CloudFormation Resource (AWS::FSx::Volume.TieringPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-tieringpolicy.html
@@ -13,7 +16,7 @@ type Volume_TieringPolicy struct {
 	// CoolingPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-tieringpolicy.html#cfn-fsx-volume-ontapconfiguration-tieringpolicy-coolingperiod
-	CoolingPeriod *int `json:"CoolingPeriod,omitempty"`
+	CoolingPeriod *utils.Value[int] `json:"CoolingPeriod,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false

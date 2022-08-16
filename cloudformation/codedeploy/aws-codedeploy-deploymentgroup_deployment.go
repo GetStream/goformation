@@ -4,7 +4,10 @@ package codedeploy
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeploymentGroup_Deployment AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.Deployment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html
@@ -18,7 +21,7 @@ type DeploymentGroup_Deployment struct {
 	// IgnoreApplicationStopFailures AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-properties-codedeploy-deploymentgroup-deployment-ignoreapplicationstopfailures
-	IgnoreApplicationStopFailures *bool `json:"IgnoreApplicationStopFailures,omitempty"`
+	IgnoreApplicationStopFailures *utils.Value[bool] `json:"IgnoreApplicationStopFailures,omitempty"`
 
 	// Revision AWS CloudFormation Property
 	// Required: true

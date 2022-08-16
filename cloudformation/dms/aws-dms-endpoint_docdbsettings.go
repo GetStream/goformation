@@ -4,7 +4,10 @@ package dms
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Endpoint_DocDbSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.DocDbSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-docdbsettings.html
@@ -13,12 +16,12 @@ type Endpoint_DocDbSettings struct {
 	// DocsToInvestigate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-docdbsettings.html#cfn-dms-endpoint-docdbsettings-docstoinvestigate
-	DocsToInvestigate *int `json:"DocsToInvestigate,omitempty"`
+	DocsToInvestigate *utils.Value[int] `json:"DocsToInvestigate,omitempty"`
 
 	// ExtractDocId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-docdbsettings.html#cfn-dms-endpoint-docdbsettings-extractdocid
-	ExtractDocId *bool `json:"ExtractDocId,omitempty"`
+	ExtractDocId *utils.Value[bool] `json:"ExtractDocId,omitempty"`
 
 	// NestingLevel AWS CloudFormation Property
 	// Required: false

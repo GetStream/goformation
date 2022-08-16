@@ -4,7 +4,10 @@ package kinesisfirehose
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeliveryStream_ParquetSerDe AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.ParquetSerDe)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html
@@ -13,7 +16,7 @@ type DeliveryStream_ParquetSerDe struct {
 	// BlockSizeBytes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-blocksizebytes
-	BlockSizeBytes *int `json:"BlockSizeBytes,omitempty"`
+	BlockSizeBytes *utils.Value[int] `json:"BlockSizeBytes,omitempty"`
 
 	// Compression AWS CloudFormation Property
 	// Required: false
@@ -23,17 +26,17 @@ type DeliveryStream_ParquetSerDe struct {
 	// EnableDictionaryCompression AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-enabledictionarycompression
-	EnableDictionaryCompression *bool `json:"EnableDictionaryCompression,omitempty"`
+	EnableDictionaryCompression *utils.Value[bool] `json:"EnableDictionaryCompression,omitempty"`
 
 	// MaxPaddingBytes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-maxpaddingbytes
-	MaxPaddingBytes *int `json:"MaxPaddingBytes,omitempty"`
+	MaxPaddingBytes *utils.Value[int] `json:"MaxPaddingBytes,omitempty"`
 
 	// PageSizeBytes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-pagesizebytes
-	PageSizeBytes *int `json:"PageSizeBytes,omitempty"`
+	PageSizeBytes *utils.Value[int] `json:"PageSizeBytes,omitempty"`
 
 	// WriterVersion AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package route53resolver
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FirewallRuleGroup_FirewallRule AWS CloudFormation Resource (AWS::Route53Resolver::FirewallRuleGroup.FirewallRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html
@@ -28,7 +31,7 @@ type FirewallRuleGroup_FirewallRule struct {
 	// BlockOverrideTtl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-blockoverridettl
-	BlockOverrideTtl *int `json:"BlockOverrideTtl,omitempty"`
+	BlockOverrideTtl *utils.Value[int] `json:"BlockOverrideTtl,omitempty"`
 
 	// BlockResponse AWS CloudFormation Property
 	// Required: false
@@ -43,7 +46,7 @@ type FirewallRuleGroup_FirewallRule struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-priority
-	Priority int `json:"Priority"`
+	Priority utils.Value[int] `json:"Priority"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

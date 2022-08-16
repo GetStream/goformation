@@ -4,7 +4,10 @@ package dms
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Endpoint_MySqlSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.MySqlSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mysqlsettings.html
@@ -18,22 +21,22 @@ type Endpoint_MySqlSettings struct {
 	// CleanSourceMetadataOnMismatch AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mysqlsettings.html#cfn-dms-endpoint-mysqlsettings-cleansourcemetadataonmismatch
-	CleanSourceMetadataOnMismatch *bool `json:"CleanSourceMetadataOnMismatch,omitempty"`
+	CleanSourceMetadataOnMismatch *utils.Value[bool] `json:"CleanSourceMetadataOnMismatch,omitempty"`
 
 	// EventsPollInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mysqlsettings.html#cfn-dms-endpoint-mysqlsettings-eventspollinterval
-	EventsPollInterval *int `json:"EventsPollInterval,omitempty"`
+	EventsPollInterval *utils.Value[int] `json:"EventsPollInterval,omitempty"`
 
 	// MaxFileSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mysqlsettings.html#cfn-dms-endpoint-mysqlsettings-maxfilesize
-	MaxFileSize *int `json:"MaxFileSize,omitempty"`
+	MaxFileSize *utils.Value[int] `json:"MaxFileSize,omitempty"`
 
 	// ParallelLoadThreads AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mysqlsettings.html#cfn-dms-endpoint-mysqlsettings-parallelloadthreads
-	ParallelLoadThreads *int `json:"ParallelLoadThreads,omitempty"`
+	ParallelLoadThreads *utils.Value[int] `json:"ParallelLoadThreads,omitempty"`
 
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false

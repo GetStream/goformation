@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bucket AWS CloudFormation Resource (AWS::Lightsail::Bucket)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html
@@ -33,7 +36,7 @@ type Bucket struct {
 	// ObjectVersioning AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-objectversioning
-	ObjectVersioning *bool `json:"ObjectVersioning,omitempty"`
+	ObjectVersioning *utils.Value[bool] `json:"ObjectVersioning,omitempty"`
 
 	// ReadOnlyAccessAccounts AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package glue
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Table_TableInput AWS CloudFormation Resource (AWS::Glue::Table.TableInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html
@@ -38,7 +41,7 @@ type Table_TableInput struct {
 	// Retention AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-retention
-	Retention *int `json:"Retention,omitempty"`
+	Retention *utils.Value[int] `json:"Retention,omitempty"`
 
 	// StorageDescriptor AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package s3
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StorageLens_SelectionCriteria AWS CloudFormation Resource (AWS::S3::StorageLens.SelectionCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-selectioncriteria.html
@@ -18,7 +21,7 @@ type StorageLens_SelectionCriteria struct {
 	// MaxDepth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-selectioncriteria.html#cfn-s3-storagelens-selectioncriteria-maxdepth
-	MaxDepth *int `json:"MaxDepth,omitempty"`
+	MaxDepth *utils.Value[int] `json:"MaxDepth,omitempty"`
 
 	// MinStorageBytesPercentage AWS CloudFormation Property
 	// Required: false

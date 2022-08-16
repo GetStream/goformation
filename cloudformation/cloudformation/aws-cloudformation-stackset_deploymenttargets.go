@@ -4,7 +4,10 @@ package cloudformation
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StackSet_DeploymentTargets AWS CloudFormation Resource (AWS::CloudFormation::StackSet.DeploymentTargets)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-deploymenttargets.html

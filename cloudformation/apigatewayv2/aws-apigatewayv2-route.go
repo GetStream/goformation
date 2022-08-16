@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Route AWS CloudFormation Resource (AWS::ApiGatewayV2::Route)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html
@@ -22,7 +25,7 @@ type Route struct {
 	// ApiKeyRequired AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-apikeyrequired
-	ApiKeyRequired *bool `json:"ApiKeyRequired,omitempty"`
+	ApiKeyRequired *utils.Value[bool] `json:"ApiKeyRequired,omitempty"`
 
 	// AuthorizationScopes AWS CloudFormation Property
 	// Required: false

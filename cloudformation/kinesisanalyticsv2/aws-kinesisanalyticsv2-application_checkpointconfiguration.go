@@ -4,7 +4,10 @@ package kinesisanalyticsv2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Application_CheckpointConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.CheckpointConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html
@@ -13,12 +16,12 @@ type Application_CheckpointConfiguration struct {
 	// CheckpointInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html#cfn-kinesisanalyticsv2-application-checkpointconfiguration-checkpointinterval
-	CheckpointInterval *int `json:"CheckpointInterval,omitempty"`
+	CheckpointInterval *utils.Value[int] `json:"CheckpointInterval,omitempty"`
 
 	// CheckpointingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html#cfn-kinesisanalyticsv2-application-checkpointconfiguration-checkpointingenabled
-	CheckpointingEnabled *bool `json:"CheckpointingEnabled,omitempty"`
+	CheckpointingEnabled *utils.Value[bool] `json:"CheckpointingEnabled,omitempty"`
 
 	// ConfigurationType AWS CloudFormation Property
 	// Required: true
@@ -28,7 +31,7 @@ type Application_CheckpointConfiguration struct {
 	// MinPauseBetweenCheckpoints AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html#cfn-kinesisanalyticsv2-application-checkpointconfiguration-minpausebetweencheckpoints
-	MinPauseBetweenCheckpoints *int `json:"MinPauseBetweenCheckpoints,omitempty"`
+	MinPauseBetweenCheckpoints *utils.Value[int] `json:"MinPauseBetweenCheckpoints,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

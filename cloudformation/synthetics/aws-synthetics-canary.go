@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Canary AWS CloudFormation Resource (AWS::Synthetics::Canary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html
@@ -33,7 +36,7 @@ type Canary struct {
 	// DeleteLambdaResourcesOnCanaryDeletion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-deletelambdaresourcesoncanarydeletion
-	DeleteLambdaResourcesOnCanaryDeletion *bool `json:"DeleteLambdaResourcesOnCanaryDeletion,omitempty"`
+	DeleteLambdaResourcesOnCanaryDeletion *utils.Value[bool] `json:"DeleteLambdaResourcesOnCanaryDeletion,omitempty"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: true
@@ -43,7 +46,7 @@ type Canary struct {
 	// FailureRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-failureretentionperiod
-	FailureRetentionPeriod *int `json:"FailureRetentionPeriod,omitempty"`
+	FailureRetentionPeriod *utils.Value[int] `json:"FailureRetentionPeriod,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -68,12 +71,12 @@ type Canary struct {
 	// StartCanaryAfterCreation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-startcanaryaftercreation
-	StartCanaryAfterCreation bool `json:"StartCanaryAfterCreation"`
+	StartCanaryAfterCreation utils.Value[bool] `json:"StartCanaryAfterCreation"`
 
 	// SuccessRetentionPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-successretentionperiod
-	SuccessRetentionPeriod *int `json:"SuccessRetentionPeriod,omitempty"`
+	SuccessRetentionPeriod *utils.Value[int] `json:"SuccessRetentionPeriod,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -4,7 +4,10 @@ package fsx
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Volume_OpenZFSConfiguration AWS CloudFormation Resource (AWS::FSx::Volume.OpenZFSConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html
@@ -13,7 +16,7 @@ type Volume_OpenZFSConfiguration struct {
 	// CopyTagsToSnapshots AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-copytagstosnapshots
-	CopyTagsToSnapshots *bool `json:"CopyTagsToSnapshots,omitempty"`
+	CopyTagsToSnapshots *utils.Value[bool] `json:"CopyTagsToSnapshots,omitempty"`
 
 	// DataCompressionType AWS CloudFormation Property
 	// Required: false
@@ -43,22 +46,22 @@ type Volume_OpenZFSConfiguration struct {
 	// ReadOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-readonly
-	ReadOnly *bool `json:"ReadOnly,omitempty"`
+	ReadOnly *utils.Value[bool] `json:"ReadOnly,omitempty"`
 
 	// RecordSizeKiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-recordsizekib
-	RecordSizeKiB *int `json:"RecordSizeKiB,omitempty"`
+	RecordSizeKiB *utils.Value[int] `json:"RecordSizeKiB,omitempty"`
 
 	// StorageCapacityQuotaGiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-storagecapacityquotagib
-	StorageCapacityQuotaGiB *int `json:"StorageCapacityQuotaGiB,omitempty"`
+	StorageCapacityQuotaGiB *utils.Value[int] `json:"StorageCapacityQuotaGiB,omitempty"`
 
 	// StorageCapacityReservationGiB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration.html#cfn-fsx-volume-openzfsconfiguration-storagecapacityreservationgib
-	StorageCapacityReservationGiB *int `json:"StorageCapacityReservationGiB,omitempty"`
+	StorageCapacityReservationGiB *utils.Value[int] `json:"StorageCapacityReservationGiB,omitempty"`
 
 	// UserAndGroupQuotas AWS CloudFormation Property
 	// Required: false

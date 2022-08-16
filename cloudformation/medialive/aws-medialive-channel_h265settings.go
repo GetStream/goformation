@@ -4,7 +4,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_H265Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.H265Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html
@@ -28,12 +31,12 @@ type Channel_H265Settings struct {
 	// Bitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-bitrate
-	Bitrate *int `json:"Bitrate,omitempty"`
+	Bitrate *utils.Value[int] `json:"Bitrate,omitempty"`
 
 	// BufSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-bufsize
-	BufSize *int `json:"BufSize,omitempty"`
+	BufSize *utils.Value[int] `json:"BufSize,omitempty"`
 
 	// ColorMetadata AWS CloudFormation Property
 	// Required: false
@@ -63,17 +66,17 @@ type Channel_H265Settings struct {
 	// FramerateDenominator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-frameratedenominator
-	FramerateDenominator *int `json:"FramerateDenominator,omitempty"`
+	FramerateDenominator *utils.Value[int] `json:"FramerateDenominator,omitempty"`
 
 	// FramerateNumerator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-frameratenumerator
-	FramerateNumerator *int `json:"FramerateNumerator,omitempty"`
+	FramerateNumerator *utils.Value[int] `json:"FramerateNumerator,omitempty"`
 
 	// GopClosedCadence AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-gopclosedcadence
-	GopClosedCadence *int `json:"GopClosedCadence,omitempty"`
+	GopClosedCadence *utils.Value[int] `json:"GopClosedCadence,omitempty"`
 
 	// GopSize AWS CloudFormation Property
 	// Required: false
@@ -98,22 +101,22 @@ type Channel_H265Settings struct {
 	// MaxBitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-maxbitrate
-	MaxBitrate *int `json:"MaxBitrate,omitempty"`
+	MaxBitrate *utils.Value[int] `json:"MaxBitrate,omitempty"`
 
 	// MinIInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-miniinterval
-	MinIInterval *int `json:"MinIInterval,omitempty"`
+	MinIInterval *utils.Value[int] `json:"MinIInterval,omitempty"`
 
 	// ParDenominator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-pardenominator
-	ParDenominator *int `json:"ParDenominator,omitempty"`
+	ParDenominator *utils.Value[int] `json:"ParDenominator,omitempty"`
 
 	// ParNumerator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-parnumerator
-	ParNumerator *int `json:"ParNumerator,omitempty"`
+	ParNumerator *utils.Value[int] `json:"ParNumerator,omitempty"`
 
 	// Profile AWS CloudFormation Property
 	// Required: false
@@ -123,7 +126,7 @@ type Channel_H265Settings struct {
 	// QvbrQualityLevel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-qvbrqualitylevel
-	QvbrQualityLevel *int `json:"QvbrQualityLevel,omitempty"`
+	QvbrQualityLevel *utils.Value[int] `json:"QvbrQualityLevel,omitempty"`
 
 	// RateControlMode AWS CloudFormation Property
 	// Required: false
@@ -143,7 +146,7 @@ type Channel_H265Settings struct {
 	// Slices AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-slices
-	Slices *int `json:"Slices,omitempty"`
+	Slices *utils.Value[int] `json:"Slices,omitempty"`
 
 	// Tier AWS CloudFormation Property
 	// Required: false

@@ -9,7 +9,10 @@ import (
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResourceShare AWS CloudFormation Resource (AWS::RAM::ResourceShare)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html
@@ -18,7 +21,7 @@ type ResourceShare struct {
 	// AllowExternalPrincipals AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-allowexternalprincipals
-	AllowExternalPrincipals *bool `json:"AllowExternalPrincipals,omitempty"`
+	AllowExternalPrincipals *utils.Value[bool] `json:"AllowExternalPrincipals,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true

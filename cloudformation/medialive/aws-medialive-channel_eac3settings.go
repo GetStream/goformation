@@ -4,7 +4,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_Eac3Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.Eac3Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html
@@ -38,7 +41,7 @@ type Channel_Eac3Settings struct {
 	// Dialnorm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-dialnorm
-	Dialnorm *int `json:"Dialnorm,omitempty"`
+	Dialnorm *utils.Value[int] `json:"Dialnorm,omitempty"`
 
 	// DrcLine AWS CloudFormation Property
 	// Required: false

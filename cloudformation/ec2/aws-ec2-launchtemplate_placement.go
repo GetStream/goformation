@@ -4,7 +4,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LaunchTemplate_Placement AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.Placement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html
@@ -38,7 +41,7 @@ type LaunchTemplate_Placement struct {
 	// PartitionNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-partitionnumber
-	PartitionNumber *int `json:"PartitionNumber,omitempty"`
+	PartitionNumber *utils.Value[int] `json:"PartitionNumber,omitempty"`
 
 	// SpreadDomain AWS CloudFormation Property
 	// Required: false

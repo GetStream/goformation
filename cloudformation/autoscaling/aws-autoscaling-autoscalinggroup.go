@@ -8,7 +8,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AutoScalingGroup AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html
@@ -27,7 +30,7 @@ type AutoScalingGroup struct {
 	// CapacityRebalance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-capacityrebalance
-	CapacityRebalance *bool `json:"CapacityRebalance,omitempty"`
+	CapacityRebalance *utils.Value[bool] `json:"CapacityRebalance,omitempty"`
 
 	// Context AWS CloudFormation Property
 	// Required: false
@@ -42,7 +45,7 @@ type AutoScalingGroup struct {
 	// DefaultInstanceWarmup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-defaultinstancewarmup
-	DefaultInstanceWarmup *int `json:"DefaultInstanceWarmup,omitempty"`
+	DefaultInstanceWarmup *utils.Value[int] `json:"DefaultInstanceWarmup,omitempty"`
 
 	// DesiredCapacity AWS CloudFormation Property
 	// Required: false
@@ -57,7 +60,7 @@ type AutoScalingGroup struct {
 	// HealthCheckGracePeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-healthcheckgraceperiod
-	HealthCheckGracePeriod *int `json:"HealthCheckGracePeriod,omitempty"`
+	HealthCheckGracePeriod *utils.Value[int] `json:"HealthCheckGracePeriod,omitempty"`
 
 	// HealthCheckType AWS CloudFormation Property
 	// Required: false
@@ -92,7 +95,7 @@ type AutoScalingGroup struct {
 	// MaxInstanceLifetime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-maxinstancelifetime
-	MaxInstanceLifetime *int `json:"MaxInstanceLifetime,omitempty"`
+	MaxInstanceLifetime *utils.Value[int] `json:"MaxInstanceLifetime,omitempty"`
 
 	// MaxSize AWS CloudFormation Property
 	// Required: true
@@ -117,7 +120,7 @@ type AutoScalingGroup struct {
 	// NewInstancesProtectedFromScaleIn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-newinstancesprotectedfromscalein
-	NewInstancesProtectedFromScaleIn *bool `json:"NewInstancesProtectedFromScaleIn,omitempty"`
+	NewInstancesProtectedFromScaleIn *utils.Value[bool] `json:"NewInstancesProtectedFromScaleIn,omitempty"`
 
 	// NotificationConfigurations AWS CloudFormation Property
 	// Required: false

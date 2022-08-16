@@ -4,7 +4,10 @@ package imagebuilder
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DistributionConfiguration_FastLaunchSnapshotConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.FastLaunchSnapshotConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchsnapshotconfiguration.html
@@ -13,7 +16,7 @@ type DistributionConfiguration_FastLaunchSnapshotConfiguration struct {
 	// TargetResourceCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-fastlaunchsnapshotconfiguration.html#cfn-imagebuilder-distributionconfiguration-fastlaunchsnapshotconfiguration-targetresourcecount
-	TargetResourceCount *int `json:"TargetResourceCount,omitempty"`
+	TargetResourceCount *utils.Value[int] `json:"TargetResourceCount,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

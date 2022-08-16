@@ -4,7 +4,10 @@ package appmesh
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VirtualNode_HealthCheck AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.HealthCheck)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html
@@ -13,12 +16,12 @@ type VirtualNode_HealthCheck struct {
 	// HealthyThreshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-healthythreshold
-	HealthyThreshold int `json:"HealthyThreshold"`
+	HealthyThreshold utils.Value[int] `json:"HealthyThreshold"`
 
 	// IntervalMillis AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-intervalmillis
-	IntervalMillis int `json:"IntervalMillis"`
+	IntervalMillis utils.Value[int] `json:"IntervalMillis"`
 
 	// Path AWS CloudFormation Property
 	// Required: false
@@ -28,7 +31,7 @@ type VirtualNode_HealthCheck struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-port
-	Port *int `json:"Port,omitempty"`
+	Port *utils.Value[int] `json:"Port,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true
@@ -38,12 +41,12 @@ type VirtualNode_HealthCheck struct {
 	// TimeoutMillis AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-timeoutmillis
-	TimeoutMillis int `json:"TimeoutMillis"`
+	TimeoutMillis utils.Value[int] `json:"TimeoutMillis"`
 
 	// UnhealthyThreshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-healthcheck.html#cfn-appmesh-virtualnode-healthcheck-unhealthythreshold
-	UnhealthyThreshold int `json:"UnhealthyThreshold"`
+	UnhealthyThreshold utils.Value[int] `json:"UnhealthyThreshold"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

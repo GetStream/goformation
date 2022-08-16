@@ -4,7 +4,10 @@ package iotwireless
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // WirelessDevice_SessionKeysAbpV11 AWS CloudFormation Resource (AWS::IoTWireless::WirelessDevice.SessionKeysAbpV11)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html

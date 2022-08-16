@@ -4,7 +4,10 @@ package iotwireless
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // WirelessDevice_LoRaWANDevice AWS CloudFormation Resource (AWS::IoTWireless::WirelessDevice.LoRaWANDevice)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html

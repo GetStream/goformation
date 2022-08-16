@@ -4,7 +4,10 @@ package dms
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Endpoint_IbmDb2Settings AWS CloudFormation Resource (AWS::DMS::Endpoint.IbmDb2Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html
@@ -18,7 +21,7 @@ type Endpoint_IbmDb2Settings struct {
 	// MaxKBytesPerRead AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-maxkbytesperread
-	MaxKBytesPerRead *int `json:"MaxKBytesPerRead,omitempty"`
+	MaxKBytesPerRead *utils.Value[int] `json:"MaxKBytesPerRead,omitempty"`
 
 	// SecretsManagerAccessRoleArn AWS CloudFormation Property
 	// Required: false
@@ -33,7 +36,7 @@ type Endpoint_IbmDb2Settings struct {
 	// SetDataCaptureChanges AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-setdatacapturechanges
-	SetDataCaptureChanges *bool `json:"SetDataCaptureChanges,omitempty"`
+	SetDataCaptureChanges *utils.Value[bool] `json:"SetDataCaptureChanges,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

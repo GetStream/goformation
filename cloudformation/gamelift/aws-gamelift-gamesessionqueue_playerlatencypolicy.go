@@ -4,7 +4,10 @@ package gamelift
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // GameSessionQueue_PlayerLatencyPolicy AWS CloudFormation Resource (AWS::GameLift::GameSessionQueue.PlayerLatencyPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-playerlatencypolicy.html
@@ -13,12 +16,12 @@ type GameSessionQueue_PlayerLatencyPolicy struct {
 	// MaximumIndividualPlayerLatencyMilliseconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-playerlatencypolicy.html#cfn-gamelift-gamesessionqueue-playerlatencypolicy-maximumindividualplayerlatencymilliseconds
-	MaximumIndividualPlayerLatencyMilliseconds *int `json:"MaximumIndividualPlayerLatencyMilliseconds,omitempty"`
+	MaximumIndividualPlayerLatencyMilliseconds *utils.Value[int] `json:"MaximumIndividualPlayerLatencyMilliseconds,omitempty"`
 
 	// PolicyDurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-playerlatencypolicy.html#cfn-gamelift-gamesessionqueue-playerlatencypolicy-policydurationseconds
-	PolicyDurationSeconds *int `json:"PolicyDurationSeconds,omitempty"`
+	PolicyDurationSeconds *utils.Value[int] `json:"PolicyDurationSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

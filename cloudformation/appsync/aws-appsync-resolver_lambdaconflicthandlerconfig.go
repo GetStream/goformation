@@ -4,7 +4,10 @@ package appsync
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Resolver_LambdaConflictHandlerConfig AWS CloudFormation Resource (AWS::AppSync::Resolver.LambdaConflictHandlerConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-lambdaconflicthandlerconfig.html

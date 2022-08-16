@@ -4,7 +4,10 @@ package fsx
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Volume_UserAndGroupQuotas AWS CloudFormation Resource (AWS::FSx::Volume.UserAndGroupQuotas)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-userandgroupquotas.html
@@ -13,12 +16,12 @@ type Volume_UserAndGroupQuotas struct {
 	// Id AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-userandgroupquotas.html#cfn-fsx-volume-openzfsconfiguration-userandgroupquotas-id
-	Id int `json:"Id"`
+	Id utils.Value[int] `json:"Id"`
 
 	// StorageCapacityQuotaGiB AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-userandgroupquotas.html#cfn-fsx-volume-openzfsconfiguration-userandgroupquotas-storagecapacityquotagib
-	StorageCapacityQuotaGiB int `json:"StorageCapacityQuotaGiB"`
+	StorageCapacityQuotaGiB utils.Value[int] `json:"StorageCapacityQuotaGiB"`
 
 	// Type AWS CloudFormation Property
 	// Required: true

@@ -4,7 +4,10 @@ package kinesisfirehose
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeliveryStream_OrcSerDe AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.OrcSerDe)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html
@@ -13,7 +16,7 @@ type DeliveryStream_OrcSerDe struct {
 	// BlockSizeBytes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-blocksizebytes
-	BlockSizeBytes *int `json:"BlockSizeBytes,omitempty"`
+	BlockSizeBytes *utils.Value[int] `json:"BlockSizeBytes,omitempty"`
 
 	// BloomFilterColumns AWS CloudFormation Property
 	// Required: false
@@ -38,7 +41,7 @@ type DeliveryStream_OrcSerDe struct {
 	// EnablePadding AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-enablepadding
-	EnablePadding *bool `json:"EnablePadding,omitempty"`
+	EnablePadding *utils.Value[bool] `json:"EnablePadding,omitempty"`
 
 	// FormatVersion AWS CloudFormation Property
 	// Required: false
@@ -53,12 +56,12 @@ type DeliveryStream_OrcSerDe struct {
 	// RowIndexStride AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-rowindexstride
-	RowIndexStride *int `json:"RowIndexStride,omitempty"`
+	RowIndexStride *utils.Value[int] `json:"RowIndexStride,omitempty"`
 
 	// StripeSizeBytes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-stripesizebytes
-	StripeSizeBytes *int `json:"StripeSizeBytes,omitempty"`
+	StripeSizeBytes *utils.Value[int] `json:"StripeSizeBytes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

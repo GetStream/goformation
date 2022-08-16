@@ -4,7 +4,10 @@ package kendra
 
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSource_WebCrawlerConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.WebCrawlerConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html
@@ -18,7 +21,7 @@ type DataSource_WebCrawlerConfiguration struct {
 	// CrawlDepth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-crawldepth
-	CrawlDepth *int `json:"CrawlDepth,omitempty"`
+	CrawlDepth *utils.Value[int] `json:"CrawlDepth,omitempty"`
 
 	// MaxContentSizePerPageInMegaBytes AWS CloudFormation Property
 	// Required: false
@@ -28,12 +31,12 @@ type DataSource_WebCrawlerConfiguration struct {
 	// MaxLinksPerPage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-maxlinksperpage
-	MaxLinksPerPage *int `json:"MaxLinksPerPage,omitempty"`
+	MaxLinksPerPage *utils.Value[int] `json:"MaxLinksPerPage,omitempty"`
 
 	// MaxUrlsPerMinuteCrawlRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-webcrawlerconfiguration.html#cfn-kendra-datasource-webcrawlerconfiguration-maxurlsperminutecrawlrate
-	MaxUrlsPerMinuteCrawlRate *int `json:"MaxUrlsPerMinuteCrawlRate,omitempty"`
+	MaxUrlsPerMinuteCrawlRate *utils.Value[int] `json:"MaxUrlsPerMinuteCrawlRate,omitempty"`
 
 	// ProxyConfiguration AWS CloudFormation Property
 	// Required: false

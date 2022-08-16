@@ -5,7 +5,10 @@ package apigateway
 import (
 	"github.com/awslabs/goformation/v6/cloudformation/policies"
 	"github.com/awslabs/goformation/v6/cloudformation/tags"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Deployment_StageDescription AWS CloudFormation Resource (AWS::ApiGateway::Deployment.StageDescription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html
@@ -19,7 +22,7 @@ type Deployment_StageDescription struct {
 	// CacheClusterEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cacheclusterenabled
-	CacheClusterEnabled *bool `json:"CacheClusterEnabled,omitempty"`
+	CacheClusterEnabled *utils.Value[bool] `json:"CacheClusterEnabled,omitempty"`
 
 	// CacheClusterSize AWS CloudFormation Property
 	// Required: false
@@ -29,17 +32,17 @@ type Deployment_StageDescription struct {
 	// CacheDataEncrypted AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachedataencrypted
-	CacheDataEncrypted *bool `json:"CacheDataEncrypted,omitempty"`
+	CacheDataEncrypted *utils.Value[bool] `json:"CacheDataEncrypted,omitempty"`
 
 	// CacheTtlInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachettlinseconds
-	CacheTtlInSeconds *int `json:"CacheTtlInSeconds,omitempty"`
+	CacheTtlInSeconds *utils.Value[int] `json:"CacheTtlInSeconds,omitempty"`
 
 	// CachingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachingenabled
-	CachingEnabled *bool `json:"CachingEnabled,omitempty"`
+	CachingEnabled *utils.Value[bool] `json:"CachingEnabled,omitempty"`
 
 	// CanarySetting AWS CloudFormation Property
 	// Required: false
@@ -54,7 +57,7 @@ type Deployment_StageDescription struct {
 	// DataTraceEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-datatraceenabled
-	DataTraceEnabled *bool `json:"DataTraceEnabled,omitempty"`
+	DataTraceEnabled *utils.Value[bool] `json:"DataTraceEnabled,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -79,7 +82,7 @@ type Deployment_StageDescription struct {
 	// MetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-metricsenabled
-	MetricsEnabled *bool `json:"MetricsEnabled,omitempty"`
+	MetricsEnabled *utils.Value[bool] `json:"MetricsEnabled,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -89,7 +92,7 @@ type Deployment_StageDescription struct {
 	// ThrottlingBurstLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-throttlingburstlimit
-	ThrottlingBurstLimit *int `json:"ThrottlingBurstLimit,omitempty"`
+	ThrottlingBurstLimit *utils.Value[int] `json:"ThrottlingBurstLimit,omitempty"`
 
 	// ThrottlingRateLimit AWS CloudFormation Property
 	// Required: false
@@ -99,7 +102,7 @@ type Deployment_StageDescription struct {
 	// TracingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-tracingenabled
-	TracingEnabled *bool `json:"TracingEnabled,omitempty"`
+	TracingEnabled *utils.Value[bool] `json:"TracingEnabled,omitempty"`
 
 	// Variables AWS CloudFormation Property
 	// Required: false
