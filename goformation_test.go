@@ -16,6 +16,7 @@ import (
 	"github.com/awslabs/goformation/v6/cloudformation/s3"
 	"github.com/awslabs/goformation/v6/cloudformation/serverless"
 	"github.com/awslabs/goformation/v6/cloudformation/sns"
+	"github.com/awslabs/goformation/v6/cloudformation/utils"
 	"github.com/awslabs/goformation/v6/intrinsics"
 
 	. "github.com/onsi/ginkgo/v2"
@@ -565,7 +566,7 @@ var _ = Describe("Goformation", func() {
 							S3Location: &serverless.Function_S3Location{
 								Bucket:  "test-bucket",
 								Key:     "test-key",
-								Version: cloudformation.Int(100),
+								Version: utils.NewPtrValue(100),
 							},
 						},
 					},
@@ -866,7 +867,7 @@ var _ = Describe("Goformation", func() {
 		event := serverless.Function_Properties{
 			ApiEvent: &serverless.Function_ApiEvent{
 				Auth: &serverless.Function_Auth{
-					ApiKeyRequired:      cloudformation.Bool(true),
+					ApiKeyRequired:      utils.NewPtrValue(true),
 					AuthorizationScopes: cloudformation.Strings("scope1", "scope2"),
 					Authorizer:          cloudformation.String("aws_iam"),
 					ResourcePolicy: &serverless.Function_AuthResourcePolicy{
@@ -1416,7 +1417,7 @@ var _ = Describe("Goformation", func() {
 
 			globals := cloudformation.Globals{}
 			globals["Function"] = &global.Function{
-				Timeout: cloudformation.Int(123),
+				Timeout: utils.NewPtrValue(123),
 			}
 			template.Globals = globals
 

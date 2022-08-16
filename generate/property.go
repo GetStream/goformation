@@ -261,9 +261,32 @@ func (p Property) IsCustomType() bool {
 	return p.PrimitiveType == "" && p.ItemType == "" && p.PrimitiveItemType == ""
 }
 
-// GoType returns the correct type for this property
-// within a Go struct. For example, []string or map[string]AWSLambdaFunction_VpcConfig
 func (p Property) GoType(typename string, basename string, name string) string {
+	normalType := p.goType(typename, basename, name)
+
+	plainType := normalType
+	isPtr := normalType[0] == '*'
+	if isPtr {
+		plainType = plainType[1:]
+	}
+
+	switch plainType {
+	case "int", "bool":
+	default:
+		return normalType
+	}
+
+	generic := "utils.Value[" + plainType + "]"
+	if isPtr {
+		generic = "*" + generic
+	}
+
+	return generic
+}
+
+// goType returns the correct type for this property
+// within a Go struct. For example, []string or map[string]AWSLambdaFunction_VpcConfig
+func (p Property) goType(typename string, basename string, name string) string {
 
 	if p.Type == "Tag" && p.ItemType == "Tag" {
 		// WORKAROUND: On 2022-06-01, AWS::Rekognition::ModelPackage published a property
