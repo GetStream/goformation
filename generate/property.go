@@ -233,25 +233,32 @@ func (p Property) IsCustomType() bool {
 	return p.PrimitiveType == "" && p.ItemType == "" && p.PrimitiveItemType == ""
 }
 
+var valueTypes = map[string]struct{}{
+	"int":                         {},
+	"int64":                       {},
+	"float64":                     {},
+	"bool":                        {},
+	"Table_ProvisionedThroughput": {},
+}
+
 // GoType returns the correct type for this property
 // within a Go struct. For example, []string or map[string]AWSLambdaFunction_VpcConfig
 func (p Property) GoType(typename string, basename string, name string) string {
 	original := p.goType(typename, basename, name)
 	copyOriginal := original
 
-	isPtr := copyOriginal[0] == '*'
-	if isPtr {
+	if copyOriginal[0] == '*' {
 		copyOriginal = copyOriginal[1:]
 	}
 
-	switch copyOriginal {
-	case "int", "int64", "float64", "bool":
-	default:
+	if _, ok := valueTypes[copyOriginal]; !ok {
 		return original
 	}
 
+	// Always a pointer to accommodate zero-value marshaling.
+	// Or more precisely lack thereof.
 	newType := "utils.Value[" + copyOriginal + "]"
-	if isPtr {
+	if !p.IsCustomType() {
 		newType = "*" + newType
 	}
 
