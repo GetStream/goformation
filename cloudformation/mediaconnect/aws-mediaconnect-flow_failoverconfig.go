@@ -2,7 +2,10 @@ package mediaconnect
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Flow_FailoverConfig AWS CloudFormation Resource (AWS::MediaConnect::Flow.FailoverConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html
@@ -11,7 +14,7 @@ type Flow_FailoverConfig struct {
 	// RecoveryWindow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-recoverywindow
-	RecoveryWindow int `json:"RecoveryWindow,omitempty"`
+	RecoveryWindow *utils.Value[int] `json:"RecoveryWindow,omitempty"`
 
 	// State AWS CloudFormation Property
 	// Required: false

@@ -2,7 +2,10 @@ package lex
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bot_PromptSpecification AWS CloudFormation Resource (AWS::Lex::Bot.PromptSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html
@@ -11,17 +14,22 @@ type Bot_PromptSpecification struct {
 	// AllowInterrupt AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-allowinterrupt
-	AllowInterrupt bool `json:"AllowInterrupt,omitempty"`
+	AllowInterrupt *utils.Value[bool] `json:"AllowInterrupt,omitempty"`
 
 	// MaxRetries AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-maxretries
-	MaxRetries int `json:"MaxRetries"`
+	MaxRetries *utils.Value[int] `json:"MaxRetries"`
 
 	// MessageGroupsList AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-messagegroupslist
 	MessageGroupsList []Bot_MessageGroup `json:"MessageGroupsList,omitempty"`
+
+	// MessageSelectionStrategy AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-messageselectionstrategy
+	MessageSelectionStrategy string `json:"MessageSelectionStrategy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

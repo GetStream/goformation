@@ -2,7 +2,10 @@ package apigatewayv2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ApiGatewayManagedOverrides_IntegrationOverrides AWS CloudFormation Resource (AWS::ApiGatewayV2::ApiGatewayManagedOverrides.IntegrationOverrides)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-integrationoverrides.html
@@ -26,7 +29,7 @@ type ApiGatewayManagedOverrides_IntegrationOverrides struct {
 	// TimeoutInMillis AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-integrationoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-integrationoverrides-timeoutinmillis
-	TimeoutInMillis int `json:"TimeoutInMillis,omitempty"`
+	TimeoutInMillis *utils.Value[int] `json:"TimeoutInMillis,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

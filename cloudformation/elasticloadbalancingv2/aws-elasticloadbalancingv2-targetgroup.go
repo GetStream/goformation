@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TargetGroup AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::TargetGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html
@@ -16,12 +19,12 @@ type TargetGroup struct {
 	// HealthCheckEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckenabled
-	HealthCheckEnabled bool `json:"HealthCheckEnabled,omitempty"`
+	HealthCheckEnabled *utils.Value[bool] `json:"HealthCheckEnabled,omitempty"`
 
 	// HealthCheckIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthcheckintervalseconds
-	HealthCheckIntervalSeconds int `json:"HealthCheckIntervalSeconds,omitempty"`
+	HealthCheckIntervalSeconds *utils.Value[int] `json:"HealthCheckIntervalSeconds,omitempty"`
 
 	// HealthCheckPath AWS CloudFormation Property
 	// Required: false
@@ -41,12 +44,12 @@ type TargetGroup struct {
 	// HealthCheckTimeoutSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthchecktimeoutseconds
-	HealthCheckTimeoutSeconds int `json:"HealthCheckTimeoutSeconds,omitempty"`
+	HealthCheckTimeoutSeconds *utils.Value[int] `json:"HealthCheckTimeoutSeconds,omitempty"`
 
 	// HealthyThresholdCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthythresholdcount
-	HealthyThresholdCount int `json:"HealthyThresholdCount,omitempty"`
+	HealthyThresholdCount *utils.Value[int] `json:"HealthyThresholdCount,omitempty"`
 
 	// IpAddressType AWS CloudFormation Property
 	// Required: false
@@ -66,7 +69,7 @@ type TargetGroup struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-port
-	Port int `json:"Port,omitempty"`
+	Port *utils.Value[int] `json:"Port,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: false
@@ -101,7 +104,7 @@ type TargetGroup struct {
 	// UnhealthyThresholdCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-unhealthythresholdcount
-	UnhealthyThresholdCount int `json:"UnhealthyThresholdCount,omitempty"`
+	UnhealthyThresholdCount *utils.Value[int] `json:"UnhealthyThresholdCount,omitempty"`
 
 	// VpcId AWS CloudFormation Property
 	// Required: false

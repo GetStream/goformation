@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ComputeEnvironment AWS CloudFormation Resource (AWS::Batch::ComputeEnvironment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html
@@ -21,6 +24,11 @@ type ComputeEnvironment struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeresources
 	ComputeResources *ComputeEnvironment_ComputeResources `json:"ComputeResources,omitempty"`
+
+	// ReplaceComputeEnvironment AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-replacecomputeenvironment
+	ReplaceComputeEnvironment *utils.Value[bool] `json:"ReplaceComputeEnvironment,omitempty"`
 
 	// ServiceRole AWS CloudFormation Property
 	// Required: false
@@ -45,7 +53,12 @@ type ComputeEnvironment struct {
 	// UnmanagedvCpus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-unmanagedvcpus
-	UnmanagedvCpus int `json:"UnmanagedvCpus,omitempty"`
+	UnmanagedvCpus *utils.Value[int] `json:"UnmanagedvCpus,omitempty"`
+
+	// UpdatePolicy AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-updatepolicy
+	UpdatePolicy *ComputeEnvironment_UpdatePolicy `json:"UpdatePolicy,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

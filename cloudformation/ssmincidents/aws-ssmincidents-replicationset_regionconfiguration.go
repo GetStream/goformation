@@ -2,7 +2,10 @@ package ssmincidents
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ReplicationSet_RegionConfiguration AWS CloudFormation Resource (AWS::SSMIncidents::ReplicationSet.RegionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-replicationset-regionconfiguration.html

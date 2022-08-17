@@ -2,7 +2,10 @@ package servicecatalog
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CloudFormationProduct_ProvisioningArtifactProperties AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html
@@ -16,7 +19,7 @@ type CloudFormationProduct_ProvisioningArtifactProperties struct {
 	// DisableTemplateValidation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactproperties-disabletemplatevalidation
-	DisableTemplateValidation bool `json:"DisableTemplateValidation,omitempty"`
+	DisableTemplateValidation *utils.Value[bool] `json:"DisableTemplateValidation,omitempty"`
 
 	// Info AWS CloudFormation Property
 	// Required: true

@@ -2,7 +2,10 @@ package appmesh
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // GatewayRoute_GrpcGatewayRouteMetadata AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.GrpcGatewayRouteMetadata)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html
@@ -11,7 +14,7 @@ type GatewayRoute_GrpcGatewayRouteMetadata struct {
 	// Invert AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-invert
-	Invert bool `json:"Invert,omitempty"`
+	Invert *utils.Value[bool] `json:"Invert,omitempty"`
 
 	// Match AWS CloudFormation Property
 	// Required: false

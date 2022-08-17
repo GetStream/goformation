@@ -2,7 +2,10 @@ package ecs
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster_ExecuteCommandLogConfiguration AWS CloudFormation Resource (AWS::ECS::Cluster.ExecuteCommandLogConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandlogconfiguration.html
@@ -11,7 +14,7 @@ type Cluster_ExecuteCommandLogConfiguration struct {
 	// CloudWatchEncryptionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandlogconfiguration.html#cfn-ecs-cluster-executecommandlogconfiguration-cloudwatchencryptionenabled
-	CloudWatchEncryptionEnabled bool `json:"CloudWatchEncryptionEnabled,omitempty"`
+	CloudWatchEncryptionEnabled *utils.Value[bool] `json:"CloudWatchEncryptionEnabled,omitempty"`
 
 	// CloudWatchLogGroupName AWS CloudFormation Property
 	// Required: false
@@ -26,7 +29,7 @@ type Cluster_ExecuteCommandLogConfiguration struct {
 	// S3EncryptionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandlogconfiguration.html#cfn-ecs-cluster-executecommandlogconfiguration-s3encryptionenabled
-	S3EncryptionEnabled bool `json:"S3EncryptionEnabled,omitempty"`
+	S3EncryptionEnabled *utils.Value[bool] `json:"S3EncryptionEnabled,omitempty"`
 
 	// S3KeyPrefix AWS CloudFormation Property
 	// Required: false

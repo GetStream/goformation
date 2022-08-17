@@ -2,7 +2,10 @@ package opsworks
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Layer_AutoScalingThresholds AWS CloudFormation Resource (AWS::OpsWorks::Layer.AutoScalingThresholds)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html
@@ -11,32 +14,32 @@ type Layer_AutoScalingThresholds struct {
 	// CpuThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-cputhreshold
-	CpuThreshold float64 `json:"CpuThreshold,omitempty"`
+	CpuThreshold *utils.Value[float64] `json:"CpuThreshold,omitempty"`
 
 	// IgnoreMetricsTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-ignoremetricstime
-	IgnoreMetricsTime int `json:"IgnoreMetricsTime,omitempty"`
+	IgnoreMetricsTime *utils.Value[int] `json:"IgnoreMetricsTime,omitempty"`
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-instancecount
-	InstanceCount int `json:"InstanceCount,omitempty"`
+	InstanceCount *utils.Value[int] `json:"InstanceCount,omitempty"`
 
 	// LoadThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-loadthreshold
-	LoadThreshold float64 `json:"LoadThreshold,omitempty"`
+	LoadThreshold *utils.Value[float64] `json:"LoadThreshold,omitempty"`
 
 	// MemoryThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-memorythreshold
-	MemoryThreshold float64 `json:"MemoryThreshold,omitempty"`
+	MemoryThreshold *utils.Value[float64] `json:"MemoryThreshold,omitempty"`
 
 	// ThresholdsWaitTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-thresholdwaittime
-	ThresholdsWaitTime int `json:"ThresholdsWaitTime,omitempty"`
+	ThresholdsWaitTime *utils.Value[int] `json:"ThresholdsWaitTime,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

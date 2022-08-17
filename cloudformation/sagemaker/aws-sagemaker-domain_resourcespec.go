@@ -2,7 +2,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Domain_ResourceSpec AWS CloudFormation Resource (AWS::SageMaker::Domain.ResourceSpec)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html
@@ -12,6 +15,11 @@ type Domain_ResourceSpec struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html#cfn-sagemaker-domain-resourcespec-instancetype
 	InstanceType string `json:"InstanceType,omitempty"`
+
+	// LifecycleConfigArn AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html#cfn-sagemaker-domain-resourcespec-lifecycleconfigarn
+	LifecycleConfigArn string `json:"LifecycleConfigArn,omitempty"`
 
 	// SageMakerImageArn AWS CloudFormation Property
 	// Required: false

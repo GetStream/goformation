@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // IdentityPool AWS CloudFormation Resource (AWS::Cognito::IdentityPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html
@@ -15,12 +18,12 @@ type IdentityPool struct {
 	// AllowClassicFlow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowclassicflow
-	AllowClassicFlow bool `json:"AllowClassicFlow,omitempty"`
+	AllowClassicFlow *utils.Value[bool] `json:"AllowClassicFlow,omitempty"`
 
 	// AllowUnauthenticatedIdentities AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowunauthenticatedidentities
-	AllowUnauthenticatedIdentities bool `json:"AllowUnauthenticatedIdentities"`
+	AllowUnauthenticatedIdentities *utils.Value[bool] `json:"AllowUnauthenticatedIdentities"`
 
 	// CognitoEvents AWS CloudFormation Property
 	// Required: false

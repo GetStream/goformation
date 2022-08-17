@@ -2,7 +2,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // NetworkInsightsAnalysis_PathComponent AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.PathComponent)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html
@@ -46,7 +49,7 @@ type NetworkInsightsAnalysis_PathComponent struct {
 	// SequenceNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sequencenumber
-	SequenceNumber int `json:"SequenceNumber,omitempty"`
+	SequenceNumber *utils.Value[int] `json:"SequenceNumber,omitempty"`
 
 	// SourceVpc AWS CloudFormation Property
 	// Required: false
@@ -57,6 +60,16 @@ type NetworkInsightsAnalysis_PathComponent struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-subnet
 	Subnet *NetworkInsightsAnalysis_AnalysisComponent `json:"Subnet,omitempty"`
+
+	// TransitGateway AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgateway
+	TransitGateway *NetworkInsightsAnalysis_AnalysisComponent `json:"TransitGateway,omitempty"`
+
+	// TransitGatewayRouteTableRoute AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgatewayroutetableroute
+	TransitGatewayRouteTableRoute *NetworkInsightsAnalysis_TransitGatewayRouteTableRoute `json:"TransitGatewayRouteTableRoute,omitempty"`
 
 	// Vpc AWS CloudFormation Property
 	// Required: false

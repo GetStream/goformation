@@ -2,7 +2,10 @@ package customerprofiles
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Integration_SalesforceSourceProperties AWS CloudFormation Resource (AWS::CustomerProfiles::Integration.SalesforceSourceProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-salesforcesourceproperties.html
@@ -11,12 +14,12 @@ type Integration_SalesforceSourceProperties struct {
 	// EnableDynamicFieldUpdate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-salesforcesourceproperties.html#cfn-customerprofiles-integration-salesforcesourceproperties-enabledynamicfieldupdate
-	EnableDynamicFieldUpdate bool `json:"EnableDynamicFieldUpdate,omitempty"`
+	EnableDynamicFieldUpdate *utils.Value[bool] `json:"EnableDynamicFieldUpdate,omitempty"`
 
 	// IncludeDeletedRecords AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-salesforcesourceproperties.html#cfn-customerprofiles-integration-salesforcesourceproperties-includedeletedrecords
-	IncludeDeletedRecords bool `json:"IncludeDeletedRecords,omitempty"`
+	IncludeDeletedRecords *utils.Value[bool] `json:"IncludeDeletedRecords,omitempty"`
 
 	// Object AWS CloudFormation Property
 	// Required: true

@@ -2,7 +2,10 @@ package fsx
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FileSystem_RootVolumeConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.RootVolumeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html
@@ -11,7 +14,7 @@ type FileSystem_RootVolumeConfiguration struct {
 	// CopyTagsToSnapshots AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-copytagstosnapshots
-	CopyTagsToSnapshots bool `json:"CopyTagsToSnapshots,omitempty"`
+	CopyTagsToSnapshots *utils.Value[bool] `json:"CopyTagsToSnapshots,omitempty"`
 
 	// DataCompressionType AWS CloudFormation Property
 	// Required: false
@@ -26,7 +29,12 @@ type FileSystem_RootVolumeConfiguration struct {
 	// ReadOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-readonly
-	ReadOnly bool `json:"ReadOnly,omitempty"`
+	ReadOnly *utils.Value[bool] `json:"ReadOnly,omitempty"`
+
+	// RecordSizeKiB AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-rootvolumeconfiguration-recordsizekib
+	RecordSizeKiB *utils.Value[int] `json:"RecordSizeKiB,omitempty"`
 
 	// UserAndGroupQuotas AWS CloudFormation Property
 	// Required: false

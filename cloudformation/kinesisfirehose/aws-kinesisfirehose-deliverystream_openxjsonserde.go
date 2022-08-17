@@ -2,7 +2,10 @@ package kinesisfirehose
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeliveryStream_OpenXJsonSerDe AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.OpenXJsonSerDe)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-openxjsonserde.html
@@ -11,7 +14,7 @@ type DeliveryStream_OpenXJsonSerDe struct {
 	// CaseInsensitive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-openxjsonserde.html#cfn-kinesisfirehose-deliverystream-openxjsonserde-caseinsensitive
-	CaseInsensitive bool `json:"CaseInsensitive,omitempty"`
+	CaseInsensitive *utils.Value[bool] `json:"CaseInsensitive,omitempty"`
 
 	// ColumnToJsonKeyMappings AWS CloudFormation Property
 	// Required: false
@@ -21,7 +24,7 @@ type DeliveryStream_OpenXJsonSerDe struct {
 	// ConvertDotsInJsonKeysToUnderscores AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-openxjsonserde.html#cfn-kinesisfirehose-deliverystream-openxjsonserde-convertdotsinjsonkeystounderscores
-	ConvertDotsInJsonKeysToUnderscores bool `json:"ConvertDotsInJsonKeysToUnderscores,omitempty"`
+	ConvertDotsInJsonKeysToUnderscores *utils.Value[bool] `json:"ConvertDotsInJsonKeysToUnderscores,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

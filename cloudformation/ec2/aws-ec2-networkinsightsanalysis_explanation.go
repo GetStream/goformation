@@ -2,7 +2,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // NetworkInsightsAnalysis_Explanation AWS CloudFormation Resource (AWS::EC2::NetworkInsightsAnalysis.Explanation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html
@@ -101,7 +104,7 @@ type NetworkInsightsAnalysis_Explanation struct {
 	// LoadBalancerListenerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerlistenerport
-	LoadBalancerListenerPort int `json:"LoadBalancerListenerPort,omitempty"`
+	LoadBalancerListenerPort *utils.Value[int] `json:"LoadBalancerListenerPort,omitempty"`
 
 	// LoadBalancerTarget AWS CloudFormation Property
 	// Required: false
@@ -121,7 +124,7 @@ type NetworkInsightsAnalysis_Explanation struct {
 	// LoadBalancerTargetPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetport
-	LoadBalancerTargetPort int `json:"LoadBalancerTargetPort,omitempty"`
+	LoadBalancerTargetPort *utils.Value[int] `json:"LoadBalancerTargetPort,omitempty"`
 
 	// MissingComponent AWS CloudFormation Property
 	// Required: false
@@ -146,7 +149,7 @@ type NetworkInsightsAnalysis_Explanation struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-port
-	Port int `json:"Port,omitempty"`
+	Port *utils.Value[int] `json:"Port,omitempty"`
 
 	// PortRanges AWS CloudFormation Property
 	// Required: false
@@ -207,6 +210,26 @@ type NetworkInsightsAnalysis_Explanation struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-subnetroutetable
 	SubnetRouteTable *NetworkInsightsAnalysis_AnalysisComponent `json:"SubnetRouteTable,omitempty"`
+
+	// TransitGateway AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgateway
+	TransitGateway *NetworkInsightsAnalysis_AnalysisComponent `json:"TransitGateway,omitempty"`
+
+	// TransitGatewayAttachment AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewayattachment
+	TransitGatewayAttachment *NetworkInsightsAnalysis_AnalysisComponent `json:"TransitGatewayAttachment,omitempty"`
+
+	// TransitGatewayRouteTable AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewayroutetable
+	TransitGatewayRouteTable *NetworkInsightsAnalysis_AnalysisComponent `json:"TransitGatewayRouteTable,omitempty"`
+
+	// TransitGatewayRouteTableRoute AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewayroutetableroute
+	TransitGatewayRouteTableRoute *NetworkInsightsAnalysis_TransitGatewayRouteTableRoute `json:"TransitGatewayRouteTableRoute,omitempty"`
 
 	// Vpc AWS CloudFormation Property
 	// Required: false

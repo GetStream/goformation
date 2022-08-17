@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSet AWS CloudFormation Resource (AWS::QuickSight::DataSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html
@@ -32,6 +35,11 @@ type DataSet struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-datasetid
 	DataSetId string `json:"DataSetId,omitempty"`
+
+	// DataSetUsageConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-datasetusageconfiguration
+	DataSetUsageConfiguration *DataSet_DataSetUsageConfiguration `json:"DataSetUsageConfiguration,omitempty"`
 
 	// FieldFolders AWS CloudFormation Property
 	// Required: false

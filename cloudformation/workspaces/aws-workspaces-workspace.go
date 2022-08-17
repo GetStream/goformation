@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Workspace AWS CloudFormation Resource (AWS::WorkSpaces::Workspace)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html
@@ -26,7 +29,7 @@ type Workspace struct {
 	// RootVolumeEncryptionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled
-	RootVolumeEncryptionEnabled bool `json:"RootVolumeEncryptionEnabled,omitempty"`
+	RootVolumeEncryptionEnabled *utils.Value[bool] `json:"RootVolumeEncryptionEnabled,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -41,7 +44,7 @@ type Workspace struct {
 	// UserVolumeEncryptionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled
-	UserVolumeEncryptionEnabled bool `json:"UserVolumeEncryptionEnabled,omitempty"`
+	UserVolumeEncryptionEnabled *utils.Value[bool] `json:"UserVolumeEncryptionEnabled,omitempty"`
 
 	// VolumeEncryptionKey AWS CloudFormation Property
 	// Required: false

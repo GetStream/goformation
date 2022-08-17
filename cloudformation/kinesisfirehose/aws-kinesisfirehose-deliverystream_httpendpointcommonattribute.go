@@ -2,7 +2,10 @@ package kinesisfirehose
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeliveryStream_HttpEndpointCommonAttribute AWS CloudFormation Resource (AWS::KinesisFirehose::DeliveryStream.HttpEndpointCommonAttribute)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointcommonattribute.html

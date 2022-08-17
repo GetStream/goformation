@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Broker AWS CloudFormation Resource (AWS::AmazonMQ::Broker)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html
@@ -20,7 +23,7 @@ type Broker struct {
 	// AutoMinorVersionUpgrade AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-autominorversionupgrade
-	AutoMinorVersionUpgrade bool `json:"AutoMinorVersionUpgrade"`
+	AutoMinorVersionUpgrade *utils.Value[bool] `json:"AutoMinorVersionUpgrade"`
 
 	// BrokerName AWS CloudFormation Property
 	// Required: true
@@ -75,7 +78,7 @@ type Broker struct {
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-publiclyaccessible
-	PubliclyAccessible bool `json:"PubliclyAccessible"`
+	PubliclyAccessible *utils.Value[bool] `json:"PubliclyAccessible"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false

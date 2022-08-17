@@ -2,7 +2,10 @@ package wafv2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // WebACL_VisibilityConfig AWS CloudFormation Resource (AWS::WAFv2::WebACL.VisibilityConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html
@@ -11,7 +14,7 @@ type WebACL_VisibilityConfig struct {
 	// CloudWatchMetricsEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-cloudwatchmetricsenabled
-	CloudWatchMetricsEnabled bool `json:"CloudWatchMetricsEnabled"`
+	CloudWatchMetricsEnabled *utils.Value[bool] `json:"CloudWatchMetricsEnabled"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
@@ -21,7 +24,7 @@ type WebACL_VisibilityConfig struct {
 	// SampledRequestsEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-sampledrequestsenabled
-	SampledRequestsEnabled bool `json:"SampledRequestsEnabled"`
+	SampledRequestsEnabled *utils.Value[bool] `json:"SampledRequestsEnabled"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

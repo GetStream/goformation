@@ -2,7 +2,10 @@ package s3
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bucket_ReplicationRule AWS CloudFormation Resource (AWS::S3::Bucket.ReplicationRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html
@@ -36,7 +39,7 @@ type Bucket_ReplicationRule struct {
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-priority
-	Priority int `json:"Priority,omitempty"`
+	Priority *utils.Value[int] `json:"Priority,omitempty"`
 
 	// SourceSelectionCriteria AWS CloudFormation Property
 	// Required: false

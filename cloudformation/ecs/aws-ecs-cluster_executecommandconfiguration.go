@@ -2,7 +2,10 @@ package ecs
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster_ExecuteCommandConfiguration AWS CloudFormation Resource (AWS::ECS::Cluster.ExecuteCommandConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandconfiguration.html

@@ -2,7 +2,10 @@ package acmpca
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CertificateAuthority_Subject AWS CloudFormation Resource (AWS::ACMPCA::CertificateAuthority.Subject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html
@@ -17,6 +20,11 @@ type CertificateAuthority_Subject struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-country
 	Country string `json:"Country,omitempty"`
+
+	// CustomAttributes AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-customattributes
+	CustomAttributes []CertificateAuthority_CustomAttribute `json:"CustomAttributes,omitempty"`
 
 	// DistinguishedNameQualifier AWS CloudFormation Property
 	// Required: false

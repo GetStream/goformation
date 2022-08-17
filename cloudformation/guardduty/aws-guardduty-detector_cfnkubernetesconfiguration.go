@@ -2,7 +2,10 @@ package guardduty
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Detector_CFNKubernetesConfiguration AWS CloudFormation Resource (AWS::GuardDuty::Detector.CFNKubernetesConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnkubernetesconfiguration.html

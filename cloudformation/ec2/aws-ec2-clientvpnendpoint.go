@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ClientVpnEndpoint AWS CloudFormation Resource (AWS::EC2::ClientVpnEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html
@@ -65,12 +68,12 @@ type ClientVpnEndpoint struct {
 	// SessionTimeoutHours AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-sessiontimeouthours
-	SessionTimeoutHours int `json:"SessionTimeoutHours,omitempty"`
+	SessionTimeoutHours *utils.Value[int] `json:"SessionTimeoutHours,omitempty"`
 
 	// SplitTunnel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-splittunnel
-	SplitTunnel bool `json:"SplitTunnel,omitempty"`
+	SplitTunnel *utils.Value[bool] `json:"SplitTunnel,omitempty"`
 
 	// TagSpecifications AWS CloudFormation Property
 	// Required: false
@@ -90,7 +93,7 @@ type ClientVpnEndpoint struct {
 	// VpnPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-vpnport
-	VpnPort int `json:"VpnPort,omitempty"`
+	VpnPort *utils.Value[int] `json:"VpnPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

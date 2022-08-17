@@ -6,14 +6,17 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LaunchTemplate AWS CloudFormation Resource (AWS::EC2::LaunchTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html
 type LaunchTemplate struct {
 
 	// LaunchTemplateData AWS CloudFormation Property
-	// Required: false
+	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatedata
 	LaunchTemplateData *LaunchTemplate_LaunchTemplateData `json:"LaunchTemplateData,omitempty"`
 

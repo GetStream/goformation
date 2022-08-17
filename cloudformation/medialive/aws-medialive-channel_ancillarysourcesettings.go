@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_AncillarySourceSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AncillarySourceSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ancillarysourcesettings.html
@@ -11,7 +14,7 @@ type Channel_AncillarySourceSettings struct {
 	// SourceAncillaryChannelNumber AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ancillarysourcesettings.html#cfn-medialive-channel-ancillarysourcesettings-sourceancillarychannelnumber
-	SourceAncillaryChannelNumber int `json:"SourceAncillaryChannelNumber,omitempty"`
+	SourceAncillaryChannelNumber *utils.Value[int] `json:"SourceAncillaryChannelNumber,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

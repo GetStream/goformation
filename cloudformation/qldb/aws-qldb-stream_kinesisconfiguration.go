@@ -2,7 +2,10 @@ package qldb
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Stream_KinesisConfiguration AWS CloudFormation Resource (AWS::QLDB::Stream.KinesisConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qldb-stream-kinesisconfiguration.html
@@ -11,7 +14,7 @@ type Stream_KinesisConfiguration struct {
 	// AggregationEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qldb-stream-kinesisconfiguration.html#cfn-qldb-stream-kinesisconfiguration-aggregationenabled
-	AggregationEnabled bool `json:"AggregationEnabled,omitempty"`
+	AggregationEnabled *utils.Value[bool] `json:"AggregationEnabled,omitempty"`
 
 	// StreamArn AWS CloudFormation Property
 	// Required: false

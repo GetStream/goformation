@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TransitGateway AWS CloudFormation Resource (AWS::EC2::TransitGateway)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html
@@ -16,7 +19,7 @@ type TransitGateway struct {
 	// AmazonSideAsn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-amazonsideasn
-	AmazonSideAsn int `json:"AmazonSideAsn,omitempty"`
+	AmazonSideAsn *utils.Value[int] `json:"AmazonSideAsn,omitempty"`
 
 	// AssociationDefaultRouteTableId AWS CloudFormation Property
 	// Required: false

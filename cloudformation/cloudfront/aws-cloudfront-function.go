@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Function AWS CloudFormation Resource (AWS::CloudFront::Function)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html
@@ -15,7 +18,7 @@ type Function struct {
 	// AutoPublish AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-autopublish
-	AutoPublish bool `json:"AutoPublish,omitempty"`
+	AutoPublish *utils.Value[bool] `json:"AutoPublish,omitempty"`
 
 	// FunctionCode AWS CloudFormation Property
 	// Required: false

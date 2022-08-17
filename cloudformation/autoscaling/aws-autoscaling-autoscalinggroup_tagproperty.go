@@ -2,7 +2,10 @@ package autoscaling
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AutoScalingGroup_TagProperty AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.TagProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html
@@ -16,7 +19,7 @@ type AutoScalingGroup_TagProperty struct {
 	// PropagateAtLaunch AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-PropagateAtLaunch
-	PropagateAtLaunch bool `json:"PropagateAtLaunch"`
+	PropagateAtLaunch *utils.Value[bool] `json:"PropagateAtLaunch"`
 
 	// Value AWS CloudFormation Property
 	// Required: true

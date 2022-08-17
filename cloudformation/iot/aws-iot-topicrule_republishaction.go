@@ -2,7 +2,10 @@ package iot
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TopicRule_RepublishAction AWS CloudFormation Resource (AWS::IoT::TopicRule.RepublishAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html
@@ -11,7 +14,7 @@ type TopicRule_RepublishAction struct {
 	// Qos AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html#cfn-iot-topicrule-republishaction-qos
-	Qos int `json:"Qos,omitempty"`
+	Qos *utils.Value[int] `json:"Qos,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true

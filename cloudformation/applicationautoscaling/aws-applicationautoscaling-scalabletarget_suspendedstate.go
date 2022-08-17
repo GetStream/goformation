@@ -2,7 +2,10 @@ package applicationautoscaling
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ScalableTarget_SuspendedState AWS CloudFormation Resource (AWS::ApplicationAutoScaling::ScalableTarget.SuspendedState)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html
@@ -11,17 +14,17 @@ type ScalableTarget_SuspendedState struct {
 	// DynamicScalingInSuspended AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html#cfn-applicationautoscaling-scalabletarget-suspendedstate-dynamicscalinginsuspended
-	DynamicScalingInSuspended bool `json:"DynamicScalingInSuspended,omitempty"`
+	DynamicScalingInSuspended *utils.Value[bool] `json:"DynamicScalingInSuspended,omitempty"`
 
 	// DynamicScalingOutSuspended AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html#cfn-applicationautoscaling-scalabletarget-suspendedstate-dynamicscalingoutsuspended
-	DynamicScalingOutSuspended bool `json:"DynamicScalingOutSuspended,omitempty"`
+	DynamicScalingOutSuspended *utils.Value[bool] `json:"DynamicScalingOutSuspended,omitempty"`
 
 	// ScheduledScalingSuspended AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html#cfn-applicationautoscaling-scalabletarget-suspendedstate-scheduledscalingsuspended
-	ScheduledScalingSuspended bool `json:"ScheduledScalingSuspended,omitempty"`
+	ScheduledScalingSuspended *utils.Value[bool] `json:"ScheduledScalingSuspended,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

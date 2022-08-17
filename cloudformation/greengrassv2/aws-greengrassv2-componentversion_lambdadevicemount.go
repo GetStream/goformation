@@ -2,7 +2,10 @@ package greengrassv2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ComponentVersion_LambdaDeviceMount AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.LambdaDeviceMount)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdadevicemount.html
@@ -11,7 +14,7 @@ type ComponentVersion_LambdaDeviceMount struct {
 	// AddGroupOwner AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdadevicemount.html#cfn-greengrassv2-componentversion-lambdadevicemount-addgroupowner
-	AddGroupOwner bool `json:"AddGroupOwner,omitempty"`
+	AddGroupOwner *utils.Value[bool] `json:"AddGroupOwner,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false

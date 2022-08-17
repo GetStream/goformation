@@ -2,7 +2,10 @@ package greengrass
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CoreDefinition_Core AWS CloudFormation Resource (AWS::Greengrass::CoreDefinition.Core)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html
@@ -21,7 +24,7 @@ type CoreDefinition_Core struct {
 	// SyncShadow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html#cfn-greengrass-coredefinition-core-syncshadow
-	SyncShadow bool `json:"SyncShadow,omitempty"`
+	SyncShadow *utils.Value[bool] `json:"SyncShadow,omitempty"`
 
 	// ThingArn AWS CloudFormation Property
 	// Required: true

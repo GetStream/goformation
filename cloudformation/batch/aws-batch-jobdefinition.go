@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // JobDefinition AWS CloudFormation Resource (AWS::Batch::JobDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html
@@ -40,7 +43,7 @@ type JobDefinition struct {
 	// PropagateTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-propagatetags
-	PropagateTags bool `json:"PropagateTags,omitempty"`
+	PropagateTags *utils.Value[bool] `json:"PropagateTags,omitempty"`
 
 	// RetryStrategy AWS CloudFormation Property
 	// Required: false
@@ -50,7 +53,7 @@ type JobDefinition struct {
 	// SchedulingPriority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-schedulingpriority
-	SchedulingPriority int `json:"SchedulingPriority,omitempty"`
+	SchedulingPriority *utils.Value[int] `json:"SchedulingPriority,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

@@ -2,7 +2,10 @@ package codepipeline
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CustomActionType_ConfigurationProperties AWS CloudFormation Resource (AWS::CodePipeline::CustomActionType.ConfigurationProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html
@@ -16,7 +19,7 @@ type CustomActionType_ConfigurationProperties struct {
 	// Key AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html#cfn-codepipeline-customactiontype-configurationproperties-key
-	Key bool `json:"Key"`
+	Key *utils.Value[bool] `json:"Key"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -26,17 +29,17 @@ type CustomActionType_ConfigurationProperties struct {
 	// Queryable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html#cfn-codepipeline-customactiontype-configurationproperties-queryable
-	Queryable bool `json:"Queryable,omitempty"`
+	Queryable *utils.Value[bool] `json:"Queryable,omitempty"`
 
 	// Required AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html#cfn-codepipeline-customactiontype-configurationproperties-required
-	Required bool `json:"Required"`
+	Required *utils.Value[bool] `json:"Required"`
 
 	// Secret AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html#cfn-codepipeline-customactiontype-configurationproperties-secret
-	Secret bool `json:"Secret"`
+	Secret *utils.Value[bool] `json:"Secret"`
 
 	// Type AWS CloudFormation Property
 	// Required: false

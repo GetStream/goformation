@@ -2,7 +2,10 @@ package kendra
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSource_SalesforceStandardObjectConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.SalesforceStandardObjectConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardobjectconfiguration.html

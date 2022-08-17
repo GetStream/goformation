@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeploymentStrategy AWS CloudFormation Resource (AWS::AppConfig::DeploymentStrategy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html
@@ -15,7 +18,7 @@ type DeploymentStrategy struct {
 	// DeploymentDurationInMinutes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-deploymentdurationinminutes
-	DeploymentDurationInMinutes float64 `json:"DeploymentDurationInMinutes"`
+	DeploymentDurationInMinutes *utils.Value[float64] `json:"DeploymentDurationInMinutes"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -25,12 +28,12 @@ type DeploymentStrategy struct {
 	// FinalBakeTimeInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-finalbaketimeinminutes
-	FinalBakeTimeInMinutes float64 `json:"FinalBakeTimeInMinutes,omitempty"`
+	FinalBakeTimeInMinutes *utils.Value[float64] `json:"FinalBakeTimeInMinutes,omitempty"`
 
 	// GrowthFactor AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-growthfactor
-	GrowthFactor float64 `json:"GrowthFactor"`
+	GrowthFactor *utils.Value[float64] `json:"GrowthFactor"`
 
 	// GrowthType AWS CloudFormation Property
 	// Required: false

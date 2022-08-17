@@ -2,7 +2,10 @@ package xray
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SamplingRule_SamplingRuleRecord AWS CloudFormation Resource (AWS::XRay::SamplingRule.SamplingRuleRecord)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrulerecord.html

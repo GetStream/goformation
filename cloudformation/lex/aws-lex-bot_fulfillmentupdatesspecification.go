@@ -2,7 +2,10 @@ package lex
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bot_FulfillmentUpdatesSpecification AWS CloudFormation Resource (AWS::Lex::Bot.FulfillmentUpdatesSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdatesspecification.html
@@ -11,7 +14,7 @@ type Bot_FulfillmentUpdatesSpecification struct {
 	// Active AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdatesspecification.html#cfn-lex-bot-fulfillmentupdatesspecification-active
-	Active bool `json:"Active"`
+	Active *utils.Value[bool] `json:"Active"`
 
 	// StartResponse AWS CloudFormation Property
 	// Required: false
@@ -21,7 +24,7 @@ type Bot_FulfillmentUpdatesSpecification struct {
 	// TimeoutInSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdatesspecification.html#cfn-lex-bot-fulfillmentupdatesspecification-timeoutinseconds
-	TimeoutInSeconds int `json:"TimeoutInSeconds,omitempty"`
+	TimeoutInSeconds *utils.Value[int] `json:"TimeoutInSeconds,omitempty"`
 
 	// UpdateResponse AWS CloudFormation Property
 	// Required: false

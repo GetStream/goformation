@@ -2,7 +2,10 @@ package appmesh
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VirtualRouter_PortMapping AWS CloudFormation Resource (AWS::AppMesh::VirtualRouter.PortMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html
@@ -11,7 +14,7 @@ type VirtualRouter_PortMapping struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-port
-	Port int `json:"Port"`
+	Port *utils.Value[int] `json:"Port"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true

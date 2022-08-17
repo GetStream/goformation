@@ -2,7 +2,10 @@ package lex
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // BotVersion_BotVersionLocaleSpecification AWS CloudFormation Resource (AWS::Lex::BotVersion.BotVersionLocaleSpecification)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html

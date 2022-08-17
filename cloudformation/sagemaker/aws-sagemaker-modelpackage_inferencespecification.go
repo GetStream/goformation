@@ -1,0 +1,58 @@
+package sagemaker
+
+import (
+	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
+)
+
+var _ utils.Value[struct{}]
+
+// ModelPackage_InferenceSpecification AWS CloudFormation Resource (AWS::SageMaker::ModelPackage.InferenceSpecification)
+// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html
+type ModelPackage_InferenceSpecification struct {
+
+	// Containers AWS CloudFormation Property
+	// Required: true
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html#cfn-sagemaker-modelpackage-inferencespecification-containers
+	Containers []ModelPackage_ModelPackageContainerDefinition `json:"Containers,omitempty"`
+
+	// SupportedContentTypes AWS CloudFormation Property
+	// Required: true
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html#cfn-sagemaker-modelpackage-inferencespecification-supportedcontenttypes
+	SupportedContentTypes []string `json:"SupportedContentTypes,omitempty"`
+
+	// SupportedRealtimeInferenceInstanceTypes AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html#cfn-sagemaker-modelpackage-inferencespecification-supportedrealtimeinferenceinstancetypes
+	SupportedRealtimeInferenceInstanceTypes []string `json:"SupportedRealtimeInferenceInstanceTypes,omitempty"`
+
+	// SupportedResponseMIMETypes AWS CloudFormation Property
+	// Required: true
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html#cfn-sagemaker-modelpackage-inferencespecification-supportedresponsemimetypes
+	SupportedResponseMIMETypes []string `json:"SupportedResponseMIMETypes,omitempty"`
+
+	// SupportedTransformInstanceTypes AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-inferencespecification.html#cfn-sagemaker-modelpackage-inferencespecification-supportedtransforminstancetypes
+	SupportedTransformInstanceTypes []string `json:"SupportedTransformInstanceTypes,omitempty"`
+
+	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
+	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
+
+	// AWSCloudFormationUpdateReplacePolicy represents a CloudFormation UpdateReplacePolicy
+	AWSCloudFormationUpdateReplacePolicy policies.UpdateReplacePolicy `json:"-"`
+
+	// AWSCloudFormationDependsOn stores the logical ID of the resources to be created before this resource
+	AWSCloudFormationDependsOn []string `json:"-"`
+
+	// AWSCloudFormationMetadata stores structured data associated with this resource
+	AWSCloudFormationMetadata map[string]interface{} `json:"-"`
+
+	// AWSCloudFormationCondition stores the logical ID of the condition that must be satisfied for this resource to be created
+	AWSCloudFormationCondition string `json:"-"`
+}
+
+// AWSCloudFormationType returns the AWS CloudFormation resource type
+func (r *ModelPackage_InferenceSpecification) AWSCloudFormationType() string {
+	return "AWS::SageMaker::ModelPackage.InferenceSpecification"
+}

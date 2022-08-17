@@ -2,7 +2,10 @@ package glue
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Classifier_CsvClassifier AWS CloudFormation Resource (AWS::Glue::Classifier.CsvClassifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html
@@ -11,7 +14,7 @@ type Classifier_CsvClassifier struct {
 	// AllowSingleColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-allowsinglecolumn
-	AllowSingleColumn bool `json:"AllowSingleColumn,omitempty"`
+	AllowSingleColumn *utils.Value[bool] `json:"AllowSingleColumn,omitempty"`
 
 	// ContainsHeader AWS CloudFormation Property
 	// Required: false
@@ -26,7 +29,7 @@ type Classifier_CsvClassifier struct {
 	// DisableValueTrimming AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-disablevaluetrimming
-	DisableValueTrimming bool `json:"DisableValueTrimming,omitempty"`
+	DisableValueTrimming *utils.Value[bool] `json:"DisableValueTrimming,omitempty"`
 
 	// Header AWS CloudFormation Property
 	// Required: false

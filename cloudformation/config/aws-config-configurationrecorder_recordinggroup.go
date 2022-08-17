@@ -2,7 +2,10 @@ package config
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConfigurationRecorder_RecordingGroup AWS CloudFormation Resource (AWS::Config::ConfigurationRecorder.RecordingGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html
@@ -11,12 +14,12 @@ type ConfigurationRecorder_RecordingGroup struct {
 	// AllSupported AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-allsupported
-	AllSupported bool `json:"AllSupported,omitempty"`
+	AllSupported *utils.Value[bool] `json:"AllSupported,omitempty"`
 
 	// IncludeGlobalResourceTypes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-includeglobalresourcetypes
-	IncludeGlobalResourceTypes bool `json:"IncludeGlobalResourceTypes,omitempty"`
+	IncludeGlobalResourceTypes *utils.Value[bool] `json:"IncludeGlobalResourceTypes,omitempty"`
 
 	// ResourceTypes AWS CloudFormation Property
 	// Required: false

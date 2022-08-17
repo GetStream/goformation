@@ -2,7 +2,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EC2Fleet_FleetLaunchTemplateOverridesRequest AWS CloudFormation Resource (AWS::EC2::EC2Fleet.FleetLaunchTemplateOverridesRequest)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html
@@ -36,7 +39,7 @@ type EC2Fleet_FleetLaunchTemplateOverridesRequest struct {
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-priority
-	Priority float64 `json:"Priority,omitempty"`
+	Priority *utils.Value[float64] `json:"Priority,omitempty"`
 
 	// SubnetId AWS CloudFormation Property
 	// Required: false
@@ -46,7 +49,7 @@ type EC2Fleet_FleetLaunchTemplateOverridesRequest struct {
 	// WeightedCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-weightedcapacity
-	WeightedCapacity float64 `json:"WeightedCapacity,omitempty"`
+	WeightedCapacity *utils.Value[float64] `json:"WeightedCapacity,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

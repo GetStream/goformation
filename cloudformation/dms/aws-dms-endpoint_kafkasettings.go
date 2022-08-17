@@ -2,7 +2,10 @@ package dms
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Endpoint_KafkaSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.KafkaSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html
@@ -16,32 +19,47 @@ type Endpoint_KafkaSettings struct {
 	// IncludeControlDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-includecontroldetails
-	IncludeControlDetails bool `json:"IncludeControlDetails,omitempty"`
+	IncludeControlDetails *utils.Value[bool] `json:"IncludeControlDetails,omitempty"`
 
 	// IncludeNullAndEmpty AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-includenullandempty
-	IncludeNullAndEmpty bool `json:"IncludeNullAndEmpty,omitempty"`
+	IncludeNullAndEmpty *utils.Value[bool] `json:"IncludeNullAndEmpty,omitempty"`
+
+	// IncludePartitionValue AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-includepartitionvalue
+	IncludePartitionValue *utils.Value[bool] `json:"IncludePartitionValue,omitempty"`
 
 	// IncludeTableAlterOperations AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-includetablealteroperations
-	IncludeTableAlterOperations bool `json:"IncludeTableAlterOperations,omitempty"`
+	IncludeTableAlterOperations *utils.Value[bool] `json:"IncludeTableAlterOperations,omitempty"`
 
 	// IncludeTransactionDetails AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-includetransactiondetails
-	IncludeTransactionDetails bool `json:"IncludeTransactionDetails,omitempty"`
+	IncludeTransactionDetails *utils.Value[bool] `json:"IncludeTransactionDetails,omitempty"`
+
+	// MessageFormat AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-messageformat
+	MessageFormat string `json:"MessageFormat,omitempty"`
+
+	// MessageMaxBytes AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-messagemaxbytes
+	MessageMaxBytes *utils.Value[int] `json:"MessageMaxBytes,omitempty"`
 
 	// NoHexPrefix AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-nohexprefix
-	NoHexPrefix bool `json:"NoHexPrefix,omitempty"`
+	NoHexPrefix *utils.Value[bool] `json:"NoHexPrefix,omitempty"`
 
 	// PartitionIncludeSchemaTable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-partitionincludeschematable
-	PartitionIncludeSchemaTable bool `json:"PartitionIncludeSchemaTable,omitempty"`
+	PartitionIncludeSchemaTable *utils.Value[bool] `json:"PartitionIncludeSchemaTable,omitempty"`
 
 	// SaslPassword AWS CloudFormation Property
 	// Required: false

@@ -2,7 +2,10 @@ package glue
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MLTransform_FindMatchesParameters AWS CloudFormation Resource (AWS::Glue::MLTransform.FindMatchesParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html
@@ -11,17 +14,17 @@ type MLTransform_FindMatchesParameters struct {
 	// AccuracyCostTradeoff AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-accuracycosttradeoff
-	AccuracyCostTradeoff float64 `json:"AccuracyCostTradeoff,omitempty"`
+	AccuracyCostTradeoff *utils.Value[float64] `json:"AccuracyCostTradeoff,omitempty"`
 
 	// EnforceProvidedLabels AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-enforceprovidedlabels
-	EnforceProvidedLabels bool `json:"EnforceProvidedLabels,omitempty"`
+	EnforceProvidedLabels *utils.Value[bool] `json:"EnforceProvidedLabels,omitempty"`
 
 	// PrecisionRecallTradeoff AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-precisionrecalltradeoff
-	PrecisionRecallTradeoff float64 `json:"PrecisionRecallTradeoff,omitempty"`
+	PrecisionRecallTradeoff *utils.Value[float64] `json:"PrecisionRecallTradeoff,omitempty"`
 
 	// PrimaryKeyColumnName AWS CloudFormation Property
 	// Required: true

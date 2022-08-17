@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Database AWS CloudFormation Resource (AWS::Lightsail::Database)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html
@@ -21,7 +24,7 @@ type Database struct {
 	// BackupRetention AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-backupretention
-	BackupRetention bool `json:"BackupRetention,omitempty"`
+	BackupRetention *utils.Value[bool] `json:"BackupRetention,omitempty"`
 
 	// CaCertificateIdentifier AWS CloudFormation Property
 	// Required: false
@@ -56,7 +59,7 @@ type Database struct {
 	// PubliclyAccessible AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-publiclyaccessible
-	PubliclyAccessible bool `json:"PubliclyAccessible,omitempty"`
+	PubliclyAccessible *utils.Value[bool] `json:"PubliclyAccessible,omitempty"`
 
 	// RelationalDatabaseBlueprintId AWS CloudFormation Property
 	// Required: true
@@ -81,7 +84,7 @@ type Database struct {
 	// RotateMasterUserPassword AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-rotatemasteruserpassword
-	RotateMasterUserPassword bool `json:"RotateMasterUserPassword,omitempty"`
+	RotateMasterUserPassword *utils.Value[bool] `json:"RotateMasterUserPassword,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

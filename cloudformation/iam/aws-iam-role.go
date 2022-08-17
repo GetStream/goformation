@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Role AWS CloudFormation Resource (AWS::IAM::Role)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html
@@ -31,7 +34,7 @@ type Role struct {
 	// MaxSessionDuration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-maxsessionduration
-	MaxSessionDuration int `json:"MaxSessionDuration,omitempty"`
+	MaxSessionDuration *utils.Value[int] `json:"MaxSessionDuration,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: false

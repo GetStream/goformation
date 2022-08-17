@@ -2,7 +2,10 @@ package lookoutmetrics
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AnomalyDetector_AnomalyDetectorConfig AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.AnomalyDetectorConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-anomalydetectorconfig.html

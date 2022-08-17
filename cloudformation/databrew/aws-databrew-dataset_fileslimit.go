@@ -2,7 +2,10 @@ package databrew
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Dataset_FilesLimit AWS CloudFormation Resource (AWS::DataBrew::Dataset.FilesLimit)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-fileslimit.html
@@ -11,7 +14,7 @@ type Dataset_FilesLimit struct {
 	// MaxFiles AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-fileslimit.html#cfn-databrew-dataset-fileslimit-maxfiles
-	MaxFiles int `json:"MaxFiles"`
+	MaxFiles *utils.Value[int] `json:"MaxFiles"`
 
 	// Order AWS CloudFormation Property
 	// Required: false

@@ -2,7 +2,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // OriginRequestPolicy_QueryStringsConfig AWS CloudFormation Resource (AWS::CloudFront::OriginRequestPolicy.QueryStringsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-querystringsconfig.html

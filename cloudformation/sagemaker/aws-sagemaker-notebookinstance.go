@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // NotebookInstance AWS CloudFormation Resource (AWS::SageMaker::NotebookInstance)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html
@@ -32,6 +35,11 @@ type NotebookInstance struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-directinternetaccess
 	DirectInternetAccess string `json:"DirectInternetAccess,omitempty"`
+
+	// InstanceMetadataServiceConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-instancemetadataserviceconfiguration
+	InstanceMetadataServiceConfiguration *NotebookInstance_InstanceMetadataServiceConfiguration `json:"InstanceMetadataServiceConfiguration,omitempty"`
 
 	// InstanceType AWS CloudFormation Property
 	// Required: true
@@ -86,7 +94,7 @@ type NotebookInstance struct {
 	// VolumeSizeInGB AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-volumesizeingb
-	VolumeSizeInGB int `json:"VolumeSizeInGB,omitempty"`
+	VolumeSizeInGB *utils.Value[int] `json:"VolumeSizeInGB,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

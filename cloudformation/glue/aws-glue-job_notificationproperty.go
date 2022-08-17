@@ -2,7 +2,10 @@ package glue
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Job_NotificationProperty AWS CloudFormation Resource (AWS::Glue::Job.NotificationProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-notificationproperty.html
@@ -11,7 +14,7 @@ type Job_NotificationProperty struct {
 	// NotifyDelayAfter AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-notificationproperty.html#cfn-glue-job-notificationproperty-notifydelayafter
-	NotifyDelayAfter int `json:"NotifyDelayAfter,omitempty"`
+	NotifyDelayAfter *utils.Value[int] `json:"NotifyDelayAfter,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

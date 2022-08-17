@@ -2,7 +2,10 @@ package resiliencehub
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResiliencyPolicy_FailurePolicy AWS CloudFormation Resource (AWS::ResilienceHub::ResiliencyPolicy.FailurePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-resiliencypolicy-failurepolicy.html
@@ -11,12 +14,12 @@ type ResiliencyPolicy_FailurePolicy struct {
 	// RpoInSecs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-resiliencypolicy-failurepolicy.html#cfn-resiliencehub-resiliencypolicy-failurepolicy-rpoinsecs
-	RpoInSecs int `json:"RpoInSecs"`
+	RpoInSecs *utils.Value[int] `json:"RpoInSecs"`
 
 	// RtoInSecs AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehub-resiliencypolicy-failurepolicy.html#cfn-resiliencehub-resiliencypolicy-failurepolicy-rtoinsecs
-	RtoInSecs int `json:"RtoInSecs"`
+	RtoInSecs *utils.Value[int] `json:"RtoInSecs"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

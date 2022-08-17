@@ -2,7 +2,10 @@ package codebuild
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Project_Environment AWS CloudFormation Resource (AWS::CodeBuild::Project.Environment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html
@@ -36,7 +39,7 @@ type Project_Environment struct {
 	// PrivilegedMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-privilegedmode
-	PrivilegedMode bool `json:"PrivilegedMode,omitempty"`
+	PrivilegedMode *utils.Value[bool] `json:"PrivilegedMode,omitempty"`
 
 	// RegistryCredential AWS CloudFormation Property
 	// Required: false

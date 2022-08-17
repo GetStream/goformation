@@ -2,7 +2,10 @@ package appmesh
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VirtualGateway_VirtualGatewayPortMapping AWS CloudFormation Resource (AWS::AppMesh::VirtualGateway.VirtualGatewayPortMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html
@@ -11,7 +14,7 @@ type VirtualGateway_VirtualGatewayPortMapping struct {
 	// Port AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html#cfn-appmesh-virtualgateway-virtualgatewayportmapping-port
-	Port int `json:"Port"`
+	Port *utils.Value[int] `json:"Port"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true

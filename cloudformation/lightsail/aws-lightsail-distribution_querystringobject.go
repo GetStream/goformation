@@ -2,7 +2,10 @@ package lightsail
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Distribution_QueryStringObject AWS CloudFormation Resource (AWS::Lightsail::Distribution.QueryStringObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-querystringobject.html
@@ -11,7 +14,7 @@ type Distribution_QueryStringObject struct {
 	// Option AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-querystringobject.html#cfn-lightsail-distribution-querystringobject-option
-	Option bool `json:"Option,omitempty"`
+	Option *utils.Value[bool] `json:"Option,omitempty"`
 
 	// QueryStringsAllowList AWS CloudFormation Property
 	// Required: false

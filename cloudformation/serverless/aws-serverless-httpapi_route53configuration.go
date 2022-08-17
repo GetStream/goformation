@@ -2,7 +2,10 @@ package serverless
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // HttpApi_Route53Configuration AWS CloudFormation Resource (AWS::Serverless::HttpApi.Route53Configuration)
 // See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-httpapi-route53configuration.html
@@ -16,7 +19,7 @@ type HttpApi_Route53Configuration struct {
 	// EvaluateTargetHealth AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-httpapi-route53configuration.html#sam-httpapi-route53configuration-evaluatetargethealth
-	EvaluateTargetHealth bool `json:"EvaluateTargetHealth,omitempty"`
+	EvaluateTargetHealth *utils.Value[bool] `json:"EvaluateTargetHealth,omitempty"`
 
 	// HostedZoneId AWS CloudFormation Property
 	// Required: false
@@ -31,7 +34,7 @@ type HttpApi_Route53Configuration struct {
 	// IpV6 AWS CloudFormation Property
 	// Required: false
 	// See: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-httpapi-route53configuration.html#sam-httpapi-route53configuration-ipv6
-	IpV6 bool `json:"IpV6,omitempty"`
+	IpV6 *utils.Value[bool] `json:"IpV6,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

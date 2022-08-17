@@ -2,7 +2,10 @@ package timestream
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ScheduledQuery_MixedMeasureMapping AWS CloudFormation Resource (AWS::Timestream::ScheduledQuery.MixedMeasureMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-mixedmeasuremapping.html

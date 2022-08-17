@@ -2,7 +2,10 @@ package autoscaling
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AutoScalingGroup_InstancesDistribution AWS CloudFormation Resource (AWS::AutoScaling::AutoScalingGroup.InstancesDistribution)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html
@@ -16,12 +19,12 @@ type AutoScalingGroup_InstancesDistribution struct {
 	// OnDemandBaseCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-ondemandbasecapacity
-	OnDemandBaseCapacity int `json:"OnDemandBaseCapacity,omitempty"`
+	OnDemandBaseCapacity *utils.Value[int] `json:"OnDemandBaseCapacity,omitempty"`
 
 	// OnDemandPercentageAboveBaseCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-ondemandpercentageabovebasecapacity
-	OnDemandPercentageAboveBaseCapacity int `json:"OnDemandPercentageAboveBaseCapacity,omitempty"`
+	OnDemandPercentageAboveBaseCapacity *utils.Value[int] `json:"OnDemandPercentageAboveBaseCapacity,omitempty"`
 
 	// SpotAllocationStrategy AWS CloudFormation Property
 	// Required: false
@@ -31,7 +34,7 @@ type AutoScalingGroup_InstancesDistribution struct {
 	// SpotInstancePools AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-spotinstancepools
-	SpotInstancePools int `json:"SpotInstancePools,omitempty"`
+	SpotInstancePools *utils.Value[int] `json:"SpotInstancePools,omitempty"`
 
 	// SpotMaxPrice AWS CloudFormation Property
 	// Required: false

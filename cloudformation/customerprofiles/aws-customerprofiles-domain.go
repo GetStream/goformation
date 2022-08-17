@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Domain AWS CloudFormation Resource (AWS::CustomerProfiles::Domain)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html
@@ -26,7 +29,7 @@ type Domain struct {
 	// DefaultExpirationDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#cfn-customerprofiles-domain-defaultexpirationdays
-	DefaultExpirationDays int `json:"DefaultExpirationDays,omitempty"`
+	DefaultExpirationDays *utils.Value[int] `json:"DefaultExpirationDays,omitempty"`
 
 	// DomainName AWS CloudFormation Property
 	// Required: true

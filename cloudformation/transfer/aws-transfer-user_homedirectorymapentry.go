@@ -2,7 +2,10 @@ package transfer
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // User_HomeDirectoryMapEntry AWS CloudFormation Resource (AWS::Transfer::User.HomeDirectoryMapEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-homedirectorymapentry.html

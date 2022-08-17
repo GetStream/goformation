@@ -2,7 +2,10 @@ package wafv2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RuleGroup_SizeConstraintStatement AWS CloudFormation Resource (AWS::WAFv2::RuleGroup.SizeConstraintStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sizeconstraintstatement.html
@@ -21,7 +24,7 @@ type RuleGroup_SizeConstraintStatement struct {
 	// Size AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sizeconstraintstatement.html#cfn-wafv2-rulegroup-sizeconstraintstatement-size
-	Size float64 `json:"Size"`
+	Size *utils.Value[float64] `json:"Size"`
 
 	// TextTransformations AWS CloudFormation Property
 	// Required: true

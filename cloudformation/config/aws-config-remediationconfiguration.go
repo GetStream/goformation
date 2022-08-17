@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RemediationConfiguration AWS CloudFormation Resource (AWS::Config::RemediationConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html
@@ -15,7 +18,7 @@ type RemediationConfiguration struct {
 	// Automatic AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-automatic
-	Automatic bool `json:"Automatic,omitempty"`
+	Automatic *utils.Value[bool] `json:"Automatic,omitempty"`
 
 	// ConfigRuleName AWS CloudFormation Property
 	// Required: true
@@ -30,7 +33,7 @@ type RemediationConfiguration struct {
 	// MaximumAutomaticAttempts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-maximumautomaticattempts
-	MaximumAutomaticAttempts int `json:"MaximumAutomaticAttempts,omitempty"`
+	MaximumAutomaticAttempts *utils.Value[int] `json:"MaximumAutomaticAttempts,omitempty"`
 
 	// Parameters AWS CloudFormation Property
 	// Required: false
@@ -45,7 +48,7 @@ type RemediationConfiguration struct {
 	// RetryAttemptSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-retryattemptseconds
-	RetryAttemptSeconds int `json:"RetryAttemptSeconds,omitempty"`
+	RetryAttemptSeconds *utils.Value[int] `json:"RetryAttemptSeconds,omitempty"`
 
 	// TargetId AWS CloudFormation Property
 	// Required: true

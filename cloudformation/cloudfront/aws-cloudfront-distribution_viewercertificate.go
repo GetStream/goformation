@@ -2,7 +2,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Distribution_ViewerCertificate AWS CloudFormation Resource (AWS::CloudFront::Distribution.ViewerCertificate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html
@@ -16,7 +19,7 @@ type Distribution_ViewerCertificate struct {
 	// CloudFrontDefaultCertificate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-cloudfrontdefaultcertificate
-	CloudFrontDefaultCertificate bool `json:"CloudFrontDefaultCertificate,omitempty"`
+	CloudFrontDefaultCertificate *utils.Value[bool] `json:"CloudFrontDefaultCertificate,omitempty"`
 
 	// IamCertificateId AWS CloudFormation Property
 	// Required: false

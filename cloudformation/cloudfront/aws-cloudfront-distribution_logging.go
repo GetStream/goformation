@@ -2,7 +2,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Distribution_Logging AWS CloudFormation Resource (AWS::CloudFront::Distribution.Logging)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html
@@ -16,7 +19,7 @@ type Distribution_Logging struct {
 	// IncludeCookies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-includecookies
-	IncludeCookies bool `json:"IncludeCookies,omitempty"`
+	IncludeCookies *utils.Value[bool] `json:"IncludeCookies,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false

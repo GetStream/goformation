@@ -2,7 +2,10 @@ package serverless
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Function_CloudWatchLogsEvent AWS CloudFormation Resource (AWS::Serverless::Function.CloudWatchLogsEvent)
 // See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#cloudwatchevent

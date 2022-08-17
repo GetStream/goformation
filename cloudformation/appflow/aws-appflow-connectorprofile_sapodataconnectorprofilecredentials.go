@@ -2,7 +2,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConnectorProfile_SAPODataConnectorProfileCredentials AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SAPODataConnectorProfileCredentials)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofilecredentials.html
@@ -11,7 +14,7 @@ type ConnectorProfile_SAPODataConnectorProfileCredentials struct {
 	// BasicAuthCredentials AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-sapodataconnectorprofilecredentials.html#cfn-appflow-connectorprofile-sapodataconnectorprofilecredentials-basicauthcredentials
-	BasicAuthCredentials interface{} `json:"BasicAuthCredentials,omitempty"`
+	BasicAuthCredentials *ConnectorProfile_BasicAuthCredentials `json:"BasicAuthCredentials,omitempty"`
 
 	// OAuthCredentials AWS CloudFormation Property
 	// Required: false

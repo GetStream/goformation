@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_DvbSubDestinationSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.DvbSubDestinationSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html
@@ -21,7 +24,7 @@ type Channel_DvbSubDestinationSettings struct {
 	// BackgroundOpacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-backgroundopacity
-	BackgroundOpacity int `json:"BackgroundOpacity,omitempty"`
+	BackgroundOpacity *utils.Value[int] `json:"BackgroundOpacity,omitempty"`
 
 	// Font AWS CloudFormation Property
 	// Required: false
@@ -36,12 +39,12 @@ type Channel_DvbSubDestinationSettings struct {
 	// FontOpacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-fontopacity
-	FontOpacity int `json:"FontOpacity,omitempty"`
+	FontOpacity *utils.Value[int] `json:"FontOpacity,omitempty"`
 
 	// FontResolution AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-fontresolution
-	FontResolution int `json:"FontResolution,omitempty"`
+	FontResolution *utils.Value[int] `json:"FontResolution,omitempty"`
 
 	// FontSize AWS CloudFormation Property
 	// Required: false
@@ -56,7 +59,7 @@ type Channel_DvbSubDestinationSettings struct {
 	// OutlineSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-outlinesize
-	OutlineSize int `json:"OutlineSize,omitempty"`
+	OutlineSize *utils.Value[int] `json:"OutlineSize,omitempty"`
 
 	// ShadowColor AWS CloudFormation Property
 	// Required: false
@@ -66,17 +69,17 @@ type Channel_DvbSubDestinationSettings struct {
 	// ShadowOpacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-shadowopacity
-	ShadowOpacity int `json:"ShadowOpacity,omitempty"`
+	ShadowOpacity *utils.Value[int] `json:"ShadowOpacity,omitempty"`
 
 	// ShadowXOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-shadowxoffset
-	ShadowXOffset int `json:"ShadowXOffset,omitempty"`
+	ShadowXOffset *utils.Value[int] `json:"ShadowXOffset,omitempty"`
 
 	// ShadowYOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-shadowyoffset
-	ShadowYOffset int `json:"ShadowYOffset,omitempty"`
+	ShadowYOffset *utils.Value[int] `json:"ShadowYOffset,omitempty"`
 
 	// TeletextGridControl AWS CloudFormation Property
 	// Required: false
@@ -86,12 +89,12 @@ type Channel_DvbSubDestinationSettings struct {
 	// XPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-xposition
-	XPosition int `json:"XPosition,omitempty"`
+	XPosition *utils.Value[int] `json:"XPosition,omitempty"`
 
 	// YPosition AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-yposition
-	YPosition int `json:"YPosition,omitempty"`
+	YPosition *utils.Value[int] `json:"YPosition,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

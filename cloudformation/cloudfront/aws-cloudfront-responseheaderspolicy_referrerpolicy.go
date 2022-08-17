@@ -2,7 +2,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResponseHeadersPolicy_ReferrerPolicy AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.ReferrerPolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-referrerpolicy.html
@@ -11,7 +14,7 @@ type ResponseHeadersPolicy_ReferrerPolicy struct {
 	// Override AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-referrerpolicy.html#cfn-cloudfront-responseheaderspolicy-referrerpolicy-override
-	Override bool `json:"Override"`
+	Override *utils.Value[bool] `json:"Override"`
 
 	// ReferrerPolicy AWS CloudFormation Property
 	// Required: true

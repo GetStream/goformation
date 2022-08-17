@@ -2,7 +2,10 @@ package route53recoverycontrol
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SafetyRule_RuleConfig AWS CloudFormation Resource (AWS::Route53RecoveryControl::SafetyRule.RuleConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-ruleconfig.html
@@ -11,12 +14,12 @@ type SafetyRule_RuleConfig struct {
 	// Inverted AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-ruleconfig.html#cfn-route53recoverycontrol-safetyrule-ruleconfig-inverted
-	Inverted bool `json:"Inverted"`
+	Inverted *utils.Value[bool] `json:"Inverted"`
 
 	// Threshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoverycontrol-safetyrule-ruleconfig.html#cfn-route53recoverycontrol-safetyrule-ruleconfig-threshold
-	Threshold int `json:"Threshold"`
+	Threshold *utils.Value[int] `json:"Threshold"`
 
 	// Type AWS CloudFormation Property
 	// Required: true

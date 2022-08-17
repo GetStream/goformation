@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_Scte35TimeSignalApos AWS CloudFormation Resource (AWS::MediaLive::Channel.Scte35TimeSignalApos)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35timesignalapos.html
@@ -11,7 +14,7 @@ type Channel_Scte35TimeSignalApos struct {
 	// AdAvailOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35timesignalapos.html#cfn-medialive-channel-scte35timesignalapos-adavailoffset
-	AdAvailOffset int `json:"AdAvailOffset,omitempty"`
+	AdAvailOffset *utils.Value[int] `json:"AdAvailOffset,omitempty"`
 
 	// NoRegionalBlackoutFlag AWS CloudFormation Property
 	// Required: false

@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_DvbNitSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.DvbNitSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbnitsettings.html
@@ -11,7 +14,7 @@ type Channel_DvbNitSettings struct {
 	// NetworkId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbnitsettings.html#cfn-medialive-channel-dvbnitsettings-networkid
-	NetworkId int `json:"NetworkId,omitempty"`
+	NetworkId *utils.Value[int] `json:"NetworkId,omitempty"`
 
 	// NetworkName AWS CloudFormation Property
 	// Required: false
@@ -21,7 +24,7 @@ type Channel_DvbNitSettings struct {
 	// RepInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbnitsettings.html#cfn-medialive-channel-dvbnitsettings-repinterval
-	RepInterval int `json:"RepInterval,omitempty"`
+	RepInterval *utils.Value[int] `json:"RepInterval,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

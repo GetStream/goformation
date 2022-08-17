@@ -2,7 +2,10 @@ package databrew
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Dataset_JsonOptions AWS CloudFormation Resource (AWS::DataBrew::Dataset.JsonOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-jsonoptions.html
@@ -11,7 +14,7 @@ type Dataset_JsonOptions struct {
 	// MultiLine AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-jsonoptions.html#cfn-databrew-dataset-jsonoptions-multiline
-	MultiLine bool `json:"MultiLine,omitempty"`
+	MultiLine *utils.Value[bool] `json:"MultiLine,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

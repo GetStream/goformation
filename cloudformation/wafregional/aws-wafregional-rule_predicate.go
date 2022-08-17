@@ -2,7 +2,10 @@ package wafregional
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Rule_Predicate AWS CloudFormation Resource (AWS::WAFRegional::Rule.Predicate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-rule-predicate.html
@@ -16,7 +19,7 @@ type Rule_Predicate struct {
 	// Negated AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-rule-predicate.html#cfn-wafregional-rule-predicate-negated
-	Negated bool `json:"Negated"`
+	Negated *utils.Value[bool] `json:"Negated"`
 
 	// Type AWS CloudFormation Property
 	// Required: true

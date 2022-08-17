@@ -2,7 +2,10 @@ package lambda
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CodeSigningConfig_CodeSigningPolicies AWS CloudFormation Resource (AWS::Lambda::CodeSigningConfig.CodeSigningPolicies)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-codesigningconfig-codesigningpolicies.html

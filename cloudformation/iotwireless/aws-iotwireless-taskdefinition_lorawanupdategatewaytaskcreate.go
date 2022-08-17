@@ -2,7 +2,10 @@ package iotwireless
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TaskDefinition_LoRaWANUpdateGatewayTaskCreate AWS CloudFormation Resource (AWS::IoTWireless::TaskDefinition.LoRaWANUpdateGatewayTaskCreate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate.html
@@ -16,7 +19,7 @@ type TaskDefinition_LoRaWANUpdateGatewayTaskCreate struct {
 	// SigKeyCrc AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate-sigkeycrc
-	SigKeyCrc int `json:"SigKeyCrc,omitempty"`
+	SigKeyCrc *utils.Value[int] `json:"SigKeyCrc,omitempty"`
 
 	// UpdateSignature AWS CloudFormation Property
 	// Required: false

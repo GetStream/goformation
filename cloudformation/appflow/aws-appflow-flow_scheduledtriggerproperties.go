@@ -2,7 +2,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Flow_ScheduledTriggerProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.ScheduledTriggerProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html
@@ -13,10 +16,20 @@ type Flow_ScheduledTriggerProperties struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-datapullmode
 	DataPullMode string `json:"DataPullMode,omitempty"`
 
+	// FirstExecutionFrom AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-firstexecutionfrom
+	FirstExecutionFrom *utils.Value[float64] `json:"FirstExecutionFrom,omitempty"`
+
+	// FlowErrorDeactivationThreshold AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-flowerrordeactivationthreshold
+	FlowErrorDeactivationThreshold *utils.Value[int] `json:"FlowErrorDeactivationThreshold,omitempty"`
+
 	// ScheduleEndTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-scheduleendtime
-	ScheduleEndTime float64 `json:"ScheduleEndTime,omitempty"`
+	ScheduleEndTime *utils.Value[float64] `json:"ScheduleEndTime,omitempty"`
 
 	// ScheduleExpression AWS CloudFormation Property
 	// Required: true
@@ -26,12 +39,12 @@ type Flow_ScheduledTriggerProperties struct {
 	// ScheduleOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-scheduleoffset
-	ScheduleOffset float64 `json:"ScheduleOffset,omitempty"`
+	ScheduleOffset *utils.Value[float64] `json:"ScheduleOffset,omitempty"`
 
 	// ScheduleStartTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-schedulestarttime
-	ScheduleStartTime float64 `json:"ScheduleStartTime,omitempty"`
+	ScheduleStartTime *utils.Value[float64] `json:"ScheduleStartTime,omitempty"`
 
 	// TimeZone AWS CloudFormation Property
 	// Required: false

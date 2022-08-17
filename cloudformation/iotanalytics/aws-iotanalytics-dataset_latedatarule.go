@@ -2,7 +2,10 @@ package iotanalytics
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Dataset_LateDataRule AWS CloudFormation Resource (AWS::IoTAnalytics::Dataset.LateDataRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html

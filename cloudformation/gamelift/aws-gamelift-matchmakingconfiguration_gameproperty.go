@@ -2,7 +2,10 @@ package gamelift
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MatchmakingConfiguration_GameProperty AWS CloudFormation Resource (AWS::GameLift::MatchmakingConfiguration.GameProperty)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-matchmakingconfiguration-gameproperty.html

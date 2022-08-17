@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ApiDestination AWS CloudFormation Resource (AWS::Events::ApiDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-apidestination.html
@@ -35,7 +38,7 @@ type ApiDestination struct {
 	// InvocationRateLimitPerSecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-apidestination.html#cfn-events-apidestination-invocationratelimitpersecond
-	InvocationRateLimitPerSecond int `json:"InvocationRateLimitPerSecond,omitempty"`
+	InvocationRateLimitPerSecond *utils.Value[int] `json:"InvocationRateLimitPerSecond,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false

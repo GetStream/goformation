@@ -2,7 +2,10 @@ package s3objectlambda
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AccessPoint_ObjectLambdaConfiguration AWS CloudFormation Resource (AWS::S3ObjectLambda::AccessPoint.ObjectLambdaConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-objectlambdaconfiguration.html
@@ -16,7 +19,7 @@ type AccessPoint_ObjectLambdaConfiguration struct {
 	// CloudWatchMetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-objectlambdaconfiguration.html#cfn-s3objectlambda-accesspoint-objectlambdaconfiguration-cloudwatchmetricsenabled
-	CloudWatchMetricsEnabled bool `json:"CloudWatchMetricsEnabled,omitempty"`
+	CloudWatchMetricsEnabled *utils.Value[bool] `json:"CloudWatchMetricsEnabled,omitempty"`
 
 	// SupportingAccessPoint AWS CloudFormation Property
 	// Required: true

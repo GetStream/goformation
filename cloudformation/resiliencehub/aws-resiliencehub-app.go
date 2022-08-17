@@ -6,11 +6,19 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // App AWS CloudFormation Resource (AWS::ResilienceHub::App)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html
 type App struct {
+
+	// AppAssessmentSchedule AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-appassessmentschedule
+	AppAssessmentSchedule string `json:"AppAssessmentSchedule,omitempty"`
 
 	// AppTemplateBody AWS CloudFormation Property
 	// Required: true

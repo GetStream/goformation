@@ -2,7 +2,10 @@ package route53recoveryreadiness
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResourceSet_Resource AWS CloudFormation Resource (AWS::Route53RecoveryReadiness::ResourceSet.Resource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53recoveryreadiness-resourceset-resource.html

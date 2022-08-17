@@ -2,7 +2,10 @@ package backup
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // BackupPlan_BackupRuleResourceType AWS CloudFormation Resource (AWS::Backup::BackupPlan.BackupRuleResourceType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html
@@ -11,7 +14,7 @@ type BackupPlan_BackupRuleResourceType struct {
 	// CompletionWindowMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-completionwindowminutes
-	CompletionWindowMinutes float64 `json:"CompletionWindowMinutes,omitempty"`
+	CompletionWindowMinutes *utils.Value[float64] `json:"CompletionWindowMinutes,omitempty"`
 
 	// CopyActions AWS CloudFormation Property
 	// Required: false
@@ -21,7 +24,7 @@ type BackupPlan_BackupRuleResourceType struct {
 	// EnableContinuousBackup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-enablecontinuousbackup
-	EnableContinuousBackup bool `json:"EnableContinuousBackup,omitempty"`
+	EnableContinuousBackup *utils.Value[bool] `json:"EnableContinuousBackup,omitempty"`
 
 	// Lifecycle AWS CloudFormation Property
 	// Required: false
@@ -46,7 +49,7 @@ type BackupPlan_BackupRuleResourceType struct {
 	// StartWindowMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-startwindowminutes
-	StartWindowMinutes float64 `json:"StartWindowMinutes,omitempty"`
+	StartWindowMinutes *utils.Value[float64] `json:"StartWindowMinutes,omitempty"`
 
 	// TargetBackupVault AWS CloudFormation Property
 	// Required: true

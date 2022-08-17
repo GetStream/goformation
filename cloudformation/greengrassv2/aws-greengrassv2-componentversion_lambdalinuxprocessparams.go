@@ -2,7 +2,10 @@ package greengrassv2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ComponentVersion_LambdaLinuxProcessParams AWS CloudFormation Resource (AWS::GreengrassV2::ComponentVersion.LambdaLinuxProcessParams)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdalinuxprocessparams.html

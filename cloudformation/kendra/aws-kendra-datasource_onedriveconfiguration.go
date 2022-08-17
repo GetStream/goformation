@@ -2,7 +2,10 @@ package kendra
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSource_OneDriveConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.OneDriveConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html
@@ -11,7 +14,7 @@ type DataSource_OneDriveConfiguration struct {
 	// DisableLocalGroups AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-disablelocalgroups
-	DisableLocalGroups bool `json:"DisableLocalGroups,omitempty"`
+	DisableLocalGroups *utils.Value[bool] `json:"DisableLocalGroups,omitempty"`
 
 	// ExclusionPatterns AWS CloudFormation Property
 	// Required: false

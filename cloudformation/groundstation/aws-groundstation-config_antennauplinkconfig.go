@@ -2,7 +2,10 @@ package groundstation
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Config_AntennaUplinkConfig AWS CloudFormation Resource (AWS::GroundStation::Config.AntennaUplinkConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennauplinkconfig.html
@@ -21,7 +24,7 @@ type Config_AntennaUplinkConfig struct {
 	// TransmitDisabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennauplinkconfig.html#cfn-groundstation-config-antennauplinkconfig-transmitdisabled
-	TransmitDisabled bool `json:"TransmitDisabled,omitempty"`
+	TransmitDisabled *utils.Value[bool] `json:"TransmitDisabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

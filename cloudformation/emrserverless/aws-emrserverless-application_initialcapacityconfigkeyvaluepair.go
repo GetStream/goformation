@@ -1,0 +1,43 @@
+package emrserverless
+
+import (
+	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
+)
+
+var _ utils.Value[struct{}]
+
+// Application_InitialCapacityConfigKeyValuePair AWS CloudFormation Resource (AWS::EMRServerless::Application.InitialCapacityConfigKeyValuePair)
+// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-initialcapacityconfigkeyvaluepair.html
+type Application_InitialCapacityConfigKeyValuePair struct {
+
+	// Key AWS CloudFormation Property
+	// Required: true
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-initialcapacityconfigkeyvaluepair.html#cfn-emrserverless-application-initialcapacityconfigkeyvaluepair-key
+	Key string `json:"Key,omitempty"`
+
+	// Value AWS CloudFormation Property
+	// Required: true
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-initialcapacityconfigkeyvaluepair.html#cfn-emrserverless-application-initialcapacityconfigkeyvaluepair-value
+	Value *Application_InitialCapacityConfig `json:"Value,omitempty"`
+
+	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
+	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
+
+	// AWSCloudFormationUpdateReplacePolicy represents a CloudFormation UpdateReplacePolicy
+	AWSCloudFormationUpdateReplacePolicy policies.UpdateReplacePolicy `json:"-"`
+
+	// AWSCloudFormationDependsOn stores the logical ID of the resources to be created before this resource
+	AWSCloudFormationDependsOn []string `json:"-"`
+
+	// AWSCloudFormationMetadata stores structured data associated with this resource
+	AWSCloudFormationMetadata map[string]interface{} `json:"-"`
+
+	// AWSCloudFormationCondition stores the logical ID of the condition that must be satisfied for this resource to be created
+	AWSCloudFormationCondition string `json:"-"`
+}
+
+// AWSCloudFormationType returns the AWS CloudFormation resource type
+func (r *Application_InitialCapacityConfigKeyValuePair) AWSCloudFormationType() string {
+	return "AWS::EMRServerless::Application.InitialCapacityConfigKeyValuePair"
+}

@@ -2,7 +2,10 @@ package appmesh
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // GatewayRoute_HttpGatewayRouteHeader AWS CloudFormation Resource (AWS::AppMesh::GatewayRoute.HttpGatewayRouteHeader)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheader.html
@@ -11,7 +14,7 @@ type GatewayRoute_HttpGatewayRouteHeader struct {
 	// Invert AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheader.html#cfn-appmesh-gatewayroute-httpgatewayrouteheader-invert
-	Invert bool `json:"Invert,omitempty"`
+	Invert *utils.Value[bool] `json:"Invert,omitempty"`
 
 	// Match AWS CloudFormation Property
 	// Required: false

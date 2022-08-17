@@ -2,7 +2,10 @@ package eks
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster_EncryptionConfig AWS CloudFormation Resource (AWS::EKS::Cluster.EncryptionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-encryptionconfig.html
@@ -11,7 +14,7 @@ type Cluster_EncryptionConfig struct {
 	// Provider AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-encryptionconfig.html#cfn-eks-cluster-encryptionconfig-provider
-	Provider interface{} `json:"Provider,omitempty"`
+	Provider *Cluster_Provider `json:"Provider,omitempty"`
 
 	// Resources AWS CloudFormation Property
 	// Required: false

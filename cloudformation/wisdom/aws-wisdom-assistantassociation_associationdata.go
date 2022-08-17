@@ -2,7 +2,10 @@ package wisdom
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AssistantAssociation_AssociationData AWS CloudFormation Resource (AWS::Wisdom::AssistantAssociation.AssociationData)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-assistantassociation-associationdata.html

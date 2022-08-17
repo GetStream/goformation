@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_AudioSilenceFailoverSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AudioSilenceFailoverSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiosilencefailoversettings.html
@@ -16,7 +19,7 @@ type Channel_AudioSilenceFailoverSettings struct {
 	// AudioSilenceThresholdMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiosilencefailoversettings.html#cfn-medialive-channel-audiosilencefailoversettings-audiosilencethresholdmsec
-	AudioSilenceThresholdMsec int `json:"AudioSilenceThresholdMsec,omitempty"`
+	AudioSilenceThresholdMsec *utils.Value[int] `json:"AudioSilenceThresholdMsec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

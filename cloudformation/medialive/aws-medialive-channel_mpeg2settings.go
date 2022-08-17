@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_Mpeg2Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.Mpeg2Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html
@@ -46,27 +49,27 @@ type Channel_Mpeg2Settings struct {
 	// FramerateDenominator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-frameratedenominator
-	FramerateDenominator int `json:"FramerateDenominator,omitempty"`
+	FramerateDenominator *utils.Value[int] `json:"FramerateDenominator,omitempty"`
 
 	// FramerateNumerator AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-frameratenumerator
-	FramerateNumerator int `json:"FramerateNumerator,omitempty"`
+	FramerateNumerator *utils.Value[int] `json:"FramerateNumerator,omitempty"`
 
 	// GopClosedCadence AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-gopclosedcadence
-	GopClosedCadence int `json:"GopClosedCadence,omitempty"`
+	GopClosedCadence *utils.Value[int] `json:"GopClosedCadence,omitempty"`
 
 	// GopNumBFrames AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-gopnumbframes
-	GopNumBFrames int `json:"GopNumBFrames,omitempty"`
+	GopNumBFrames *utils.Value[int] `json:"GopNumBFrames,omitempty"`
 
 	// GopSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-gopsize
-	GopSize float64 `json:"GopSize,omitempty"`
+	GopSize *utils.Value[float64] `json:"GopSize,omitempty"`
 
 	// GopSizeUnits AWS CloudFormation Property
 	// Required: false

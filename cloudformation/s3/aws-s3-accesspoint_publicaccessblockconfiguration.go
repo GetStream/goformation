@@ -2,7 +2,10 @@ package s3
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AccessPoint_PublicAccessBlockConfiguration AWS CloudFormation Resource (AWS::S3::AccessPoint.PublicAccessBlockConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-publicaccessblockconfiguration.html
@@ -11,22 +14,22 @@ type AccessPoint_PublicAccessBlockConfiguration struct {
 	// BlockPublicAcls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-publicaccessblockconfiguration.html#cfn-s3-accesspoint-publicaccessblockconfiguration-blockpublicacls
-	BlockPublicAcls bool `json:"BlockPublicAcls,omitempty"`
+	BlockPublicAcls *utils.Value[bool] `json:"BlockPublicAcls,omitempty"`
 
 	// BlockPublicPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-publicaccessblockconfiguration.html#cfn-s3-accesspoint-publicaccessblockconfiguration-blockpublicpolicy
-	BlockPublicPolicy bool `json:"BlockPublicPolicy,omitempty"`
+	BlockPublicPolicy *utils.Value[bool] `json:"BlockPublicPolicy,omitempty"`
 
 	// IgnorePublicAcls AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-publicaccessblockconfiguration.html#cfn-s3-accesspoint-publicaccessblockconfiguration-ignorepublicacls
-	IgnorePublicAcls bool `json:"IgnorePublicAcls,omitempty"`
+	IgnorePublicAcls *utils.Value[bool] `json:"IgnorePublicAcls,omitempty"`
 
 	// RestrictPublicBuckets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-publicaccessblockconfiguration.html#cfn-s3-accesspoint-publicaccessblockconfiguration-restrictpublicbuckets
-	RestrictPublicBuckets bool `json:"RestrictPublicBuckets,omitempty"`
+	RestrictPublicBuckets *utils.Value[bool] `json:"RestrictPublicBuckets,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Discoverer AWS CloudFormation Resource (AWS::EventSchemas::Discoverer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html
@@ -15,7 +18,7 @@ type Discoverer struct {
 	// CrossAccount AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-crossaccount
-	CrossAccount bool `json:"CrossAccount,omitempty"`
+	CrossAccount *utils.Value[bool] `json:"CrossAccount,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false

@@ -2,11 +2,19 @@ package quicksight
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSet_LogicalTableSource AWS CloudFormation Resource (AWS::QuickSight::DataSet.LogicalTableSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltablesource.html
 type DataSet_LogicalTableSource struct {
+
+	// DataSetArn AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltablesource.html#cfn-quicksight-dataset-logicaltablesource-datasetarn
+	DataSetArn string `json:"DataSetArn,omitempty"`
 
 	// JoinInstruction AWS CloudFormation Property
 	// Required: false

@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Disk AWS CloudFormation Resource (AWS::Lightsail::Disk)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html
@@ -31,7 +34,7 @@ type Disk struct {
 	// SizeInGb AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#cfn-lightsail-disk-sizeingb
-	SizeInGb int `json:"SizeInGb"`
+	SizeInGb *utils.Value[int] `json:"SizeInGb"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

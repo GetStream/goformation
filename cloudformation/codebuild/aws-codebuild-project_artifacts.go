@@ -2,7 +2,10 @@ package codebuild
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Project_Artifacts AWS CloudFormation Resource (AWS::CodeBuild::Project.Artifacts)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html
@@ -16,7 +19,7 @@ type Project_Artifacts struct {
 	// EncryptionDisabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-encryptiondisabled
-	EncryptionDisabled bool `json:"EncryptionDisabled,omitempty"`
+	EncryptionDisabled *utils.Value[bool] `json:"EncryptionDisabled,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: false
@@ -36,7 +39,7 @@ type Project_Artifacts struct {
 	// OverrideArtifactName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-overrideartifactname
-	OverrideArtifactName bool `json:"OverrideArtifactName,omitempty"`
+	OverrideArtifactName *utils.Value[bool] `json:"OverrideArtifactName,omitempty"`
 
 	// Packaging AWS CloudFormation Property
 	// Required: false

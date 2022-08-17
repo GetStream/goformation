@@ -7,11 +7,19 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ModelQualityJobDefinition AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html
 type ModelQualityJobDefinition struct {
+
+	// EndpointName AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-endpointname
+	EndpointName string `json:"EndpointName,omitempty"`
 
 	// JobDefinitionName AWS CloudFormation Property
 	// Required: false

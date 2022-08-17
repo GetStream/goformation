@@ -2,7 +2,10 @@ package mediapackage
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // OriginEndpoint_SpekeKeyProvider AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.SpekeKeyProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html
@@ -12,6 +15,11 @@ type OriginEndpoint_SpekeKeyProvider struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html#cfn-mediapackage-originendpoint-spekekeyprovider-certificatearn
 	CertificateArn string `json:"CertificateArn,omitempty"`
+
+	// EncryptionContractConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html#cfn-mediapackage-originendpoint-spekekeyprovider-encryptioncontractconfiguration
+	EncryptionContractConfiguration *OriginEndpoint_EncryptionContractConfiguration `json:"EncryptionContractConfiguration,omitempty"`
 
 	// ResourceId AWS CloudFormation Property
 	// Required: true

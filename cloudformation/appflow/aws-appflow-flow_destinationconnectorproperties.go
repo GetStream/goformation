@@ -2,11 +2,19 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Flow_DestinationConnectorProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.DestinationConnectorProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html
 type Flow_DestinationConnectorProperties struct {
+
+	// CustomConnector AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-customconnector
+	CustomConnector *Flow_CustomConnectorDestinationProperties `json:"CustomConnector,omitempty"`
 
 	// EventBridge AWS CloudFormation Property
 	// Required: false
@@ -17,6 +25,11 @@ type Flow_DestinationConnectorProperties struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-lookoutmetrics
 	LookoutMetrics *Flow_LookoutMetricsDestinationProperties `json:"LookoutMetrics,omitempty"`
+
+	// Marketo AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-marketo
+	Marketo *Flow_MarketoDestinationProperties `json:"Marketo,omitempty"`
 
 	// Redshift AWS CloudFormation Property
 	// Required: false

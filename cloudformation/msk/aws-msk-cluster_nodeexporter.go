@@ -2,7 +2,10 @@ package msk
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Cluster_NodeExporter AWS CloudFormation Resource (AWS::MSK::Cluster.NodeExporter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html
@@ -11,7 +14,7 @@ type Cluster_NodeExporter struct {
 	// EnabledInBroker AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html#cfn-msk-cluster-nodeexporter-enabledinbroker
-	EnabledInBroker bool `json:"EnabledInBroker"`
+	EnabledInBroker *utils.Value[bool] `json:"EnabledInBroker"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

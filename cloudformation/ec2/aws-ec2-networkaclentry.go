@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // NetworkAclEntry AWS CloudFormation Resource (AWS::EC2::NetworkAclEntry)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html
@@ -20,7 +23,7 @@ type NetworkAclEntry struct {
 	// Egress AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-egress
-	Egress bool `json:"Egress,omitempty"`
+	Egress *utils.Value[bool] `json:"Egress,omitempty"`
 
 	// Icmp AWS CloudFormation Property
 	// Required: false
@@ -45,7 +48,7 @@ type NetworkAclEntry struct {
 	// Protocol AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-protocol
-	Protocol int `json:"Protocol"`
+	Protocol *utils.Value[int] `json:"Protocol"`
 
 	// RuleAction AWS CloudFormation Property
 	// Required: true
@@ -55,7 +58,7 @@ type NetworkAclEntry struct {
 	// RuleNumber AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-rulenumber
-	RuleNumber int `json:"RuleNumber"`
+	RuleNumber *utils.Value[int] `json:"RuleNumber"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

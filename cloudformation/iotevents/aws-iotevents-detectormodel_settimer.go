@@ -2,7 +2,10 @@ package iotevents
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DetectorModel_SetTimer AWS CloudFormation Resource (AWS::IoTEvents::DetectorModel.SetTimer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html
@@ -16,7 +19,7 @@ type DetectorModel_SetTimer struct {
 	// Seconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-seconds
-	Seconds int `json:"Seconds,omitempty"`
+	Seconds *utils.Value[int] `json:"Seconds,omitempty"`
 
 	// TimerName AWS CloudFormation Property
 	// Required: true

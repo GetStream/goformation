@@ -2,7 +2,10 @@ package opensearchservice
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Domain_MasterUserOptions AWS CloudFormation Resource (AWS::OpenSearchService::Domain.MasterUserOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-masteruseroptions.html

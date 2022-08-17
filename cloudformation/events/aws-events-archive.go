@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Archive AWS CloudFormation Resource (AWS::Events::Archive)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html
@@ -30,7 +33,7 @@ type Archive struct {
 	// RetentionDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html#cfn-events-archive-retentiondays
-	RetentionDays int `json:"RetentionDays,omitempty"`
+	RetentionDays *utils.Value[int] `json:"RetentionDays,omitempty"`
 
 	// SourceArn AWS CloudFormation Property
 	// Required: true

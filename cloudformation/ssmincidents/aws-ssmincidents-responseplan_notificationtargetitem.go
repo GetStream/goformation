@@ -2,7 +2,10 @@ package ssmincidents
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResponsePlan_NotificationTargetItem AWS CloudFormation Resource (AWS::SSMIncidents::ResponsePlan.NotificationTargetItem)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-notificationtargetitem.html

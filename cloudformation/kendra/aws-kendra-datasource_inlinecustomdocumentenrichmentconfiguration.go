@@ -2,7 +2,10 @@ package kendra
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSource_InlineCustomDocumentEnrichmentConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.InlineCustomDocumentEnrichmentConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html
@@ -16,7 +19,7 @@ type DataSource_InlineCustomDocumentEnrichmentConfiguration struct {
 	// DocumentContentDeletion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-documentcontentdeletion
-	DocumentContentDeletion bool `json:"DocumentContentDeletion,omitempty"`
+	DocumentContentDeletion *utils.Value[bool] `json:"DocumentContentDeletion,omitempty"`
 
 	// Target AWS CloudFormation Property
 	// Required: false

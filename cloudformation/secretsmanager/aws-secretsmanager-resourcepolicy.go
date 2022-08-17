@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResourcePolicy AWS CloudFormation Resource (AWS::SecretsManager::ResourcePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html
@@ -15,7 +18,7 @@ type ResourcePolicy struct {
 	// BlockPublicPolicy AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-blockpublicpolicy
-	BlockPublicPolicy bool `json:"BlockPublicPolicy,omitempty"`
+	BlockPublicPolicy *utils.Value[bool] `json:"BlockPublicPolicy,omitempty"`
 
 	// ResourcePolicy AWS CloudFormation Property
 	// Required: true

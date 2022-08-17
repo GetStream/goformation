@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LocationObjectStorage AWS CloudFormation Resource (AWS::DataSync::LocationObjectStorage)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html
@@ -41,7 +44,7 @@ type LocationObjectStorage struct {
 	// ServerPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-serverport
-	ServerPort int `json:"ServerPort,omitempty"`
+	ServerPort *utils.Value[int] `json:"ServerPort,omitempty"`
 
 	// ServerProtocol AWS CloudFormation Property
 	// Required: false

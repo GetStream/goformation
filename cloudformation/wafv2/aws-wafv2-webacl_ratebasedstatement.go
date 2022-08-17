@@ -2,7 +2,10 @@ package wafv2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // WebACL_RateBasedStatement AWS CloudFormation Resource (AWS::WAFv2::WebACL.RateBasedStatement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatement.html
@@ -21,7 +24,7 @@ type WebACL_RateBasedStatement struct {
 	// Limit AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatement.html#cfn-wafv2-webacl-ratebasedstatement-limit
-	Limit int `json:"Limit"`
+	Limit *utils.Value[int] `json:"Limit"`
 
 	// ScopeDownStatement AWS CloudFormation Property
 	// Required: false

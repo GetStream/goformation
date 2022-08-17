@@ -2,7 +2,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResponseHeadersPolicy_CorsConfig AWS CloudFormation Resource (AWS::CloudFront::ResponseHeadersPolicy.CorsConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html
@@ -11,7 +14,7 @@ type ResponseHeadersPolicy_CorsConfig struct {
 	// AccessControlAllowCredentials AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowcredentials
-	AccessControlAllowCredentials bool `json:"AccessControlAllowCredentials"`
+	AccessControlAllowCredentials *utils.Value[bool] `json:"AccessControlAllowCredentials"`
 
 	// AccessControlAllowHeaders AWS CloudFormation Property
 	// Required: true
@@ -36,12 +39,12 @@ type ResponseHeadersPolicy_CorsConfig struct {
 	// AccessControlMaxAgeSec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolmaxagesec
-	AccessControlMaxAgeSec int `json:"AccessControlMaxAgeSec,omitempty"`
+	AccessControlMaxAgeSec *utils.Value[int] `json:"AccessControlMaxAgeSec,omitempty"`
 
 	// OriginOverride AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-originoverride
-	OriginOverride bool `json:"OriginOverride"`
+	OriginOverride *utils.Value[bool] `json:"OriginOverride"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

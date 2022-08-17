@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SignalingChannel AWS CloudFormation Resource (AWS::KinesisVideo::SignalingChannel)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-signalingchannel.html
@@ -16,7 +19,7 @@ type SignalingChannel struct {
 	// MessageTtlSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-signalingchannel.html#cfn-kinesisvideo-signalingchannel-messagettlseconds
-	MessageTtlSeconds int `json:"MessageTtlSeconds,omitempty"`
+	MessageTtlSeconds *utils.Value[int] `json:"MessageTtlSeconds,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false

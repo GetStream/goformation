@@ -2,7 +2,10 @@ package amplifyuibuilder
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Component_ComponentVariantValues AWS CloudFormation Resource (AWS::AmplifyUIBuilder::Component.ComponentVariantValues)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentvariantvalues.html

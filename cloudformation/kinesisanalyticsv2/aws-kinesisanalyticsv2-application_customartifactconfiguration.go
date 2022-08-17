@@ -2,7 +2,10 @@ package kinesisanalyticsv2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Application_CustomArtifactConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.CustomArtifactConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-customartifactconfiguration.html

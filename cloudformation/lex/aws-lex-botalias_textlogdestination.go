@@ -2,14 +2,17 @@ package lex
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // BotAlias_TextLogDestination AWS CloudFormation Resource (AWS::Lex::BotAlias.TextLogDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-textlogdestination.html
 type BotAlias_TextLogDestination struct {
 
 	// CloudWatch AWS CloudFormation Property
-	// Required: false
+	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-textlogdestination.html#cfn-lex-botalias-textlogdestination-cloudwatch
 	CloudWatch *BotAlias_CloudWatchLogGroupLogDestination `json:"CloudWatch,omitempty"`
 

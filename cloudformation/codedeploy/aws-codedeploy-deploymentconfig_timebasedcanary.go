@@ -2,7 +2,10 @@ package codedeploy
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeploymentConfig_TimeBasedCanary AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentConfig.TimeBasedCanary)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html
@@ -11,12 +14,12 @@ type DeploymentConfig_TimeBasedCanary struct {
 	// CanaryInterval AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedcanary-canaryinterval
-	CanaryInterval int `json:"CanaryInterval"`
+	CanaryInterval *utils.Value[int] `json:"CanaryInterval"`
 
 	// CanaryPercentage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedcanary-canarypercentage
-	CanaryPercentage int `json:"CanaryPercentage"`
+	CanaryPercentage *utils.Value[int] `json:"CanaryPercentage"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

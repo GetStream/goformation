@@ -2,7 +2,10 @@ package groundstation
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataflowEndpointGroup_DataflowEndpoint AWS CloudFormation Resource (AWS::GroundStation::DataflowEndpointGroup.DataflowEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-dataflowendpoint.html
@@ -16,7 +19,7 @@ type DataflowEndpointGroup_DataflowEndpoint struct {
 	// Mtu AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-dataflowendpoint.html#cfn-groundstation-dataflowendpointgroup-dataflowendpoint-mtu
-	Mtu int `json:"Mtu,omitempty"`
+	Mtu *utils.Value[int] `json:"Mtu,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false

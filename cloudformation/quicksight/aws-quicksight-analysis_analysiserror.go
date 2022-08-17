@@ -2,7 +2,10 @@ package quicksight
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Analysis_AnalysisError AWS CloudFormation Resource (AWS::QuickSight::Analysis.AnalysisError)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysiserror.html

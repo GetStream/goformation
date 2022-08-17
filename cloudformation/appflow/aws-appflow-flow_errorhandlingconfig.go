@@ -2,7 +2,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Flow_ErrorHandlingConfig AWS CloudFormation Resource (AWS::AppFlow::Flow.ErrorHandlingConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html
@@ -21,7 +24,7 @@ type Flow_ErrorHandlingConfig struct {
 	// FailOnFirstError AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-failonfirsterror
-	FailOnFirstError bool `json:"FailOnFirstError,omitempty"`
+	FailOnFirstError *utils.Value[bool] `json:"FailOnFirstError,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -2,7 +2,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LaunchTemplate_LaunchTemplateElasticInferenceAccelerator AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.LaunchTemplateElasticInferenceAccelerator)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator.html
@@ -11,7 +14,7 @@ type LaunchTemplate_LaunchTemplateElasticInferenceAccelerator struct {
 	// Count AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator.html#cfn-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator-count
-	Count int `json:"Count,omitempty"`
+	Count *utils.Value[int] `json:"Count,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: false

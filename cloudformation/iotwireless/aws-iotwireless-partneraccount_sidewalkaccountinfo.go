@@ -2,7 +2,10 @@ package iotwireless
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // PartnerAccount_SidewalkAccountInfo AWS CloudFormation Resource (AWS::IoTWireless::PartnerAccount.SidewalkAccountInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfo.html

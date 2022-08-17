@@ -2,7 +2,10 @@ package iot
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SecurityProfile_BehaviorCriteria AWS CloudFormation Resource (AWS::IoT::SecurityProfile.BehaviorCriteria)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behaviorcriteria.html
@@ -16,17 +19,17 @@ type SecurityProfile_BehaviorCriteria struct {
 	// ConsecutiveDatapointsToAlarm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behaviorcriteria.html#cfn-iot-securityprofile-behaviorcriteria-consecutivedatapointstoalarm
-	ConsecutiveDatapointsToAlarm int `json:"ConsecutiveDatapointsToAlarm,omitempty"`
+	ConsecutiveDatapointsToAlarm *utils.Value[int] `json:"ConsecutiveDatapointsToAlarm,omitempty"`
 
 	// ConsecutiveDatapointsToClear AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behaviorcriteria.html#cfn-iot-securityprofile-behaviorcriteria-consecutivedatapointstoclear
-	ConsecutiveDatapointsToClear int `json:"ConsecutiveDatapointsToClear,omitempty"`
+	ConsecutiveDatapointsToClear *utils.Value[int] `json:"ConsecutiveDatapointsToClear,omitempty"`
 
 	// DurationSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behaviorcriteria.html#cfn-iot-securityprofile-behaviorcriteria-durationseconds
-	DurationSeconds int `json:"DurationSeconds,omitempty"`
+	DurationSeconds *utils.Value[int] `json:"DurationSeconds,omitempty"`
 
 	// MlDetectionConfig AWS CloudFormation Property
 	// Required: false

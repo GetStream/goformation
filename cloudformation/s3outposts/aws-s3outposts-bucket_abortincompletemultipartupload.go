@@ -2,7 +2,10 @@ package s3outposts
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bucket_AbortIncompleteMultipartUpload AWS CloudFormation Resource (AWS::S3Outposts::Bucket.AbortIncompleteMultipartUpload)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-abortincompletemultipartupload.html
@@ -11,7 +14,7 @@ type Bucket_AbortIncompleteMultipartUpload struct {
 	// DaysAfterInitiation AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-abortincompletemultipartupload.html#cfn-s3outposts-bucket-abortincompletemultipartupload-daysafterinitiation
-	DaysAfterInitiation int `json:"DaysAfterInitiation"`
+	DaysAfterInitiation *utils.Value[int] `json:"DaysAfterInitiation"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

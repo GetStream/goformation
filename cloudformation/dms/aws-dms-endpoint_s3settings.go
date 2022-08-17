@@ -2,7 +2,10 @@ package dms
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Endpoint_S3Settings AWS CloudFormation Resource (AWS::DMS::Endpoint.S3Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html
@@ -11,7 +14,7 @@ type Endpoint_S3Settings struct {
 	// AddColumnName AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-addcolumnname
-	AddColumnName bool `json:"AddColumnName,omitempty"`
+	AddColumnName *utils.Value[bool] `json:"AddColumnName,omitempty"`
 
 	// BucketFolder AWS CloudFormation Property
 	// Required: false
@@ -31,22 +34,22 @@ type Endpoint_S3Settings struct {
 	// CdcInsertsAndUpdates AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-cdcinsertsandupdates
-	CdcInsertsAndUpdates bool `json:"CdcInsertsAndUpdates,omitempty"`
+	CdcInsertsAndUpdates *utils.Value[bool] `json:"CdcInsertsAndUpdates,omitempty"`
 
 	// CdcInsertsOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-cdcinsertsonly
-	CdcInsertsOnly bool `json:"CdcInsertsOnly,omitempty"`
+	CdcInsertsOnly *utils.Value[bool] `json:"CdcInsertsOnly,omitempty"`
 
 	// CdcMaxBatchInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-cdcmaxbatchinterval
-	CdcMaxBatchInterval int `json:"CdcMaxBatchInterval,omitempty"`
+	CdcMaxBatchInterval *utils.Value[int] `json:"CdcMaxBatchInterval,omitempty"`
 
 	// CdcMinFileSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-cdcminfilesize
-	CdcMinFileSize int `json:"CdcMinFileSize,omitempty"`
+	CdcMinFileSize *utils.Value[int] `json:"CdcMinFileSize,omitempty"`
 
 	// CdcPath AWS CloudFormation Property
 	// Required: false
@@ -86,7 +89,7 @@ type Endpoint_S3Settings struct {
 	// DataPageSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-datapagesize
-	DataPageSize int `json:"DataPageSize,omitempty"`
+	DataPageSize *utils.Value[int] `json:"DataPageSize,omitempty"`
 
 	// DatePartitionDelimiter AWS CloudFormation Property
 	// Required: false
@@ -96,7 +99,7 @@ type Endpoint_S3Settings struct {
 	// DatePartitionEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-datepartitionenabled
-	DatePartitionEnabled bool `json:"DatePartitionEnabled,omitempty"`
+	DatePartitionEnabled *utils.Value[bool] `json:"DatePartitionEnabled,omitempty"`
 
 	// DatePartitionSequence AWS CloudFormation Property
 	// Required: false
@@ -111,12 +114,12 @@ type Endpoint_S3Settings struct {
 	// DictPageSizeLimit AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-dictpagesizelimit
-	DictPageSizeLimit int `json:"DictPageSizeLimit,omitempty"`
+	DictPageSizeLimit *utils.Value[int] `json:"DictPageSizeLimit,omitempty"`
 
 	// EnableStatistics AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-enablestatistics
-	EnableStatistics bool `json:"EnableStatistics,omitempty"`
+	EnableStatistics *utils.Value[bool] `json:"EnableStatistics,omitempty"`
 
 	// EncodingType AWS CloudFormation Property
 	// Required: false
@@ -136,22 +139,22 @@ type Endpoint_S3Settings struct {
 	// IgnoreHeaderRows AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-ignoreheaderrows
-	IgnoreHeaderRows int `json:"IgnoreHeaderRows,omitempty"`
+	IgnoreHeaderRows *utils.Value[int] `json:"IgnoreHeaderRows,omitempty"`
 
 	// IncludeOpForFullLoad AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-includeopforfullload
-	IncludeOpForFullLoad bool `json:"IncludeOpForFullLoad,omitempty"`
+	IncludeOpForFullLoad *utils.Value[bool] `json:"IncludeOpForFullLoad,omitempty"`
 
 	// MaxFileSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-maxfilesize
-	MaxFileSize int `json:"MaxFileSize,omitempty"`
+	MaxFileSize *utils.Value[int] `json:"MaxFileSize,omitempty"`
 
 	// ParquetTimestampInMillisecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-parquettimestampinmillisecond
-	ParquetTimestampInMillisecond bool `json:"ParquetTimestampInMillisecond,omitempty"`
+	ParquetTimestampInMillisecond *utils.Value[bool] `json:"ParquetTimestampInMillisecond,omitempty"`
 
 	// ParquetVersion AWS CloudFormation Property
 	// Required: false
@@ -161,17 +164,17 @@ type Endpoint_S3Settings struct {
 	// PreserveTransactions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-preservetransactions
-	PreserveTransactions bool `json:"PreserveTransactions,omitempty"`
+	PreserveTransactions *utils.Value[bool] `json:"PreserveTransactions,omitempty"`
 
 	// Rfc4180 AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-rfc4180
-	Rfc4180 bool `json:"Rfc4180,omitempty"`
+	Rfc4180 *utils.Value[bool] `json:"Rfc4180,omitempty"`
 
 	// RowGroupLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-rowgrouplength
-	RowGroupLength int `json:"RowGroupLength,omitempty"`
+	RowGroupLength *utils.Value[int] `json:"RowGroupLength,omitempty"`
 
 	// ServerSideEncryptionKmsKeyId AWS CloudFormation Property
 	// Required: false
@@ -191,12 +194,12 @@ type Endpoint_S3Settings struct {
 	// UseCsvNoSupValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-usecsvnosupvalue
-	UseCsvNoSupValue bool `json:"UseCsvNoSupValue,omitempty"`
+	UseCsvNoSupValue *utils.Value[bool] `json:"UseCsvNoSupValue,omitempty"`
 
 	// UseTaskStartTimeForFullLoadTimestamp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-usetaskstarttimeforfullloadtimestamp
-	UseTaskStartTimeForFullLoadTimestamp bool `json:"UseTaskStartTimeForFullLoadTimestamp,omitempty"`
+	UseTaskStartTimeForFullLoadTimestamp *utils.Value[bool] `json:"UseTaskStartTimeForFullLoadTimestamp,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

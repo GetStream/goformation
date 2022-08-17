@@ -2,11 +2,19 @@ package s3
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MultiRegionAccessPoint_Region AWS CloudFormation Resource (AWS::S3::MultiRegionAccessPoint.Region)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-multiregionaccesspoint-region.html
 type MultiRegionAccessPoint_Region struct {
+
+	// AccountId AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-multiregionaccesspoint-region.html#cfn-s3-multiregionaccesspoint-region-accountid
+	AccountId string `json:"AccountId,omitempty"`
 
 	// Bucket AWS CloudFormation Property
 	// Required: true

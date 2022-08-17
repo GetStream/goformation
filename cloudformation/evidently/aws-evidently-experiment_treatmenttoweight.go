@@ -2,7 +2,10 @@ package evidently
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Experiment_TreatmentToWeight AWS CloudFormation Resource (AWS::Evidently::Experiment.TreatmentToWeight)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-treatmenttoweight.html
@@ -11,7 +14,7 @@ type Experiment_TreatmentToWeight struct {
 	// SplitWeight AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-experiment-treatmenttoweight.html#cfn-evidently-experiment-treatmenttoweight-splitweight
-	SplitWeight int `json:"SplitWeight"`
+	SplitWeight *utils.Value[int] `json:"SplitWeight"`
 
 	// Treatment AWS CloudFormation Property
 	// Required: true

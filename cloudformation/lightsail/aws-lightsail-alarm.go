@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Alarm AWS CloudFormation Resource (AWS::Lightsail::Alarm)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html
@@ -30,12 +33,12 @@ type Alarm struct {
 	// DatapointsToAlarm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-datapointstoalarm
-	DatapointsToAlarm int `json:"DatapointsToAlarm,omitempty"`
+	DatapointsToAlarm *utils.Value[int] `json:"DatapointsToAlarm,omitempty"`
 
 	// EvaluationPeriods AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-evaluationperiods
-	EvaluationPeriods int `json:"EvaluationPeriods"`
+	EvaluationPeriods *utils.Value[int] `json:"EvaluationPeriods"`
 
 	// MetricName AWS CloudFormation Property
 	// Required: true
@@ -50,7 +53,7 @@ type Alarm struct {
 	// NotificationEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-notificationenabled
-	NotificationEnabled bool `json:"NotificationEnabled,omitempty"`
+	NotificationEnabled *utils.Value[bool] `json:"NotificationEnabled,omitempty"`
 
 	// NotificationTriggers AWS CloudFormation Property
 	// Required: false
@@ -60,7 +63,7 @@ type Alarm struct {
 	// Threshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-threshold
-	Threshold float64 `json:"Threshold"`
+	Threshold *utils.Value[float64] `json:"Threshold"`
 
 	// TreatMissingData AWS CloudFormation Property
 	// Required: false

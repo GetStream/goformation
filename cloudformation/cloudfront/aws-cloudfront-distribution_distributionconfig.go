@@ -2,7 +2,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Distribution_DistributionConfig AWS CloudFormation Resource (AWS::CloudFront::Distribution.DistributionConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html
@@ -39,7 +42,7 @@ type Distribution_DistributionConfig struct {
 	CustomOrigin *Distribution_LegacyCustomOrigin `json:"CustomOrigin,omitempty"`
 
 	// DefaultCacheBehavior AWS CloudFormation Property
-	// Required: false
+	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultcachebehavior
 	DefaultCacheBehavior *Distribution_DefaultCacheBehavior `json:"DefaultCacheBehavior,omitempty"`
 
@@ -51,7 +54,7 @@ type Distribution_DistributionConfig struct {
 	// Enabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-enabled
-	Enabled bool `json:"Enabled"`
+	Enabled *utils.Value[bool] `json:"Enabled"`
 
 	// HttpVersion AWS CloudFormation Property
 	// Required: false
@@ -61,7 +64,7 @@ type Distribution_DistributionConfig struct {
 	// IPV6Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-ipv6enabled
-	IPV6Enabled bool `json:"IPV6Enabled,omitempty"`
+	IPV6Enabled *utils.Value[bool] `json:"IPV6Enabled,omitempty"`
 
 	// Logging AWS CloudFormation Property
 	// Required: false

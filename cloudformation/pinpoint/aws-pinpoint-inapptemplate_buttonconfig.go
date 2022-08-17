@@ -2,7 +2,10 @@ package pinpoint
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // InAppTemplate_ButtonConfig AWS CloudFormation Resource (AWS::Pinpoint::InAppTemplate.ButtonConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html

@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TrafficMirrorFilterRule AWS CloudFormation Resource (AWS::EC2::TrafficMirrorFilterRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html
@@ -30,7 +33,7 @@ type TrafficMirrorFilterRule struct {
 	// Protocol AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-protocol
-	Protocol int `json:"Protocol,omitempty"`
+	Protocol *utils.Value[int] `json:"Protocol,omitempty"`
 
 	// RuleAction AWS CloudFormation Property
 	// Required: true
@@ -40,7 +43,7 @@ type TrafficMirrorFilterRule struct {
 	// RuleNumber AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-rulenumber
-	RuleNumber int `json:"RuleNumber"`
+	RuleNumber *utils.Value[int] `json:"RuleNumber"`
 
 	// SourceCidrBlock AWS CloudFormation Property
 	// Required: true

@@ -2,7 +2,10 @@ package dlm
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LifecyclePolicy_ShareRule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.ShareRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-sharerule.html
@@ -16,7 +19,7 @@ type LifecyclePolicy_ShareRule struct {
 	// UnshareInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-sharerule.html#cfn-dlm-lifecyclepolicy-sharerule-unshareinterval
-	UnshareInterval int `json:"UnshareInterval,omitempty"`
+	UnshareInterval *utils.Value[int] `json:"UnshareInterval,omitempty"`
 
 	// UnshareIntervalUnit AWS CloudFormation Property
 	// Required: false

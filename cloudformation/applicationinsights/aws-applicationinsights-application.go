@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Application AWS CloudFormation Resource (AWS::ApplicationInsights::Application)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html
@@ -16,12 +19,12 @@ type Application struct {
 	// AutoConfigurationEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-autoconfigurationenabled
-	AutoConfigurationEnabled bool `json:"AutoConfigurationEnabled,omitempty"`
+	AutoConfigurationEnabled *utils.Value[bool] `json:"AutoConfigurationEnabled,omitempty"`
 
 	// CWEMonitorEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-cwemonitorenabled
-	CWEMonitorEnabled bool `json:"CWEMonitorEnabled,omitempty"`
+	CWEMonitorEnabled *utils.Value[bool] `json:"CWEMonitorEnabled,omitempty"`
 
 	// ComponentMonitoringSettings AWS CloudFormation Property
 	// Required: false
@@ -33,6 +36,11 @@ type Application struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-customcomponents
 	CustomComponents []Application_CustomComponent `json:"CustomComponents,omitempty"`
 
+	// GroupingType AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-groupingtype
+	GroupingType string `json:"GroupingType,omitempty"`
+
 	// LogPatternSets AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-logpatternsets
@@ -41,7 +49,7 @@ type Application struct {
 	// OpsCenterEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-opscenterenabled
-	OpsCenterEnabled bool `json:"OpsCenterEnabled,omitempty"`
+	OpsCenterEnabled *utils.Value[bool] `json:"OpsCenterEnabled,omitempty"`
 
 	// OpsItemSNSTopicArn AWS CloudFormation Property
 	// Required: false

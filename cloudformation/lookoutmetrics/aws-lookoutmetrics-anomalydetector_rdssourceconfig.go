@@ -2,7 +2,10 @@ package lookoutmetrics
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AnomalyDetector_RDSSourceConfig AWS CloudFormation Resource (AWS::LookoutMetrics::AnomalyDetector.RDSSourceConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-rdssourceconfig.html
@@ -26,7 +29,7 @@ type AnomalyDetector_RDSSourceConfig struct {
 	// DatabasePort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-rdssourceconfig.html#cfn-lookoutmetrics-anomalydetector-rdssourceconfig-databaseport
-	DatabasePort int `json:"DatabasePort"`
+	DatabasePort *utils.Value[int] `json:"DatabasePort"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true

@@ -2,7 +2,10 @@ package nimblestudio
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LaunchProfile_StreamConfiguration AWS CloudFormation Resource (AWS::NimbleStudio::LaunchProfile.StreamConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html
@@ -21,12 +24,12 @@ type LaunchProfile_StreamConfiguration struct {
 	// MaxSessionLengthInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-maxsessionlengthinminutes
-	MaxSessionLengthInMinutes float64 `json:"MaxSessionLengthInMinutes,omitempty"`
+	MaxSessionLengthInMinutes *utils.Value[float64] `json:"MaxSessionLengthInMinutes,omitempty"`
 
 	// MaxStoppedSessionLengthInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-maxstoppedsessionlengthinminutes
-	MaxStoppedSessionLengthInMinutes float64 `json:"MaxStoppedSessionLengthInMinutes,omitempty"`
+	MaxStoppedSessionLengthInMinutes *utils.Value[float64] `json:"MaxStoppedSessionLengthInMinutes,omitempty"`
 
 	// SessionStorage AWS CloudFormation Property
 	// Required: false

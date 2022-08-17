@@ -2,7 +2,10 @@ package databrew
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Project_Sample AWS CloudFormation Resource (AWS::DataBrew::Project.Sample)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html
@@ -11,7 +14,7 @@ type Project_Sample struct {
 	// Size AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-size
-	Size int `json:"Size,omitempty"`
+	Size *utils.Value[int] `json:"Size,omitempty"`
 
 	// Type AWS CloudFormation Property
 	// Required: true

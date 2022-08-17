@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ReportDefinition AWS CloudFormation Resource (AWS::CUR::ReportDefinition)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html
@@ -40,7 +43,7 @@ type ReportDefinition struct {
 	// RefreshClosedReports AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-refreshclosedreports
-	RefreshClosedReports bool `json:"RefreshClosedReports"`
+	RefreshClosedReports *utils.Value[bool] `json:"RefreshClosedReports"`
 
 	// ReportName AWS CloudFormation Property
 	// Required: true

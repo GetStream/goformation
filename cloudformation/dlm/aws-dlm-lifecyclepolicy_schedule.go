@@ -3,7 +3,10 @@ package dlm
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LifecyclePolicy_Schedule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.Schedule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html
@@ -12,7 +15,7 @@ type LifecyclePolicy_Schedule struct {
 	// CopyTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-copytags
-	CopyTags bool `json:"CopyTags,omitempty"`
+	CopyTags *utils.Value[bool] `json:"CopyTags,omitempty"`
 
 	// CreateRule AWS CloudFormation Property
 	// Required: false

@@ -2,7 +2,10 @@ package codebuild
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Project_RegistryCredential AWS CloudFormation Resource (AWS::CodeBuild::Project.RegistryCredential)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html

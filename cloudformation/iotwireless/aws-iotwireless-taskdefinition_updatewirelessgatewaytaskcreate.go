@@ -2,7 +2,10 @@ package iotwireless
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TaskDefinition_UpdateWirelessGatewayTaskCreate AWS CloudFormation Resource (AWS::IoTWireless::TaskDefinition.UpdateWirelessGatewayTaskCreate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate.html

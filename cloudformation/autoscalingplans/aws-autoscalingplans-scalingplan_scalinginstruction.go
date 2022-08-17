@@ -2,7 +2,10 @@ package autoscalingplans
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ScalingPlan_ScalingInstruction AWS CloudFormation Resource (AWS::AutoScalingPlans::ScalingPlan.ScalingInstruction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html
@@ -16,17 +19,17 @@ type ScalingPlan_ScalingInstruction struct {
 	// DisableDynamicScaling AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-disabledynamicscaling
-	DisableDynamicScaling bool `json:"DisableDynamicScaling,omitempty"`
+	DisableDynamicScaling *utils.Value[bool] `json:"DisableDynamicScaling,omitempty"`
 
 	// MaxCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-maxcapacity
-	MaxCapacity int `json:"MaxCapacity"`
+	MaxCapacity *utils.Value[int] `json:"MaxCapacity"`
 
 	// MinCapacity AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-mincapacity
-	MinCapacity int `json:"MinCapacity"`
+	MinCapacity *utils.Value[int] `json:"MinCapacity"`
 
 	// PredefinedLoadMetricSpecification AWS CloudFormation Property
 	// Required: false
@@ -41,7 +44,7 @@ type ScalingPlan_ScalingInstruction struct {
 	// PredictiveScalingMaxCapacityBuffer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predictivescalingmaxcapacitybuffer
-	PredictiveScalingMaxCapacityBuffer int `json:"PredictiveScalingMaxCapacityBuffer,omitempty"`
+	PredictiveScalingMaxCapacityBuffer *utils.Value[int] `json:"PredictiveScalingMaxCapacityBuffer,omitempty"`
 
 	// PredictiveScalingMode AWS CloudFormation Property
 	// Required: false
@@ -66,7 +69,7 @@ type ScalingPlan_ScalingInstruction struct {
 	// ScheduledActionBufferTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-scheduledactionbuffertime
-	ScheduledActionBufferTime int `json:"ScheduledActionBufferTime,omitempty"`
+	ScheduledActionBufferTime *utils.Value[int] `json:"ScheduledActionBufferTime,omitempty"`
 
 	// ServiceNamespace AWS CloudFormation Property
 	// Required: true

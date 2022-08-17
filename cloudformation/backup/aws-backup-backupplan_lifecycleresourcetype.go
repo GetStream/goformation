@@ -2,7 +2,10 @@ package backup
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // BackupPlan_LifecycleResourceType AWS CloudFormation Resource (AWS::Backup::BackupPlan.LifecycleResourceType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html
@@ -11,12 +14,12 @@ type BackupPlan_LifecycleResourceType struct {
 	// DeleteAfterDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-deleteafterdays
-	DeleteAfterDays float64 `json:"DeleteAfterDays,omitempty"`
+	DeleteAfterDays *utils.Value[float64] `json:"DeleteAfterDays,omitempty"`
 
 	// MoveToColdStorageAfterDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-movetocoldstorageafterdays
-	MoveToColdStorageAfterDays float64 `json:"MoveToColdStorageAfterDays,omitempty"`
+	MoveToColdStorageAfterDays *utils.Value[float64] `json:"MoveToColdStorageAfterDays,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

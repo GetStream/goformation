@@ -2,7 +2,10 @@ package ssmcontacts
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Contact_ContactTargetInfo AWS CloudFormation Resource (AWS::SSMContacts::Contact.ContactTargetInfo)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-contacttargetinfo.html
@@ -16,7 +19,7 @@ type Contact_ContactTargetInfo struct {
 	// IsEssential AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-contacttargetinfo.html#cfn-ssmcontacts-contact-contacttargetinfo-isessential
-	IsEssential bool `json:"IsEssential"`
+	IsEssential *utils.Value[bool] `json:"IsEssential"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

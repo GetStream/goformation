@@ -2,7 +2,10 @@ package iotsitewise
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AccessPolicy_IamRole AWS CloudFormation Resource (AWS::IoTSiteWise::AccessPolicy.IamRole)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-iamrole.html

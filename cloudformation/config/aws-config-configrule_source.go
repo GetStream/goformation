@@ -2,11 +2,19 @@ package config
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConfigRule_Source AWS CloudFormation Resource (AWS::Config::ConfigRule.Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html
 type ConfigRule_Source struct {
+
+	// CustomPolicyDetails AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-custompolicydetails
+	CustomPolicyDetails *ConfigRule_CustomPolicyDetails `json:"CustomPolicyDetails,omitempty"`
 
 	// Owner AWS CloudFormation Property
 	// Required: true
@@ -19,7 +27,7 @@ type ConfigRule_Source struct {
 	SourceDetails []ConfigRule_SourceDetail `json:"SourceDetails,omitempty"`
 
 	// SourceIdentifier AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourceidentifier
 	SourceIdentifier string `json:"SourceIdentifier,omitempty"`
 

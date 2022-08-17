@@ -2,7 +2,10 @@ package quicksight
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Dashboard_ExportToCSVOption AWS CloudFormation Resource (AWS::QuickSight::Dashboard.ExportToCSVOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-exporttocsvoption.html

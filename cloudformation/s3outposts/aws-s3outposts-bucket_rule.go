@@ -2,7 +2,10 @@ package s3outposts
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bucket_Rule AWS CloudFormation Resource (AWS::S3Outposts::Bucket.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html
@@ -21,7 +24,7 @@ type Bucket_Rule struct {
 	// ExpirationInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationindays
-	ExpirationInDays int `json:"ExpirationInDays,omitempty"`
+	ExpirationInDays *utils.Value[int] `json:"ExpirationInDays,omitempty"`
 
 	// Filter AWS CloudFormation Property
 	// Required: false

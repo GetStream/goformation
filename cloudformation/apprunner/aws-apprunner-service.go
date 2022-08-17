@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Service AWS CloudFormation Resource (AWS::AppRunner::Service)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html
@@ -37,6 +40,11 @@ type Service struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-networkconfiguration
 	NetworkConfiguration *Service_NetworkConfiguration `json:"NetworkConfiguration,omitempty"`
+
+	// ObservabilityConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-observabilityconfiguration
+	ObservabilityConfiguration *Service_ServiceObservabilityConfiguration `json:"ObservabilityConfiguration,omitempty"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: false

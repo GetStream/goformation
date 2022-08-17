@@ -2,7 +2,10 @@ package batch
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // JobDefinition_ContainerProperties AWS CloudFormation Resource (AWS::Batch::JobDefinition.ContainerProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html
@@ -56,7 +59,7 @@ type JobDefinition_ContainerProperties struct {
 	// Memory AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-memory
-	Memory int `json:"Memory,omitempty"`
+	Memory *utils.Value[int] `json:"Memory,omitempty"`
 
 	// MountPoints AWS CloudFormation Property
 	// Required: false
@@ -71,12 +74,12 @@ type JobDefinition_ContainerProperties struct {
 	// Privileged AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-privileged
-	Privileged bool `json:"Privileged,omitempty"`
+	Privileged *utils.Value[bool] `json:"Privileged,omitempty"`
 
 	// ReadonlyRootFilesystem AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-readonlyrootfilesystem
-	ReadonlyRootFilesystem bool `json:"ReadonlyRootFilesystem,omitempty"`
+	ReadonlyRootFilesystem *utils.Value[bool] `json:"ReadonlyRootFilesystem,omitempty"`
 
 	// ResourceRequirements AWS CloudFormation Property
 	// Required: false
@@ -101,7 +104,7 @@ type JobDefinition_ContainerProperties struct {
 	// Vcpus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-vcpus
-	Vcpus int `json:"Vcpus,omitempty"`
+	Vcpus *utils.Value[int] `json:"Vcpus,omitempty"`
 
 	// Volumes AWS CloudFormation Property
 	// Required: false

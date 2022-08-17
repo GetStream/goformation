@@ -2,7 +2,10 @@ package accessanalyzer
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Analyzer_Filter AWS CloudFormation Resource (AWS::AccessAnalyzer::Analyzer.Filter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-filter.html
@@ -21,7 +24,7 @@ type Analyzer_Filter struct {
 	// Exists AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-filter.html#cfn-accessanalyzer-analyzer-filter-exists
-	Exists bool `json:"Exists,omitempty"`
+	Exists *utils.Value[bool] `json:"Exists,omitempty"`
 
 	// Neq AWS CloudFormation Property
 	// Required: false

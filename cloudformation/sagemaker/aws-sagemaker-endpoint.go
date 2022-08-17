@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Endpoint AWS CloudFormation Resource (AWS::SageMaker::Endpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html
@@ -36,12 +39,12 @@ type Endpoint struct {
 	// RetainAllVariantProperties AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-retainallvariantproperties
-	RetainAllVariantProperties bool `json:"RetainAllVariantProperties,omitempty"`
+	RetainAllVariantProperties *utils.Value[bool] `json:"RetainAllVariantProperties,omitempty"`
 
 	// RetainDeploymentConfig AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-retaindeploymentconfig
-	RetainDeploymentConfig bool `json:"RetainDeploymentConfig,omitempty"`
+	RetainDeploymentConfig *utils.Value[bool] `json:"RetainDeploymentConfig,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

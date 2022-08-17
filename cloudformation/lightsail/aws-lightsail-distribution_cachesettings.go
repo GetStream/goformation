@@ -2,7 +2,10 @@ package lightsail
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Distribution_CacheSettings AWS CloudFormation Resource (AWS::Lightsail::Distribution.CacheSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html
@@ -21,7 +24,7 @@ type Distribution_CacheSettings struct {
 	// DefaultTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-defaultttl
-	DefaultTTL int `json:"DefaultTTL,omitempty"`
+	DefaultTTL *utils.Value[int] `json:"DefaultTTL,omitempty"`
 
 	// ForwardedCookies AWS CloudFormation Property
 	// Required: false
@@ -41,12 +44,12 @@ type Distribution_CacheSettings struct {
 	// MaximumTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-maximumttl
-	MaximumTTL int `json:"MaximumTTL,omitempty"`
+	MaximumTTL *utils.Value[int] `json:"MaximumTTL,omitempty"`
 
 	// MinimumTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-minimumttl
-	MinimumTTL int `json:"MinimumTTL,omitempty"`
+	MinimumTTL *utils.Value[int] `json:"MinimumTTL,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

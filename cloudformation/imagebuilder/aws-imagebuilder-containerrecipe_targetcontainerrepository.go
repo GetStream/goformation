@@ -2,7 +2,10 @@ package imagebuilder
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ContainerRecipe_TargetContainerRepository AWS CloudFormation Resource (AWS::ImageBuilder::ContainerRecipe.TargetContainerRepository)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-targetcontainerrepository.html

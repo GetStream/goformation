@@ -2,7 +2,10 @@ package mediapackage
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // OriginEndpoint_HlsEncryption AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.HlsEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsencryption.html
@@ -21,12 +24,12 @@ type OriginEndpoint_HlsEncryption struct {
 	// KeyRotationIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsencryption.html#cfn-mediapackage-originendpoint-hlsencryption-keyrotationintervalseconds
-	KeyRotationIntervalSeconds int `json:"KeyRotationIntervalSeconds,omitempty"`
+	KeyRotationIntervalSeconds *utils.Value[int] `json:"KeyRotationIntervalSeconds,omitempty"`
 
 	// RepeatExtXKey AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsencryption.html#cfn-mediapackage-originendpoint-hlsencryption-repeatextxkey
-	RepeatExtXKey bool `json:"RepeatExtXKey,omitempty"`
+	RepeatExtXKey *utils.Value[bool] `json:"RepeatExtXKey,omitempty"`
 
 	// SpekeKeyProvider AWS CloudFormation Property
 	// Required: true

@@ -2,7 +2,10 @@ package budgets
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Budget_Spend AWS CloudFormation Resource (AWS::Budgets::Budget.Spend)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html
@@ -11,7 +14,7 @@ type Budget_Spend struct {
 	// Amount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-amount
-	Amount float64 `json:"Amount"`
+	Amount *utils.Value[float64] `json:"Amount"`
 
 	// Unit AWS CloudFormation Property
 	// Required: true

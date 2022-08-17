@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Pipeline AWS CloudFormation Resource (AWS::DataPipeline::Pipeline)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html
@@ -15,7 +18,7 @@ type Pipeline struct {
 	// Activate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-activate
-	Activate bool `json:"Activate,omitempty"`
+	Activate *utils.Value[bool] `json:"Activate,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false

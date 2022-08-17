@@ -2,7 +2,10 @@ package cognito
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // UserPool_AdminCreateUserConfig AWS CloudFormation Resource (AWS::Cognito::UserPool.AdminCreateUserConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html
@@ -11,7 +14,7 @@ type UserPool_AdminCreateUserConfig struct {
 	// AllowAdminCreateUserOnly AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-allowadmincreateuseronly
-	AllowAdminCreateUserOnly bool `json:"AllowAdminCreateUserOnly,omitempty"`
+	AllowAdminCreateUserOnly *utils.Value[bool] `json:"AllowAdminCreateUserOnly,omitempty"`
 
 	// InviteMessageTemplate AWS CloudFormation Property
 	// Required: false
@@ -21,7 +24,7 @@ type UserPool_AdminCreateUserConfig struct {
 	// UnusedAccountValidityDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-unusedaccountvaliditydays
-	UnusedAccountValidityDays int `json:"UnusedAccountValidityDays,omitempty"`
+	UnusedAccountValidityDays *utils.Value[int] `json:"UnusedAccountValidityDays,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

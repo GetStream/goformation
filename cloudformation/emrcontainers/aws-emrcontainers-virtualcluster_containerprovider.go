@@ -2,7 +2,10 @@ package emrcontainers
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VirtualCluster_ContainerProvider AWS CloudFormation Resource (AWS::EMRContainers::VirtualCluster.ContainerProvider)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-containerprovider.html

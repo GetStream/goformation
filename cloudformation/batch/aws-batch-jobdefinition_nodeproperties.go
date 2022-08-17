@@ -2,7 +2,10 @@ package batch
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // JobDefinition_NodeProperties AWS CloudFormation Resource (AWS::Batch::JobDefinition.NodeProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html
@@ -11,7 +14,7 @@ type JobDefinition_NodeProperties struct {
 	// MainNode AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-mainnode
-	MainNode int `json:"MainNode"`
+	MainNode *utils.Value[int] `json:"MainNode"`
 
 	// NodeRangeProperties AWS CloudFormation Property
 	// Required: true
@@ -21,7 +24,7 @@ type JobDefinition_NodeProperties struct {
 	// NumNodes AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-numnodes
-	NumNodes int `json:"NumNodes"`
+	NumNodes *utils.Value[int] `json:"NumNodes"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

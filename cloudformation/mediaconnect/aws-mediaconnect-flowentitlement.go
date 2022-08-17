@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FlowEntitlement AWS CloudFormation Resource (AWS::MediaConnect::FlowEntitlement)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html
@@ -15,7 +18,7 @@ type FlowEntitlement struct {
 	// DataTransferSubscriberFeePercent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-datatransfersubscriberfeepercent
-	DataTransferSubscriberFeePercent int `json:"DataTransferSubscriberFeePercent,omitempty"`
+	DataTransferSubscriberFeePercent *utils.Value[int] `json:"DataTransferSubscriberFeePercent,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: true

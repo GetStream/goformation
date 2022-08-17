@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Model AWS CloudFormation Resource (AWS::SageMaker::Model)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html
@@ -21,7 +24,7 @@ type Model struct {
 	// EnableNetworkIsolation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-enablenetworkisolation
-	EnableNetworkIsolation bool `json:"EnableNetworkIsolation,omitempty"`
+	EnableNetworkIsolation *utils.Value[bool] `json:"EnableNetworkIsolation,omitempty"`
 
 	// ExecutionRoleArn AWS CloudFormation Property
 	// Required: true

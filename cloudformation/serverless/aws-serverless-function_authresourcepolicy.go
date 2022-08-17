@@ -2,7 +2,10 @@ package serverless
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Function_AuthResourcePolicy AWS CloudFormation Resource (AWS::Serverless::Function.AuthResourcePolicy)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object

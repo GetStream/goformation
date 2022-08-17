@@ -2,7 +2,10 @@ package iot
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TopicRule_IotAnalyticsAction AWS CloudFormation Resource (AWS::IoT::TopicRule.IotAnalyticsAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotanalyticsaction.html
@@ -11,7 +14,7 @@ type TopicRule_IotAnalyticsAction struct {
 	// BatchMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotanalyticsaction.html#cfn-iot-topicrule-iotanalyticsaction-batchmode
-	BatchMode bool `json:"BatchMode,omitempty"`
+	BatchMode *utils.Value[bool] `json:"BatchMode,omitempty"`
 
 	// ChannelName AWS CloudFormation Property
 	// Required: true

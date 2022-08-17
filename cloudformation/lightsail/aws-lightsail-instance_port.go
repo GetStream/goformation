@@ -2,7 +2,10 @@ package lightsail
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Instance_Port AWS CloudFormation Resource (AWS::Lightsail::Instance.Port)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html
@@ -41,7 +44,7 @@ type Instance_Port struct {
 	// FromPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-fromport
-	FromPort int `json:"FromPort,omitempty"`
+	FromPort *utils.Value[int] `json:"FromPort,omitempty"`
 
 	// Ipv6Cidrs AWS CloudFormation Property
 	// Required: false
@@ -56,7 +59,7 @@ type Instance_Port struct {
 	// ToPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-port.html#cfn-lightsail-instance-port-toport
-	ToPort int `json:"ToPort,omitempty"`
+	ToPort *utils.Value[int] `json:"ToPort,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

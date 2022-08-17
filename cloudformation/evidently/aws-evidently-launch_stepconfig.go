@@ -2,7 +2,10 @@ package evidently
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Launch_StepConfig AWS CloudFormation Resource (AWS::Evidently::Launch.StepConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-stepconfig.html
@@ -12,6 +15,11 @@ type Launch_StepConfig struct {
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-stepconfig.html#cfn-evidently-launch-stepconfig-groupweights
 	GroupWeights []Launch_GroupToWeight `json:"GroupWeights,omitempty"`
+
+	// SegmentOverrides AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-stepconfig.html#cfn-evidently-launch-stepconfig-segmentoverrides
+	SegmentOverrides []Launch_SegmentOverride `json:"SegmentOverrides,omitempty"`
 
 	// StartTime AWS CloudFormation Property
 	// Required: true

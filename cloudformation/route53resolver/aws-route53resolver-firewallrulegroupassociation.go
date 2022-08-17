@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FirewallRuleGroupAssociation AWS CloudFormation Resource (AWS::Route53Resolver::FirewallRuleGroupAssociation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html
@@ -31,7 +34,7 @@ type FirewallRuleGroupAssociation struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#cfn-route53resolver-firewallrulegroupassociation-priority
-	Priority int `json:"Priority"`
+	Priority *utils.Value[int] `json:"Priority"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

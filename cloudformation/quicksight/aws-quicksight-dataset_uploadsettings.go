@@ -2,7 +2,10 @@ package quicksight
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSet_UploadSettings AWS CloudFormation Resource (AWS::QuickSight::DataSet.UploadSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html
@@ -11,7 +14,7 @@ type DataSet_UploadSettings struct {
 	// ContainsHeader AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-containsheader
-	ContainsHeader bool `json:"ContainsHeader,omitempty"`
+	ContainsHeader *utils.Value[bool] `json:"ContainsHeader,omitempty"`
 
 	// Delimiter AWS CloudFormation Property
 	// Required: false
@@ -26,7 +29,7 @@ type DataSet_UploadSettings struct {
 	// StartFromRow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-startfromrow
-	StartFromRow float64 `json:"StartFromRow,omitempty"`
+	StartFromRow *utils.Value[float64] `json:"StartFromRow,omitempty"`
 
 	// TextQualifier AWS CloudFormation Property
 	// Required: false

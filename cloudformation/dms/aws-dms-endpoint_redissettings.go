@@ -2,7 +2,10 @@ package dms
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Endpoint_RedisSettings AWS CloudFormation Resource (AWS::DMS::Endpoint.RedisSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html
@@ -26,7 +29,7 @@ type Endpoint_RedisSettings struct {
 	// Port AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-port
-	Port float64 `json:"Port,omitempty"`
+	Port *utils.Value[float64] `json:"Port,omitempty"`
 
 	// ServerName AWS CloudFormation Property
 	// Required: false

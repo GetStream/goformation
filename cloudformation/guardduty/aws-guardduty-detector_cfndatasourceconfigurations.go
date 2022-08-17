@@ -2,7 +2,10 @@ package guardduty
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Detector_CFNDataSourceConfigurations AWS CloudFormation Resource (AWS::GuardDuty::Detector.CFNDataSourceConfigurations)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html
@@ -12,6 +15,11 @@ type Detector_CFNDataSourceConfigurations struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html#cfn-guardduty-detector-cfndatasourceconfigurations-kubernetes
 	Kubernetes *Detector_CFNKubernetesConfiguration `json:"Kubernetes,omitempty"`
+
+	// MalwareProtection AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html#cfn-guardduty-detector-cfndatasourceconfigurations-malwareprotection
+	MalwareProtection *Detector_CFNMalwareProtectionConfiguration `json:"MalwareProtection,omitempty"`
 
 	// S3Logs AWS CloudFormation Property
 	// Required: false

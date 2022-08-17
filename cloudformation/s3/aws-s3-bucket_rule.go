@@ -2,7 +2,10 @@ package s3
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bucket_Rule AWS CloudFormation Resource (AWS::S3::Bucket.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html
@@ -21,12 +24,12 @@ type Bucket_Rule struct {
 	// ExpirationInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-expirationindays
-	ExpirationInDays int `json:"ExpirationInDays,omitempty"`
+	ExpirationInDays *utils.Value[int] `json:"ExpirationInDays,omitempty"`
 
 	// ExpiredObjectDeleteMarker AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-expiredobjectdeletemarker
-	ExpiredObjectDeleteMarker bool `json:"ExpiredObjectDeleteMarker,omitempty"`
+	ExpiredObjectDeleteMarker *utils.Value[bool] `json:"ExpiredObjectDeleteMarker,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: false
@@ -41,7 +44,7 @@ type Bucket_Rule struct {
 	// NoncurrentVersionExpirationInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpirationindays
-	NoncurrentVersionExpirationInDays int `json:"NoncurrentVersionExpirationInDays,omitempty"`
+	NoncurrentVersionExpirationInDays *utils.Value[int] `json:"NoncurrentVersionExpirationInDays,omitempty"`
 
 	// NoncurrentVersionTransition AWS CloudFormation Property
 	// Required: false
@@ -56,12 +59,12 @@ type Bucket_Rule struct {
 	// ObjectSizeGreaterThan AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-objectsizegreaterthan
-	ObjectSizeGreaterThan int64 `json:"ObjectSizeGreaterThan,omitempty"`
+	ObjectSizeGreaterThan *utils.Value[int64] `json:"ObjectSizeGreaterThan,omitempty"`
 
 	// ObjectSizeLessThan AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-objectsizelessthan
-	ObjectSizeLessThan int64 `json:"ObjectSizeLessThan,omitempty"`
+	ObjectSizeLessThan *utils.Value[int64] `json:"ObjectSizeLessThan,omitempty"`
 
 	// Prefix AWS CloudFormation Property
 	// Required: false

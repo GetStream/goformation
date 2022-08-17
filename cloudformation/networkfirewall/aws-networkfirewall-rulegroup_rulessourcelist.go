@@ -2,7 +2,10 @@ package networkfirewall
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // RuleGroup_RulesSourceList AWS CloudFormation Resource (AWS::NetworkFirewall::RuleGroup.RulesSourceList)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessourcelist.html

@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_M3u8Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.M3u8Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html
@@ -11,7 +14,7 @@ type Channel_M3u8Settings struct {
 	// AudioFramesPerPes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-audioframesperpes
-	AudioFramesPerPes int `json:"AudioFramesPerPes,omitempty"`
+	AudioFramesPerPes *utils.Value[int] `json:"AudioFramesPerPes,omitempty"`
 
 	// AudioPids AWS CloudFormation Property
 	// Required: false
@@ -31,7 +34,7 @@ type Channel_M3u8Settings struct {
 	// PatInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-patinterval
-	PatInterval int `json:"PatInterval,omitempty"`
+	PatInterval *utils.Value[int] `json:"PatInterval,omitempty"`
 
 	// PcrControl AWS CloudFormation Property
 	// Required: false
@@ -41,7 +44,7 @@ type Channel_M3u8Settings struct {
 	// PcrPeriod AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-pcrperiod
-	PcrPeriod int `json:"PcrPeriod,omitempty"`
+	PcrPeriod *utils.Value[int] `json:"PcrPeriod,omitempty"`
 
 	// PcrPid AWS CloudFormation Property
 	// Required: false
@@ -51,7 +54,7 @@ type Channel_M3u8Settings struct {
 	// PmtInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-pmtinterval
-	PmtInterval int `json:"PmtInterval,omitempty"`
+	PmtInterval *utils.Value[int] `json:"PmtInterval,omitempty"`
 
 	// PmtPid AWS CloudFormation Property
 	// Required: false
@@ -61,7 +64,7 @@ type Channel_M3u8Settings struct {
 	// ProgramNum AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-programnum
-	ProgramNum int `json:"ProgramNum,omitempty"`
+	ProgramNum *utils.Value[int] `json:"ProgramNum,omitempty"`
 
 	// Scte35Behavior AWS CloudFormation Property
 	// Required: false
@@ -86,7 +89,7 @@ type Channel_M3u8Settings struct {
 	// TransportStreamId AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-transportstreamid
-	TransportStreamId int `json:"TransportStreamId,omitempty"`
+	TransportStreamId *utils.Value[int] `json:"TransportStreamId,omitempty"`
 
 	// VideoPid AWS CloudFormation Property
 	// Required: false

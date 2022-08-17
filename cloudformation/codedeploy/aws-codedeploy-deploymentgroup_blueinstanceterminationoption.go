@@ -2,7 +2,10 @@ package codedeploy
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeploymentGroup_BlueInstanceTerminationOption AWS CloudFormation Resource (AWS::CodeDeploy::DeploymentGroup.BlueInstanceTerminationOption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html
@@ -16,7 +19,7 @@ type DeploymentGroup_BlueInstanceTerminationOption struct {
 	// TerminationWaitTimeInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-blueinstanceterminationoption-terminationwaittimeinminutes
-	TerminationWaitTimeInMinutes int `json:"TerminationWaitTimeInMinutes,omitempty"`
+	TerminationWaitTimeInMinutes *utils.Value[int] `json:"TerminationWaitTimeInMinutes,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

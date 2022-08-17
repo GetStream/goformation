@@ -2,11 +2,19 @@ package lex
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bot_BotLocale AWS CloudFormation Resource (AWS::Lex::Bot.BotLocale)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html
 type Bot_BotLocale struct {
+
+	// CustomVocabulary AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-customvocabulary
+	CustomVocabulary *Bot_CustomVocabulary `json:"CustomVocabulary,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -26,7 +34,7 @@ type Bot_BotLocale struct {
 	// NluConfidenceThreshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-nluconfidencethreshold
-	NluConfidenceThreshold float64 `json:"NluConfidenceThreshold"`
+	NluConfidenceThreshold *utils.Value[float64] `json:"NluConfidenceThreshold"`
 
 	// SlotTypes AWS CloudFormation Property
 	// Required: false

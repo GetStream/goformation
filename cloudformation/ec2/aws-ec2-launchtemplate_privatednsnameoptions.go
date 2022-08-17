@@ -2,7 +2,10 @@ package ec2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LaunchTemplate_PrivateDnsNameOptions AWS CloudFormation Resource (AWS::EC2::LaunchTemplate.PrivateDnsNameOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html
@@ -11,12 +14,12 @@ type LaunchTemplate_PrivateDnsNameOptions struct {
 	// EnableResourceNameDnsAAAARecord AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsaaaarecord
-	EnableResourceNameDnsAAAARecord bool `json:"EnableResourceNameDnsAAAARecord,omitempty"`
+	EnableResourceNameDnsAAAARecord *utils.Value[bool] `json:"EnableResourceNameDnsAAAARecord,omitempty"`
 
 	// EnableResourceNameDnsARecord AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsarecord
-	EnableResourceNameDnsARecord bool `json:"EnableResourceNameDnsARecord,omitempty"`
+	EnableResourceNameDnsARecord *utils.Value[bool] `json:"EnableResourceNameDnsARecord,omitempty"`
 
 	// HostnameType AWS CloudFormation Property
 	// Required: false

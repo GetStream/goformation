@@ -2,7 +2,10 @@ package iot
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TopicRule_FirehoseAction AWS CloudFormation Resource (AWS::IoT::TopicRule.FirehoseAction)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html
@@ -11,7 +14,7 @@ type TopicRule_FirehoseAction struct {
 	// BatchMode AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html#cfn-iot-topicrule-firehoseaction-batchmode
-	BatchMode bool `json:"BatchMode,omitempty"`
+	BatchMode *utils.Value[bool] `json:"BatchMode,omitempty"`
 
 	// DeliveryStreamName AWS CloudFormation Property
 	// Required: true

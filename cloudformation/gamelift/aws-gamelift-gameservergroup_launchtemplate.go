@@ -2,7 +2,10 @@ package gamelift
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // GameServerGroup_LaunchTemplate AWS CloudFormation Resource (AWS::GameLift::GameServerGroup.LaunchTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-launchtemplate.html

@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_AacSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.AacSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html
@@ -11,7 +14,7 @@ type Channel_AacSettings struct {
 	// Bitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html#cfn-medialive-channel-aacsettings-bitrate
-	Bitrate float64 `json:"Bitrate,omitempty"`
+	Bitrate *utils.Value[float64] `json:"Bitrate,omitempty"`
 
 	// CodingMode AWS CloudFormation Property
 	// Required: false
@@ -41,7 +44,7 @@ type Channel_AacSettings struct {
 	// SampleRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html#cfn-medialive-channel-aacsettings-samplerate
-	SampleRate float64 `json:"SampleRate,omitempty"`
+	SampleRate *utils.Value[float64] `json:"SampleRate,omitempty"`
 
 	// Spec AWS CloudFormation Property
 	// Required: false

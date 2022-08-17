@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ExperimentTemplate AWS CloudFormation Resource (AWS::FIS::ExperimentTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html
@@ -21,6 +24,11 @@ type ExperimentTemplate struct {
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-description
 	Description string `json:"Description,omitempty"`
+
+	// LogConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-logconfiguration
+	LogConfiguration *ExperimentTemplate_ExperimentTemplateLogConfiguration `json:"LogConfiguration,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: true

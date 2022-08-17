@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Association AWS CloudFormation Resource (AWS::SSM::Association)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html
@@ -15,7 +18,7 @@ type Association struct {
 	// ApplyOnlyAtCronInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-applyonlyatcroninterval
-	ApplyOnlyAtCronInterval bool `json:"ApplyOnlyAtCronInterval,omitempty"`
+	ApplyOnlyAtCronInterval *utils.Value[bool] `json:"ApplyOnlyAtCronInterval,omitempty"`
 
 	// AssociationName AWS CloudFormation Property
 	// Required: false
@@ -77,6 +80,11 @@ type Association struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleexpression
 	ScheduleExpression string `json:"ScheduleExpression,omitempty"`
 
+	// ScheduleOffset AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-scheduleoffset
+	ScheduleOffset *utils.Value[int] `json:"ScheduleOffset,omitempty"`
+
 	// SyncCompliance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-synccompliance
@@ -90,7 +98,7 @@ type Association struct {
 	// WaitForSuccessTimeoutSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-waitforsuccesstimeoutseconds
-	WaitForSuccessTimeoutSeconds int `json:"WaitForSuccessTimeoutSeconds,omitempty"`
+	WaitForSuccessTimeoutSeconds *utils.Value[int] `json:"WaitForSuccessTimeoutSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

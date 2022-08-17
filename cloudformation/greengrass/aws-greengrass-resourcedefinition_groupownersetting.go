@@ -2,7 +2,10 @@ package greengrass
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResourceDefinition_GroupOwnerSetting AWS CloudFormation Resource (AWS::Greengrass::ResourceDefinition.GroupOwnerSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-groupownersetting.html
@@ -11,7 +14,7 @@ type ResourceDefinition_GroupOwnerSetting struct {
 	// AutoAddGroupOwner AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-groupownersetting.html#cfn-greengrass-resourcedefinition-groupownersetting-autoaddgroupowner
-	AutoAddGroupOwner bool `json:"AutoAddGroupOwner"`
+	AutoAddGroupOwner *utils.Value[bool] `json:"AutoAddGroupOwner"`
 
 	// GroupOwner AWS CloudFormation Property
 	// Required: false

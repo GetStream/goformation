@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CapacityReservation AWS CloudFormation Resource (AWS::EC2::CapacityReservation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html
@@ -20,7 +23,7 @@ type CapacityReservation struct {
 	// EbsOptimized AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-ebsoptimized
-	EbsOptimized bool `json:"EbsOptimized,omitempty"`
+	EbsOptimized *utils.Value[bool] `json:"EbsOptimized,omitempty"`
 
 	// EndDate AWS CloudFormation Property
 	// Required: false
@@ -35,12 +38,12 @@ type CapacityReservation struct {
 	// EphemeralStorage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-ephemeralstorage
-	EphemeralStorage bool `json:"EphemeralStorage,omitempty"`
+	EphemeralStorage *utils.Value[bool] `json:"EphemeralStorage,omitempty"`
 
 	// InstanceCount AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instancecount
-	InstanceCount int `json:"InstanceCount"`
+	InstanceCount *utils.Value[int] `json:"InstanceCount"`
 
 	// InstanceMatchCriteria AWS CloudFormation Property
 	// Required: false

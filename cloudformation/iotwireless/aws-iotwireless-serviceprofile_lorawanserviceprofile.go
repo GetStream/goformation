@@ -2,7 +2,10 @@ package iotwireless
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ServiceProfile_LoRaWANServiceProfile AWS CloudFormation Resource (AWS::IoTWireless::ServiceProfile.LoRaWANServiceProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html
@@ -11,7 +14,7 @@ type ServiceProfile_LoRaWANServiceProfile struct {
 	// AddGwMetadata AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-addgwmetadata
-	AddGwMetadata bool `json:"AddGwMetadata,omitempty"`
+	AddGwMetadata *utils.Value[bool] `json:"AddGwMetadata,omitempty"`
 
 	// ChannelMask AWS CloudFormation Property
 	// Required: false
@@ -21,17 +24,17 @@ type ServiceProfile_LoRaWANServiceProfile struct {
 	// DevStatusReqFreq AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-devstatusreqfreq
-	DevStatusReqFreq int `json:"DevStatusReqFreq,omitempty"`
+	DevStatusReqFreq *utils.Value[int] `json:"DevStatusReqFreq,omitempty"`
 
 	// DlBucketSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-dlbucketsize
-	DlBucketSize int `json:"DlBucketSize,omitempty"`
+	DlBucketSize *utils.Value[int] `json:"DlBucketSize,omitempty"`
 
 	// DlRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-dlrate
-	DlRate int `json:"DlRate,omitempty"`
+	DlRate *utils.Value[int] `json:"DlRate,omitempty"`
 
 	// DlRatePolicy AWS CloudFormation Property
 	// Required: false
@@ -41,62 +44,62 @@ type ServiceProfile_LoRaWANServiceProfile struct {
 	// DrMax AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-drmax
-	DrMax int `json:"DrMax,omitempty"`
+	DrMax *utils.Value[int] `json:"DrMax,omitempty"`
 
 	// DrMin AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-drmin
-	DrMin int `json:"DrMin,omitempty"`
+	DrMin *utils.Value[int] `json:"DrMin,omitempty"`
 
 	// HrAllowed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-hrallowed
-	HrAllowed bool `json:"HrAllowed,omitempty"`
+	HrAllowed *utils.Value[bool] `json:"HrAllowed,omitempty"`
 
 	// MinGwDiversity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-mingwdiversity
-	MinGwDiversity int `json:"MinGwDiversity,omitempty"`
+	MinGwDiversity *utils.Value[int] `json:"MinGwDiversity,omitempty"`
 
 	// NwkGeoLoc AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-nwkgeoloc
-	NwkGeoLoc bool `json:"NwkGeoLoc,omitempty"`
+	NwkGeoLoc *utils.Value[bool] `json:"NwkGeoLoc,omitempty"`
 
 	// PrAllowed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-prallowed
-	PrAllowed bool `json:"PrAllowed,omitempty"`
+	PrAllowed *utils.Value[bool] `json:"PrAllowed,omitempty"`
 
 	// RaAllowed AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-raallowed
-	RaAllowed bool `json:"RaAllowed,omitempty"`
+	RaAllowed *utils.Value[bool] `json:"RaAllowed,omitempty"`
 
 	// ReportDevStatusBattery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-reportdevstatusbattery
-	ReportDevStatusBattery bool `json:"ReportDevStatusBattery,omitempty"`
+	ReportDevStatusBattery *utils.Value[bool] `json:"ReportDevStatusBattery,omitempty"`
 
 	// ReportDevStatusMargin AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-reportdevstatusmargin
-	ReportDevStatusMargin bool `json:"ReportDevStatusMargin,omitempty"`
+	ReportDevStatusMargin *utils.Value[bool] `json:"ReportDevStatusMargin,omitempty"`
 
 	// TargetPer AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-targetper
-	TargetPer int `json:"TargetPer,omitempty"`
+	TargetPer *utils.Value[int] `json:"TargetPer,omitempty"`
 
 	// UlBucketSize AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-ulbucketsize
-	UlBucketSize int `json:"UlBucketSize,omitempty"`
+	UlBucketSize *utils.Value[int] `json:"UlBucketSize,omitempty"`
 
 	// UlRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-ulrate
-	UlRate int `json:"UlRate,omitempty"`
+	UlRate *utils.Value[int] `json:"UlRate,omitempty"`
 
 	// UlRatePolicy AWS CloudFormation Property
 	// Required: false

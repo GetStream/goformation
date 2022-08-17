@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MicrosoftAD AWS CloudFormation Resource (AWS::DirectoryService::MicrosoftAD)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html
@@ -15,7 +18,7 @@ type MicrosoftAD struct {
 	// CreateAlias AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-createalias
-	CreateAlias bool `json:"CreateAlias,omitempty"`
+	CreateAlias *utils.Value[bool] `json:"CreateAlias,omitempty"`
 
 	// Edition AWS CloudFormation Property
 	// Required: false
@@ -25,7 +28,7 @@ type MicrosoftAD struct {
 	// EnableSso AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-enablesso
-	EnableSso bool `json:"EnableSso,omitempty"`
+	EnableSso *utils.Value[bool] `json:"EnableSso,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true

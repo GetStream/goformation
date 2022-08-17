@@ -2,7 +2,10 @@ package applicationinsights
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Application_SubComponentTypeConfiguration AWS CloudFormation Resource (AWS::ApplicationInsights::Application.SubComponentTypeConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-subcomponenttypeconfiguration.html

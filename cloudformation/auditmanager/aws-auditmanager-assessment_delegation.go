@@ -2,7 +2,10 @@ package auditmanager
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Assessment_Delegation AWS CloudFormation Resource (AWS::AuditManager::Assessment.Delegation)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html
@@ -36,7 +39,7 @@ type Assessment_Delegation struct {
 	// CreationTime AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-creationtime
-	CreationTime float64 `json:"CreationTime,omitempty"`
+	CreationTime *utils.Value[float64] `json:"CreationTime,omitempty"`
 
 	// Id AWS CloudFormation Property
 	// Required: false
@@ -46,7 +49,7 @@ type Assessment_Delegation struct {
 	// LastUpdated AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-lastupdated
-	LastUpdated float64 `json:"LastUpdated,omitempty"`
+	LastUpdated *utils.Value[float64] `json:"LastUpdated,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false

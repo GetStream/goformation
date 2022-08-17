@@ -2,7 +2,10 @@ package lambda
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Version_ProvisionedConcurrencyConfiguration AWS CloudFormation Resource (AWS::Lambda::Version.ProvisionedConcurrencyConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-provisionedconcurrencyconfiguration.html
@@ -11,7 +14,7 @@ type Version_ProvisionedConcurrencyConfiguration struct {
 	// ProvisionedConcurrentExecutions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-provisionedconcurrencyconfiguration.html#cfn-lambda-version-provisionedconcurrencyconfiguration-provisionedconcurrentexecutions
-	ProvisionedConcurrentExecutions int `json:"ProvisionedConcurrentExecutions"`
+	ProvisionedConcurrentExecutions *utils.Value[int] `json:"ProvisionedConcurrentExecutions"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -2,7 +2,10 @@ package amazonmq
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Broker_User AWS CloudFormation Resource (AWS::AmazonMQ::Broker.User)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html
@@ -11,7 +14,7 @@ type Broker_User struct {
 	// ConsoleAccess AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-consoleaccess
-	ConsoleAccess bool `json:"ConsoleAccess,omitempty"`
+	ConsoleAccess *utils.Value[bool] `json:"ConsoleAccess,omitempty"`
 
 	// Groups AWS CloudFormation Property
 	// Required: false

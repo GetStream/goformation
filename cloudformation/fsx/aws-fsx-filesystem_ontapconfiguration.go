@@ -2,7 +2,10 @@ package fsx
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FileSystem_OntapConfiguration AWS CloudFormation Resource (AWS::FSx::FileSystem.OntapConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html
@@ -11,7 +14,7 @@ type FileSystem_OntapConfiguration struct {
 	// AutomaticBackupRetentionDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-automaticbackupretentiondays
-	AutomaticBackupRetentionDays int `json:"AutomaticBackupRetentionDays,omitempty"`
+	AutomaticBackupRetentionDays *utils.Value[int] `json:"AutomaticBackupRetentionDays,omitempty"`
 
 	// DailyAutomaticBackupStartTime AWS CloudFormation Property
 	// Required: false
@@ -51,7 +54,7 @@ type FileSystem_OntapConfiguration struct {
 	// ThroughputCapacity AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-throughputcapacity
-	ThroughputCapacity int `json:"ThroughputCapacity,omitempty"`
+	ThroughputCapacity *utils.Value[int] `json:"ThroughputCapacity,omitempty"`
 
 	// WeeklyMaintenanceStartTime AWS CloudFormation Property
 	// Required: false

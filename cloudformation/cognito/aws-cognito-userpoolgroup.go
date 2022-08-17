@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // UserPoolGroup AWS CloudFormation Resource (AWS::Cognito::UserPoolGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html
@@ -25,7 +28,7 @@ type UserPoolGroup struct {
 	// Precedence AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-precedence
-	Precedence float64 `json:"Precedence,omitempty"`
+	Precedence *utils.Value[float64] `json:"Precedence,omitempty"`
 
 	// RoleArn AWS CloudFormation Property
 	// Required: false

@@ -2,7 +2,10 @@ package iot
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SecurityProfile_MetricValue AWS CloudFormation Resource (AWS::IoT::SecurityProfile.MetricValue)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricvalue.html
@@ -21,7 +24,7 @@ type SecurityProfile_MetricValue struct {
 	// Number AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricvalue.html#cfn-iot-securityprofile-metricvalue-number
-	Number float64 `json:"Number,omitempty"`
+	Number *utils.Value[float64] `json:"Number,omitempty"`
 
 	// Numbers AWS CloudFormation Property
 	// Required: false

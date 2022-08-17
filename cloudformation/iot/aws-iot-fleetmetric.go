@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FleetMetric AWS CloudFormation Resource (AWS::IoT::FleetMetric)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html
@@ -41,7 +44,7 @@ type FleetMetric struct {
 	// Period AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-period
-	Period int `json:"Period,omitempty"`
+	Period *utils.Value[int] `json:"Period,omitempty"`
 
 	// QueryString AWS CloudFormation Property
 	// Required: false

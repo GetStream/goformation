@@ -2,7 +2,10 @@ package opsworks
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // App_EnvironmentVariable AWS CloudFormation Resource (AWS::OpsWorks::App.EnvironmentVariable)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html
@@ -16,7 +19,7 @@ type App_EnvironmentVariable struct {
 	// Secure AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html#cfn-opsworks-app-environment-secure
-	Secure bool `json:"Secure,omitempty"`
+	Secure *utils.Value[bool] `json:"Secure,omitempty"`
 
 	// Value AWS CloudFormation Property
 	// Required: true

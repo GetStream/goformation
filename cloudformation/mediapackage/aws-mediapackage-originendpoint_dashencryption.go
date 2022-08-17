@@ -2,7 +2,10 @@ package mediapackage
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // OriginEndpoint_DashEncryption AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint.DashEncryption)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashencryption.html
@@ -11,7 +14,7 @@ type OriginEndpoint_DashEncryption struct {
 	// KeyRotationIntervalSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashencryption.html#cfn-mediapackage-originendpoint-dashencryption-keyrotationintervalseconds
-	KeyRotationIntervalSeconds int `json:"KeyRotationIntervalSeconds,omitempty"`
+	KeyRotationIntervalSeconds *utils.Value[int] `json:"KeyRotationIntervalSeconds,omitempty"`
 
 	// SpekeKeyProvider AWS CloudFormation Property
 	// Required: true

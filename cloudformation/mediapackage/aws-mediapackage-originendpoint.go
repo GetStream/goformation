@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // OriginEndpoint AWS CloudFormation Resource (AWS::MediaPackage::OriginEndpoint)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html
@@ -66,7 +69,7 @@ type OriginEndpoint struct {
 	// StartoverWindowSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-startoverwindowseconds
-	StartoverWindowSeconds int `json:"StartoverWindowSeconds,omitempty"`
+	StartoverWindowSeconds *utils.Value[int] `json:"StartoverWindowSeconds,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
@@ -76,7 +79,7 @@ type OriginEndpoint struct {
 	// TimeDelaySeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-timedelayseconds
-	TimeDelaySeconds int `json:"TimeDelaySeconds,omitempty"`
+	TimeDelaySeconds *utils.Value[int] `json:"TimeDelaySeconds,omitempty"`
 
 	// Whitelist AWS CloudFormation Property
 	// Required: false

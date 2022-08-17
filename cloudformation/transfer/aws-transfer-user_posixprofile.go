@@ -2,7 +2,10 @@ package transfer
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // User_PosixProfile AWS CloudFormation Resource (AWS::Transfer::User.PosixProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html
@@ -11,7 +14,7 @@ type User_PosixProfile struct {
 	// Gid AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html#cfn-transfer-user-posixprofile-gid
-	Gid float64 `json:"Gid"`
+	Gid *utils.Value[float64] `json:"Gid"`
 
 	// SecondaryGids AWS CloudFormation Property
 	// Required: false
@@ -21,7 +24,7 @@ type User_PosixProfile struct {
 	// Uid AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html#cfn-transfer-user-posixprofile-uid
-	Uid float64 `json:"Uid"`
+	Uid *utils.Value[float64] `json:"Uid"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

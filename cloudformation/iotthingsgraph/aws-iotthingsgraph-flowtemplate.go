@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // FlowTemplate AWS CloudFormation Resource (AWS::IoTThingsGraph::FlowTemplate)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html
@@ -15,7 +18,7 @@ type FlowTemplate struct {
 	// CompatibleNamespaceVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-compatiblenamespaceversion
-	CompatibleNamespaceVersion float64 `json:"CompatibleNamespaceVersion,omitempty"`
+	CompatibleNamespaceVersion *utils.Value[float64] `json:"CompatibleNamespaceVersion,omitempty"`
 
 	// Definition AWS CloudFormation Property
 	// Required: true

@@ -2,7 +2,10 @@ package codebuild
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Project_ProjectBuildBatchConfig AWS CloudFormation Resource (AWS::CodeBuild::Project.ProjectBuildBatchConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html
@@ -16,7 +19,7 @@ type Project_ProjectBuildBatchConfig struct {
 	// CombineArtifacts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-combineartifacts
-	CombineArtifacts bool `json:"CombineArtifacts,omitempty"`
+	CombineArtifacts *utils.Value[bool] `json:"CombineArtifacts,omitempty"`
 
 	// Restrictions AWS CloudFormation Property
 	// Required: false
@@ -31,7 +34,7 @@ type Project_ProjectBuildBatchConfig struct {
 	// TimeoutInMins AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-timeoutinmins
-	TimeoutInMins int `json:"TimeoutInMins,omitempty"`
+	TimeoutInMins *utils.Value[int] `json:"TimeoutInMins,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

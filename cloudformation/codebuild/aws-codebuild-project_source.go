@@ -2,7 +2,10 @@ package codebuild
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Project_Source AWS CloudFormation Resource (AWS::CodeBuild::Project.Source)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html
@@ -26,7 +29,7 @@ type Project_Source struct {
 	// GitCloneDepth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitclonedepth
-	GitCloneDepth int `json:"GitCloneDepth,omitempty"`
+	GitCloneDepth *utils.Value[int] `json:"GitCloneDepth,omitempty"`
 
 	// GitSubmodulesConfig AWS CloudFormation Property
 	// Required: false
@@ -36,7 +39,7 @@ type Project_Source struct {
 	// InsecureSsl AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-insecuressl
-	InsecureSsl bool `json:"InsecureSsl,omitempty"`
+	InsecureSsl *utils.Value[bool] `json:"InsecureSsl,omitempty"`
 
 	// Location AWS CloudFormation Property
 	// Required: false
@@ -46,7 +49,7 @@ type Project_Source struct {
 	// ReportBuildStatus AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-reportbuildstatus
-	ReportBuildStatus bool `json:"ReportBuildStatus,omitempty"`
+	ReportBuildStatus *utils.Value[bool] `json:"ReportBuildStatus,omitempty"`
 
 	// SourceIdentifier AWS CloudFormation Property
 	// Required: false

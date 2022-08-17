@@ -2,7 +2,10 @@ package athena
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // WorkGroup_WorkGroupConfiguration AWS CloudFormation Resource (AWS::Athena::WorkGroup.WorkGroupConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html
@@ -11,12 +14,12 @@ type WorkGroup_WorkGroupConfiguration struct {
 	// BytesScannedCutoffPerQuery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-bytesscannedcutoffperquery
-	BytesScannedCutoffPerQuery int `json:"BytesScannedCutoffPerQuery,omitempty"`
+	BytesScannedCutoffPerQuery *utils.Value[int] `json:"BytesScannedCutoffPerQuery,omitempty"`
 
 	// EnforceWorkGroupConfiguration AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-enforceworkgroupconfiguration
-	EnforceWorkGroupConfiguration bool `json:"EnforceWorkGroupConfiguration,omitempty"`
+	EnforceWorkGroupConfiguration *utils.Value[bool] `json:"EnforceWorkGroupConfiguration,omitempty"`
 
 	// EngineVersion AWS CloudFormation Property
 	// Required: false
@@ -26,12 +29,12 @@ type WorkGroup_WorkGroupConfiguration struct {
 	// PublishCloudWatchMetricsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-publishcloudwatchmetricsenabled
-	PublishCloudWatchMetricsEnabled bool `json:"PublishCloudWatchMetricsEnabled,omitempty"`
+	PublishCloudWatchMetricsEnabled *utils.Value[bool] `json:"PublishCloudWatchMetricsEnabled,omitempty"`
 
 	// RequesterPaysEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-requesterpaysenabled
-	RequesterPaysEnabled bool `json:"RequesterPaysEnabled,omitempty"`
+	RequesterPaysEnabled *utils.Value[bool] `json:"RequesterPaysEnabled,omitempty"`
 
 	// ResultConfiguration AWS CloudFormation Property
 	// Required: false

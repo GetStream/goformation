@@ -2,7 +2,10 @@ package gamelift
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Fleet_IpPermission AWS CloudFormation Resource (AWS::GameLift::Fleet.IpPermission)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html
@@ -11,7 +14,7 @@ type Fleet_IpPermission struct {
 	// FromPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html#cfn-gamelift-fleet-ippermission-fromport
-	FromPort int `json:"FromPort"`
+	FromPort *utils.Value[int] `json:"FromPort"`
 
 	// IpRange AWS CloudFormation Property
 	// Required: true
@@ -26,7 +29,7 @@ type Fleet_IpPermission struct {
 	// ToPort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html#cfn-gamelift-fleet-ippermission-toport
-	ToPort int `json:"ToPort"`
+	ToPort *utils.Value[int] `json:"ToPort"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -2,7 +2,10 @@ package applicationinsights
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Application_HANAPrometheusExporter AWS CloudFormation Resource (AWS::ApplicationInsights::Application.HANAPrometheusExporter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html
@@ -11,7 +14,7 @@ type Application_HANAPrometheusExporter struct {
 	// AgreeToInstallHANADBClient AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-agreetoinstallhanadbclient
-	AgreeToInstallHANADBClient bool `json:"AgreeToInstallHANADBClient"`
+	AgreeToInstallHANADBClient *utils.Value[bool] `json:"AgreeToInstallHANADBClient"`
 
 	// HANAPort AWS CloudFormation Property
 	// Required: true

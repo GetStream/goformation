@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // IPAMPool AWS CloudFormation Resource (AWS::EC2::IPAMPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html
@@ -21,17 +24,17 @@ type IPAMPool struct {
 	// AllocationDefaultNetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationdefaultnetmasklength
-	AllocationDefaultNetmaskLength int `json:"AllocationDefaultNetmaskLength,omitempty"`
+	AllocationDefaultNetmaskLength *utils.Value[int] `json:"AllocationDefaultNetmaskLength,omitempty"`
 
 	// AllocationMaxNetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationmaxnetmasklength
-	AllocationMaxNetmaskLength int `json:"AllocationMaxNetmaskLength,omitempty"`
+	AllocationMaxNetmaskLength *utils.Value[int] `json:"AllocationMaxNetmaskLength,omitempty"`
 
 	// AllocationMinNetmaskLength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationminnetmasklength
-	AllocationMinNetmaskLength int `json:"AllocationMinNetmaskLength,omitempty"`
+	AllocationMinNetmaskLength *utils.Value[int] `json:"AllocationMinNetmaskLength,omitempty"`
 
 	// AllocationResourceTags AWS CloudFormation Property
 	// Required: false
@@ -41,7 +44,12 @@ type IPAMPool struct {
 	// AutoImport AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-autoimport
-	AutoImport bool `json:"AutoImport,omitempty"`
+	AutoImport *utils.Value[bool] `json:"AutoImport,omitempty"`
+
+	// AwsService AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-awsservice
+	AwsService string `json:"AwsService,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -66,7 +74,7 @@ type IPAMPool struct {
 	// PubliclyAdvertisable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-publiclyadvertisable
-	PubliclyAdvertisable bool `json:"PubliclyAdvertisable,omitempty"`
+	PubliclyAdvertisable *utils.Value[bool] `json:"PubliclyAdvertisable,omitempty"`
 
 	// SourceIpamPoolId AWS CloudFormation Property
 	// Required: false

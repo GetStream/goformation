@@ -2,7 +2,10 @@ package databrew
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Recipe_RecipeParameters AWS CloudFormation Resource (AWS::DataBrew::Recipe.RecipeParameters)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html
@@ -206,7 +209,7 @@ type Recipe_RecipeParameters struct {
 	// MultiLine AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-multiline
-	MultiLine bool `json:"MultiLine,omitempty"`
+	MultiLine *utils.Value[bool] `json:"MultiLine,omitempty"`
 
 	// NumRows AWS CloudFormation Property
 	// Required: false

@@ -2,7 +2,10 @@ package appsync
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // GraphQLApi_OpenIDConnectConfig AWS CloudFormation Resource (AWS::AppSync::GraphQLApi.OpenIDConnectConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html
@@ -11,7 +14,7 @@ type GraphQLApi_OpenIDConnectConfig struct {
 	// AuthTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-authttl
-	AuthTTL float64 `json:"AuthTTL,omitempty"`
+	AuthTTL *utils.Value[float64] `json:"AuthTTL,omitempty"`
 
 	// ClientId AWS CloudFormation Property
 	// Required: false
@@ -21,7 +24,7 @@ type GraphQLApi_OpenIDConnectConfig struct {
 	// IatTTL AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-iatttl
-	IatTTL float64 `json:"IatTTL,omitempty"`
+	IatTTL *utils.Value[float64] `json:"IatTTL,omitempty"`
 
 	// Issuer AWS CloudFormation Property
 	// Required: false

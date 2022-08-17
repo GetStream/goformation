@@ -2,7 +2,10 @@ package evidently
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Launch_GroupToWeight AWS CloudFormation Resource (AWS::Evidently::Launch.GroupToWeight)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-grouptoweight.html
@@ -16,7 +19,7 @@ type Launch_GroupToWeight struct {
 	// SplitWeight AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-launch-grouptoweight.html#cfn-evidently-launch-grouptoweight-splitweight
-	SplitWeight int `json:"SplitWeight"`
+	SplitWeight *utils.Value[int] `json:"SplitWeight"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

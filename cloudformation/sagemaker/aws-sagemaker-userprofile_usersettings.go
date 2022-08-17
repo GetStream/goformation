@@ -2,7 +2,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // UserProfile_UserSettings AWS CloudFormation Resource (AWS::SageMaker::UserProfile.UserSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html
@@ -22,6 +25,11 @@ type UserProfile_UserSettings struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-kernelgatewayappsettings
 	KernelGatewayAppSettings *UserProfile_KernelGatewayAppSettings `json:"KernelGatewayAppSettings,omitempty"`
+
+	// RStudioServerProAppSettings AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-rstudioserverproappsettings
+	RStudioServerProAppSettings *UserProfile_RStudioServerProAppSettings `json:"RStudioServerProAppSettings,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false

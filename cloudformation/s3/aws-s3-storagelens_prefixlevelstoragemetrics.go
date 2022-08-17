@@ -2,7 +2,10 @@ package s3
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // StorageLens_PrefixLevelStorageMetrics AWS CloudFormation Resource (AWS::S3::StorageLens.PrefixLevelStorageMetrics)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-prefixlevelstoragemetrics.html
@@ -11,7 +14,7 @@ type StorageLens_PrefixLevelStorageMetrics struct {
 	// IsEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-prefixlevelstoragemetrics.html#cfn-s3-storagelens-prefixlevelstoragemetrics-isenabled
-	IsEnabled bool `json:"IsEnabled,omitempty"`
+	IsEnabled *utils.Value[bool] `json:"IsEnabled,omitempty"`
 
 	// SelectionCriteria AWS CloudFormation Property
 	// Required: false

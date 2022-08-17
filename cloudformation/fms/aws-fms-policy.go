@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Policy AWS CloudFormation Resource (AWS::FMS::Policy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html
@@ -15,7 +18,7 @@ type Policy struct {
 	// DeleteAllPolicyResources AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-deleteallpolicyresources
-	DeleteAllPolicyResources bool `json:"DeleteAllPolicyResources,omitempty"`
+	DeleteAllPolicyResources *utils.Value[bool] `json:"DeleteAllPolicyResources,omitempty"`
 
 	// ExcludeMap AWS CloudFormation Property
 	// Required: false
@@ -25,7 +28,7 @@ type Policy struct {
 	// ExcludeResourceTags AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-excluderesourcetags
-	ExcludeResourceTags bool `json:"ExcludeResourceTags"`
+	ExcludeResourceTags *utils.Value[bool] `json:"ExcludeResourceTags"`
 
 	// IncludeMap AWS CloudFormation Property
 	// Required: false
@@ -40,7 +43,7 @@ type Policy struct {
 	// RemediationEnabled AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-remediationenabled
-	RemediationEnabled bool `json:"RemediationEnabled"`
+	RemediationEnabled *utils.Value[bool] `json:"RemediationEnabled"`
 
 	// ResourceTags AWS CloudFormation Property
 	// Required: false
@@ -60,12 +63,12 @@ type Policy struct {
 	// ResourcesCleanUp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcescleanup
-	ResourcesCleanUp bool `json:"ResourcesCleanUp,omitempty"`
+	ResourcesCleanUp *utils.Value[bool] `json:"ResourcesCleanUp,omitempty"`
 
 	// SecurityServicePolicyData AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-securityservicepolicydata
-	SecurityServicePolicyData interface{} `json:"SecurityServicePolicyData,omitempty"`
+	SecurityServicePolicyData *Policy_SecurityServicePolicyData `json:"SecurityServicePolicyData,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

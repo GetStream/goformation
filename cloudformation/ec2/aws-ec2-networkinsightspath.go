@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // NetworkInsightsPath AWS CloudFormation Resource (AWS::EC2::NetworkInsightsPath)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html
@@ -26,7 +29,7 @@ type NetworkInsightsPath struct {
 	// DestinationPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destinationport
-	DestinationPort int `json:"DestinationPort,omitempty"`
+	DestinationPort *utils.Value[int] `json:"DestinationPort,omitempty"`
 
 	// Protocol AWS CloudFormation Property
 	// Required: true

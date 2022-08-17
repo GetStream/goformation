@@ -2,7 +2,10 @@ package certificatemanager
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Account_ExpiryEventsConfiguration AWS CloudFormation Resource (AWS::CertificateManager::Account.ExpiryEventsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-account-expiryeventsconfiguration.html
@@ -11,7 +14,7 @@ type Account_ExpiryEventsConfiguration struct {
 	// DaysBeforeExpiry AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-account-expiryeventsconfiguration.html#cfn-certificatemanager-account-expiryeventsconfiguration-daysbeforeexpiry
-	DaysBeforeExpiry int `json:"DaysBeforeExpiry,omitempty"`
+	DaysBeforeExpiry *utils.Value[int] `json:"DaysBeforeExpiry,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

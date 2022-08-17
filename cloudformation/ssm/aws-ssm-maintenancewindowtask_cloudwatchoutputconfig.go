@@ -2,7 +2,10 @@ package ssm
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MaintenanceWindowTask_CloudWatchOutputConfig AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask.CloudWatchOutputConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-cloudwatchoutputconfig.html
@@ -16,7 +19,7 @@ type MaintenanceWindowTask_CloudWatchOutputConfig struct {
 	// CloudWatchOutputEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-cloudwatchoutputconfig.html#cfn-ssm-maintenancewindowtask-cloudwatchoutputconfig-cloudwatchoutputenabled
-	CloudWatchOutputEnabled bool `json:"CloudWatchOutputEnabled,omitempty"`
+	CloudWatchOutputEnabled *utils.Value[bool] `json:"CloudWatchOutputEnabled,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

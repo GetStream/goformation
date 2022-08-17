@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Publisher AWS CloudFormation Resource (AWS::CloudFormation::Publisher)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publisher.html
@@ -15,7 +18,7 @@ type Publisher struct {
 	// AcceptTermsAndConditions AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publisher.html#cfn-cloudformation-publisher-accepttermsandconditions
-	AcceptTermsAndConditions bool `json:"AcceptTermsAndConditions"`
+	AcceptTermsAndConditions *utils.Value[bool] `json:"AcceptTermsAndConditions"`
 
 	// ConnectionArn AWS CloudFormation Property
 	// Required: false

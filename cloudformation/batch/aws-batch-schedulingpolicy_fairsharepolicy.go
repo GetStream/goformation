@@ -2,7 +2,10 @@ package batch
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // SchedulingPolicy_FairsharePolicy AWS CloudFormation Resource (AWS::Batch::SchedulingPolicy.FairsharePolicy)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-fairsharepolicy.html
@@ -11,12 +14,12 @@ type SchedulingPolicy_FairsharePolicy struct {
 	// ComputeReservation AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-fairsharepolicy.html#cfn-batch-schedulingpolicy-fairsharepolicy-computereservation
-	ComputeReservation float64 `json:"ComputeReservation,omitempty"`
+	ComputeReservation *utils.Value[float64] `json:"ComputeReservation,omitempty"`
 
 	// ShareDecaySeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-fairsharepolicy.html#cfn-batch-schedulingpolicy-fairsharepolicy-sharedecayseconds
-	ShareDecaySeconds float64 `json:"ShareDecaySeconds,omitempty"`
+	ShareDecaySeconds *utils.Value[float64] `json:"ShareDecaySeconds,omitempty"`
 
 	// ShareDistribution AWS CloudFormation Property
 	// Required: false

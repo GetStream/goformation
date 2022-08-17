@@ -2,7 +2,10 @@ package acmpca
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Certificate_Extensions AWS CloudFormation Resource (AWS::ACMPCA::Certificate.Extensions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extensions.html
@@ -12,6 +15,11 @@ type Certificate_Extensions struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extensions.html#cfn-acmpca-certificate-extensions-certificatepolicies
 	CertificatePolicies []Certificate_PolicyInformation `json:"CertificatePolicies,omitempty"`
+
+	// CustomExtensions AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extensions.html#cfn-acmpca-certificate-extensions-customextensions
+	CustomExtensions []Certificate_CustomExtension `json:"CustomExtensions,omitempty"`
 
 	// ExtendedKeyUsage AWS CloudFormation Property
 	// Required: false

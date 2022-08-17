@@ -2,7 +2,10 @@ package ses
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ReceiptRule_Rule AWS CloudFormation Resource (AWS::SES::ReceiptRule.Rule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html
@@ -16,7 +19,7 @@ type ReceiptRule_Rule struct {
 	// Enabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-enabled
-	Enabled bool `json:"Enabled,omitempty"`
+	Enabled *utils.Value[bool] `json:"Enabled,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -31,7 +34,7 @@ type ReceiptRule_Rule struct {
 	// ScanEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-scanenabled
-	ScanEnabled bool `json:"ScanEnabled,omitempty"`
+	ScanEnabled *utils.Value[bool] `json:"ScanEnabled,omitempty"`
 
 	// TlsPolicy AWS CloudFormation Property
 	// Required: false

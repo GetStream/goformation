@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bucket AWS CloudFormation Resource (AWS::S3::Bucket)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html
@@ -81,7 +84,7 @@ type Bucket struct {
 	// ObjectLockEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockenabled
-	ObjectLockEnabled bool `json:"ObjectLockEnabled,omitempty"`
+	ObjectLockEnabled *utils.Value[bool] `json:"ObjectLockEnabled,omitempty"`
 
 	// OwnershipControls AWS CloudFormation Property
 	// Required: false

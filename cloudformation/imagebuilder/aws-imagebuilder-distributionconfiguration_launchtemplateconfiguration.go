@@ -2,7 +2,10 @@ package imagebuilder
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DistributionConfiguration_LaunchTemplateConfiguration AWS CloudFormation Resource (AWS::ImageBuilder::DistributionConfiguration.LaunchTemplateConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-launchtemplateconfiguration.html
@@ -21,7 +24,7 @@ type DistributionConfiguration_LaunchTemplateConfiguration struct {
 	// SetDefaultVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-launchtemplateconfiguration.html#cfn-imagebuilder-distributionconfiguration-launchtemplateconfiguration-setdefaultversion
-	SetDefaultVersion bool `json:"SetDefaultVersion,omitempty"`
+	SetDefaultVersion *utils.Value[bool] `json:"SetDefaultVersion,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

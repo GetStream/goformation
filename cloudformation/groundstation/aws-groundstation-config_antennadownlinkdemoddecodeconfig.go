@@ -2,7 +2,10 @@ package groundstation
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Config_AntennaDownlinkDemodDecodeConfig AWS CloudFormation Resource (AWS::GroundStation::Config.AntennaDownlinkDemodDecodeConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennadownlinkdemoddecodeconfig.html

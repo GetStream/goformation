@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Identity AWS CloudFormation Resource (AWS::PinpointEmail::Identity)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html
@@ -15,12 +18,12 @@ type Identity struct {
 	// DkimSigningEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-dkimsigningenabled
-	DkimSigningEnabled bool `json:"DkimSigningEnabled,omitempty"`
+	DkimSigningEnabled *utils.Value[bool] `json:"DkimSigningEnabled,omitempty"`
 
 	// FeedbackForwardingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-feedbackforwardingenabled
-	FeedbackForwardingEnabled bool `json:"FeedbackForwardingEnabled,omitempty"`
+	FeedbackForwardingEnabled *utils.Value[bool] `json:"FeedbackForwardingEnabled,omitempty"`
 
 	// MailFromAttributes AWS CloudFormation Property
 	// Required: false

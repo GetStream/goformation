@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // UserPool AWS CloudFormation Resource (AWS::Cognito::UserPool)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html
@@ -91,6 +94,11 @@ type UserPool struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsverificationmessage
 	SmsVerificationMessage string `json:"SmsVerificationMessage,omitempty"`
+
+	// UserAttributeUpdateSettings AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userattributeupdatesettings
+	UserAttributeUpdateSettings *UserPool_UserAttributeUpdateSettings `json:"UserAttributeUpdateSettings,omitempty"`
 
 	// UserPoolAddOns AWS CloudFormation Property
 	// Required: false

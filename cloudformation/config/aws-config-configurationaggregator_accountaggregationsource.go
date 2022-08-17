@@ -2,7 +2,10 @@ package config
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConfigurationAggregator_AccountAggregationSource AWS CloudFormation Resource (AWS::Config::ConfigurationAggregator.AccountAggregationSource)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html
@@ -16,7 +19,7 @@ type ConfigurationAggregator_AccountAggregationSource struct {
 	// AllAwsRegions AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html#cfn-config-configurationaggregator-accountaggregationsource-allawsregions
-	AllAwsRegions bool `json:"AllAwsRegions,omitempty"`
+	AllAwsRegions *utils.Value[bool] `json:"AllAwsRegions,omitempty"`
 
 	// AwsRegions AWS CloudFormation Property
 	// Required: false

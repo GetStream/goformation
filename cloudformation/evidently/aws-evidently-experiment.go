@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Experiment AWS CloudFormation Resource (AWS::Evidently::Experiment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html
@@ -43,10 +46,25 @@ type Experiment struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-randomizationsalt
 	RandomizationSalt string `json:"RandomizationSalt,omitempty"`
 
+	// RemoveSegment AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-removesegment
+	RemoveSegment *utils.Value[bool] `json:"RemoveSegment,omitempty"`
+
+	// RunningStatus AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-runningstatus
+	RunningStatus *Experiment_RunningStatusObject `json:"RunningStatus,omitempty"`
+
 	// SamplingRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-samplingrate
-	SamplingRate int `json:"SamplingRate,omitempty"`
+	SamplingRate *utils.Value[int] `json:"SamplingRate,omitempty"`
+
+	// Segment AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-segment
+	Segment string `json:"Segment,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

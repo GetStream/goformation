@@ -2,7 +2,10 @@ package devopsguru
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ResourceCollection_CloudFormationCollectionFilter AWS CloudFormation Resource (AWS::DevOpsGuru::ResourceCollection.CloudFormationCollectionFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-cloudformationcollectionfilter.html

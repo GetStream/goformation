@@ -2,7 +2,10 @@ package eks
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Nodegroup_UpdateConfig AWS CloudFormation Resource (AWS::EKS::Nodegroup.UpdateConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-updateconfig.html
@@ -11,12 +14,12 @@ type Nodegroup_UpdateConfig struct {
 	// MaxUnavailable AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-updateconfig.html#cfn-eks-nodegroup-updateconfig-maxunavailable
-	MaxUnavailable float64 `json:"MaxUnavailable,omitempty"`
+	MaxUnavailable *utils.Value[float64] `json:"MaxUnavailable,omitempty"`
 
 	// MaxUnavailablePercentage AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-updateconfig.html#cfn-eks-nodegroup-updateconfig-maxunavailablepercentage
-	MaxUnavailablePercentage float64 `json:"MaxUnavailablePercentage,omitempty"`
+	MaxUnavailablePercentage *utils.Value[float64] `json:"MaxUnavailablePercentage,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

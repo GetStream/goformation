@@ -2,7 +2,10 @@ package s3
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bucket_ServerSideEncryptionRule AWS CloudFormation Resource (AWS::S3::Bucket.ServerSideEncryptionRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html
@@ -11,7 +14,7 @@ type Bucket_ServerSideEncryptionRule struct {
 	// BucketKeyEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-bucketkeyenabled
-	BucketKeyEnabled bool `json:"BucketKeyEnabled,omitempty"`
+	BucketKeyEnabled *utils.Value[bool] `json:"BucketKeyEnabled,omitempty"`
 
 	// ServerSideEncryptionByDefault AWS CloudFormation Property
 	// Required: false

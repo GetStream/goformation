@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Domain AWS CloudFormation Resource (AWS::SageMaker::Domain)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html
@@ -17,6 +20,11 @@ type Domain struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-appnetworkaccesstype
 	AppNetworkAccessType string `json:"AppNetworkAccessType,omitempty"`
+
+	// AppSecurityGroupManagement AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-appsecuritygroupmanagement
+	AppSecurityGroupManagement string `json:"AppSecurityGroupManagement,omitempty"`
 
 	// AuthMode AWS CloudFormation Property
 	// Required: true
@@ -32,6 +40,11 @@ type Domain struct {
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-domainname
 	DomainName string `json:"DomainName,omitempty"`
+
+	// DomainSettings AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-domainsettings
+	DomainSettings *Domain_DomainSettings `json:"DomainSettings,omitempty"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false

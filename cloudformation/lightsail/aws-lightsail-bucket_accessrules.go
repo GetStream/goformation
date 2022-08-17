@@ -2,7 +2,10 @@ package lightsail
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bucket_AccessRules AWS CloudFormation Resource (AWS::Lightsail::Bucket.AccessRules)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-bucket-accessrules.html
@@ -11,7 +14,7 @@ type Bucket_AccessRules struct {
 	// AllowPublicOverrides AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-bucket-accessrules.html#cfn-lightsail-bucket-accessrules-allowpublicoverrides
-	AllowPublicOverrides bool `json:"AllowPublicOverrides,omitempty"`
+	AllowPublicOverrides *utils.Value[bool] `json:"AllowPublicOverrides,omitempty"`
 
 	// GetObject AWS CloudFormation Property
 	// Required: false

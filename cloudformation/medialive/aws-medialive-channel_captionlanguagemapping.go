@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_CaptionLanguageMapping AWS CloudFormation Resource (AWS::MediaLive::Channel.CaptionLanguageMapping)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionlanguagemapping.html
@@ -11,7 +14,7 @@ type Channel_CaptionLanguageMapping struct {
 	// CaptionChannel AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionlanguagemapping.html#cfn-medialive-channel-captionlanguagemapping-captionchannel
-	CaptionChannel int `json:"CaptionChannel,omitempty"`
+	CaptionChannel *utils.Value[int] `json:"CaptionChannel,omitempty"`
 
 	// LanguageCode AWS CloudFormation Property
 	// Required: false

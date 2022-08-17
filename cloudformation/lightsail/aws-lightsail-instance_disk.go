@@ -2,7 +2,10 @@ package lightsail
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Instance_Disk AWS CloudFormation Resource (AWS::Lightsail::Instance.Disk)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html
@@ -26,12 +29,12 @@ type Instance_Disk struct {
 	// IOPS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-iops
-	IOPS int `json:"IOPS,omitempty"`
+	IOPS *utils.Value[int] `json:"IOPS,omitempty"`
 
 	// IsSystemDisk AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-disk.html#cfn-lightsail-instance-disk-issystemdisk
-	IsSystemDisk bool `json:"IsSystemDisk,omitempty"`
+	IsSystemDisk *utils.Value[bool] `json:"IsSystemDisk,omitempty"`
 
 	// Path AWS CloudFormation Property
 	// Required: true

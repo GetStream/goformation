@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Stream AWS CloudFormation Resource (AWS::KinesisVideo::Stream)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-stream.html
@@ -16,7 +19,7 @@ type Stream struct {
 	// DataRetentionInHours AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-stream.html#cfn-kinesisvideo-stream-dataretentioninhours
-	DataRetentionInHours int `json:"DataRetentionInHours,omitempty"`
+	DataRetentionInHours *utils.Value[int] `json:"DataRetentionInHours,omitempty"`
 
 	// DeviceName AWS CloudFormation Property
 	// Required: false

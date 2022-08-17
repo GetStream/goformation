@@ -2,7 +2,10 @@ package applicationinsights
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Application_ComponentMonitoringSetting AWS CloudFormation Resource (AWS::ApplicationInsights::Application.ComponentMonitoringSetting)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentmonitoringsetting.html

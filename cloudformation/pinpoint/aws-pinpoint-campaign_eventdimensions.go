@@ -2,7 +2,10 @@ package pinpoint
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Campaign_EventDimensions AWS CloudFormation Resource (AWS::Pinpoint::Campaign.EventDimensions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html

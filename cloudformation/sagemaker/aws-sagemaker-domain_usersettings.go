@@ -2,7 +2,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Domain_UserSettings AWS CloudFormation Resource (AWS::SageMaker::Domain.UserSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html
@@ -22,6 +25,16 @@ type Domain_UserSettings struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-kernelgatewayappsettings
 	KernelGatewayAppSettings *Domain_KernelGatewayAppSettings `json:"KernelGatewayAppSettings,omitempty"`
+
+	// RSessionAppSettings AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-rsessionappsettings
+	RSessionAppSettings *Domain_RSessionAppSettings `json:"RSessionAppSettings,omitempty"`
+
+	// RStudioServerProAppSettings AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-rstudioserverproappsettings
+	RStudioServerProAppSettings *Domain_RStudioServerProAppSettings `json:"RStudioServerProAppSettings,omitempty"`
 
 	// SecurityGroups AWS CloudFormation Property
 	// Required: false

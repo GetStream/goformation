@@ -2,7 +2,10 @@ package servicediscovery
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Service_HealthCheckConfig AWS CloudFormation Resource (AWS::ServiceDiscovery::Service.HealthCheckConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html
@@ -11,7 +14,7 @@ type Service_HealthCheckConfig struct {
 	// FailureThreshold AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-failurethreshold
-	FailureThreshold float64 `json:"FailureThreshold,omitempty"`
+	FailureThreshold *utils.Value[float64] `json:"FailureThreshold,omitempty"`
 
 	// ResourcePath AWS CloudFormation Property
 	// Required: false

@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ReportGroup AWS CloudFormation Resource (AWS::CodeBuild::ReportGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html
@@ -16,7 +19,7 @@ type ReportGroup struct {
 	// DeleteReports AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-deletereports
-	DeleteReports bool `json:"DeleteReports,omitempty"`
+	DeleteReports *utils.Value[bool] `json:"DeleteReports,omitempty"`
 
 	// ExportConfig AWS CloudFormation Property
 	// Required: true

@@ -2,7 +2,10 @@ package elasticache
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ReplicationGroup_CloudWatchLogsDestinationDetails AWS CloudFormation Resource (AWS::ElastiCache::ReplicationGroup.CloudWatchLogsDestinationDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-cloudwatchlogsdestinationdetails.html

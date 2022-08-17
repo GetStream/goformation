@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Stack AWS CloudFormation Resource (AWS::AppStream::Stack)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html
@@ -31,7 +34,7 @@ type Stack struct {
 	// DeleteStorageConnectors AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-deletestorageconnectors
-	DeleteStorageConnectors bool `json:"DeleteStorageConnectors,omitempty"`
+	DeleteStorageConnectors *utils.Value[bool] `json:"DeleteStorageConnectors,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -67,6 +70,11 @@ type Stack struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-storageconnectors
 	StorageConnectors []Stack_StorageConnector `json:"StorageConnectors,omitempty"`
+
+	// StreamingExperienceSettings AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-streamingexperiencesettings
+	StreamingExperienceSettings *Stack_StreamingExperienceSettings `json:"StreamingExperienceSettings,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

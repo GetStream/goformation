@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Campaign AWS CloudFormation Resource (AWS::Pinpoint::Campaign)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html
@@ -27,6 +30,11 @@ type Campaign struct {
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-campaignhook
 	CampaignHook *Campaign_CampaignHook `json:"CampaignHook,omitempty"`
 
+	// CustomDeliveryConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-customdeliveryconfiguration
+	CustomDeliveryConfiguration *Campaign_CustomDeliveryConfiguration `json:"CustomDeliveryConfiguration,omitempty"`
+
 	// Description AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-description
@@ -35,12 +43,12 @@ type Campaign struct {
 	// HoldoutPercent AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-holdoutpercent
-	HoldoutPercent int `json:"HoldoutPercent,omitempty"`
+	HoldoutPercent *utils.Value[int] `json:"HoldoutPercent,omitempty"`
 
 	// IsPaused AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-ispaused
-	IsPaused bool `json:"IsPaused,omitempty"`
+	IsPaused *utils.Value[bool] `json:"IsPaused,omitempty"`
 
 	// Limits AWS CloudFormation Property
 	// Required: false
@@ -48,7 +56,7 @@ type Campaign struct {
 	Limits *Campaign_Limits `json:"Limits,omitempty"`
 
 	// MessageConfiguration AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-messageconfiguration
 	MessageConfiguration *Campaign_MessageConfiguration `json:"MessageConfiguration,omitempty"`
 
@@ -60,7 +68,7 @@ type Campaign struct {
 	// Priority AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-priority
-	Priority int `json:"Priority,omitempty"`
+	Priority *utils.Value[int] `json:"Priority,omitempty"`
 
 	// Schedule AWS CloudFormation Property
 	// Required: true
@@ -75,12 +83,17 @@ type Campaign struct {
 	// SegmentVersion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentversion
-	SegmentVersion int `json:"SegmentVersion,omitempty"`
+	SegmentVersion *utils.Value[int] `json:"SegmentVersion,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-tags
 	Tags interface{} `json:"Tags,omitempty"`
+
+	// TemplateConfiguration AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-templateconfiguration
+	TemplateConfiguration *Campaign_TemplateConfiguration `json:"TemplateConfiguration,omitempty"`
 
 	// TreatmentDescription AWS CloudFormation Property
 	// Required: false

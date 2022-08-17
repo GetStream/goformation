@@ -2,7 +2,10 @@ package cloudtrail
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Trail_EventSelector AWS CloudFormation Resource (AWS::CloudTrail::Trail.EventSelector)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html
@@ -21,7 +24,7 @@ type Trail_EventSelector struct {
 	// IncludeManagementEvents AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-includemanagementevents
-	IncludeManagementEvents bool `json:"IncludeManagementEvents,omitempty"`
+	IncludeManagementEvents *utils.Value[bool] `json:"IncludeManagementEvents,omitempty"`
 
 	// ReadWriteType AWS CloudFormation Property
 	// Required: false

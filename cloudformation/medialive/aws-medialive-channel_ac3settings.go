@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_Ac3Settings AWS CloudFormation Resource (AWS::MediaLive::Channel.Ac3Settings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html
@@ -11,7 +14,7 @@ type Channel_Ac3Settings struct {
 	// Bitrate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-bitrate
-	Bitrate float64 `json:"Bitrate,omitempty"`
+	Bitrate *utils.Value[float64] `json:"Bitrate,omitempty"`
 
 	// BitstreamMode AWS CloudFormation Property
 	// Required: false
@@ -26,7 +29,7 @@ type Channel_Ac3Settings struct {
 	// Dialnorm AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-dialnorm
-	Dialnorm int `json:"Dialnorm,omitempty"`
+	Dialnorm *utils.Value[int] `json:"Dialnorm,omitempty"`
 
 	// DrcProfile AWS CloudFormation Property
 	// Required: false

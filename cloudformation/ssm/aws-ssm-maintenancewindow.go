@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MaintenanceWindow AWS CloudFormation Resource (AWS::SSM::MaintenanceWindow)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html
@@ -16,12 +19,12 @@ type MaintenanceWindow struct {
 	// AllowUnassociatedTargets AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-allowunassociatedtargets
-	AllowUnassociatedTargets bool `json:"AllowUnassociatedTargets"`
+	AllowUnassociatedTargets *utils.Value[bool] `json:"AllowUnassociatedTargets"`
 
 	// Cutoff AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-cutoff
-	Cutoff int `json:"Cutoff"`
+	Cutoff *utils.Value[int] `json:"Cutoff"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -31,7 +34,7 @@ type MaintenanceWindow struct {
 	// Duration AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-duration
-	Duration int `json:"Duration"`
+	Duration *utils.Value[int] `json:"Duration"`
 
 	// EndDate AWS CloudFormation Property
 	// Required: false
@@ -51,7 +54,7 @@ type MaintenanceWindow struct {
 	// ScheduleOffset AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-scheduleoffset
-	ScheduleOffset int `json:"ScheduleOffset,omitempty"`
+	ScheduleOffset *utils.Value[int] `json:"ScheduleOffset,omitempty"`
 
 	// ScheduleTimezone AWS CloudFormation Property
 	// Required: false

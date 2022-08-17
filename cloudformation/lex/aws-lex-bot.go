@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Bot AWS CloudFormation Resource (AWS::Lex::Bot)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html
@@ -16,7 +19,7 @@ type Bot struct {
 	// AutoBuildBotLocales AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-autobuildbotlocales
-	AutoBuildBotLocales bool `json:"AutoBuildBotLocales,omitempty"`
+	AutoBuildBotLocales *utils.Value[bool] `json:"AutoBuildBotLocales,omitempty"`
 
 	// BotFileS3Location AWS CloudFormation Property
 	// Required: false
@@ -46,7 +49,7 @@ type Bot struct {
 	// IdleSessionTTLInSeconds AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-idlesessionttlinseconds
-	IdleSessionTTLInSeconds int `json:"IdleSessionTTLInSeconds"`
+	IdleSessionTTLInSeconds *utils.Value[int] `json:"IdleSessionTTLInSeconds"`
 
 	// Name AWS CloudFormation Property
 	// Required: true
@@ -57,6 +60,11 @@ type Bot struct {
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-rolearn
 	RoleArn string `json:"RoleArn,omitempty"`
+
+	// TestBotAliasSettings AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliassettings
+	TestBotAliasSettings *Bot_TestBotAliasSettings `json:"TestBotAliasSettings,omitempty"`
 
 	// TestBotAliasTags AWS CloudFormation Property
 	// Required: false

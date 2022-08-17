@@ -2,7 +2,10 @@ package elasticsearch
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Domain_DomainEndpointOptions AWS CloudFormation Resource (AWS::Elasticsearch::Domain.DomainEndpointOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html
@@ -21,12 +24,12 @@ type Domain_DomainEndpointOptions struct {
 	// CustomEndpointEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpointenabled
-	CustomEndpointEnabled bool `json:"CustomEndpointEnabled,omitempty"`
+	CustomEndpointEnabled *utils.Value[bool] `json:"CustomEndpointEnabled,omitempty"`
 
 	// EnforceHTTPS AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-enforcehttps
-	EnforceHTTPS bool `json:"EnforceHTTPS,omitempty"`
+	EnforceHTTPS *utils.Value[bool] `json:"EnforceHTTPS,omitempty"`
 
 	// TLSSecurityPolicy AWS CloudFormation Property
 	// Required: false

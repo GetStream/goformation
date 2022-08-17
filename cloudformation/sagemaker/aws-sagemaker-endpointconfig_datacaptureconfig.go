@@ -2,7 +2,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // EndpointConfig_DataCaptureConfig AWS CloudFormation Resource (AWS::SageMaker::EndpointConfig.DataCaptureConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html
@@ -26,12 +29,12 @@ type EndpointConfig_DataCaptureConfig struct {
 	// EnableCapture AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-enablecapture
-	EnableCapture bool `json:"EnableCapture,omitempty"`
+	EnableCapture *utils.Value[bool] `json:"EnableCapture,omitempty"`
 
 	// InitialSamplingPercentage AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-initialsamplingpercentage
-	InitialSamplingPercentage int `json:"InitialSamplingPercentage"`
+	InitialSamplingPercentage *utils.Value[int] `json:"InitialSamplingPercentage"`
 
 	// KmsKeyId AWS CloudFormation Property
 	// Required: false

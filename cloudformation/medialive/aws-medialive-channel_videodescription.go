@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_VideoDescription AWS CloudFormation Resource (AWS::MediaLive::Channel.VideoDescription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html
@@ -16,7 +19,7 @@ type Channel_VideoDescription struct {
 	// Height AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-height
-	Height int `json:"Height,omitempty"`
+	Height *utils.Value[int] `json:"Height,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: false
@@ -36,12 +39,12 @@ type Channel_VideoDescription struct {
 	// Sharpness AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-sharpness
-	Sharpness int `json:"Sharpness,omitempty"`
+	Sharpness *utils.Value[int] `json:"Sharpness,omitempty"`
 
 	// Width AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-width
-	Width int `json:"Width,omitempty"`
+	Width *utils.Value[int] `json:"Width,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

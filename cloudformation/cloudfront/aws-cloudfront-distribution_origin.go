@@ -2,7 +2,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Distribution_Origin AWS CloudFormation Resource (AWS::CloudFront::Distribution.Origin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html
@@ -11,12 +14,12 @@ type Distribution_Origin struct {
 	// ConnectionAttempts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectionattempts
-	ConnectionAttempts int `json:"ConnectionAttempts,omitempty"`
+	ConnectionAttempts *utils.Value[int] `json:"ConnectionAttempts,omitempty"`
 
 	// ConnectionTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectiontimeout
-	ConnectionTimeout int `json:"ConnectionTimeout,omitempty"`
+	ConnectionTimeout *utils.Value[int] `json:"ConnectionTimeout,omitempty"`
 
 	// CustomOriginConfig AWS CloudFormation Property
 	// Required: false

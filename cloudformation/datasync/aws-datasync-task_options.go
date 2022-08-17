@@ -2,7 +2,10 @@ package datasync
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Task_Options AWS CloudFormation Resource (AWS::DataSync::Task.Options)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html
@@ -16,7 +19,7 @@ type Task_Options struct {
 	// BytesPerSecond AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-bytespersecond
-	BytesPerSecond int `json:"BytesPerSecond,omitempty"`
+	BytesPerSecond *utils.Value[int] `json:"BytesPerSecond,omitempty"`
 
 	// Gid AWS CloudFormation Property
 	// Required: false
@@ -32,6 +35,11 @@ type Task_Options struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-mtime
 	Mtime string `json:"Mtime,omitempty"`
+
+	// ObjectTags AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-objecttags
+	ObjectTags string `json:"ObjectTags,omitempty"`
 
 	// OverwriteMode AWS CloudFormation Property
 	// Required: false

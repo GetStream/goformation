@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LogGroup AWS CloudFormation Resource (AWS::Logs::LogGroup)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html
@@ -26,7 +29,7 @@ type LogGroup struct {
 	// RetentionInDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-retentionindays
-	RetentionInDays int `json:"RetentionInDays,omitempty"`
+	RetentionInDays *utils.Value[int] `json:"RetentionInDays,omitempty"`
 
 	// Tags AWS CloudFormation Property
 	// Required: false

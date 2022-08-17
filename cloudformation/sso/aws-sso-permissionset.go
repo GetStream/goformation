@@ -7,11 +7,19 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // PermissionSet AWS CloudFormation Resource (AWS::SSO::PermissionSet)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html
 type PermissionSet struct {
+
+	// CustomerManagedPolicyReferences AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-customermanagedpolicyreferences
+	CustomerManagedPolicyReferences []PermissionSet_CustomerManagedPolicyReference `json:"CustomerManagedPolicyReferences,omitempty"`
 
 	// Description AWS CloudFormation Property
 	// Required: false
@@ -37,6 +45,11 @@ type PermissionSet struct {
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-name
 	Name string `json:"Name,omitempty"`
+
+	// PermissionsBoundary AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-permissionsboundary
+	PermissionsBoundary *PermissionSet_PermissionsBoundary `json:"PermissionsBoundary,omitempty"`
 
 	// RelayStateType AWS CloudFormation Property
 	// Required: false

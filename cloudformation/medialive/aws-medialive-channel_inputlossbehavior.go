@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_InputLossBehavior AWS CloudFormation Resource (AWS::MediaLive::Channel.InputLossBehavior)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html
@@ -11,7 +14,7 @@ type Channel_InputLossBehavior struct {
 	// BlackFrameMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-blackframemsec
-	BlackFrameMsec int `json:"BlackFrameMsec,omitempty"`
+	BlackFrameMsec *utils.Value[int] `json:"BlackFrameMsec,omitempty"`
 
 	// InputLossImageColor AWS CloudFormation Property
 	// Required: false
@@ -31,7 +34,7 @@ type Channel_InputLossBehavior struct {
 	// RepeatFrameMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-repeatframemsec
-	RepeatFrameMsec int `json:"RepeatFrameMsec,omitempty"`
+	RepeatFrameMsec *utils.Value[int] `json:"RepeatFrameMsec,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

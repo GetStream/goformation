@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_WavSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.WavSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-wavsettings.html
@@ -11,7 +14,7 @@ type Channel_WavSettings struct {
 	// BitDepth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-wavsettings.html#cfn-medialive-channel-wavsettings-bitdepth
-	BitDepth float64 `json:"BitDepth,omitempty"`
+	BitDepth *utils.Value[float64] `json:"BitDepth,omitempty"`
 
 	// CodingMode AWS CloudFormation Property
 	// Required: false
@@ -21,7 +24,7 @@ type Channel_WavSettings struct {
 	// SampleRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-wavsettings.html#cfn-medialive-channel-wavsettings-samplerate
-	SampleRate float64 `json:"SampleRate,omitempty"`
+	SampleRate *utils.Value[float64] `json:"SampleRate,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

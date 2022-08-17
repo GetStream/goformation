@@ -2,7 +2,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Distribution_LegacyCustomOrigin AWS CloudFormation Resource (AWS::CloudFront::Distribution.LegacyCustomOrigin)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacycustomorigin.html
@@ -16,12 +19,12 @@ type Distribution_LegacyCustomOrigin struct {
 	// HTTPPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacycustomorigin.html#cfn-cloudfront-distribution-legacycustomorigin-httpport
-	HTTPPort int `json:"HTTPPort,omitempty"`
+	HTTPPort *utils.Value[int] `json:"HTTPPort,omitempty"`
 
 	// HTTPSPort AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacycustomorigin.html#cfn-cloudfront-distribution-legacycustomorigin-httpsport
-	HTTPSPort int `json:"HTTPSPort,omitempty"`
+	HTTPSPort *utils.Value[int] `json:"HTTPSPort,omitempty"`
 
 	// OriginProtocolPolicy AWS CloudFormation Property
 	// Required: true

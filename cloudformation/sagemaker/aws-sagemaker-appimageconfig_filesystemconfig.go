@@ -2,7 +2,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AppImageConfig_FileSystemConfig AWS CloudFormation Resource (AWS::SageMaker::AppImageConfig.FileSystemConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-filesystemconfig.html
@@ -11,12 +14,12 @@ type AppImageConfig_FileSystemConfig struct {
 	// DefaultGid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-filesystemconfig.html#cfn-sagemaker-appimageconfig-filesystemconfig-defaultgid
-	DefaultGid int `json:"DefaultGid,omitempty"`
+	DefaultGid *utils.Value[int] `json:"DefaultGid,omitempty"`
 
 	// DefaultUid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-filesystemconfig.html#cfn-sagemaker-appimageconfig-filesystemconfig-defaultuid
-	DefaultUid int `json:"DefaultUid,omitempty"`
+	DefaultUid *utils.Value[int] `json:"DefaultUid,omitempty"`
 
 	// MountPath AWS CloudFormation Property
 	// Required: false

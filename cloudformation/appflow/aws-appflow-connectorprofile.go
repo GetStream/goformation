@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConnectorProfile AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html
@@ -16,6 +19,11 @@ type ConnectorProfile struct {
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html#cfn-appflow-connectorprofile-connectionmode
 	ConnectionMode string `json:"ConnectionMode,omitempty"`
+
+	// ConnectorLabel AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html#cfn-appflow-connectorprofile-connectorlabel
+	ConnectorLabel string `json:"ConnectorLabel,omitempty"`
 
 	// ConnectorProfileConfig AWS CloudFormation Property
 	// Required: false

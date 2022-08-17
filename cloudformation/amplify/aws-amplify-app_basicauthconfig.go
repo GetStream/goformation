@@ -2,7 +2,10 @@ package amplify
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // App_BasicAuthConfig AWS CloudFormation Resource (AWS::Amplify::App.BasicAuthConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-basicauthconfig.html
@@ -11,7 +14,7 @@ type App_BasicAuthConfig struct {
 	// EnableBasicAuth AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-basicauthconfig.html#cfn-amplify-app-basicauthconfig-enablebasicauth
-	EnableBasicAuth bool `json:"EnableBasicAuth,omitempty"`
+	EnableBasicAuth *utils.Value[bool] `json:"EnableBasicAuth,omitempty"`
 
 	// Password AWS CloudFormation Property
 	// Required: false

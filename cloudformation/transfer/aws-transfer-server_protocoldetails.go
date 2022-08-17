@@ -2,16 +2,29 @@ package transfer
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Server_ProtocolDetails AWS CloudFormation Resource (AWS::Transfer::Server.ProtocolDetails)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html
 type Server_ProtocolDetails struct {
 
+	// As2Transports AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-as2transports
+	As2Transports []Server_As2Transport `json:"As2Transports,omitempty"`
+
 	// PassiveIp AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-passiveip
 	PassiveIp string `json:"PassiveIp,omitempty"`
+
+	// SetStatOption AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-setstatoption
+	SetStatOption string `json:"SetStatOption,omitempty"`
 
 	// TlsSessionResumptionMode AWS CloudFormation Property
 	// Required: false

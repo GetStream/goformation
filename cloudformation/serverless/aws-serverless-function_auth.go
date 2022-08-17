@@ -2,7 +2,10 @@ package serverless
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Function_Auth AWS CloudFormation Resource (AWS::Serverless::Function.Auth)
 // See: https://github.com/aws/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
@@ -11,7 +14,7 @@ type Function_Auth struct {
 	// ApiKeyRequired AWS CloudFormation Property
 	// Required: false
 	// See: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#function-auth-object
-	ApiKeyRequired bool `json:"ApiKeyRequired,omitempty"`
+	ApiKeyRequired *utils.Value[bool] `json:"ApiKeyRequired,omitempty"`
 
 	// AuthorizationScopes AWS CloudFormation Property
 	// Required: false

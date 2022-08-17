@@ -2,7 +2,10 @@ package databrew
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Dataset_ExcelOptions AWS CloudFormation Resource (AWS::DataBrew::Dataset.ExcelOptions)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-exceloptions.html
@@ -11,7 +14,7 @@ type Dataset_ExcelOptions struct {
 	// HeaderRow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-exceloptions.html#cfn-databrew-dataset-exceloptions-headerrow
-	HeaderRow bool `json:"HeaderRow,omitempty"`
+	HeaderRow *utils.Value[bool] `json:"HeaderRow,omitempty"`
 
 	// SheetIndexes AWS CloudFormation Property
 	// Required: false

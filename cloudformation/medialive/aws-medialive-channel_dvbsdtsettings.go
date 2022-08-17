@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_DvbSdtSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.DvbSdtSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsdtsettings.html
@@ -16,7 +19,7 @@ type Channel_DvbSdtSettings struct {
 	// RepInterval AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsdtsettings.html#cfn-medialive-channel-dvbsdtsettings-repinterval
-	RepInterval int `json:"RepInterval,omitempty"`
+	RepInterval *utils.Value[int] `json:"RepInterval,omitempty"`
 
 	// ServiceName AWS CloudFormation Property
 	// Required: false

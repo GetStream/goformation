@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CustomDataIdentifier AWS CloudFormation Resource (AWS::Macie::CustomDataIdentifier)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html
@@ -30,7 +33,7 @@ type CustomDataIdentifier struct {
 	// MaximumMatchDistance AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-maximummatchdistance
-	MaximumMatchDistance int `json:"MaximumMatchDistance,omitempty"`
+	MaximumMatchDistance *utils.Value[int] `json:"MaximumMatchDistance,omitempty"`
 
 	// Name AWS CloudFormation Property
 	// Required: true

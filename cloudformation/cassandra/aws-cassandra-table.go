@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Table AWS CloudFormation Resource (AWS::Cassandra::Table)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html
@@ -26,7 +29,7 @@ type Table struct {
 	// DefaultTimeToLive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-defaulttimetolive
-	DefaultTimeToLive int `json:"DefaultTimeToLive,omitempty"`
+	DefaultTimeToLive *utils.Value[int] `json:"DefaultTimeToLive,omitempty"`
 
 	// EncryptionSpecification AWS CloudFormation Property
 	// Required: false
@@ -46,7 +49,7 @@ type Table struct {
 	// PointInTimeRecoveryEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-pointintimerecoveryenabled
-	PointInTimeRecoveryEnabled bool `json:"PointInTimeRecoveryEnabled,omitempty"`
+	PointInTimeRecoveryEnabled *utils.Value[bool] `json:"PointInTimeRecoveryEnabled,omitempty"`
 
 	// RegularColumns AWS CloudFormation Property
 	// Required: false

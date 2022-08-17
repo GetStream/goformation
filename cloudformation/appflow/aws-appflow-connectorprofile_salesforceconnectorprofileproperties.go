@@ -2,7 +2,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ConnectorProfile_SalesforceConnectorProfileProperties AWS CloudFormation Resource (AWS::AppFlow::ConnectorProfile.SalesforceConnectorProfileProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofileproperties.html
@@ -16,7 +19,7 @@ type ConnectorProfile_SalesforceConnectorProfileProperties struct {
 	// isSandboxEnvironment AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofileproperties.html#cfn-appflow-connectorprofile-salesforceconnectorprofileproperties-issandboxenvironment
-	isSandboxEnvironment bool `json:"isSandboxEnvironment,omitempty"`
+	isSandboxEnvironment *utils.Value[bool] `json:"isSandboxEnvironment,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

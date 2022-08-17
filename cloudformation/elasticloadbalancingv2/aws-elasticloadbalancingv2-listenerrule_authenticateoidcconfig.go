@@ -2,7 +2,10 @@ package elasticloadbalancingv2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ListenerRule_AuthenticateOidcConfig AWS CloudFormation Resource (AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateOidcConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html
@@ -24,7 +27,7 @@ type ListenerRule_AuthenticateOidcConfig struct {
 	ClientId string `json:"ClientId,omitempty"`
 
 	// ClientSecret AWS CloudFormation Property
-	// Required: true
+	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-clientsecret
 	ClientSecret string `json:"ClientSecret,omitempty"`
 
@@ -51,7 +54,7 @@ type ListenerRule_AuthenticateOidcConfig struct {
 	// SessionTimeout AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-sessiontimeout
-	SessionTimeout int `json:"SessionTimeout,omitempty"`
+	SessionTimeout *utils.Value[int] `json:"SessionTimeout,omitempty"`
 
 	// TokenEndpoint AWS CloudFormation Property
 	// Required: true
@@ -61,7 +64,7 @@ type ListenerRule_AuthenticateOidcConfig struct {
 	// UseExistingClientSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-useexistingclientsecret
-	UseExistingClientSecret bool `json:"UseExistingClientSecret,omitempty"`
+	UseExistingClientSecret *utils.Value[bool] `json:"UseExistingClientSecret,omitempty"`
 
 	// UserInfoEndpoint AWS CloudFormation Property
 	// Required: true

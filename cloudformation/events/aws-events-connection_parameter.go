@@ -2,7 +2,10 @@ package events
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Connection_Parameter AWS CloudFormation Resource (AWS::Events::Connection.Parameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-parameter.html
@@ -11,7 +14,7 @@ type Connection_Parameter struct {
 	// IsValueSecret AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-parameter.html#cfn-events-connection-parameter-isvaluesecret
-	IsValueSecret bool `json:"IsValueSecret,omitempty"`
+	IsValueSecret *utils.Value[bool] `json:"IsValueSecret,omitempty"`
 
 	// Key AWS CloudFormation Property
 	// Required: true

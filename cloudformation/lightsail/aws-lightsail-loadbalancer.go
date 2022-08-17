@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LoadBalancer AWS CloudFormation Resource (AWS::Lightsail::LoadBalancer)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html
@@ -26,7 +29,7 @@ type LoadBalancer struct {
 	// InstancePort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-instanceport
-	InstancePort int `json:"InstancePort"`
+	InstancePort *utils.Value[int] `json:"InstancePort"`
 
 	// IpAddressType AWS CloudFormation Property
 	// Required: false
@@ -41,7 +44,7 @@ type LoadBalancer struct {
 	// SessionStickinessEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-sessionstickinessenabled
-	SessionStickinessEnabled bool `json:"SessionStickinessEnabled,omitempty"`
+	SessionStickinessEnabled *utils.Value[bool] `json:"SessionStickinessEnabled,omitempty"`
 
 	// SessionStickinessLBCookieDurationSeconds AWS CloudFormation Property
 	// Required: false
@@ -52,6 +55,11 @@ type LoadBalancer struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-tags
 	Tags []tags.Tag `json:"Tags,omitempty"`
+
+	// TlsPolicyName AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-tlspolicyname
+	TlsPolicyName string `json:"TlsPolicyName,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

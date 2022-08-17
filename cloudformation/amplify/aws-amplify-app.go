@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // App AWS CloudFormation Resource (AWS::Amplify::App)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html
@@ -51,7 +54,7 @@ type App struct {
 	// EnableBranchAutoDeletion AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-enablebranchautodeletion
-	EnableBranchAutoDeletion bool `json:"EnableBranchAutoDeletion,omitempty"`
+	EnableBranchAutoDeletion *utils.Value[bool] `json:"EnableBranchAutoDeletion,omitempty"`
 
 	// EnvironmentVariables AWS CloudFormation Property
 	// Required: false

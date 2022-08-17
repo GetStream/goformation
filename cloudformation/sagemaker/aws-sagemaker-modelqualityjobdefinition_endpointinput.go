@@ -2,7 +2,10 @@ package sagemaker
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // ModelQualityJobDefinition_EndpointInput AWS CloudFormation Resource (AWS::SageMaker::ModelQualityJobDefinition.EndpointInput)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html
@@ -36,7 +39,7 @@ type ModelQualityJobDefinition_EndpointInput struct {
 	// ProbabilityThresholdAttribute AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-probabilitythresholdattribute
-	ProbabilityThresholdAttribute float64 `json:"ProbabilityThresholdAttribute,omitempty"`
+	ProbabilityThresholdAttribute *utils.Value[float64] `json:"ProbabilityThresholdAttribute,omitempty"`
 
 	// S3DataDistributionType AWS CloudFormation Property
 	// Required: false

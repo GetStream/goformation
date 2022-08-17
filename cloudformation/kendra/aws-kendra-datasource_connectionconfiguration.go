@@ -2,7 +2,10 @@ package kendra
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DataSource_ConnectionConfiguration AWS CloudFormation Resource (AWS::Kendra::DataSource.ConnectionConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-connectionconfiguration.html
@@ -21,7 +24,7 @@ type DataSource_ConnectionConfiguration struct {
 	// DatabasePort AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-connectionconfiguration.html#cfn-kendra-datasource-connectionconfiguration-databaseport
-	DatabasePort int `json:"DatabasePort"`
+	DatabasePort *utils.Value[int] `json:"DatabasePort"`
 
 	// SecretArn AWS CloudFormation Property
 	// Required: true

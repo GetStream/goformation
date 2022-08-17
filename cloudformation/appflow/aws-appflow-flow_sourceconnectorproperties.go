@@ -2,7 +2,10 @@ package appflow
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Flow_SourceConnectorProperties AWS CloudFormation Resource (AWS::AppFlow::Flow.SourceConnectorProperties)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html
@@ -12,6 +15,11 @@ type Flow_SourceConnectorProperties struct {
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-amplitude
 	Amplitude *Flow_AmplitudeSourceProperties `json:"Amplitude,omitempty"`
+
+	// CustomConnector AWS CloudFormation Property
+	// Required: false
+	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-customconnector
+	CustomConnector *Flow_CustomConnectorSourceProperties `json:"CustomConnector,omitempty"`
 
 	// Datadog AWS CloudFormation Property
 	// Required: false

@@ -2,7 +2,10 @@ package greengrass
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // DeviceDefinition_Device AWS CloudFormation Resource (AWS::Greengrass::DeviceDefinition.Device)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html
@@ -21,7 +24,7 @@ type DeviceDefinition_Device struct {
 	// SyncShadow AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinition-device.html#cfn-greengrass-devicedefinition-device-syncshadow
-	SyncShadow bool `json:"SyncShadow,omitempty"`
+	SyncShadow *utils.Value[bool] `json:"SyncShadow,omitempty"`
 
 	// ThingArn AWS CloudFormation Property
 	// Required: true

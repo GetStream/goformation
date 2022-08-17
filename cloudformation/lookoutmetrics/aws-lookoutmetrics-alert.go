@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Alert AWS CloudFormation Resource (AWS::LookoutMetrics::Alert)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-alert.html
@@ -30,7 +33,7 @@ type Alert struct {
 	// AlertSensitivityThreshold AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-alert.html#cfn-lookoutmetrics-alert-alertsensitivitythreshold
-	AlertSensitivityThreshold int `json:"AlertSensitivityThreshold"`
+	AlertSensitivityThreshold *utils.Value[int] `json:"AlertSensitivityThreshold"`
 
 	// AnomalyDetectorArn AWS CloudFormation Property
 	// Required: true

@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MaintenanceWindowTask AWS CloudFormation Resource (AWS::SSM::MaintenanceWindowTask)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html
@@ -45,7 +48,7 @@ type MaintenanceWindowTask struct {
 	// Priority AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-priority
-	Priority int `json:"Priority"`
+	Priority *utils.Value[int] `json:"Priority"`
 
 	// ServiceRoleArn AWS CloudFormation Property
 	// Required: false

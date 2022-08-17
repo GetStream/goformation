@@ -2,7 +2,10 @@ package evidently
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Feature_VariationObject AWS CloudFormation Resource (AWS::Evidently::Feature.VariationObject)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html
@@ -11,17 +14,17 @@ type Feature_VariationObject struct {
 	// BooleanValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html#cfn-evidently-feature-variationobject-booleanvalue
-	BooleanValue bool `json:"BooleanValue,omitempty"`
+	BooleanValue *utils.Value[bool] `json:"BooleanValue,omitempty"`
 
 	// DoubleValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html#cfn-evidently-feature-variationobject-doublevalue
-	DoubleValue float64 `json:"DoubleValue,omitempty"`
+	DoubleValue *utils.Value[float64] `json:"DoubleValue,omitempty"`
 
 	// LongValue AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-evidently-feature-variationobject.html#cfn-evidently-feature-variationobject-longvalue
-	LongValue float64 `json:"LongValue,omitempty"`
+	LongValue *utils.Value[float64] `json:"LongValue,omitempty"`
 
 	// StringValue AWS CloudFormation Property
 	// Required: false

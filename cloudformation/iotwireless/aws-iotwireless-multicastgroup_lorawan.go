@@ -2,7 +2,10 @@ package iotwireless
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // MulticastGroup_LoRaWAN AWS CloudFormation Resource (AWS::IoTWireless::MulticastGroup.LoRaWAN)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-multicastgroup-lorawan.html
@@ -16,12 +19,12 @@ type MulticastGroup_LoRaWAN struct {
 	// NumberOfDevicesInGroup AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-multicastgroup-lorawan.html#cfn-iotwireless-multicastgroup-lorawan-numberofdevicesingroup
-	NumberOfDevicesInGroup int `json:"NumberOfDevicesInGroup,omitempty"`
+	NumberOfDevicesInGroup *utils.Value[int] `json:"NumberOfDevicesInGroup,omitempty"`
 
 	// NumberOfDevicesRequested AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-multicastgroup-lorawan.html#cfn-iotwireless-multicastgroup-lorawan-numberofdevicesrequested
-	NumberOfDevicesRequested int `json:"NumberOfDevicesRequested,omitempty"`
+	NumberOfDevicesRequested *utils.Value[int] `json:"NumberOfDevicesRequested,omitempty"`
 
 	// RfRegion AWS CloudFormation Property
 	// Required: true

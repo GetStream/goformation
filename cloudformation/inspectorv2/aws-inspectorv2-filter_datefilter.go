@@ -2,7 +2,10 @@ package inspectorv2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Filter_DateFilter AWS CloudFormation Resource (AWS::InspectorV2::Filter.DateFilter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-datefilter.html
@@ -11,12 +14,12 @@ type Filter_DateFilter struct {
 	// EndInclusive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-datefilter.html#cfn-inspectorv2-filter-datefilter-endinclusive
-	EndInclusive int `json:"EndInclusive,omitempty"`
+	EndInclusive *utils.Value[int] `json:"EndInclusive,omitempty"`
 
 	// StartInclusive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-datefilter.html#cfn-inspectorv2-filter-datefilter-startinclusive
-	StartInclusive int `json:"StartInclusive,omitempty"`
+	StartInclusive *utils.Value[int] `json:"StartInclusive,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

@@ -2,7 +2,10 @@ package appmesh
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // VirtualNode_OutlierDetection AWS CloudFormation Resource (AWS::AppMesh::VirtualNode.OutlierDetection)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-outlierdetection.html
@@ -21,12 +24,12 @@ type VirtualNode_OutlierDetection struct {
 	// MaxEjectionPercent AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-outlierdetection.html#cfn-appmesh-virtualnode-outlierdetection-maxejectionpercent
-	MaxEjectionPercent int `json:"MaxEjectionPercent"`
+	MaxEjectionPercent *utils.Value[int] `json:"MaxEjectionPercent"`
 
 	// MaxServerErrors AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-outlierdetection.html#cfn-appmesh-virtualnode-outlierdetection-maxservererrors
-	MaxServerErrors int `json:"MaxServerErrors"`
+	MaxServerErrors *utils.Value[int] `json:"MaxServerErrors"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

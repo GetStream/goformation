@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_UdpOutputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.UdpOutputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html
@@ -11,7 +14,7 @@ type Channel_UdpOutputSettings struct {
 	// BufferMsec AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-buffermsec
-	BufferMsec int `json:"BufferMsec,omitempty"`
+	BufferMsec *utils.Value[int] `json:"BufferMsec,omitempty"`
 
 	// ContainerSettings AWS CloudFormation Property
 	// Required: false

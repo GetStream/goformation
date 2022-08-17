@@ -2,7 +2,10 @@ package wisdom
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // KnowledgeBase_AppIntegrationsConfiguration AWS CloudFormation Resource (AWS::Wisdom::KnowledgeBase.AppIntegrationsConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-knowledgebase-appintegrationsconfiguration.html

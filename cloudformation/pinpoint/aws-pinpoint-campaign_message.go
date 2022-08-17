@@ -2,7 +2,10 @@ package pinpoint
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Campaign_Message AWS CloudFormation Resource (AWS::Pinpoint::Campaign.Message)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html
@@ -51,12 +54,12 @@ type Campaign_Message struct {
 	// SilentPush AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-silentpush
-	SilentPush bool `json:"SilentPush,omitempty"`
+	SilentPush *utils.Value[bool] `json:"SilentPush,omitempty"`
 
 	// TimeToLive AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-timetolive
-	TimeToLive int `json:"TimeToLive,omitempty"`
+	TimeToLive *utils.Value[int] `json:"TimeToLive,omitempty"`
 
 	// Title AWS CloudFormation Property
 	// Required: false

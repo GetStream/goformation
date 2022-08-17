@@ -2,14 +2,17 @@ package lex
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // BotAlias_AudioLogDestination AWS CloudFormation Resource (AWS::Lex::BotAlias.AudioLogDestination)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologdestination.html
 type BotAlias_AudioLogDestination struct {
 
 	// S3Bucket AWS CloudFormation Property
-	// Required: false
+	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologdestination.html#cfn-lex-botalias-audiologdestination-s3bucket
 	S3Bucket *BotAlias_S3BucketLogDestination `json:"S3Bucket,omitempty"`
 

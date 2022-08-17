@@ -2,7 +2,10 @@ package cloudfront
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CachePolicy_CachePolicyConfig AWS CloudFormation Resource (AWS::CloudFront::CachePolicy.CachePolicyConfig)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html
@@ -16,17 +19,17 @@ type CachePolicy_CachePolicyConfig struct {
 	// DefaultTTL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-defaultttl
-	DefaultTTL float64 `json:"DefaultTTL"`
+	DefaultTTL *utils.Value[float64] `json:"DefaultTTL"`
 
 	// MaxTTL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-maxttl
-	MaxTTL float64 `json:"MaxTTL"`
+	MaxTTL *utils.Value[float64] `json:"MaxTTL"`
 
 	// MinTTL AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-minttl
-	MinTTL float64 `json:"MinTTL"`
+	MinTTL *utils.Value[float64] `json:"MinTTL"`
 
 	// Name AWS CloudFormation Property
 	// Required: true

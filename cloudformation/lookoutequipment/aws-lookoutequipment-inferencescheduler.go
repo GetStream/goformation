@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // InferenceScheduler AWS CloudFormation Resource (AWS::LookoutEquipment::InferenceScheduler)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html
@@ -16,7 +19,7 @@ type InferenceScheduler struct {
 	// DataDelayOffsetInMinutes AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-datadelayoffsetinminutes
-	DataDelayOffsetInMinutes int `json:"DataDelayOffsetInMinutes,omitempty"`
+	DataDelayOffsetInMinutes *utils.Value[int] `json:"DataDelayOffsetInMinutes,omitempty"`
 
 	// DataInputConfiguration AWS CloudFormation Property
 	// Required: true

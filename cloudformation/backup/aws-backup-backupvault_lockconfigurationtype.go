@@ -2,7 +2,10 @@ package backup
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // BackupVault_LockConfigurationType AWS CloudFormation Resource (AWS::Backup::BackupVault.LockConfigurationType)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html
@@ -11,17 +14,17 @@ type BackupVault_LockConfigurationType struct {
 	// ChangeableForDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-changeablefordays
-	ChangeableForDays float64 `json:"ChangeableForDays,omitempty"`
+	ChangeableForDays *utils.Value[float64] `json:"ChangeableForDays,omitempty"`
 
 	// MaxRetentionDays AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-maxretentiondays
-	MaxRetentionDays float64 `json:"MaxRetentionDays,omitempty"`
+	MaxRetentionDays *utils.Value[float64] `json:"MaxRetentionDays,omitempty"`
 
 	// MinRetentionDays AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-minretentiondays
-	MinRetentionDays float64 `json:"MinRetentionDays"`
+	MinRetentionDays *utils.Value[float64] `json:"MinRetentionDays"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

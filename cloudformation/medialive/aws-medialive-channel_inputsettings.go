@@ -2,7 +2,10 @@ package medialive
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Channel_InputSettings AWS CloudFormation Resource (AWS::MediaLive::Channel.InputSettings)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html
@@ -31,7 +34,7 @@ type Channel_InputSettings struct {
 	// FilterStrength AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-filterstrength
-	FilterStrength int `json:"FilterStrength,omitempty"`
+	FilterStrength *utils.Value[int] `json:"FilterStrength,omitempty"`
 
 	// InputFilter AWS CloudFormation Property
 	// Required: false
@@ -46,7 +49,7 @@ type Channel_InputSettings struct {
 	// Scte35Pid AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-scte35pid
-	Scte35Pid int `json:"Scte35Pid,omitempty"`
+	Scte35Pid *utils.Value[int] `json:"Scte35Pid,omitempty"`
 
 	// Smpte2038DataPreference AWS CloudFormation Property
 	// Required: false

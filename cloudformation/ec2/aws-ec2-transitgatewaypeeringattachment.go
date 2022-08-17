@@ -7,16 +7,14 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // TransitGatewayPeeringAttachment AWS CloudFormation Resource (AWS::EC2::TransitGatewayPeeringAttachment)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html
 type TransitGatewayPeeringAttachment struct {
-
-	// Options AWS CloudFormation Property
-	// Required: false
-	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#cfn-ec2-transitgatewaypeeringattachment-options
-	Options *TransitGatewayPeeringAttachment_TransitGatewayPeeringAttachmentOptions `json:"Options,omitempty"`
 
 	// PeerAccountId AWS CloudFormation Property
 	// Required: true

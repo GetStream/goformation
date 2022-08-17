@@ -7,7 +7,10 @@ import (
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
 	"github.com/awslabs/goformation/v5/cloudformation/tags"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // CloudFormationProduct AWS CloudFormation Resource (AWS::ServiceCatalog::CloudFormationProduct)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html
@@ -46,7 +49,7 @@ type CloudFormationProduct struct {
 	// ReplaceProvisioningArtifacts AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-replaceprovisioningartifacts
-	ReplaceProvisioningArtifacts bool `json:"ReplaceProvisioningArtifacts,omitempty"`
+	ReplaceProvisioningArtifacts *utils.Value[bool] `json:"ReplaceProvisioningArtifacts,omitempty"`
 
 	// SupportDescription AWS CloudFormation Property
 	// Required: false

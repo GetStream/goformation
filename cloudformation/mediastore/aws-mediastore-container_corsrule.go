@@ -2,7 +2,10 @@ package mediastore
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Container_CorsRule AWS CloudFormation Resource (AWS::MediaStore::Container.CorsRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-corsrule.html
@@ -31,7 +34,7 @@ type Container_CorsRule struct {
 	// MaxAgeSeconds AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-corsrule.html#cfn-mediastore-container-corsrule-maxageseconds
-	MaxAgeSeconds int `json:"MaxAgeSeconds,omitempty"`
+	MaxAgeSeconds *utils.Value[int] `json:"MaxAgeSeconds,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`

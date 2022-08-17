@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/awslabs/goformation/v5/intrinsics"
 	"github.com/sanathkr/yaml"
+
+	"github.com/awslabs/goformation/v5/intrinsics"
 )
 
 // Template represents an AWS CloudFormation template

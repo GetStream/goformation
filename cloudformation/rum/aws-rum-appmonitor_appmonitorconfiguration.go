@@ -2,7 +2,10 @@ package rum
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // AppMonitor_AppMonitorConfiguration AWS CloudFormation Resource (AWS::RUM::AppMonitor.AppMonitorConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html
@@ -11,12 +14,12 @@ type AppMonitor_AppMonitorConfiguration struct {
 	// AllowCookies AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-allowcookies
-	AllowCookies bool `json:"AllowCookies,omitempty"`
+	AllowCookies *utils.Value[bool] `json:"AllowCookies,omitempty"`
 
 	// EnableXRay AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-enablexray
-	EnableXRay bool `json:"EnableXRay,omitempty"`
+	EnableXRay *utils.Value[bool] `json:"EnableXRay,omitempty"`
 
 	// ExcludedPages AWS CloudFormation Property
 	// Required: false
@@ -46,7 +49,7 @@ type AppMonitor_AppMonitorConfiguration struct {
 	// SessionSampleRate AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-appmonitorconfiguration.html#cfn-rum-appmonitor-appmonitorconfiguration-sessionsamplerate
-	SessionSampleRate float64 `json:"SessionSampleRate,omitempty"`
+	SessionSampleRate *utils.Value[float64] `json:"SessionSampleRate,omitempty"`
 
 	// Telemetries AWS CloudFormation Property
 	// Required: false

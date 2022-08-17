@@ -6,7 +6,10 @@ import (
 	"fmt"
 
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Subscription AWS CloudFormation Resource (AWS::SNS::Subscription)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html
@@ -35,7 +38,7 @@ type Subscription struct {
 	// RawMessageDelivery AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-rawmessagedelivery
-	RawMessageDelivery bool `json:"RawMessageDelivery,omitempty"`
+	RawMessageDelivery *utils.Value[bool] `json:"RawMessageDelivery,omitempty"`
 
 	// RedrivePolicy AWS CloudFormation Property
 	// Required: false

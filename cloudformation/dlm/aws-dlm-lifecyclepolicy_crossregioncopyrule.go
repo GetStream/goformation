@@ -2,7 +2,10 @@ package dlm
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // LifecyclePolicy_CrossRegionCopyRule AWS CloudFormation Resource (AWS::DLM::LifecyclePolicy.CrossRegionCopyRule)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html
@@ -16,7 +19,7 @@ type LifecyclePolicy_CrossRegionCopyRule struct {
 	// CopyTags AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-copytags
-	CopyTags bool `json:"CopyTags,omitempty"`
+	CopyTags *utils.Value[bool] `json:"CopyTags,omitempty"`
 
 	// DeprecateRule AWS CloudFormation Property
 	// Required: false
@@ -26,7 +29,7 @@ type LifecyclePolicy_CrossRegionCopyRule struct {
 	// Encrypted AWS CloudFormation Property
 	// Required: true
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-encrypted
-	Encrypted bool `json:"Encrypted"`
+	Encrypted *utils.Value[bool] `json:"Encrypted"`
 
 	// RetainRule AWS CloudFormation Property
 	// Required: false

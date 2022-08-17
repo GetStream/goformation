@@ -2,7 +2,10 @@ package databrew
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Dataset_DatasetParameter AWS CloudFormation Resource (AWS::DataBrew::Dataset.DatasetParameter)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html
@@ -11,7 +14,7 @@ type Dataset_DatasetParameter struct {
 	// CreateColumn AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-createcolumn
-	CreateColumn bool `json:"CreateColumn,omitempty"`
+	CreateColumn *utils.Value[bool] `json:"CreateColumn,omitempty"`
 
 	// DatetimeOptions AWS CloudFormation Property
 	// Required: false

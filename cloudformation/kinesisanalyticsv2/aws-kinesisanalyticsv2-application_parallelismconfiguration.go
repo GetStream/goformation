@@ -2,7 +2,10 @@ package kinesisanalyticsv2
 
 import (
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
+
+var _ utils.Value[struct{}]
 
 // Application_ParallelismConfiguration AWS CloudFormation Resource (AWS::KinesisAnalyticsV2::Application.ParallelismConfiguration)
 // See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html
@@ -11,7 +14,7 @@ type Application_ParallelismConfiguration struct {
 	// AutoScalingEnabled AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html#cfn-kinesisanalyticsv2-application-parallelismconfiguration-autoscalingenabled
-	AutoScalingEnabled bool `json:"AutoScalingEnabled,omitempty"`
+	AutoScalingEnabled *utils.Value[bool] `json:"AutoScalingEnabled,omitempty"`
 
 	// ConfigurationType AWS CloudFormation Property
 	// Required: true
@@ -21,12 +24,12 @@ type Application_ParallelismConfiguration struct {
 	// Parallelism AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html#cfn-kinesisanalyticsv2-application-parallelismconfiguration-parallelism
-	Parallelism int `json:"Parallelism,omitempty"`
+	Parallelism *utils.Value[int] `json:"Parallelism,omitempty"`
 
 	// ParallelismPerKPU AWS CloudFormation Property
 	// Required: false
 	// See: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-parallelismconfiguration.html#cfn-kinesisanalyticsv2-application-parallelismconfiguration-parallelismperkpu
-	ParallelismPerKPU int `json:"ParallelismPerKPU,omitempty"`
+	ParallelismPerKPU *utils.Value[int] `json:"ParallelismPerKPU,omitempty"`
 
 	// AWSCloudFormationDeletionPolicy represents a CloudFormation DeletionPolicy
 	AWSCloudFormationDeletionPolicy policies.DeletionPolicy `json:"-"`
