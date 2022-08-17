@@ -220,8 +220,9 @@ func search(input interface{}, template interface{}, options *ProcessorOptions) 
 		}
 
 		// An intrinsic should be an object, with a single key containing a valid intrinsic name
+		// Support embedded types by processing this case.
 		if len(intrinsic) != 1 {
-			return value
+			return search(intrinsic, template, options)
 		}
 
 		for key, val := range intrinsic {
