@@ -220,6 +220,29 @@ func (p Property) IsCustomType() bool {
 // GoType returns the correct type for this property
 // within a Go struct. For example, []string or map[string]AWSLambdaFunction_VpcConfig
 func (p Property) GoType(typename string, basename string, name string) string {
+	original := p.goType(typename, basename, name)
+	copyOriginal := original
+
+	isPtr := copyOriginal[0] == '*'
+	if isPtr {
+		copyOriginal = copyOriginal[1:]
+	}
+
+	switch copyOriginal {
+	case "int", "int64", "float64", "bool":
+	default:
+		return original
+	}
+
+	newType := "utils.Value[" + copyOriginal + "]"
+	if isPtr {
+		newType = "*" + newType
+	}
+
+	return newType
+}
+
+func (p Property) goType(typename string, basename string, name string) string {
 
 	if p.ItemType == "Tag" {
 		return "[]tags.Tag"

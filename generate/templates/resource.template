@@ -8,13 +8,17 @@ import (
 	{{if .HasTags}}
 	"github.com/awslabs/goformation/v5/cloudformation/tags"{{end}}
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
 {{else}}
 import ({{if .HasTags}}
 	"github.com/awslabs/goformation/v5/cloudformation/tags"{{end}}
 	"github.com/awslabs/goformation/v5/cloudformation/policies"
+	"github.com/awslabs/goformation/v5/cloudformation/utils"
 )
 {{end}}
+
+var _ utils.Value[struct{}]
 
 // {{.StructName}} AWS CloudFormation Resource ({{.Name}})
 // See: {{.Resource.Documentation}}
